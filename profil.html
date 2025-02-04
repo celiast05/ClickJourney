@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Utilisateur - Elysia Voyage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    
+    <section class="profil">
+        <h2>Mon Profil</h2>
+        <form action="profil_update.php" method="POST" onsubmit="return validateForm()">
+            <div class="profil-info">
+                <label for="civilite">Civilité :</label>
+                <select id="civilite" name="civilite">
+                    <option value="">Sélectionnez...</option>
+                    <option value="Monsieur">Monsieur</option>
+                    <option value="Madame">Madame</option>
+                    <option value="Autre">Autre</option>
+                </select>
+            </div>
+        
+            <div class="profil-info obligatoire">
+                <label for="nom">Nom :</label>
+                <input type="text" id="nom" name="nom" placeholder="Votre nom" required>
+            </div>
+            
+            <div class="profil-info obligatoire">
+                <label for="prenom">Prénom :</label>
+                <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required>
+            </div>
+            
+            <div class="profil-info obligatoire">
+                <label for="email">Email :</label>
+                <input type="email" id="email" name="email" placeholder="Votre email" required>
+            </div>
+            
+            <div class="profil-info obligatoire">
+                <label for="telephone">Téléphone :</label>
+                <input type="tel" id="telephone" name="telephone" placeholder="Votre téléphone" required>
+            </div>
+            
+            <h3>Informations Facultatives</h3>
+            
+            <div class="profil-info">
+                <label for="photo">Photo de Profil :</label>
+                <input type="file" id="photo" name="photo" accept="image/*">
+            </div>
+        
+            
+            <div class="profil-info">
+                <label for="preferences">Préférences de Voyage :</label>
+                <textarea id="preferences" name="preferences" placeholder="Indiquez vos préférences (ex: plages, montagnes, road trip...)"></textarea>
+            </div>
+            
+            <div class="profil-info">
+                <label for="passeport">Type de Passeport :</label>
+                <select id="passeport" name="passeport">
+                    <option value="">Sélectionnez...</option>
+                    <option value="Ordinaire">Ordinaire</option>
+                    <option value="Diplomatique">Diplomatique</option>
+                    <option value="Officiel">Officiel</option>
+                </select>
+            </div>
+            
+            <button type="button" class="edit-btn" onclick="enableEdit()">✎ Modifier</button>
+            <button type="submit" class="save-btn" style="display:none;">Enregistrer</button>
+        </form>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Elysia Voyage. Tous droits réservés. ✈️</p>
+    </footer>
+    
+    <script>
+        function enableEdit() {
+            let inputs = document.querySelectorAll('.profil-info input, .profil-info select, .profil-info textarea');
+            inputs.forEach(input => input.removeAttribute('readonly'));
+            document.querySelector('.edit-btn').style.display = 'none';
+            document.querySelector('.save-btn').style.display = 'inline-block';
+        }
+
+        function validateForm() {
+            let requiredFields = document.querySelectorAll('.profil-info.obligatoire input');
+            for (let field of requiredFields) {
+                if (field.value.trim() === "") {
+                    alert("Tous les champs obligatoires doivent être remplis.");
+                    return false;
+                }
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
