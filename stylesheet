@@ -1,0 +1,23 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
+
+body{
+    background-color: #046A38;
+    font-family: "Bodoni Moda", serif;
+    color:#FFD700;
+}
+
+h1{
+    font-size: 30px;
+    color: #E1C31F;
+}
+
+h2{
+    font-size: 18px;
+    color: #FFD700;
+}
+
+h3{
+    font-size: 16px;
+    color: orange;
+}
