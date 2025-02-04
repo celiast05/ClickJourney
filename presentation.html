@@ -3,24 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Présentation - Mon Site</title>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <title>Recherche</title>
 </head>
 <body>
     <header>
-        <h1>Présentation</h1>
-        <nav>
-            <ul>
-                <li><a href="accueil.html">Accueil</a></li>
-                <li><a href="presentation.html">Présentation</a></li>
-            </ul>
-        </nav>
-    </header>
+        <div class="menu">
+          <nav>
+            <button><a href="accueil.html">Accueil</a></button>
+            <button><a href="presentation.html">Destinations</a></button>
+            <button><a href="connexion.html">Connexion</a></button>
+          </nav>
+        </div>
+        <h1>Elysia Voyage</h1>
+      </header>
     <main>
-        <h2>À propos de nous</h2>
-        <p>Nous sommes une agence de voyage.(mettre nos prenoms???)</p>
-        <h3>Recherche rapide</h3>
-        <input type="text" placeholder="Rechercher...">
-        <button>Rechercher</button>
+        <h2>L'élégance du Voyage, la magie de l'Amour</h2>
+        
+        <form name="search" method="post" action="#">
+                <input class="search" id="i1" type="text" placeholder="Rechercher..."><button id="b1" type="submit" ><img src="Images/loupe.png" alt="loupe"></button>
+        </form>
     </main>
 </body>
 </html>

@@ -1,23 +1,118 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap"); */
 
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap');
-
-body{
-    background-color: #046A38;
-    font-family: "Bodoni Moda", serif;
-    color:#FFD700;
+body {
+  display: block;
+  background-color: #046a38;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  color: #ffd700;
+  text-align: center;
+  justify-content: center;
+  border: #ffd700;
 }
 
-h1{
-    font-size: 30px;
-    color: #E1C31F;
+.menu {
+  text-align: right;
 }
 
-h2{
-    font-size: 18px;
-    color: #FFD700;
+nav {
+  display: inline-block;
+  padding: 10px;
+  border-bottom: 3px solid;
+  border-left: 3px solid;
+  border-radius: 10px;
+  margin: 0;
 }
 
-h3{
-    font-size: 16px;
-    color: orange;
+button {
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 25px;
+  background-color: green;
+  margin: 10px;
+  padding: 10px;
+  border: 0px;
+  border: 2px solid #046a38;
+}
+
+button:hover {
+  border: 2px solid #ffd700;
+}
+
+h1 {
+  font-size: 100px;
+  color: #e1c31f;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+h3 {
+  font-size: 16px;
+}
+
+a {
+  text-decoration: none;
+  color: #ffd700;
+}
+
+#intro {
+  font-size: 25px;
+  font-weight: normal;
+  padding: 5% 20% 5% 20%;
+}
+
+button img {
+  width: 45px;
+  padding: 5px 5px 0 5px;
+}
+
+.big_button {
+  padding: 20px 50px 20px 50px;
+  font-size: 50px;
+  border-radius: 40px;
+}
+
+.big_button:hover {
+  padding: 25px 60px 25px 60px;
+  margin-top: -5px;
+}
+
+form {
+  display: flex;
+  background-color: inherit;
+  padding: 200px;
+  border-radius: 30px;
+  outline: none;
+}
+
+#b1 {
+  margin: 0;
+  padding: 0 0 10px 10px;
+  background-color: inherit;
+  border: 0;
+}
+
+#b1 img {
+  width: 40px;
+  padding: 5px;
+}
+
+#i1 {
+  border: 2px solid white;
+  background-color: transparent;
+  border-radius: 40px;
+  margin-bottom: 20px;
+  width: 200%;
+  padding: 10px;
+  color: white;
+}
+
+#i1:focus {
+  outline: none;
+}
+
+#i1::placeholder {
+  color: white;
 }
