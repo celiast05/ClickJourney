@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <title>Customisation</title>
+  </head>
+  <body>
+    <header>
+      <div class="menu">
+        <nav>
+          <button><a href="accueil.html">Accueil</a></button>
+          <button><a href="presentation.html">Destinations</a></button>
+          <button><a href="filtrage.html">Filtrer</a></button>
+          <button><a href="connexion.html">Connexion</a></button>
+        </nav>
+      </div>
+      <h2>Elysia Voyage</h2>
+    </header>
+    <div class="container">
+      <h2>Personaliser votre voyage</h2>
+      <form action="recherche_voyage.php" method="POST">
+        <!-- Destination -->
+        <label for="destination" class="header">Destination :</label>
+        <input
+          type="text"
+          id="destination"
+          name="destination"
+          placeholder="Ex: Paris, Rome, New York"
+        />
+
+        <!-- Dates -->
+        <label for="date_depart" class="header">Date de départ :</label>
+        <input type="date" id="date_depart" name="date_depart" />
+
+        <label for="date_retour" class="header">Date de retour :</label>
+        <input type="date" id="date_retour" name="date_retour" />
+
+        <!-- Options supplémentaires -->
+        <label class="header">Options :</label>
+        <div class="checkbox-group">
+          <!-- Climat & Saison -->
+          <label for="climat_saison">Climat & Saison :</label>
+          <select id="climat_saison" name="climat_saison">
+            <option value="">-- Sélectionner --</option>
+            <option value="tropical_ensoleille">Tropical & Ensoleillé</option>
+            <option value="douceur_mediterraneenne">
+              Douceur Méditerranéenne
+            </option>
+            <option value="hiver_chic_neige">Hiver Chic & Neige</option>
+            <option value="printemps_fleuri">Printemps Fleuri</option>
+            <option value="automne_dore">Automne Doré</option>
+          </select>
+
+          <!-- Type d'Hébergement -->
+          <label for="hebergement">Type d'Hébergement :</label>
+          <select id="hebergement" name="hebergement">
+            <option value="">-- Sélectionner --</option>
+            <option value="villas_privees">Villas privées sur pilotis</option>
+            <option value="hotels_resorts_5">Hôtels & Resorts 5 étoiles</option>
+            <option value="yachts_croisieres">
+              Yachts & Croisières privées
+            </option>
+            <option value="chateaux_demeures">
+              Châteaux & Demeures historiques
+            </option>
+            <option value="lodges_safari">Lodges & Safari Lodges</option>
+          </select>
+        </div>
+        <!-- Expériences & Activités -->
+        <label class="header">Expériences & Activités :</label>
+        <div class="checkbox-group">
+          <label
+            ><input type="checkbox" name="activites[]" value="diner_prive" />
+            Dîner privé sous les étoiles</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="activites[]"
+              value="plongee_tortues"
+            />
+            Plongée & Snorkeling avec tortues</label
+          >
+          <label
+            ><input type="checkbox" name="activites[]" value="safari_vip" />
+            Safari VIP avec lodge 5 étoiles</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="activites[]"
+              value="survol_helicoptere"
+            />
+            Survol en hélicoptère ou montgolfière</label
+          >
+          <label
+            ><input type="checkbox" name="activites[]" value="spa_bien_etre" />
+            Spa & Bien-être ultra-luxe</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="activites[]"
+              value="shopping_haut_couture"
+            />
+            Shopping haute couture & joaillerie</label
+          >
+        </div>
+        <!-- Intimité & Exclusivité -->
+        <label class="header">Intimité & Exclusivité :</label>
+        <div class="checkbox-group">
+          <label
+            ><input type="checkbox" name="exclusivite[]" value="ile_privee" />
+            Île privée</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="exclusivite[]"
+              value="destination_confidentielle"
+            />
+            Destination confidentielle (peu de touristes)</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="exclusivite[]"
+              value="experiences_sur_mesure"
+            />
+            Expériences uniques sur-mesure</label
+          >
+          <label
+            ><input
+              type="checkbox"
+              name="exclusivite[]"
+              value="conciergerie_personnalisee"
+            />
+            Conciergerie & services personnalisés</label
+          >
+        </div>
+
+        <!-- Thème du Voyage -->
+        <label for="theme_voyage" class="header">Thème du Voyage :</label>
+        <div>
+          <select id="theme_voyage" name="theme_voyage">
+            <option value="">-- Sélectionner --</option>
+            <option value="romantique_feerique">Romantique & Féérique</option>
+            <option value="aventure_exploration">Aventure & Exploration</option>
+            <option value="culture_histoire">Culture & Histoire</option>
+            <option value="detente_bien_etre">Détente & Bien-être</option>
+            <option value="gastronomie_enologie">Gastronomie & Enologie</option>
+          </select>
+        </div>
+        <br />
+
+        <!-- Bouton de soumission -->
+        <button id="b2" type="submit">Rechercher</button>
+      </form>
+    </div>
+  </body>
+</html>
