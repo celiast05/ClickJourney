@@ -67,7 +67,7 @@ header h4 {
     font-weight: 300;
     border-bottom: 1px solid #8b6f47;
     padding-bottom: 5px;
-    color: #8b6f47;
+    color: #bda782;
 }
 
 main {
@@ -178,8 +178,8 @@ label {
 }
 
 .search {
-    width: 100%;
-    max-width: 400px;
+    width: 300%;
+    max-width: 700px;
     padding: 12px;
     font-size: 18px;
     border: 2px solid #2c3e50;
@@ -195,3 +195,51 @@ label {
 .search::placeholder {
     color: #999;
 }
+
+#container {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	width: 80%;
+	gap: 20px;
+}
+
+.contained {
+	width: 300px;
+	height: 180px;
+	border: 1px solid black;
+	text-align: center;
+	background-color: lightyellow;
+	color: #0F1821;
+	font-family: "Calibri";
+	color : black;
+	transition: all 1s ease;
+	padding: 10px;
+	margin:15px 0 15px 0;
+	object-fit: cover;
+	border-radius: 10px;
+	font-size: 2.6rem;
+	font-weight: bolder;
+}
+
+#container:hover > .contained:hover {
+	transform: scale(1.025);
+	transition: all 0.5s ease;
+	background-color: lightblue;
+	color : white;
+}
+
+#container:hover > :not(:hover) {
+	transition: all 1s ease;
+	background-color: lightblue;
+	filter: grayscale(70%);
+}
+
+#bergamote { background-image: url('ile.jpeg');}
+#pamplemousse { background-image: url('img/pamplemousse.jpg'); }
+#citronvert { background-image: url('img/citronvert.jpg'); }
+#citron { background-image: url('winter.jpg');}
+#orangesanguine { background-image: url('img/orangesanguine.jpg'); }
+#clementine { background-image: url('img/clementine.jpg'); }
+#cedrat { background-image: url('img/cedrat.jpg'); }
