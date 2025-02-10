@@ -211,15 +211,14 @@ label {
 	border: 1px solid black;
 	text-align: center;
 	background-color: lightyellow;
-	color: #0F1821;
-	font-family: "Calibri";
 	color : black;
+	font-family: 'Playfair', serif;
 	transition: all 1s ease;
 	padding: 10px;
 	margin:15px 0 15px 0;
 	object-fit: cover;
 	border-radius: 10px;
-	font-size: 2.6rem;
+	font-size: 1.8rem;
 	font-weight: bolder;
 }
 
@@ -227,8 +226,16 @@ label {
 	transform: scale(1.025);
 	transition: all 0.5s ease;
 	background-color: lightblue;
-	color : white;
+	opacity:1;
 }
+
+.contained h4{
+	margin:0;	
+}
+
+.contained p {opacity:0}
+
+.contained:hover p{opacity:1}
 
 #container:hover > :not(:hover) {
 	transition: all 1s ease;
