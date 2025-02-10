@@ -201,13 +201,13 @@ label {
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: space-around;
-	width: 80%;
-	gap: 20px;
+	width: 90%;
+	gap: 10px;
 }
 
 .contained {
-	width: 300px;
-	height: 180px;
+	width: 400px;
+	height: 500px;
 	border: 1px solid black;
 	text-align: center;
 	background-color: lightyellow;
@@ -233,20 +233,46 @@ label {
 	margin:0;	
 }
 
-.contained p {opacity:0}
+.contained p {
+	font-size:15px;
+	text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+	
+}
 
-.contained:hover p{opacity:1}
+
 
 #container:hover > :not(:hover) {
 	transition: all 1s ease;
 	background-color: lightblue;
-	filter: grayscale(70%);
+	filter: grayscale(30%);
 }
 
-#bergamote { background-image: url('ile.jpeg');}
-#pamplemousse { background-image: url('img/pamplemousse.jpg'); }
-#citronvert { background-image: url('img/citronvert.jpg'); }
-#citron { background-image: url('winter.jpg');}
-#orangesanguine { background-image: url('img/orangesanguine.jpg'); }
-#clementine { background-image: url('img/clementine.jpg'); }
-#cedrat { background-image: url('img/cedrat.jpg'); }
+#bora { background-image: url('img/bora.jpg'); }
+#costarica { background-image: url('img/costarica.jpg');}
+#fjords { background-image: url('img/fjords.jpeg');}
+#kyoto { background-image: url('img/kyoto.jpg');}
+#patagonie { background-image: url('img/patagonie.jpg');}
+
+.gridbox {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 10px; /* espace entre l'image et le texte */
+  justify-items: center; /* centre le contenu horizontalement */
+  width: 400px; /* largeur de la gridbox, à ajuster selon vos besoins */
+  margin: 20px auto; /* centrer la gridbox dans la page */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.gridbox img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.gridbox .label {
+  font-size: 1.2em;
+  color: #333;
+  text-align: center;
+}
