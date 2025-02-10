@@ -1,0 +1,115 @@
+/* ====== Styles pour la page Connexion ====== */
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f1ea;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Section Connexion  (rgba(255, 255, 255, 0.1))*/
+.connexion {
+    background: #2c3e50;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    width: 40%;
+    text-align: center;
+    border: 2px solid #a58a60;
+}
+
+/* Titres et textes */
+h2 {
+    color: #a58a60;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+p {
+    color: #ddd;
+    font-size: 16px;
+}
+
+/* Formulaire */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+label {
+    font-weight: 600;
+    color: #a58a60;
+    text-align: left;
+    display: block;
+}
+
+/* Champs de saisie */
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #a58a60;
+    border-radius: 6px;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+input:focus {
+    border-color: #af8a61;
+    box-shadow: 0px 0px 8px rgba(139, 111, 71, 0.7);
+}
+
+/* Bouton */
+button {
+    background: linear-gradient(135deg, #a58a60, #725a36);
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #af8a61, #a58a60);
+    transform: scale(1.05);
+}
+
+/* Lien vers inscription et mot de passe oublié */
+a {
+    color: #a58a60;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #a58a60;
+}
+
+/* Footer */
+
+footer p {
+    color: #a58a60;
+    text-align: center;
+    bottom: 10px;
+    width: 100%;
+    font-size: 14px;
+}
