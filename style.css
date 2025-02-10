@@ -205,32 +205,6 @@ label {
   gap: 10px;
 }
 
-.contained {
-  width: 400px;
-  height: 500px;
-  border: 1px solid black;
-  text-align: center;
-  background-color: lightyellow;
-  color: black;
-  font-family: "Playfair", serif;
-  transition: all 1s ease;
-  padding: 10px;
-  margin: 15px 0 15px 0;
-  object-fit: cover;
-  border-radius: 15px;
-  font-size: 1.8rem;
-  font-weight: bolder;
-}
-
-.contained h4 {
-  margin: 0;
-}
-
-.contained p {
-  font-size: 15px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-}
-
 #bora {
   background-image: url("img/bora.jpg");
 }
@@ -253,6 +227,7 @@ label {
   gap: 15px; /* espace entre l'image et le texte */
   justify-items: center; /* centre le contenu horizontalement */
   width: 400px; /* largeur de la gridbox, à ajuster selon vos besoins */
+  height: auto;
   margin: 20px auto; /* centrer la gridbox dans la page */
   background-color: lightyellow;
   margin: 5px;
@@ -262,13 +237,11 @@ label {
 .gridbox:hover {
   transform: scale(1.025);
   transition: all 0.5s ease;
-  opacity: 1;
 }
 
 #container:hover > .gridbox:not(:hover) {
   filter: grayscale(40%);
   transition: all 0.5s ease;
-  opacity: 1;
 }
 
 .gridbox img {
@@ -278,7 +251,7 @@ label {
 
 .gridbox .label {
   font-size: 1.2em;
-  color: #333;
+  color: black;
   text-align: center;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
