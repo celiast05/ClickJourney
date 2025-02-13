@@ -27,6 +27,10 @@ nav h1 {
   letter-spacing: 2px;
 }
 
+nav img {
+  width: 200px;
+}
+
 nav .btn {
   margin-top: 3px;
   margin-left: 200px;
@@ -170,12 +174,94 @@ form {
   margin-top: 40px;
 }
 
-label {
+fieldset label {
   font-size: 16px;
   font-weight: bold;
   margin-bottom: 5px;
   color: #3f3f3f;
+  text-align: left;
+  display: block;
 }
+
+fieldset {
+  padding: 10px 0 20px 20px;
+  min-width: 400px;
+  max-width: 730px;
+  width: 60%;
+  border: 2px solid #a58a60;
+  border-radius: 6px;
+  border-top: 60%;
+  margin-bottom: 30px;
+}
+
+fieldset legend {
+  font-size: 22px;
+  font-weight: bold;
+  color: #857358;
+  padding: 0 20px;
+}
+
+/* Champs de saisie */
+fieldset input[type="checkbox"] {
+  width: 20%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #a58a60;
+  border-radius: 6px;
+  background-color: none;
+  color: #a58a60;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+fieldset input:not([type="checkbox"]),
+select {
+  width: 90%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #a58a60;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #a58a60;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+fieldset ::placeholder {
+  color: rgba(165, 138, 96, 0.7);
+}
+
+input:not([type="checkbox"]):focus,
+select:focus {
+  border-color: #af8a61;
+  box-shadow: 0px 0px 8px rgba(139, 111, 71, 0.7);
+}
+
+/* Bouton */
+fieldset button {
+  background: linear-gradient(135deg, #a58a60, #857358);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  display: block; /*Centrer le bouton */
+  margin: 0 auto;
+  width: 60%;
+}
+
+form button:hover,
+.form2 form button:hover {
+  background: linear-gradient(135deg, #af8a61, #a58a60);
+  transform: scale(1.05);
+}
+
+/* Lien vers inscription et mot de passe oublié */
 
 .search {
   width: 300%;
@@ -254,4 +340,113 @@ label {
   color: black;
   text-align: center;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.spaced {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+.form2 {
+  font-family: "Poppins", sans-serif;
+  max-width: 554px;
+  min-width: 200px;
+  background: #2c3e50;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  width: 40%;
+  text-align: center;
+  border: 2px solid #a58a60;
+}
+
+/* Titres et textes */
+.form2 h2 {
+  color: #a58a60;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.form2 p {
+  color: #ddd;
+  font-size: 16px;
+}
+
+/* Formulaire */
+.form2 form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 10px;
+}
+
+.form2 label {
+  font-weight: 600;
+  color: #a58a60;
+  text-align: left;
+  display: block;
+}
+
+/* Champs de saisie */
+.form2 input {
+  width: 94%;
+  padding: 12px;
+  margin-bottom: 10px;
+  border: 1px solid #a58a60;
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.form2 input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.form2 input:focus {
+  border-color: #af8a61;
+  box-shadow: 0px 0px 8px rgba(139, 111, 71, 0.7);
+}
+
+/* Bouton */
+.form2 button {
+  background: linear-gradient(135deg, #a58a60, #725a36);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Lien vers inscription et mot de passe oublié */
+.form2 a {
+  color: #a58a60;
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.form2 a:hover {
+  color: #c1a270;
+}
+
+/* Footer */
+
+footer p {
+  color: #292218;
+  text-align: center;
+  bottom: 10px;
+  width: 100%;
+  font-size: 14px;
 }
