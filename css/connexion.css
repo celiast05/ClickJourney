@@ -1,66 +1,62 @@
-/* ====== Styles pour la page Connexion ====== */
+@import url('root.css');
 
 body {
-  font-family: "Poppins", sans-serif;
-  background-color: #f4f1ea;
-  color: rgb(0, 0, 0);
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  font-size: 1.2em;
+    margin: 0;
+    padding: 0;
+    font-family: var(--text);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.8;
+    min-height: 100vh;
 }
 
-/* Section Connexion  (rgba(255, 255, 255, 0.1))*/
 .connexion {
-  max-width: 554px;
-  min-width: 200px;
-  background: #2c3e50;
+  background: var(--banner-color);
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(12px);
   width: 40%;
   text-align: center;
-  border: 2px solid #a58a60;
+  border: 2px solid var(--title-color);
+  margin: auto;
 }
 
-/* Titres et textes */
-h2 {
-  color: #a58a60;
+section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section h2, h3{
+  color: var(--title-color);
   font-size: 26px;
   font-weight: 600;
 }
 
-p {
+section p{
   color: #ddd;
   font-size: 16px;
 }
 
-/* Formulaire */
-form {
+form{
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin: 10px;
+  align-items: center;
+  margin-top: 40px;
 }
 
 label {
-  font-weight: 600;
-  color: #a58a60;
-  text-align: left;
-  display: block;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--title-color);
 }
 
-/* Champs de saisie */
 input {
-  width: 94%;
+  width: 100%;
   padding: 12px;
-  margin-bottom: 10px;
-  border: 1px solid #a58a60;
+  border: 1px solid var(--title-color);
   border-radius: 6px;
   background-color: rgba(255, 255, 255, 0.2);
   color: white;
@@ -78,9 +74,8 @@ input:focus {
   box-shadow: 0px 0px 8px rgba(139, 111, 71, 0.7);
 }
 
-/* Bouton */
 button {
-  background: linear-gradient(135deg, #a58a60, #725a36);
+  background: var(--title-color);
   color: white;
   padding: 12px;
   border: none;
@@ -90,27 +85,24 @@ button {
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
+
 button:hover {
-  background: linear-gradient(135deg, #af8a61, #a58a60);
   transform: scale(1.05);
 }
 
-/* Lien vers inscription et mot de passe oublié */
 a {
-  color: #a58a60;
+  color: var(--title-color);
   font-weight: bold;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 a:hover {
-  color: #a58a60;
+  color: var(--title-color);
 }
 
-/* Footer */
-
 footer p {
-  color: #a58a60;
+  color: var(--title-color);
   text-align: center;
   bottom: 10px;
   width: 100%;

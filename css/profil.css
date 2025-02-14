@@ -1,62 +1,50 @@
-/* ====== Styles pour la page Inscription ====== */
+@import url('root.css');
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f4f1ea;
-    color: white;
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    font-family: var(--text);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.8;
+    min-height: 100vh;
 }
 
-/* Section Inscription */
-.inscription {
-    background: #2c3e50;
+.profil {
+    background: var(--banner-color);
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(12px);
     width: 40%;
     text-align: center;
-    border: 2px solid #8b6f47;
+    border: 2px solid var(--title-color);
+    margin: auto;
 }
 
-/* Titres et textes */
-h2 {
-    color: #a58a60;
+section h2, h3{
+    color: var(--title-color);
     font-size: 26px;
     font-weight: 600;
 }
-
-p {
-    color: #ddd;
-    font-size: 16px;
-}
-
-/* Formulaire */
-form {
+form{
     display: flex;
     flex-direction: column;
-    gap: 15px;
-    margin-top: 10px;
+    align-items: center;
+    margin-top: 40px;
 }
-
+  
 label {
-    font-weight: 600;
-    color: #a58a60;
-    text-align: left;
-    display: block;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--title-color);
 }
 
-/* Champs de saisie */
-input {
+input, select, textarea {
     width: 100%;
     padding: 12px;
-    border: 1px solid #a58a60;
+    border: 1px solid var(--title-color);
     border-radius: 6px;
     background-color: rgba(255, 255, 255, 0.2);
     color: white;
@@ -65,18 +53,17 @@ input {
     transition: 0.3s;
 }
 
-input::placeholder {
+input::placeholder, textarea::placeholder {
     color: rgba(255, 255, 255, 0.7);
 }
 
-input:focus {
+input:focus, select:focus, textarea:focus {
     border-color: #af8a61;
     box-shadow: 0px 0px 8px rgba(139, 111, 71, 0.7);
 }
 
-/* Bouton */
 button {
-    background: linear-gradient(135deg, #a58a60, #725a36);
+    background: var(--title-color);
     color: white;
     padding: 12px;
     border: none;
@@ -86,27 +73,23 @@ button {
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
-
+  
 button:hover {
-    background: linear-gradient(135deg, #af8a61, #a58a60);
     transform: scale(1.05);
 }
-
-/* Lien vers la connexion */
+  
 a {
-    color: #a58a60;
+    color: var(--title-color);
     font-weight: bold;
     text-decoration: none;
     transition: color 0.3s;
 }
-
+  
 a:hover {
-    color: #af8a61;
+    color: var(--title-color);
 }
-
-/* Footer */
 footer p {
-    color: #a58a60;
+    color: var(--title-color);
     text-align: center;
     bottom: 10px;
     width: 100%;
