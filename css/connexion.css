@@ -1,13 +1,13 @@
-@import url('root.css');
+@import url("root.css");
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: var(--text);
-    color: var(--text-color);
-    background-color: var(--background-color);
-    line-height: 1.8;
-    min-height: 100vh;
+  /* margin: 0; */
+  padding: 0;
+  font-family: var(--text);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.8;
+  min-height: 100vh;
 }
 
 .connexion {
@@ -17,44 +17,50 @@ body {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(12px);
   width: 40%;
+  max-width: 560px;
+  min-width: 280px;
   text-align: center;
   border: 2px solid var(--title-color);
   margin: auto;
+  margin-top: 10vh;
 }
 
-section{
+section {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-section h2, h3{
+section h2,
+h3 {
   color: var(--title-color);
   font-size: 26px;
   font-weight: 600;
 }
 
-section p{
+section p {
   color: #ddd;
   font-size: 16px;
 }
 
-form{
-  display: flex;
+form {
+  gap: 15px;
+  margin: 10px;
   flex-direction: column;
   align-items: center;
-  margin-top: 40px;
 }
 
 label {
   font-size: 16px;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 7px;
+  margin-top: 12px;
   color: var(--title-color);
 }
 
 input {
-  width: 100%;
+  width: calc(100% - 26px);
+  margin: 12px 0;
   padding: 12px;
   border: 1px solid var(--title-color);
   border-radius: 6px;
@@ -82,6 +88,7 @@ button {
   border-radius: 6px;
   font-size: 18px;
   font-weight: bold;
+  margin-top: 20px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
 }
@@ -98,7 +105,7 @@ a {
 }
 
 a:hover {
-  color: var(--title-color);
+  color: #c5ab80;
 }
 
 footer p {

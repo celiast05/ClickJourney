@@ -1,104 +1,109 @@
-@import url('root.css');
+@import url("root.css");
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: var(--text);
-    color: var(--text-color);
-    background-color: var(--background-color);
-    line-height: 1.8;
-    min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: var(--text);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.8;
+  min-height: 100vh;
 }
 
 .inscription {
-    background: var(--banner-color);
-    padding: 30px;
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(12px);
-    width: 40%;
-    text-align: center;
-    border: 2px solid var(--title-color);
-    margin: auto;
+  background: var(--banner-color);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  width: 40%;
+  text-align: center;
+  border: 2px solid var(--title-color);
+  margin: auto;
+  max-width: 860px;
+  min-width: 300px;
+  margin-top: 10vh;
 }
 
-section h2, h3{
-    color: var(--title-color);
-    font-size: 26px;
-    font-weight: 600;
+section h2,
+h3 {
+  color: var(--title-color);
+  font-size: 26px;
+  font-weight: 600;
 }
-  
-section p{
-    color: #ddd;
-    font-size: 16px;
+
+section p {
+  color: #ddd;
+  font-size: 16px;
 }
-  
-form{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 40px;
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
 }
-  
+
 label {
-    font-size: 16px;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: var(--title-color);
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 7px;
+  margin-top: 12px;
+  color: var(--title-color);
 }
-  
+
 input {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid var(--title-color);
-    border-radius: 6px;
-    background-color: rgba(255, 255, 255, 0.2);
-    color: white;
-    font-size: 16px;
-    outline: none;
-    transition: 0.3s;
+  width: 94%;
+  padding: 12px;
+  border: 1px solid var(--title-color);
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
 }
-  
+
 input::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.7);
 }
-  
+
 input:focus {
-    border-color: #af8a61;
-    box-shadow: 0px 0px 8px rgba(139, 111, 71, 0.7);
+  border-color: #af8a61;
+  box-shadow: 0px 0px 8px rgba(139, 111, 71, 0.7);
 }
-  
+
 button {
-    background: var(--title-color);
-    color: white;
-    padding: 12px;
-    border: none;
-    border-radius: 6px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
+  background: var(--title-color);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
 }
-  
+
 button:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
-  
+
 a {
-    color: var(--title-color);
-    font-weight: bold;
-    text-decoration: none;
-    transition: color 0.3s;
+  color: var(--title-color);
+  font-weight: bold;
+  text-decoration: none;
+  transition: color 0.3s;
 }
-  
+
 a:hover {
-    color: var(--title-color);
+  color: var(--title-color);
 }
-  
+
 footer p {
-    color: var(--title-color);
-    text-align: center;
-    bottom: 10px;
-    width: 100%;
-    font-size: 14px;
+  color: var(--title-color);
+  text-align: center;
+  bottom: 10px;
+  width: 100%;
+  font-size: 14px;
 }

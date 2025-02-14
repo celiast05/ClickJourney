@@ -28,6 +28,10 @@ nav h1 {
   letter-spacing: 2px;
 }
 
+nav img {
+  width: 200px;
+}
+
 nav .btn {
   margin-top: 3px;
   margin-left: 200px;
@@ -79,32 +83,7 @@ form {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 40px;
-}
-
-label {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.search {
-  width: 300%;
-  max-width: 700px;
-  padding: 12px;
-  font-size: 18px;
-  border: 2px solid var(--banner-color);
-  border-radius: 25px;
-  outline: none;
-  transition: 0.3s;
-}
-
-.search:focus {
-  border-color: var(--title-color);
-}
-
-.search::placeholder {
-  color: #999;
+  margin: 40px 0;
 }
 
 fieldset {
@@ -114,7 +93,7 @@ fieldset {
   width: 60%;
   border: 2px solid var(--title-color);
   border-radius: 25px; /* Harmonisation avec les inputs */
-  margin-bottom: 30px;
+  margin: 40px 0;
   background-color: rgba(255, 255, 255, 0.2);
   display: flex;
   flex-direction: column;
@@ -122,18 +101,25 @@ fieldset {
 }
 
 fieldset legend {
-  font-size: 22px;
+  font-size: 25px;
   font-weight: bold;
+  margin-bottom: 5px;
   color: var(--title-color);
   padding: 0 20px;
 }
 
-fieldset label {
-  font-size: 14px;
-  font-weight: normal;
-  margin-bottom: 8px;
+fieldset .header {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
   color: #3f3f3f;
-  text-align: left;
+  display: block;
+}
+
+fieldset label p {
+  font-size: 16px;
+  margin-bottom: 3px 0;
+  color: #3f3f3f;
   display: block;
 }
 
@@ -227,4 +213,9 @@ fieldset input[type="checkbox"] {
 
 .cta:hover::after {
   transform: scaleX(1);
+}
+
+fieldset p {
+  font-size: 16px;
+  margin: 0;
 }
