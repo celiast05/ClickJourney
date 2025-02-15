@@ -115,19 +115,25 @@ label {
 
 /* CONTAINER POUR ALIGNER LES CARTES */
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 colonnes */
+    gap: 20px;
+    justify-content: center;
+    max-width: 1200px; /* Ajuste selon ton besoin */
+    margin: 0 auto; /* Centre le tout */
 }
 
 .card {
-  width: 300px;
-  background: white;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out;
+    width: 300px;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
 }
 
 .card:hover {
@@ -136,25 +142,30 @@ label {
 
 /* IMAGE EN HAUT DE LA CARTE */
 .card-image {
-  height: 200px;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-  text-align: center;
-  padding: 20px;
-  background-blend-mode: darken;
-  background-color: rgba(0, 0, 0, 0.3);
+    width: 100%;
+    height: 250%;
+    aspect-ratio: 16/19;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    background-blend-mode: darken;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 15px 15px 0 0;
 }
 
 /* CONTENU SOUS L'IMAGE */
 .card-content {
   padding: 15px;
   text-align: center;
+  flex-grow: 1;
 }
 
 .category {
@@ -210,102 +221,111 @@ label {
 
 @media (max-width: 1024px) {
     nav {
-      padding: 20px 30px;
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: flex-start;
     }
-  
+
     nav h1 {
-      font-size: 28px;
+        font-size: 28px;
     }
-  
+
     nav img {
-      width: 180px;
+        width: 180px;
     }
-  
+
+    header h1 {
+        font-size: 40px;
+    }
+
     .search {
-      width: 100%;
-      max-width: 600px;
-      padding: 12px;
-      font-size: 18px;
+        width: 100%;
+        padding: 12px;
+        font-size: 18px;
     }
-  
+
     .container {
-      gap: 15px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        justify-content: center;
+        width: 100%;
     }
-  
+
     .card {
-      width: 45%;
+        width: 100%;
+        max-width: 100%;
     }
-  
+
     .card-image {
-      height: 180px;
-      font-size: 18px;
-      padding: 15px;
+        height: 200px; 
+        font-size: 18px;
+        padding: 15px;
     }
-  
+
     .card-content {
-      padding: 12px;
+        padding: 12px;
     }
-  
+
     .cta {
-      font-size: 14px;
+        font-size: 14px;
     }
 }
 
 @media (max-width: 767px) {
     nav {
-      padding: 15px 20px;
-      flex-direction: column;
-      align-items: flex-start;
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: flex-start;
     }
-  
+
     nav h1 {
-      font-size: 24px;
+        font-size: 24px;
     }
-  
+
     nav img {
-      width: 150px;
+        width: 150px;
     }
-  
+
     nav .btn {
-      margin-left: 0;
-      margin-top: 10px;
+        margin-left: 0;
+        margin-top: 10px;
     }
-  
+
     header h1 {
-      font-size: 30px;
+        font-size: 30px;
     }
-  
+
     .search {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
     }
-  
+
     .container {
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center; 
+        gap: 15px;
+        width: 100%; 
     }
-  
+
     .card {
-      width: 100%;
-      max-width: 90%;
+        width: 100%;
+        max-width: 90%; 
     }
-  
+
     .card-image {
-      height: 150px;
-      font-size: 16px;
-      padding: 10px;
+        height: 150px;
+        font-size: 16px;
+        padding: 10px;
     }
-  
+
     .card-content {
-      padding: 10px;
+        padding: 10px;
     }
-  
+
     .cta {
-      font-size: 12px;
+        font-size: 12px;
     }
 }
-  
-
-  
