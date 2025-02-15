@@ -89,3 +89,51 @@ th {
 .normal:hover {
     background-color: #333333;
 }
+
+@media (max-width: 1024px) {
+    .admin-container {
+        width: 80%;
+        padding: 18px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    table {
+        font-size: 16px;
+    }
+
+    th, td {
+        padding: 10px;
+    }
+
+    .vip, .bannir, .normal {
+        padding: 5px 12px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    .admin-container {
+        width: 90%;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+
+    .vip, .bannir, .normal {
+        padding: 5px 10px;
+        font-size: 14px;
+    }
+}
