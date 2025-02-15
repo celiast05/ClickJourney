@@ -1,0 +1,91 @@
+@import url('root.css');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: var(--text);
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.8;
+    min-height: 100vh;
+}
+
+.admin-container {
+    max-width: 900px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+}
+
+h1 {
+    font-family: var(--title);
+    font-size: 30px;
+    text-transform: uppercase;
+    color: var(--title-color) ;
+    text-align: center;
+}
+  
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+  
+th, td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+}
+  
+th {
+    background-color: var(--title-color);
+    color: white;
+    text-transform: uppercase;
+}
+
+.vip {
+    background-color: #C9A227;
+    color: white;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.vip:hover {
+    background-color: #A6881C;
+}
+
+.bannir {
+    background-color: #7A1414;
+    color: white;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.bannir:hover {
+    background-color: #5E1010;
+}
+
+.normal {
+    background-color: #444444;
+    color: white;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.normal:hover {
+    background-color: #333333;
+}
