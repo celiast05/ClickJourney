@@ -173,6 +173,9 @@ label {
   margin-bottom: 10px;
 }
 
+.taille{
+  height: 80px;
+}
 /*bouton de base */
 .cta {
   border: none;
