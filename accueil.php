@@ -1,3 +1,23 @@
+<?php
+session_start();
+
+// Durée d'inactivité autorisée
+$timeout = 600; // 10 minutes
+
+if ( !isset($_SESSION['stay_connected'])){ // si Rester connecté n'est pas clické
+  // Vérifier si l'utilisateur est inactif depuis trop longtemps
+  if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > $timeout) {
+      session_unset(); // Supprime toutes les variables de session
+      session_destroy(); // Détruit la session
+      header("Location: connexion.html?timeout=1"); // Redirige vers la connexion
+      exit();
+  }
+}
+
+// Met à jour l'heure de la dernière activité
+$_SESSION['last_activity'] = time();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,16 +30,27 @@
     <nav>
       <img src="Images/logo.png" alt="Logo" />
       <div class="btn">
-        <a href="accueil.html">Accueil</a>
+        <a href="accueil.php">Accueil</a>
+        <?php
+        if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+            echo "<a href='profil.html'>Mon profil</a>";
+        }
+        ?>
         <a href="presentation.html">Nos voyages</a>
         <a href="filtrage.html">Filtrer</a>
-        <a href="connexion.html">Connexion</a>
+        <?php
+        if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+            echo "<a href='deconnexion.php?action=run'>Déconnexion</a>";
+        }
+        else{
+            echo "<a href='connexion.html'>Connexion</a>";
+        }
+        ?>
       </div>
     </nav>
 
     <header>
       <h1>Elysia Voyage</h1>
-      <?php echo "Test" ?>
       <h4>L’élégance du voyage, la magie de l’amour</h4>
     </header>
     <main>

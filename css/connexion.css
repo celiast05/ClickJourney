@@ -25,6 +25,26 @@ body {
   margin-top: 10vh;
 }
 
+#error {
+  margin-top: 10vh;
+  margin: 20%;
+  font-size: 24px;
+  color: var(--banner-color);
+  border: 1px solid;
+  border-radius: 6px;
+}
+
+#error p {
+  margin: 10px 0 0 0;
+  font-size: 24px;
+  color: var(--banner-color);
+  padding: 5px;
+}
+
+#error a {
+  padding: 7px;
+}
+
 section {
   display: flex;
   flex-direction: column;
@@ -69,6 +89,12 @@ input {
   font-size: 16px;
   outline: none;
   transition: 0.3s;
+}
+
+input[type="checkbox"] {
+  width: auto;
+  margin-left: 5px;
+  accent-color: var(--title-color); /* Couleur de la checkbox */
 }
 
 input::placeholder {
