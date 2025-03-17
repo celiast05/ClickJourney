@@ -36,7 +36,7 @@ $_SESSION['last_activity'] = time();
             echo "<a href='profil.html'>Mon profil</a>";
         }
         ?>
-        <a href="presentation.html">Nos voyages</a>
+        <a href="voyages.php">Nos voyages</a>
         <a href="filtrage.html">Filtrer</a>
         <?php
         if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {

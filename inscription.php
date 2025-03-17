@@ -10,19 +10,24 @@ function add_user($nom,$prenom, $email, $password) {
         $users = []; 
     }
 
+    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+
     $new_user = [
         'nom' => $nom,
         'prenom' => $prenom,
         'email' => $email,
-        'password' => $password,
-        'admin' => 'non',
+        'passwordHash' => $passwordHash,
+        'admin' => null,
     ];
 
     $users[] = $new_user;
-   
-    file_put_contents($fileJson, json_encode($users));  // Sauvegarder les utilisateurs dans le fichier JSON
+    // Sauvegarder les utilisateurs dans le fichier JSON propre
+    file_put_contents($fileJson, json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 
-    header("Location: accueil.html");
+    session_start();
+    $_SESSION['email'] = $email;
+    $_SESSION['logged_in'] = true;
+    header("Location: accueil.php");
     exit();
 }
 
@@ -45,20 +50,41 @@ if ($users !== null) {
     }
 
     if(in_array($email,$mail_list)){
-        $error = $error + 1;
-        echo "Ce mail est déjà utilisé <br>";
-        echo "Inscription Invalide, <a href='inscription.html'>Réessayer</a></h2>";
+        $error = 1;
     }
 
 }
 
 if($password != $confirm_password){
-    echo "Les deux mots de passe sont différents <br>";
-    echo "Inscription Invalide, <a href='inscription.html'>Réessayer</a></h2>";
-    $error = $error + 1;
+    $error = 2;
 }
 
-if(!$error){ 
+if(!$error){
     add_user($nom,$prenom,$email,$password);
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Connexion - Elysia Voyage</title>
+    <link rel="stylesheet" href="css/connexion.css?v=1" />
+  </head>
+  <body>
+
+    <?php
+    echo "Ce mail est déjà utilisé <br>";
+    if ($error == 1){
+        echo "Ce mail est déjà utilisé <br>";
+    }
+    if ($error == 2){
+        echo "Les deux mots de passe sont différents <br>";
+    }
+    if($error){
+        echo "Inscription Invalide, <a href='inscription.html'>Réessayer</a></h2>";
+    }
+    ?>
+</body>
+</html>
