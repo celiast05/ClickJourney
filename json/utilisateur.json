@@ -1,0 +1,71 @@
+[
+    { "email": "alice.dupont@example.com", "mot_de_passe": "Azerty123!", "role": "administrateur",
+      "informations": {
+        "nom": "Dupont",
+        "prenom": "Alice",
+        "civilite": "Mme",
+        "telephone": "+33612345678"
+      },
+      "dates": {
+        "inscription": "2023-01-15",
+        "derniere_connexion": "2024-12-01"
+      },
+      "voyages": {
+        "consultes": ["Bora Bora", "Rome", "Courchevel"],
+        "achetes": ["Rome"],
+        "favoris": ["Courchevel"]
+      }
+    },
+    { "email": "marc.lefebvre@example.com", "mot_de_passe": "Password456$", "role": "normal",
+      "informations": {
+        "nom": "Lefebvre",
+        "prenom": "Marc",
+        "civilite": "M.",
+        "telephone": "+33698765432"
+      },
+      "dates": {
+        "inscription": "2022-06-20",
+        "derniere_connexion": "2024-11-15"
+      },
+      "voyages": {
+        "consultes": ["Aspen", "Laponie"],
+        "achetes": [],
+        "favoris": []
+      }
+    },
+    { "email": "emma.martin@example.com", "mot_de_passe": "EmmaPass789@", "role": "vip",
+      "informations": {
+        "nom": "Martin",
+        "prenom": "Emma",
+        "civilite": "Mme",
+        "telephone": "+33711223344"
+      },
+      "dates": {
+        "inscription": "2021-11-05",
+        "derniere_connexion": "2024-10-30"
+      },
+      "voyages": {
+        "consultes": ["Maldives", "Santorin", "Paris"],
+        "achetes": ["Santorin", "Paris"],
+        "favoris": ["Maldives"]
+      }
+    },
+    { "email": "luc.durand@example.com", "mot_de_passe": "LucSecure321!", "role": "bloqué",
+      "informations": {
+        "nom": "Durand",
+        "prenom": "Luc",
+        "civilite": "M.",
+        "telephone": "+33655667788"
+      },
+      "dates": {
+        "inscription": "2020-03-12",
+        "derniere_connexion": "2023-07-19"
+      },
+      "voyages": {
+        "consultes": ["Costa Rica", "Tanzanie"],
+        "achetes": [],
+        "favoris": []
+      }
+    }
+  ]
+  
