@@ -13,6 +13,7 @@ body {
 .admin-container {
     max-width: 900px;
     margin: auto;
+    margin-top: 10vh;
     background: white;
     padding: 20px;
     box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
@@ -31,12 +32,13 @@ h1 {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 20px;
+    margin: 30px auto 40px auto;
 }
   
 th, td {
     padding: 12px;
     border-bottom: 1px solid #ddd;
+    text-align: center;
 }
   
 th {
@@ -52,7 +54,6 @@ th {
     padding: 6px 12px;
     border-radius: 6px;
     border: none;
-    cursor: pointer;
     transition: background 0.3s ease-in-out;
 }
 
@@ -67,7 +68,6 @@ th {
     padding: 6px 12px;
     border-radius: 6px;
     border: none;
-    cursor: pointer;
     transition: background 0.3s ease-in-out;
 }
 
@@ -82,13 +82,38 @@ th {
     padding: 6px 12px;
     border-radius: 6px;
     border: none;
-    cursor: pointer;
     transition: background 0.3s ease-in-out;
 }
 
 .normal:hover {
     background-color: #333333;
 }
+
+.admin {
+    background-color: #1baa46;
+    color: white;
+    font-weight: bold;
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+}
+
+.pagination {text-align: center; }
+
+.pagination a {
+    background: var(--title-color);
+    color: white;
+    padding: 3px 8px;
+    text-decoration: none;
+    border: none;
+    border-radius: 6px;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 3px;
+    
+  }
+
+.pagination a.active { background-color: #333; color: white; }
 
 @media (max-width: 1024px) {
     .admin-container {

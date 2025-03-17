@@ -21,6 +21,21 @@ if ( !isset($_SESSION['stay_connected'])){ // si "Rester connecté" n'est pas cl
 
 // Met à jour l'heure de la dernière activité
 $_SESSION['last_activity'] = time();
+
+$fileJson = 'users.json';
+$users = json_decode(file_get_contents($fileJson), true);  // Parser le contenu JSON en fait un tableau
+
+if ($users === null) {
+    $users = []; // Assurer que $users est un tableau pour éviter les erreurs
+}
+
+$users_par_page = 7;
+$page_actuelle = isset($_GET['page']) ? (int)$_GET['page'] : 1; // Récupérer la page actuelle depuis l'URL (1 par défaut)
+$debut = ($page_actuelle - 1) * $users_par_page;
+// Extraire les utilisateurs pour la page actuelle
+$users_pagination = array_slice($users, $debut, $users_par_page);
+// Nombre total de pages
+$total_pages = ceil(count($users) / $users_par_page);
 ?>
 
 <!DOCTYPE html>
@@ -40,98 +55,71 @@ $_SESSION['last_activity'] = time();
                     <th>Nom</th>
                     <th>Prenom</th>
                     <th>Email</th>
-                    <th>VIP</th>
-                    <th>Bloqué</th>
-                    <th>Profil</th>
+                    <th>Role</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>Alice</td>
-                    <td>Dupont</td>
-                    <td>alice.dupont@example.com</td>
-                    <td>
-                        <button class="vip">Oui</button>
-                    </td>
-                    <td>
-                        <button class="bannir">Non</button>
-                    </td>
-                    <td>
-                        <button class="normal">Voir</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Jean</td>
-                    <td>Martin</td>
-                    <td>jean.martin@example.com</td>
-                    <td>
-                        <button class="vip">Non</button>
-                    </td>
-                    <td>
-                        <button class="bannir">Non</button>
-                    </td>
-                    <td>
-                        <button class="normal">Voir</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Emma</td>
-                    <td>Lefevre</td>
-                    <td>emma.lefevre@example.com</td>
-                    <td>
-                        <button class="vip">Non</button>
-                    </td>
-                    <td>
-                        <button class="bannir">Oui</button>
-                    </td>
-                    <td>
-                        <button class="normal">Voir</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Lucas </td>
-                    <td>Morel</td>
-                    <td>lucas.morel@example.com</td>
-                    <td>
-                        <button class="vip">Non</button>
-                    </td>
-                    <td>
-                        <button class="bannir">Non</button>
-                    </td>
-                    <td>
-                        <button class="normal">Voir</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Emma </td>
-                    <td>Dubois</td>
-                    <td>emma.dubois@example.com</td>
-                    <td>
-                        <button class="vip">Non</button>
-                    </td>
-                    <td>
-                        <button class="bannir">Non</button>
-                    </td>
-                    <td>
-                        <button class="normal">Voir</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Chloé </td>
-                    <td>Marchand</td>
-                    <td>chloé.marchand@example.com</td>
-                    <td>
-                        <button class="vip">Oui</button>
-                    </td>
-                    <td>
-                        <button class="bannir">Non</button>
-                    </td>
-                    <td>
-                        <button class="normal">Voir</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</body>
+                <?php
+                
+
+                if ($users !== null) {
+                    foreach ($users_pagination as $user) {
+                        echo "<tr>";
+                        echo "<td>".$user['nom']."</td>";
+                        echo "<td>".$user['prenom']."</td>";
+                        echo "<td>".$user['email']."</td>";
+                        if(isset($user['role'])){
+                            if($user['role']=='admin'){
+                                echo "<td> <button class='admin'>Admin</button> </td>";
+                            }
+                            elseif($user['role']=='vip'){
+                                echo "<td> <button class='vip'>VIP</button> </td>";
+                            }
+                            elseif($user['role']=='banni'){
+                                echo "<td> <button class='bannir'>Bloqué</button> </td>";
+                            }
+                        }
+                        else{
+                            echo "<td> <button class='normal'>Classic</button> </td>";
+                        }
+                        echo "</tr>";
+                    }
+                }
+                ?>
+                </tbody>
+                </table>
+
+                <div class="pagination">
+
+    <!-- Lien vers la page précédente -->
+    <?php if ($page_actuelle > 1): ?>
+        <a href="?page=<?php echo $page_actuelle - 1; ?>">Précédent</a>
+    <?php endif; ?>
+
+    <!-- Lien vers la première page -->
+    <?php if ($page_actuelle > 1): ?>
+        <a href="?page=1">1</a>
+    <?php endif; ?>
+
+    <?php if($page_actuelle > 2){
+        echo "<a>...</a>";
+    }?>
+
+    <!-- Affichage de la page actuelle avec surbrillance -->
+    <a href="?page=<?php echo $page_actuelle; ?>"><?php echo $page_actuelle ?></a>
+
+    <?php if($page_actuelle < $total_pages -1 ){
+        echo "<a>...</a>";
+    }?>
+    <!-- Lien vers la dernière page -->
+    <?php if ($page_actuelle < $total_pages): ?>
+        <a href="?page=<?php echo $total_pages; ?>"><?php echo $total_pages ?></a>
+    <?php endif; ?>
+    <!-- Lien vers la page suivante -->
+    <?php if ($page_actuelle < $total_pages): ?>
+        <a href="?page=<?php echo $page_actuelle + 1; ?>">Suivant</a>
+    <?php endif; ?>
+</div>
+        </div>
+    </body>
 </html>
