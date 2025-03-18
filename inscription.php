@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 function add_user($nom,$prenom, $email, $password) {
     
     $fileJson = 'users.json'; // Fichier où les utilisateurs sont stockés
@@ -17,14 +19,13 @@ function add_user($nom,$prenom, $email, $password) {
         'prenom' => $prenom,
         'email' => $email,
         'passwordHash' => $passwordHash,
-        'admin' => null,
+        'role' => null,
     ];
 
     $users[] = $new_user;
     // Sauvegarder les utilisateurs dans le fichier JSON propre
     file_put_contents($fileJson, json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 
-    session_start();
     $_SESSION['email'] = $email;
     $_SESSION['logged_in'] = true;
     header("Location: accueil.php");
@@ -44,6 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Récupérer les informations du f
 $fileJson = 'users.json';
 
 $users = json_decode(file_get_contents($fileJson), true); // Parser le contenu JSON en fait un tableau
+$mail_list = [];
+
 if ($users !== null) {
     foreach ($users as $u) { // on récupère les mails du fichier json
         $mail_list[] = $u['email'];
@@ -62,6 +65,7 @@ if($password != $confirm_password){
 if(!$error){
     add_user($nom,$prenom,$email,$password);
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -69,22 +73,23 @@ if(!$error){
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Connexion - Elysia Voyage</title>
+    <title>Inscription - Elysia Voyage</title>
     <link rel="stylesheet" href="css/connexion.css?v=1" />
   </head>
   <body>
-
+  <section id="error">
     <?php
-    echo "Ce mail est déjà utilisé <br>";
     if ($error == 1){
-        echo "Ce mail est déjà utilisé <br>";
+        echo "<p> Ce mail est déjà utilisé.";
+        echo "<p>Inscription Invalide, </p> ";
+        echo "<a href='inscription.html'>Réessayer</a>";
     }
     if ($error == 2){
-        echo "Les deux mots de passe sont différents <br>";
-    }
-    if($error){
-        echo "Inscription Invalide, <a href='inscription.html'>Réessayer</a></h2>";
+        echo "<p>Les deux mots de passe sont différents.</p>";
+        echo "<p>Inscription Invalide, </p> ";
+        echo "<a href='inscription.html'>Réessayer</a>";
     }
     ?>
+    </section>
 </body>
 </html>

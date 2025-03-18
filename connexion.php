@@ -28,10 +28,20 @@ if ($users !== null) {
         $simple_user_list[$u['email']] = $u['passwordHash'];
     }
 
+    $user_role = null;
+
+    foreach ($users as $user) {
+        if ($user['email'] === $email) {
+            $user_role = $user['role'];
+            break;
+        }
+    }
+
     if(isset($simple_user_list[$email]) && password_verify($password,$simple_user_list[$email])){
         $_SESSION['email'] = $email;
         $_SESSION['logged_in'] = true;
         $_SESSION['stay_connected'] = $stay_connected;
+        $_SESSION['role'] = $user_role;
         header("Location: accueil.php");
         exit();
     }

@@ -30,6 +30,11 @@ $_SESSION['last_activity'] = time();
     <nav>
       <img src="Images/logo.png" alt="Logo" />
       <div class="btn">
+        <?php
+        if(isset($_SESSION['role']) && $_SESSION['role'] == "admin") {
+            echo "<a href='admin.php'>Administrateur</a>";
+        }
+        ?>
         <a href="accueil.php">Accueil</a>
         <?php
         if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
@@ -37,7 +42,7 @@ $_SESSION['last_activity'] = time();
         }
         ?>
         <a href="voyages.php">Nos voyages</a>
-        <a href="filtrage.html">Filtrer</a>
+        <a href="filtrage.php">Filtrer</a>
         <?php
         if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
             echo "<a href='deconnexion.php?action=run'>Déconnexion</a>";
