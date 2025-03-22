@@ -57,7 +57,7 @@ if ($users !== null) {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Inscrition - Elysia Voyage</title>
+    <title>Inscription - Elysia Voyage</title>
     <link rel="stylesheet" href="css/connexion.css?v=1" />
   </head>
   <body>
