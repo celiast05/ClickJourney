@@ -1,98 +1,182 @@
-{
-    "destinations": [
-      {
-        "name": "Égypte",
-        "periode_recommandee": "Octobre à avril",
-        "prix": "8000€ - 18000€ pour 2 personnes",
-        "etapes": [
-          "Le Caire (Pyramides, musée)",
-          "Croisière sur le Nil (Louxor, Assouan)",
-          "Extension balnéaire (Hurghada, El Gouna)"
-        ],
-        "climat": {
-          "haute_saison": "20-28°C (octobre à avril)",
-          "basse_saison": "+35°C en été"
-        },
-        "hebergements": [
-          "Marriott Mena House",
-          "Old Cataract Hotel",
-          "Dahabieh de luxe",
-          "The Oberoi Sahl Hasheesh"
-        ],
-        "activites": [
-          "Visite privée des Pyramides avec guide égyptologue",
-          "Croisière intime sur le Nil",
-          "Plongée/snorkeling en mer Rouge",
-          "Dîner privé sur un bateau"
-        ],
-        "intimite": [
-          "Suites privatisées",
-          "Guide et chauffeur privés",
-          "Dîners romantiques sur le Nil"
-        ]
-      },
-      {
-        "name": "Oman",
-        "periode_recommandee": "Octobre à avril",
-        "prix": "10000€ - 20000€ pour 2 personnes",
-        "etapes": [
-          "Mascate (plages, culture)",
-          "Montagnes du Hajar",
-          "Désert de Wahiba Sands",
-          "Extension à Zighy Bay ou Salalah"
-        ],
-        "climat": {
-          "haute_saison": "22-30°C (octobre-avril)",
-          "basse_saison": "35-45°C en été"
-        },
-        "hebergements": [
-          "The Chedi Muscat",
-          "Anantara Al Jabal Al Akhdar Resort",
-          "Desert Nights Camp",
-          "Six Senses Zighy Bay"
-        ],
-        "activites": [
-          "Excursion privée en 4x4 dans le désert",
-          "Balades dans les wadis",
-          "Croisière en dhow traditionnel",
-          "Spa et soins orientaux"
-        ],
-        "intimite": [
-          "Villas avec piscine privée",
-          "Campements privatifs dans le désert",
-          "Dîners romantiques dans le désert"
-        ]
-      },
-      {
-        "name": "Dubaï",
-        "periode_recommandee": "Novembre à avril",
-        "prix": "7000€ - 18000€ pour 2 personnes",
-        "etapes": [
-          "Dubaï (gratte-ciels, shopping, plage)",
-          "Excursion désert",
-          "Option Abu Dhabi"
-        ],
-        "climat": {
-          "haute_saison": "22-30°C (novembre-avril)",
-          "basse_saison": "+40°C en été"
-        },
-        "hebergements": [
-          "Burj Al Arab",
-          "One&Only The Palm",
-          "Bulgari Resort",
-          "Atlantis The Royal"
-        ],
-        "activites": [
-          "Dîner gastronomique en gratte-ciel",
-          "Safari privé dans le désert",
-          "Survol en hélicoptère",
-          "Journée yacht privatif"
-        ],
-        "intimite": [
-          "Suites et villas avec piscine privée",
-          "Accès VIP aux plages",
-          "Excursions privatisées"
-        ]
-      }
-    ]
+[
+  {
+    "id": "paris",
+    "nom": "Paris",
+    "theme": "Ville Lumière",
+    "image": "Images/Paris.jpeg",
+    "description": "Un mélange envoûtant d’histoire, d’art et de romantisme. Flânez entre musées, avenues mythiques et dîners étoilés.",
+    "climat_saison": "Douceur méditerranéenne",
+    "hebergements": ["Palace", "Château urbain", "Hôtel historique"],
+    "experiences": ["Culture & Patrimoine", "Gastronomie", "Shopping de luxe"],
+    "activites": ["Croisière privée sur la Seine", "Visite du Louvre", "Dîner étoilé"],
+    "intimite": "Élevée"
+  },
+  {
+    "id": "rome",
+    "nom": "Rome",
+    "theme": "L’Éternelle",
+    "image": "Images/Rome.jpeg",
+    "description": "Vestiges antiques, fontaines majestueuses et dolce vita. Une escapade où l’histoire côtoie le raffinement.",
+    "climat_saison": "Douceur méditerranéenne",
+    "hebergements": ["Palace", "Demeure historique", "Villa en centre-ville"],
+    "experiences": ["Culture & Patrimoine", "Cuisine locale", "Mode italienne"],
+    "activites": ["Visite privée du Vatican", "Balade en Fiat 500", "Dîner face au Colisée"],
+    "intimite": "Moyenne"
+  },
+  {
+    "id": "santorin",
+    "nom": "Santorin",
+    "theme": "Joyau des Cyclades",
+    "image": "Images/Santorin.jpeg",
+    "description": "Falaises blanches, dômes bleus et couchers de soleil inoubliables sur la mer Égée. Une île taillée pour le rêve.",
+    "climat_saison": "Douceur méditerranéenne",
+    "hebergements": ["Villa privée", "Hôtel troglodyte", "Suite avec piscine"],
+    "experiences": ["Détente & Spa", "Culture locale", "Vin & Gastronomie"],
+    "activites": ["Croisière autour de la caldeira", "Visite d’Akrotiri", "Atelier culinaire grec"],
+    "intimite": "Très élevée"
+  },
+  {
+    "id": "maldives",
+    "nom": "Maldives",
+    "theme": "Évasion Tropicale",
+    "image": "Images/Maldives.jpeg",
+    "description": "Un coin de paradis entre lagons turquoise et bungalows flottants. Luxe et sérénité absolus.",
+    "climat_saison": "Climat tropical & ensoleillé",
+    "hebergements": [],
+    "experiences": [],
+    "activites": [],
+    "intimite": ""
+  },
+  {
+    "id": "bora_bora",
+    "nom": "Bora Bora",
+    "image": "Images/Bora-Bora.jpeg",
+    "theme": "Eaux Cristallines",
+    "description": "Plongée au cœur d’un sanctuaire marin exceptionnel. Des plages de rêve et une mer translucide.",
+    "climat_saison": "Climat tropical & ensoleillé",
+    "hebergements": [],
+    "experiences": [],
+    "activites": [],
+    "intimite": ""
+  },
+  {
+    "id": "tahiti",
+    "nom": "Tahiti",
+    "theme": "Nature Luxuriante",
+    "image": "Images/Tahiti.jpeg",
+    "description": "Île sauvage et préservée, entre montagnes verdoyantes et plages noires mystiques.",
+    "climat_saison": "Climat tropical & ensoleillé",
+    "hebergements": [],
+    "experiences": [],
+    "activites": [],
+    "intimite": ""
+  },
+  {
+    "id": "laponie",
+    "nom": "Laponie",
+    "theme": "Le Royaume des Aurores",
+    "image": "Images/Laponie.jpeg",
+    "description": "Pays des aurores boréales et des étendues enneigées, un voyage féerique au cœur du Grand Nord.",
+    "climat_saison": "Hiver chic & neige",
+    "hebergements": [],
+    "experiences": [],
+    "activites": [],
+    "intimite": ""
+  },
+  {
+    "id": "courchevel",
+    "nom": "Courchevel",
+    "theme": "Le Joyau des Alpes",
+    "image": "Images/Courchevel.jpeg",
+    "description": "Le summum du luxe alpin, entre chalets prestigieux, pistes d’exception et après-ski raffiné.",
+    "climat_saison": "Hiver chic & neige",
+    "hebergements": [],
+    "experiences": [],
+    "activites": [],
+    "intimite": ""
+  },
+  {
+    "id": "aspen",
+    "nom": "Aspen",
+    "theme": "L’Escapade Prestige",
+    "image": "Images/Aspen.jpeg",
+    "description": "Éden des skieurs et des élites, où la poudreuse rencontre l’élégance",
+    "climat_saison": "Hiver chic & neige",
+    "hebergements": [],
+    "experiences": [],
+    "activites": [],
+    "intimite": ""
+  },
+  {
+    "id": "costarica",
+    "nom": "Costa Rica",
+    "theme": "L’Éden Vert",
+    "image": "Images/Costa-Rica.jpeg",
+    "description": "Forêts tropicales luxuriantes, biodiversité exceptionnelle et plages sauvages pour une immersion en pleine nature.",
+    "climat_saison": "Printemps fleuri",
+    "hebergements": [],
+    "experiences": [],
+    "activites": [],
+    "intimite": ""
+  },
+  {
+    "id": "tanzanie",
+    "nom": "Tanzanie",
+    "theme": "Le Royaume Sauvage",
+    "image": "Images/Tanzanie.jpeg",
+    "description": "Safari au cœur des plaines sauvages,et ascension légendaire pour les aventuriers.",
+    "climat_saison": "Printemps fleuri",
+    "hebergements": [],
+    "experiences": [],
+    "activites": [],
+    "intimite": ""
+  },
+  {
+    "id": "australie",
+    "nom": "Australie",
+    "theme": "L’Aventure Australe",
+    "image": "Images/Australie.jpeg",
+    "description": "Entre terres rouges et forêts d’eucalyptus, un voyage au cœur d’une faune unique et fascinante.",
+    "climat_saison": "Printemps fleuri",
+    "hebergements": [],
+    "experiences": [],
+    "activites": [],
+    "intimite": ""
+  },
+  {
+    "id": "egypte",
+    "nom": "Égypte",
+    "theme": "La Terre des Pharaons",
+    "image": "Images/Egypte.jpeg",
+    "description": "Pyramides majestueuses, temples millénaires et croisière sur le Nil, un voyage au cœur de l’histoire antique.",
+    "climat_saison": "Automne doré",
+    "hebergements": [],
+    "experiences": [],
+    "activites": [],
+    "intimite": ""
+  },
+  {
+    "id": "oman",
+    "nom": "Oman",
+    "theme": "L’Orient Authentique",
+    "image": "Images/Oman.jpeg",
+    "description": "Déserts infinis, fjords spectaculaires et souks envoûtants, un condensé d’aventure et de traditions.",
+    "climat_saison": "Automne doré",
+    "hebergements": [],
+    "experiences": [],
+    "activites": [],
+    "intimite": ""
+  },
+  {
+    "id": "dubai",
+    "nom": "Dubaï",
+    "theme": "L’Oasis Raffinée",
+    "image": "Images/Dubai.jpeg",
+    "description": "Entre dunes dorées et gratte-ciels vertigineux, une ville où l’innovation et l’opulence se rencontrent.",
+    "climat_saison": "Automne doré",
+    "hebergements": [],
+    "experiences": [],
+    "activites": [],
+    "intimite": ""
   }
+]
