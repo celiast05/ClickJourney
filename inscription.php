@@ -1,33 +1,50 @@
 <?php
 
 session_start();
+$fileJson = 'json\users.json';
+$index = -1;
 
-function add_user($nom,$prenom, $email, $password) {
+function add_user($email, $password) {
     
-    $fileJson = 'users.json'; // Fichier où les utilisateurs sont stockés
-    
+    $fileJson = 'json\users.json';
     if (file_exists($fileJson)) {
         $users = json_decode(file_get_contents($fileJson), true); // Lire les données existantes du fichier JSON et les trasforme en tableau
     } else {
-        $users = []; 
+        $users = [];
     }
 
     $passwordHash = password_hash($password, PASSWORD_DEFAULT);
 
     $new_user = [
-        'nom' => $nom,
-        'prenom' => $prenom,
-        'email' => $email,
-        'passwordHash' => $passwordHash,
-        'role' => null,
+        "email" => $email,
+        "passwordHash" => $passwordHash,
+        "role" => "normal",
+        "informations" => [
+            "nom" => $_POST['nom'],
+            "prenom" => $_POST['prenom'],
+            "civilite" => null,
+            "telephone" => null
+        ],
+        "dates" => [
+            "inscription" => date("Y-m-d"), // Date d'inscription actuelle
+            "derniere_connexion" => null
+        ],
+        "voyages" => [
+            "consultes" => [],
+            "achetes" => [],
+            "favoris" => []
+        ]
     ];
 
     $users[] = $new_user;
     // Sauvegarder les utilisateurs dans le fichier JSON propre
     file_put_contents($fileJson, json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 
-    $_SESSION['email'] = $email;
+    $_SESSION['email'] = $_POST['email'];
     $_SESSION['logged_in'] = true;
+    $_SESSION['role'] = "normal";
+    $_SESSION['user'] = $new_user;
+    $_SESSION['index'] = count($users)-1;
     header("Location: accueil.php");
     exit();
 }
@@ -35,27 +52,21 @@ function add_user($nom,$prenom, $email, $password) {
 $error = 0; // error count
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Récupérer les informations du formulaire
-    $nom = $_POST['nom'];
-    $prenom = $_POST['prenom'];
     $email = $_POST['email'];
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm-password'];
 }
 
-$fileJson = 'users.json';
 
 $users = json_decode(file_get_contents($fileJson), true); // Parser le contenu JSON en fait un tableau
-$mail_list = [];
 
 if ($users !== null) {
     foreach ($users as $u) { // on récupère les mails du fichier json
-        $mail_list[] = $u['email'];
+        if($email==$u['email']){
+            $error = 1; // Eamil déjà utilisé dans la base utilisateur
+            break;
+        }
     }
-
-    if(in_array($email,$mail_list)){
-        $error = 1;
-    }
-
 }
 
 if($password != $confirm_password){
@@ -63,7 +74,7 @@ if($password != $confirm_password){
 }
 
 if(!$error){
-    add_user($nom,$prenom,$email,$password);
+    add_user($email,$password);
 }
 
 ?>

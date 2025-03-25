@@ -2,6 +2,7 @@
 
 session_start();
 $error = 0; // error count
+$index = -1;
 
 // si un utilisateur déjà connecté arrive sur connexion
 if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true && $_SESSION['stay_connected'] === true) { 
@@ -16,32 +17,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stay_connected = $_POST['stay_connected'];
 }
 
-$fileJson = 'users.json';
+$fileJson = 'json/users.json';
 
 $users = json_decode(file_get_contents($fileJson), true);  // Parser le contenu JSON en fait un tableau
 
-$simple_user_list = [];
-
 if ($users !== null) {
-
     foreach ($users as $u) { // on récupère les mails et mot de passe associés
-        $simple_user_list[$u['email']] = $u['passwordHash'];
-    }
-
-    $user_role = null;
-
-    foreach ($users as $user) {
-        if ($user['email'] === $email) {
-            $user_role = $user['role'];
+        if($u['email'] == $email){
+            $index += 1;
+            $password_check = $u['passwordHash'];
+            $user_role = $u['role'];
             break;
         }
     }
 
-    if(isset($simple_user_list[$email]) && password_verify($password,$simple_user_list[$email])){
+    if(isset($password_check) && password_verify($password,$password_check)){
         $_SESSION['email'] = $email;
         $_SESSION['logged_in'] = true;
         $_SESSION['stay_connected'] = $stay_connected;
         $_SESSION['role'] = $user_role;
+        $_SESSION['user'] = $users[$index];
+        $_SESSION['index'] = $index;
+        $users[$index]['dates']['derniere_connexion'] = date("Y-m-d"); // Ex: 2025-03-25
+        file_put_contents($fileJson, json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
         header("Location: accueil.php");
         exit();
     }

@@ -47,7 +47,15 @@ nav .btn a:hover {
   border-bottom: 2px solid var(--title-color);
 }
 
+.container {
+  display: flex;
+  justify-content: center; /* Centre globalement */
+  align-items: flex-start; /* Aligner en haut */
+  gap: 50px; /* Espace entre les deux parties */
+}
+
 .profil {
+  display: flex;
   background: var(--banner-color);
   padding: 30px;
   border-radius: 12px;
@@ -57,9 +65,24 @@ nav .btn a:hover {
   text-align: center;
   border: 2px solid var(--title-color);
   margin: auto;
-  margin-top: 10vh;
+  margin-top: 8vh;
   max-width: 700px;
   min-width: 325px;
+}
+
+.historique {
+  flex: 1;
+  padding: 0 30px;
+  max-width: 20%;
+  text-align: left;
+  border-left: 2px solid var(--title-color);
+  margin-top: 8vh;
+}
+
+.historique p {
+  color: var(--text-color);
+  font-family: var(--text);
+  font-size: 22px;
 }
 
 label {
@@ -170,32 +193,32 @@ footer p {
   .profil {
     width: 60%;
   }
-  
+
   section h2,
   section h3 {
     font-size: 22px;
   }
-  
+
   form {
     gap: 12px;
   }
-  
+
   label {
     font-size: 15px;
   }
-  
+
   input,
   select,
   textarea {
     padding: 11px;
     font-size: 15px;
   }
-  
+
   button {
     font-size: 17px;
     padding: 11px;
   }
-  
+
   footer p {
     font-size: 13px;
   }
@@ -230,32 +253,32 @@ footer p {
     padding: 20px;
     margin-top: 15vh;
   }
-  
+
   section h2,
   section h3 {
     font-size: 20px;
   }
-  
+
   form {
     gap: 10px;
   }
-  
+
   label {
     font-size: 14px;
   }
-  
+
   input,
   select,
   textarea {
     padding: 10px;
     font-size: 14px;
   }
-  
+
   button {
     font-size: 16px;
     padding: 10px;
   }
-  
+
   footer p {
     font-size: 12px;
   }

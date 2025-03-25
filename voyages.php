@@ -38,7 +38,7 @@ $_SESSION['last_activity'] = time();
         <a href="accueil.php">Accueil</a>
         <?php
         if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-            echo "<a href='profil.html'>Mon profil</a>";
+            echo "<a href='profil.php'>Mon profil</a>";
         }
         ?>
         <a href="voyages.php">Nos voyages</a>

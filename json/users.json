@@ -1,0 +1,86 @@
+[
+    {
+        "email": "test@gmail.com",
+        "passwordHash": "$2y$10$aO34OVxuwsO8q6XBVw.FKePGIHtQys1\/Ho\/Dx.VnK7o4H25zOJgr6",
+        "role": "admin",
+        "informations": {
+            "nom": "Test",
+            "prenom": "Test",
+            "civilite": null,
+            "telephone": null
+        },
+        "dates": {
+            "inscription": "2025-03-25",
+            "derniere_connexion": "2025-03-25"
+        },
+        "voyages": {
+            "consultes": [
+                "Bora Bora",
+                "Rome",
+                "Courchevel"
+            ],
+            "achetes": [],
+            "favoris": []
+        }
+    },
+    {
+        "email": "zoe@gmail.com",
+        "passwordHash": "$2y$10$aJipp0wjsCAeu9HaaHL.buxjhDAEM7sk6FqxeWTxidSrrX3LEIqku",
+        "role": "normal",
+        "informations": {
+            "nom": "Zoe",
+            "prenom": "Runneterra",
+            "civilite": null,
+            "telephone": null
+        },
+        "dates": {
+            "inscription": "2025-03-25",
+            "derniere_connexion": null
+        },
+        "voyages": {
+            "consultes": [],
+            "achetes": [],
+            "favoris": []
+        }
+    },
+    {
+        "email": "garen@gmail.com",
+        "passwordHash": "$2y$10$uLp2vZRw2MA7CLTyIsb4Pet4Wjr7Dl2Jz\/NayFLcP0shQrM4XGq6y",
+        "role": "normal",
+        "informations": {
+            "nom": "Demacia",
+            "prenom": "Garen",
+            "civilite": null,
+            "telephone": null
+        },
+        "dates": {
+            "inscription": "2025-03-25",
+            "derniere_connexion": null
+        },
+        "voyages": {
+            "consultes": [],
+            "achetes": [],
+            "favoris": []
+        }
+    },
+    {
+        "email": "skibidi@gmail.com",
+        "passwordHash": "$2y$10$rLP1DUy0LYgSDA2YW0Uq4.liZp6ntY1N\/594tUUm61CIdmYCYaBVO",
+        "role": "normal",
+        "informations": {
+            "nom": "Skibidi",
+            "prenom": "Toilet",
+            "civilite": null,
+            "telephone": null
+        },
+        "dates": {
+            "inscription": "2025-03-25",
+            "derniere_connexion": null
+        },
+        "voyages": {
+            "consultes": [],
+            "achetes": [],
+            "favoris": []
+        }
+    }
+]

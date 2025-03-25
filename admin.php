@@ -1,3 +1,4 @@
+<!-- // Se connecter avec admin@gmail.com le password est admin -->
 <?php
 session_start();
 
@@ -22,7 +23,7 @@ if ( !isset($_SESSION['stay_connected'])){ // si "Rester connecté" n'est pas cl
 // Met à jour l'heure de la dernière activité
 $_SESSION['last_activity'] = time();
 
-$fileJson = 'users.json';
+$fileJson = 'json/users.json';
 $users = json_decode(file_get_contents($fileJson), true);  // Parser le contenu JSON en fait un tableau
 
 if ($users === null) {
@@ -65,19 +66,17 @@ $total_pages = ceil(count($users) / $users_par_page);
                 if ($users !== null) {
                     foreach ($users_pagination as $user) {
                         echo "<tr>";
-                        echo "<td>".$user['nom']."</td>";
-                        echo "<td>".$user['prenom']."</td>";
+                        echo "<td>".$user['informations']['nom']."</td>";
+                        echo "<td>".$user['informations']['prenom']."</td>";
                         echo "<td>".$user['email']."</td>";
-                        if(isset($user['role'])){
-                            if($user['role']=='admin'){
-                                echo "<td> <button class='admin'>Admin</button> </td>";
-                            }
-                            elseif($user['role']=='vip'){
-                                echo "<td> <button class='vip'>VIP</button> </td>";
-                            }
-                            elseif($user['role']=='banni'){
-                                echo "<td> <button class='bannir'>Bloqué</button> </td>";
-                            }
+                        if($user['role']=='admin'){
+                            echo "<td> <button class='admin'>Admin</button> </td>";
+                        }
+                        elseif($user['role']=='vip'){
+                            echo "<td> <button class='vip'>VIP</button> </td>";
+                        }
+                        elseif($user['role']=='banni'){
+                            echo "<td> <button class='bannir'>Bloqué</button> </td>";
                         }
                         else{
                             echo "<td> <button class='normal'>Classic</button> </td>";
