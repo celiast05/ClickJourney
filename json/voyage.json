@@ -9,8 +9,7 @@
     "hebergements": ["Palace", "Château urbain", "Hôtel historique"],
     "experiences": ["Culture & Patrimoine", "Gastronomie", "Shopping de luxe"],
     "activites": ["Croisière privée sur la Seine", "Visite du Louvre", "Dîner étoilé"],
-    "intimite": "Élevée",
-    "details": true
+    "intimite": "Élevée"
   },
   {
     "id": "rome",
@@ -22,8 +21,7 @@
     "hebergements": ["Palace", "Demeure historique", "Villa en centre-ville"],
     "experiences": ["Culture & Patrimoine", "Cuisine locale", "Mode italienne"],
     "activites": ["Visite privée du Vatican", "Balade en Fiat 500", "Dîner face au Colisée"],
-    "intimite": "Moyenne",
-    "details": true
+    "intimite": "Moyenne"
   },
   {
     "id": "santorin",
@@ -35,8 +33,7 @@
     "hebergements": ["Villa privée", "Hôtel troglodyte", "Suite avec piscine"],
     "experiences": ["Détente & Spa", "Culture locale", "Vin & Gastronomie"],
     "activites": ["Croisière autour de la caldeira", "Visite d’Akrotiri", "Atelier culinaire grec"],
-    "intimite": "Très élevée",
-    "details": true
+    "intimite": "Très élevée"
   },
   {
     "id": "maldives",
@@ -48,8 +45,7 @@
     "hebergements": [],
     "experiences": [],
     "activites": [],
-    "intimite": "",
-    "details": false
+    "intimite": ""
   },
   {
     "id": "bora_bora",
@@ -61,8 +57,7 @@
     "hebergements": [],
     "experiences": [],
     "activites": [],
-    "intimite": "",
-    "details": false
+    "intimite": ""
   },
   {
     "id": "tahiti",
@@ -74,8 +69,7 @@
     "hebergements": [],
     "experiences": [],
     "activites": [],
-    "intimite": "",
-    "details": false
+    "intimite": ""
   },
   {
     "id": "laponie",
@@ -87,8 +81,7 @@
     "hebergements": [],
     "experiences": [],
     "activites": [],
-    "intimite": "",
-    "details": false
+    "intimite": ""
   },
   {
     "id": "courchevel",
@@ -100,8 +93,7 @@
     "hebergements": [],
     "experiences": [],
     "activites": [],
-    "intimite": "",
-    "details": false
+    "intimite": ""
   },
   {
     "id": "aspen",
@@ -113,8 +105,7 @@
     "hebergements": [],
     "experiences": [],
     "activites": [],
-    "intimite": "",
-    "details": false
+    "intimite": ""
   },
   {
     "id": "costarica",
@@ -126,8 +117,7 @@
     "hebergements": [],
     "experiences": [],
     "activites": [],
-    "intimite": "",
-    "details": false
+    "intimite": ""
   },
   {
     "id": "tanzanie",
@@ -139,8 +129,7 @@
     "hebergements": [],
     "experiences": [],
     "activites": [],
-    "intimite": "",
-    "details": false
+    "intimite": ""
   },
   {
     "id": "australie",
@@ -152,8 +141,7 @@
     "hebergements": [],
     "experiences": [],
     "activites": [],
-    "intimite": "",
-    "details": false
+    "intimite": ""
   },
   {
     "id": "egypte",
@@ -165,8 +153,7 @@
     "hebergements": [],
     "experiences": [],
     "activites": [],
-    "intimite": "",
-    "details": false
+    "intimite": ""
   },
   {
     "id": "oman",
@@ -178,8 +165,7 @@
     "hebergements": [],
     "experiences": [],
     "activites": [],
-    "intimite": "",
-    "details": false
+    "intimite": ""
   },
   {
     "id": "dubai",
@@ -191,7 +177,6 @@
     "hebergements": [],
     "experiences": [],
     "activites": [],
-    "intimite": "",
-    "details": false
+    "intimite": ""
   }
 ]
