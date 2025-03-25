@@ -60,7 +60,7 @@ $_SESSION['last_activity'] = time();
 
     <main>
       <div class="container">
-        <form action="recherche_voyage.php" method="POST">
+        <form action="#" method="POST">
           <fieldset>
             <legend>Personaliser votre voyage</legend>
             <!-- Destination -->
