@@ -79,7 +79,6 @@ if ($voyage === null) {
       <h2><?php echo htmlspecialchars($voyage['nom']); ?></h2>
       <p><strong>Sous-Titre :</strong> <?php echo htmlspecialchars($voyage['theme']); ?></p>
       <p><strong>Description :</strong> <?php echo htmlspecialchars($voyage['description']); ?></p>
-      <p><strong>Détails :</strong> <?php echo nl2br(htmlspecialchars($voyage['details'])); ?></p>
     </div>
   </div>
 </main>
