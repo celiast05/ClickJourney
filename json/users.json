@@ -5,13 +5,13 @@
         "role": "admin",
         "informations": {
             "nom": "Test",
-            "prenom": "Test",
-            "civilite": null,
-            "telephone": null
+            "prenom": "Test 2eme du nom",
+            "civilite": "Monsieur",
+            "telephone": "123456"
         },
         "dates": {
             "inscription": "2025-03-25",
-            "derniere_connexion": "2025-03-25"
+            "derniere_connexion": "2025-03-26"
         },
         "voyages": {
             "consultes": [

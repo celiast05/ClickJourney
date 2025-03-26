@@ -22,17 +22,6 @@
 
     // Met à jour l'heure de la dernière activité
     $_SESSION['last_activity'] = time();
-
-
-    // Vérifier si la clé 'voyages' et 'consultes' existent
-    if (isset($data['voyages']['consultes'])) {
-        $consultes = $data['voyages']['consultes'];
-    
-        // Afficher les voyages consultés
-        echo "Voyages consultés : " . implode(", ", $consultes);
-    } else {
-        echo "Aucune donnée de voyages consultés trouvée.";
-    }
     
 ?>
 <!DOCTYPE html>
@@ -75,57 +64,57 @@
     
     <div class="container">
     <section class="profil">
-        <h2>Mon Profil</h2>
         <form action="profil_update.php" method="POST" onsubmit="return validateForm()">
+            <h2>Mon Profil</h2>
             <div class="profil-info">
-                <label for="civilite">Civilité :</label>
-                <select id="civilite" name="civilite" <?php if(isset($_SESSION['user']['informations']['civilite'])){
-                    echo "value=".$_SESSION['user']['informations']['civilite'];} ?>>
-                    <option value="">Sélectionnez...</option>
-                    <option value="Monsieur">Monsieur</option>
-                    <option value="Madame">Madame</option>
-                    <option value="Autre">Autre</option>
+                <label for="civilite obligatoire">Civilité :</label>
+                <select id="civilite" name="civilite" disabled> 
+                    <option value="" <?php if(empty($_SESSION['user']['informations']['civilite'])){echo "selected";}?>>Sélectionnez...</option>
+                    <option value="Monsieur" <?php if($_SESSION['user']['informations']['civilite']=="Monsieur"){echo "selected";}?> >Monsieur</option>
+                    <option value="Madame" <?php if($_SESSION['user']['informations']['civilite']=="Madame"){echo "selected";}?> >Madame</option>
+                    <option value="Autre" <?php if($_SESSION['user']['informations']['civilite']=="Autre"){echo "selected";}?> >Autre</option>
                 </select>
             </div>
         
             <div class="profil-info obligatoire">
                 <label for="nom">Nom :</label>
-                <input type="text" id="nom" name="nom" <?php echo "value=".$_SESSION['user']['informations']['nom'] ?> required>
+                <input type="text" id="nom" name="nom" disabled value="<?php echo $_SESSION['user']['informations']['nom']; ?>" required>
             </div>
             
             <div class="profil-info obligatoire">
                 <label for="prenom">Prénom :</label>
-                <input type="text" id="prenom" name="prenom" <?php echo "value=".$_SESSION['user']['informations']['prenom'] ?> required>
+                <input type="text" id="prenom" name="prenom" disabled value="<?php echo $_SESSION['user']['informations']['prenom']; ?>" required>
             </div>
             
             <div class="profil-info obligatoire">
                 <label for="email">Email :</label>
-                <input type="email" id="email" name="email" <?php echo "value=".$_SESSION['email'] ?> required>
+                <input type="email" id="email" name="email" disabled <?php echo "value=".$_SESSION['email']; ?> required>
             </div>
             
             <div class="profil-info obligatoire">
                 <label for="telephone">Téléphone :</label>
-                <input type="tel" id="telephone" name="telephone" <?php if(isset($_SESSION['user']['informations']['telephone'])){
-                    echo "value=".$_SESSION['user']['informations']['telephone'];}
-                    else{echo "placeholder='Votre téléphone'";} ?>>
+                <input type="tel" id="telephone" name="telephone" disabled required value="<?php if(isset($_SESSION['user']['informations']['telephone'])){
+                    echo $_SESSION['user']['informations']['telephone'];}?>"
+                    <?php if(!isset($_SESSION['user']['informations']['telephone'])){
+                    echo "placeholder='Votre téléphone'";}?>">
             </div>
             
             <h3>Informations Facultatives</h3>
             
             <div class="profil-info">
                 <label for="photo">Photo de Profil :</label>
-                <input type="file" id="photo" name="photo" accept="image/*">
+                <input type="file" id="photo" name="photo" accept="image/*" disabled>
             </div>
         
             
             <div class="profil-info">
                 <label for="preferences">Préférences de Voyage :</label>
-                <textarea id="preferences" name="preferences" placeholder="Indiquez vos préférences (ex: plages, montagnes, road trip...)"></textarea>
+                <textarea id="preferences" name="preferences" placeholder="Indiquez vos préférences (ex: plages, montagnes, road trip...)" disabled ></textarea>
             </div>
             
             <div class="profil-info">
                 <label for="passeport">Type de Passeport :</label>
-                <select id="passeport" name="passeport">
+                <select id="passeport" name="passeport" disabled>
                     <option value="">Sélectionnez...</option>
                     <option value="Ordinaire">Ordinaire</option>
                     <option value="Diplomatique">Diplomatique</option>
@@ -158,13 +147,13 @@
     <script>
         function enableEdit() {
             let inputs = document.querySelectorAll('.profil-info input, .profil-info select, .profil-info textarea');
-            inputs.forEach(input => input.removeAttribute('readonly'));
+            inputs.forEach(input => input.removeAttribute('disabled'));
             document.querySelector('.edit-btn').style.display = 'none';
             document.querySelector('.save-btn').style.display = 'inline-block';
         }
 
         function validateForm() {
-            let requiredFields = document.querySelectorAll('.profil-info.obligatoire input');
+            let requiredFields = document.querySelectorAll('.profil-info .obligatoire input');
             for (let field of requiredFields) {
                 if (field.value.trim() === "") {
                     alert("Tous les champs obligatoires doivent être remplis.");

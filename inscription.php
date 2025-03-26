@@ -22,7 +22,7 @@ function add_user($email, $password) {
         "informations" => [
             "nom" => $_POST['nom'],
             "prenom" => $_POST['prenom'],
-            "civilite" => null,
+            "civilite" => "",
             "telephone" => null
         ],
         "dates" => [
