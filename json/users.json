@@ -19,8 +19,12 @@
                 "Rome",
                 "Courchevel"
             ],
-            "achetes": [],
-            "favoris": []
+            "achetes": [
+                "Rome"
+            ],
+            "favoris": [
+                "Courchevel"
+            ]
         }
     },
     {

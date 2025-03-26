@@ -80,11 +80,13 @@ nav .btn a:hover {
   margin-top: 8vh;
 }
 
-.historique p {
+.historique a, p{
   color: var(--text-color);
   font-family: var(--text);
   font-size: 22px;
+  text-decoration: none;
 }
+
 
 label {
   font-weight: 600;

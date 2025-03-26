@@ -22,6 +22,30 @@
 
     // Met à jour l'heure de la dernière activité
     $_SESSION['last_activity'] = time();
+
+    function print_trip($list, $name) {
+        if(!empty($list)){
+            echo "<h2>". $name;
+            if(count($list)>1){
+                echo 's';
+            }
+            echo " :</h2>";
+            $trip_to_link = ["Paris" => "paris", "Santorin" => "santorin", "Courchevel" => "courchevel", "Bora Bora" => "bora_bora", "Rome" => "rome", "Maldives"=>"maldives",
+            "Laponie"=>"laponie", "Tahiti"=>"tahiti", "Aspen" => "aspen", "Costa Rica"=>"costarica", "Tanzanie" => "tanzanie", "Australie" => "australie","Oman" => "oman",
+            "Égypte" => "egypte","Dubaï"=>"budai"];
+            $index = 0;
+            foreach($list as $trip){
+                echo '<a href="details.php?voyage='.$trip_to_link[$trip].'">'.$trip.'</a>';
+                $index += 1;
+                if ($index < count($list)){
+                    echo ', ';
+                }
+                else{
+                    echo ".";
+                }
+            }
+        }
+    }
     
 ?>
 <!DOCTYPE html>
@@ -129,13 +153,13 @@
         </form>
     </section>
     <?php
-    echo "<section class='historique'>";
- 
-        if(!empty($_SESSION['user']['voyages']['consultes'])){
-            echo "<h2> Voyage(s) consulté(s) :</h2> <p>". implode(', ',$_SESSION['user']['voyages']['consultes']) . "</p>" ;
-        }
-        
-    echo "</section>";
+    if(!empty($_SESSION['user']['voyages']['consultes']) || !empty($_SESSION['user']['voyages']['favoris']) || !empty($_SESSION['user']['voyages']['achetes'])){
+        echo "<section class='historique'>";
+            print_trip($_SESSION['user']['voyages']['consultes'],"Consulté");
+            print_trip($_SESSION['user']['voyages']['favoris'],"Favori");
+            print_trip($_SESSION['user']['voyages']['achetes'],"Acheté");
+        echo "</section>";
+    }
     ?>
     </div>
     

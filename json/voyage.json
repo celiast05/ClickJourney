@@ -50,7 +50,7 @@
   {
     "id": "bora_bora",
     "nom": "Bora Bora",
-    "image": "Images/Bora-Bora.jpeg",
+    "image": "Images/Bora_Bora.jpeg",
     "theme": "Eaux Cristallines",
     "description": "Plongée au cœur d’un sanctuaire marin exceptionnel. Des plages de rêve et une mer translucide.",
     "climat_saison": "Climat tropical & ensoleillé",
@@ -111,7 +111,7 @@
     "id": "costarica",
     "nom": "Costa Rica",
     "theme": "L’Éden Vert",
-    "image": "Images/Costa-Rica.jpeg",
+    "image": "Images/Costa_Rica.jpeg",
     "description": "Forêts tropicales luxuriantes, biodiversité exceptionnelle et plages sauvages pour une immersion en pleine nature.",
     "climat_saison": "Printemps fleuri",
     "hebergements": [],
