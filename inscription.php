@@ -6,7 +6,7 @@ $index = -1;
 
 function add_user($email, $password) {
     
-    $fileJson = 'json\users.json';
+    $fileJson = 'json/users.json';
     if (file_exists($fileJson)) {
         $users = json_decode(file_get_contents($fileJson), true); // Lire les données existantes du fichier JSON et les trasforme en tableau
     } else {

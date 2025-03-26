@@ -5,8 +5,8 @@
         "role": "admin",
         "informations": {
             "nom": "Test",
-            "prenom": "Test 2eme du nom",
-            "civilite": "Monsieur",
+            "prenom": "Zoe",
+            "civilite": "Madame",
             "telephone": "123456"
         },
         "dates": {
@@ -79,6 +79,26 @@
         },
         "dates": {
             "inscription": "2025-03-25",
+            "derniere_connexion": null
+        },
+        "voyages": {
+            "consultes": [],
+            "achetes": [],
+            "favoris": []
+        }
+    },
+    {
+        "email": "lala@gmail.com",
+        "passwordHash": "$2y$10$JiPZpjqUiWMDwEv.57ExauerM4yU54w0sRnig8PExARigde5.ot6e",
+        "role": "normal",
+        "informations": {
+            "nom": "lala",
+            "prenom": "lala",
+            "civilite": "",
+            "telephone": null
+        },
+        "dates": {
+            "inscription": "2025-03-26",
             "derniere_connexion": null
         },
         "voyages": {
