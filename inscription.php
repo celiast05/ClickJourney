@@ -45,6 +45,7 @@ function add_user($email, $password) {
     $_SESSION['role'] = "normal";
     $_SESSION['user'] = $new_user;
     $_SESSION['index'] = count($users)-1;
+    $_SESSION["panier"] = [];
     header("Location: accueil.php");
     exit();
 }

@@ -2,7 +2,7 @@
 
 session_start();
 $error = 0; // error count
-$index = -1;
+$index = 0;
 
 // si un utilisateur déjà connecté arrive sur connexion
 if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true && $_SESSION['stay_connected'] === true) { 
@@ -24,10 +24,12 @@ $users = json_decode(file_get_contents($fileJson), true);  // Parser le contenu 
 if ($users !== null) {
     foreach ($users as $u) { // on récupère les mails et mot de passe associés
         if($u['email'] == $email){
-            $index += 1;
             $password_check = $u['passwordHash'];
             $user_role = $u['role'];
             break;
+        }
+        else{
+            $index += 1;
         }
     }
 
@@ -38,6 +40,7 @@ if ($users !== null) {
         $_SESSION['role'] = $user_role;
         $_SESSION['user'] = $users[$index];
         $_SESSION['index'] = $index;
+        $_SESSION["panier"] = [];
         $users[$index]['dates']['derniere_connexion'] = date("Y-m-d"); // Ex: 2025-03-25
         file_put_contents($fileJson, json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
         header("Location: accueil.php");
