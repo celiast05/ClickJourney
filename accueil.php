@@ -76,7 +76,7 @@ $_SESSION['last_activity'] = time();
 
       <br />
 
-      <a href="presentation.html" class="cta">
+      <a href="voyages.php" class="cta">
         Decouvrir
         <svg
           xmlns="http://www.w3.org/2000/svg"

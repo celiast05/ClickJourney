@@ -11,7 +11,7 @@
         },
         "dates": {
             "inscription": "2025-03-25",
-            "derniere_connexion": "2025-03-26"
+            "derniere_connexion": "2025-03-28"
         },
         "voyages": {
             "consultes": [
@@ -70,7 +70,7 @@
     {
         "email": "skibidi@gmail.com",
         "passwordHash": "$2y$10$rLP1DUy0LYgSDA2YW0Uq4.liZp6ntY1N\/594tUUm61CIdmYCYaBVO",
-        "role": "normal",
+        "role": "vip",
         "informations": {
             "nom": "Skibidi",
             "prenom": "Toilet",
@@ -90,7 +90,7 @@
     {
         "email": "lala@gmail.com",
         "passwordHash": "$2y$10$JiPZpjqUiWMDwEv.57ExauerM4yU54w0sRnig8PExARigde5.ot6e",
-        "role": "normal",
+        "role": "banni",
         "informations": {
             "nom": "lala",
             "prenom": "lala",

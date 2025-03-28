@@ -1,0 +1,93 @@
+@import url("root.css");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--text);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  line-height: 1.8;
+  min-height: 100vh;
+  text-align: center;
+  justify-content: center;
+}
+
+h2 {
+  font-family: var(--title);
+  font-size: 36px;
+  color: var(--title-color);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  font-size: 20px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--title-color);
+  margin-top: 20px;
+}
+
+form {
+  margin-top: 30px;
+}
+
+input[type="submit"] {
+  padding: 12px 25px;
+  font-size: 18px;
+  font-family: var(--title);
+  border: none;
+  background-color: var(--title-color);
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}
+
+input[type="submit"]:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+@media screen and (max-width: 1024px) {
+  h2 {
+    font-size: 28px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  ul li {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  ul li {
+    font-size: 16px;
+  }
+
+  input[type="submit"] {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
