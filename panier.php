@@ -1,3 +1,12 @@
+<?php 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Récupérer les informations envoyées par le formulaire
+    echo $_POST["hebergements"];
+    echo print_r($_POST["activites"]);
+    echo print_r($_POST["nb_personnes"]);
+} 
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,14 +26,34 @@
 
     ?>
     <h2>Votre panier</h2>
-    <ul>
-        <li>Recapitulatif de panier (1456789.99€)</li>
-        <ul>
-            <li>Option : </li>
-            <li>Option : </li>
-            <li>Option : </li>
-        </ul>
-    </ul>
+    
+        Recapitulatif de panier <?php echo $montant ?>€</li>
+        
+            <?php 
+                echo "<p>Hébergement : ".$_POST["hebergements"]. " : ". $_POST["nb_personnes"][$_POST["hebergements"]]. " personne";
+                if ($_POST["nb_personnes"][$_POST["hebergements"]]>1){echo "s";}
+                echo "</p>";
+            if (isset($_POST["activites"])) {
+                if(count($_POST["activites"])>1){
+                    echo " <p> Activités sélectionnées : </p><ul>";
+                }
+                else{
+                    echo "<p> Activité sélectionnée : </p><ul>";
+                }
+                $activites_selectionnes = $_POST["activites"];
+                $nb_personnes = $_POST["nb_personnes"]; // Tableau associatif des nombres de personnes par hébergement
+        
+                foreach ($activites_selectionnes as $activite) {
+                    $nombre_personnes = $nb_personnes[$activite];
+                    echo "<li> " . htmlspecialchars($activite) . " : " . $nombre_personnes. " personne";
+                    if($nombre_personnes>1){echo "s";};
+                    echo '.</li>';
+                }
+                echo '</ul>';
+            }
+            ?>
+        
+    
     <h3> Total : 1456789.99€</h3>
     <form action='https://www.plateforme-smc.fr/cybank/index.php' method='POST'>
     <input type='hidden' name='transaction' value='<?php echo $transaction; ?>'>

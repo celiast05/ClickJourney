@@ -5,13 +5,13 @@
         "role": "admin",
         "informations": {
             "nom": "Test",
-            "prenom": "Zoe",
-            "civilite": "Madame",
+            "prenom": "Test le grand",
+            "civilite": "Monsieur",
             "telephone": "123456"
         },
         "dates": {
             "inscription": "2025-03-25",
-            "derniere_connexion": "2025-03-26"
+            "derniere_connexion": "2025-03-28"
         },
         "voyages": {
             "consultes": [
@@ -39,10 +39,13 @@
         },
         "dates": {
             "inscription": "2025-03-25",
-            "derniere_connexion": null
+            "derniere_connexion": "2025-03-28"
         },
         "voyages": {
-            "consultes": [],
+            "consultes": [
+                "Aspen",
+                "Laponie"
+            ],
             "achetes": [],
             "favoris": []
         }
@@ -62,9 +65,18 @@
             "derniere_connexion": null
         },
         "voyages": {
-            "consultes": [],
-            "achetes": [],
-            "favoris": []
+            "consultes": [
+                "Maldives",
+                "Santorin",
+                "Paris"
+            ],
+            "achetes": [
+                "Santorin",
+                "Paris"
+            ],
+            "favoris": [
+                "Maldives"
+            ]
         }
     },
     {
@@ -82,9 +94,18 @@
             "derniere_connexion": null
         },
         "voyages": {
-            "consultes": [],
-            "achetes": [],
-            "favoris": []
+            "consultes": [
+                "Maldives",
+                "Santorin",
+                "Paris"
+            ],
+            "achetes": [
+                "Santorin",
+                "Paris"
+            ],
+            "favoris": [
+                "Santorin"
+            ]
         }
     },
     {
@@ -102,7 +123,9 @@
             "derniere_connexion": null
         },
         "voyages": {
-            "consultes": [],
+            "consultes": [
+                "Paris"
+            ],
             "achetes": [],
             "favoris": []
         }

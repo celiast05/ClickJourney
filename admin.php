@@ -20,6 +20,11 @@ if ( !isset($_SESSION['stay_connected'])){ // si "Rester connecté" n'est pas cl
   }
 }
 
+if ( $_SESSION['role'] != 'admin'){ // si l'utilisateur n'est pas un admin
+    header("Location: accueil.php"); // renvoie à la page précédente
+    exit();
+}
+
 // Met à jour l'heure de la dernière activité
 $_SESSION['last_activity'] = time();
 

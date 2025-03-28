@@ -76,7 +76,7 @@ if (isset($_POST['keyword']) && !empty(trim($_POST['keyword']))) {
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" type="text/css" href="css/presentation.css" />
+    <link rel="stylesheet" type="text/css" href="css/voyages.css" />
     <title>Nos voyages - Elysia Voyage</title>
 </head>
 <body>
@@ -118,17 +118,17 @@ if (isset($_POST['keyword']) && !empty(trim($_POST['keyword']))) {
     <br><br>
 
     <div class="container">
-        <?php if (empty($searchResults)) : ?>
-            <p style="text-align:center;">Aucun voyage ne correspond à votre recherche.</p>
-        <?php else : ?>
-            <?php foreach ($searchResults as $voyage) { ?>
+        <?php if (empty($searchResults)){
+            echo '<p style="text-align:center;">Aucun voyage ne correspond à votre recherche.</p>';}
+         else { 
+            foreach ($searchResults as $voyage) { ?>
                 <div class="card">
                     <div class="card-image" style="background-image: url('<?= $voyage['image']; ?>');"></div>
                     <div class="card-content">
                         <h2><?= $voyage['nom']; ?></h2>
                         <p class="category"><?= $voyage['theme']; ?></p>
                         <p class="taille"><?= $voyage['description']; ?></p>
-                        <a href="carte.php?id=<?= $voyage['id']; ?>" class="cta">
+                        <a href="details.php?voyage=<?= $voyage['id']; ?>" class="cta">
                             Découvrir
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
                                 <path d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
@@ -136,8 +136,7 @@ if (isset($_POST['keyword']) && !empty(trim($_POST['keyword']))) {
                         </a>
                     </div>
                 </div>
-            <?php } ?>
-        <?php endif; ?>
+            <?php }} ?>
     </div>
 </main>
 </body>
