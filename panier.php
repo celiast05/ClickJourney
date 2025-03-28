@@ -27,16 +27,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     ?>
     <h2>Votre panier</h2>
-<<<<<<< HEAD
-    <ul>
-        <li>Recapitulatif du panier (1456789.99€)</li>
-        <ul>
-            <li>Option : </li>
-            <li>Option : </li>
-            <li>Option : </li>
-        </ul>
-    </ul>
-=======
     
         Recapitulatif de panier <?php echo $montant ?>€</li>
         
@@ -63,9 +53,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo '</ul>';
             }
             ?>
-        
-    
->>>>>>> 5cb66e18700c464015e7099b82f5584d7224a21e
     <h3> Total : 1456789.99€</h3>
     <form action='https://www.plateforme-smc.fr/cybank/index.php' method='POST'>
     <input type='hidden' name='transaction' value='<?php echo $transaction; ?>'>
