@@ -62,6 +62,33 @@ if ($users !== null) {
     <link rel="stylesheet" href="css/connexion.css?v=1" />
   </head>
   <body>
+    <nav>
+      <img src="Images/logo.png" alt="Logo" />
+      <div class="btn">
+        <?php
+        if(isset($_SESSION['role']) && $_SESSION['role'] == "admin") {
+            echo "<a href='admin.php'>Administrateur</a>";
+        }
+        ?>
+        <a href="accueil.php">Accueil</a>
+        <?php
+        if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+            echo "<a href='profil.php'>Mon profil</a>";
+        }
+        ?>
+        <a href="voyages.php">Nos voyages</a>
+        <a href="filtrage.php">Filtrer</a>
+        <?php
+        if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+            echo "<a href='deconnexion.php?action=run'>Déconnexion</a>";
+        }
+        else{
+            echo "<a href='connexion.html'>Connexion</a>";
+        }
+        ?>
+      </div>
+    </nav>
+
     <?php 
     if ($error){
         echo "<section id='error'><p> Utilisateur invalide, mail ou mot de passe incorect.</p>";

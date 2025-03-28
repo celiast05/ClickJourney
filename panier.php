@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/panier.css">
     <title>Panier</title>
 </head>
 <body>
@@ -21,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $montant = "1456789.99";
         $vendeur = "TEST";
         $api_key = getAPIKey($vendeur);
-        $retour = "http://localhost:8888/ClickJourney/accueil.php";
+        $retour = "http://localhost:8888/ClickJourney/retour_paiement.php";
         $control = md5( $api_key."#".$transaction."#".$montant."#".$vendeur."#".$retour."#");
 
     ?>
@@ -52,8 +53,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 echo '</ul>';
             }
             ?>
-        
-    
     <h3> Total : 1456789.99€</h3>
     <form action='https://www.plateforme-smc.fr/cybank/index.php' method='POST'>
     <input type='hidden' name='transaction' value='<?php echo $transaction; ?>'>
