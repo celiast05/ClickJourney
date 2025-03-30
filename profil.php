@@ -25,15 +25,16 @@
 
     function print_trip($list, $name) {
         if(!empty($list)){
+            $fileJson = 'json/voyage.json';
+            $trips = json_decode(file_get_contents($fileJson), true); 
+            foreach ($trips as $t) { // on fais la liste des correspondances
+                $trip_to_link[$t['nom']] = $t['id'];
+            }
             echo "<h2>". $name;
             if(count($list)>1){
                 echo 's';
             }
             echo " :</h2>";
-            $trip_to_link = ["Paris" => "paris", "Santorin" => "santorin", "Courchevel" => "courchevel", "Bora Bora" => "bora_bora", "Rome" => "rome", "Maldives"=>"maldives",
-            "Laponie"=>"laponie", "Tahiti"=>"tahiti", "Aspen" => "aspen", "Costa Rica"=>"costarica", "Tanzanie" => "tanzanie", "Australie" => "australie","Oman" => "oman",
-            "Égypte" => "egypte","Dubaï"=>"budai"];
-            $index = 0;
             foreach($list as $trip){
                 echo '<p class="voyage-nom"><a href="details.php?voyage='.$trip_to_link[$trip].'">'.htmlspecialchars($trip).'</a></p>';
             }
