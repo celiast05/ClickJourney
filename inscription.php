@@ -107,10 +107,10 @@ if(!$error){
         <a href="filtrage.php">Filtrer</a>
         <?php
         if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-            echo "<a href='deconnexion.php?action=run'>Déconnexion</a>";
+            echo "<a href='script/deconnexion.php?action=run'>Déconnexion</a>";
         }
         else{
-            echo "<a href='connexion.html'>Connexion</a>";
+            echo "<a href='connexion.php'>Connexion</a>";
         }
         ?>
       </div>

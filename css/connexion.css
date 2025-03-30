@@ -1,7 +1,6 @@
 @import url("root.css");
 
 body {
-  /* margin: 0; */
   padding: 0;
   font-family: var(--text);
   color: var(--text-color);
@@ -31,6 +30,10 @@ nav img {
   width: 200px;
 }
 
+nav a {
+  font-weight: normal;
+}
+
 nav .btn {
   margin-top: 3px;
   margin-left: 200px;
@@ -38,6 +41,7 @@ nav .btn {
 
 nav .btn a {
   text-decoration: none;
+  font-family: var(--text);
   color: rgba(0, 0, 0, 0.5);
   margin-right: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
@@ -255,7 +259,7 @@ footer p {
     display: block;
     margin-bottom: 8px;
   }
-  
+
   .connexion {
     width: 80%;
     padding: 20px;

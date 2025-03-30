@@ -1,4 +1,5 @@
-<!-- // Se connecter avec admin@gmail.com le password est admin -->
+<!-- // Se connecter avec test@gmail.com le password est test -->
+ <!-- pour tout les comptes le mot de passe corespond au prénom en minuscule -->
 <?php
 session_start();
 
@@ -6,7 +7,7 @@ session_start();
 $timeout = 300; // 5 minutes
 
 if (!isset($_SESSION['logged_in'])){ // utilisateur anonyme
-  header("Location: connexion.html"); // Redirige vers la connexion
+  header("Location: connexion.php"); // Redirige vers la connexion
   exit();
 } 
 
@@ -15,7 +16,7 @@ if ( !isset($_SESSION['stay_connected'])){ // si "Rester connecté" n'est pas cl
   if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > $timeout) {
       session_unset(); // Supprime toutes les variables de session
       session_destroy(); // Détruit la session
-      header("Location: connexion.html?timeout=1"); // Redirige vers la connexion
+      header("Location: connexion.php?timeout=1"); // Redirige vers la connexion
       exit();
   }
 }
@@ -71,10 +72,10 @@ $total_pages = ceil(count($users) / $users_par_page);
         <a href="filtrage.php">Filtrer</a>
         <?php
         if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-            echo "<a href='deconnexion.php?action=run'>Déconnexion</a>";
+            echo "<a href='script/deconnexion.php?action=run'>Déconnexion</a>";
         }
         else{
-            echo "<a href='connexion.html'>Connexion</a>";
+            echo "<a href='connexion.php'>Connexion</a>";
         }
         ?>
       </div>

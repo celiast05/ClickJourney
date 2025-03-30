@@ -30,7 +30,7 @@
     {
         "email": "zoe@gmail.com",
         "passwordHash": "$2y$10$aJipp0wjsCAeu9HaaHL.buxjhDAEM7sk6FqxeWTxidSrrX3LEIqku",
-        "role": "normal",
+        "role": "admin",
         "informations": {
             "nom": "Zoe",
             "prenom": "Runneterra",
@@ -39,7 +39,7 @@
         },
         "dates": {
             "inscription": "2025-03-25",
-            "derniere_connexion": "2025-03-28"
+            "derniere_connexion": "2025-03-30"
         },
         "voyages": {
             "consultes": [
@@ -126,6 +126,66 @@
             "consultes": [
                 "Paris"
             ],
+            "achetes": [],
+            "favoris": []
+        }
+    },
+    {
+        "email": "luc@gmail.com",
+        "passwordHash": "$2y$10$gAVmy0Aqib3LJVImVdcFC.iOrWy3v5joX9LhX3N8R9GCx9eFOleZ2",
+        "role": "normal",
+        "informations": {
+            "nom": "nom",
+            "prenom": "luc",
+            "civilite": "",
+            "telephone": null
+        },
+        "dates": {
+            "inscription": "2025-03-30",
+            "derniere_connexion": null
+        },
+        "voyages": {
+            "consultes": [],
+            "achetes": [],
+            "favoris": []
+        }
+    },
+    {
+        "email": "marc@gmail.com",
+        "passwordHash": "$2y$10$fLgZMqyStGxMlkQRITqQWeY0cBXBMTFG3VHn6enOQCZ3fYrzSywkK",
+        "role": "normal",
+        "informations": {
+            "nom": "nom",
+            "prenom": "marc",
+            "civilite": "",
+            "telephone": null
+        },
+        "dates": {
+            "inscription": "2025-03-30",
+            "derniere_connexion": null
+        },
+        "voyages": {
+            "consultes": [],
+            "achetes": [],
+            "favoris": []
+        }
+    },
+    {
+        "email": "paul@gmail.com",
+        "passwordHash": "$2y$10$\/.ZG6wf77XI3mchT.b2iAONpcupOljOUkYp26OwXvfsug24ffLK1e",
+        "role": "normal",
+        "informations": {
+            "nom": "nom",
+            "prenom": "paul",
+            "civilite": "",
+            "telephone": null
+        },
+        "dates": {
+            "inscription": "2025-03-30",
+            "derniere_connexion": null
+        },
+        "voyages": {
+            "consultes": [],
             "achetes": [],
             "favoris": []
         }

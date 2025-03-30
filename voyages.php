@@ -8,7 +8,7 @@ if (!isset($_SESSION['stay_connected'])) {
     if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > $timeout) {
         session_unset();
         session_destroy();
-        header("Location: connexion.html?timeout=1");
+        header("Location: connexion.php?timeout=1");
         exit();
     }
 }
@@ -98,9 +98,9 @@ if (isset($_POST['keyword']) && !empty(trim($_POST['keyword']))) {
         <a href="filtrage.php">Filtrer</a>
         <?php
         if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-            echo "<a href='deconnexion.php?action=run'>Déconnexion</a>";
+            echo "<a href='script/deconnexion.php?action=run'>Déconnexion</a>";
         } else {
-            echo "<a href='connexion.html'>Connexion</a>";
+            echo "<a href='connexion.php'>Connexion</a>";
         }
         ?>
     </div>

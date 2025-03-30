@@ -5,7 +5,7 @@ session_start();
 $timeout = 300; // 5 minutes
 
 if (!isset($_SESSION['logged_in'])){ // utilisateur anonyme
-  header("Location: connexion.html"); // Redirige vers la connexion
+  header("Location: connexion.php"); // Redirige vers la connexion
   exit();
 } 
 
@@ -14,7 +14,7 @@ if ( !isset($_SESSION['stay_connected'])){ // si "Rester connecté" n'est pas cl
   if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > $timeout) {
       session_unset(); // Supprime toutes les variables de session
       session_destroy(); // Détruit la session
-      header("Location: connexion.html?timeout=1"); // Redirige vers la connexion
+      header("Location: connexion.php?timeout=1"); // Redirige vers la connexion
       exit();
   }
 }
@@ -42,7 +42,7 @@ foreach ($trips as $t) { // on récupère le bon voyage
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $trip["nom"] ?></title>
-    <link rel="stylesheet" href="css/details.css?v=1.4">
+    <link rel="stylesheet" href="css/details.css?v=1.6">
 </head>
 <body>
 <nav>
@@ -63,10 +63,10 @@ foreach ($trips as $t) { // on récupère le bon voyage
         <a href="filtrage.php">Filtrer</a>
         <?php
         if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-            echo "<a href='deconnexion.php?action=run'>Déconnexion</a>";
+            echo "<a href='script/deconnexion.php?action=run'>Déconnexion</a>";
         }
         else{
-            echo "<a href='connexion.html'>Connexion</a>";
+            echo "<a href='connexion.php'>Connexion</a>";
         }
         ?>
       </div>
@@ -127,7 +127,17 @@ foreach ($trips as $t) { // on récupère le bon voyage
         <?php if (!empty($trip["prix"])){
             echo "<h4>Prix par personne : ". $trip["prix"] ." € </h4>";
         }?>
+    <br>
+        <label for="date_depart" class="header"> Date de départ : &emsp;
+        <input type="date" id="date_depart" name="date_depart" required/>
+        </label>
+        
         <br>
+        <label for="date_retour" class="header"> Date de retour : &emsp;
+        <input type="date" id="date_retour" name="date_retour" required />
+        </label>
+        
+        <br><br>
         <button type="submit">Ajouter au panier</button>
         </form>
     </section>

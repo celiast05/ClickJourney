@@ -4,6 +4,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: var(--text);
+  font-size: 30px;
   color: var(--text-color);
   background-color: var(--background-color);
   line-height: 1.8;
@@ -15,10 +16,25 @@ body {
 h2 {
   font-family: var(--title);
   font-size: 36px;
+  font-weight: bold;
   color: var(--title-color);
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-bottom: 20px;
+  padding: 7px;
+}
+
+a {
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+h3 {
+  font-size: 30px;
+  color: var(--title-color);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding: 7px;
 }
 
 ul {
@@ -27,25 +43,19 @@ ul {
 }
 
 ul li {
-  font-size: 20px;
+  font-size: 30px;
   font-weight: 300;
   margin-bottom: 10px;
 }
 
-h3 {
-  font-size: 24px;
-  font-weight: bold;
-  color: var(--title-color);
-  margin-top: 20px;
-}
-
 form {
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
-input[type="submit"] {
+input[type="submit"],
+a {
   padding: 12px 25px;
-  font-size: 18px;
+  font-size: 20px;
   font-family: var(--title);
   border: none;
   background-color: var(--title-color);
@@ -55,7 +65,8 @@ input[type="submit"] {
   transition: background 0.3s ease;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover,
+a:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
 

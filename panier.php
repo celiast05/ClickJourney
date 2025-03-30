@@ -1,10 +1,31 @@
 <?php 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Récupérer les informations envoyées par le formulaire
-    echo $_POST["hebergements"];
-    echo print_r($_POST["activites"]);
-    echo print_r($_POST["nb_personnes"]);
-} 
+
+$fileJson = 'json/voyage.json';
+
+$trips = json_decode(file_get_contents($fileJson), true); 
+
+foreach ($trips as $t) { // on récupère le bon voyage
+    if($t['id'] == $_GET['voyage']){
+        $trip = $t;
+        break;
+    }
+}
+
+include("getapikey.php");
+$transaction = '154632ABCZWTC';
+
+$montant = $trip['prix'] * $_POST["nb_personnes"][$_POST["hebergements"]];
+$montant +=  $_POST["nb_personnes"][$_POST["hebergements"]] * $trip["hebergements"][$_POST["hebergements"]];
+if(isset($_POST["activites"])){
+    foreach($_POST["activites"] as $activite){
+        $montant +=  $_POST["nb_personnes"][$activite] * $trip["activites"][$activite];
+    }
+}
+
+$vendeur = "TEST";
+$api_key = getAPIKey($vendeur);
+$retour = "http://localhost:8888/ClickJourney/retour_paiement.php";
+$control = md5( $api_key."#".$transaction."#".$montant."#".$vendeur."#".$retour."#");
 
 ?>
 <!DOCTYPE html>
@@ -12,34 +33,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/panier.css">
+    <link rel="stylesheet" href="css/panier.css?v=1.3">
     <title>Panier</title>
 </head>
 <body>
-    <?php
-        include("getapikey.php");
-        $transaction = '154632ABCZWTC';
-        $montant = "1456789.99";
-        $vendeur = "TEST";
-        $api_key = getAPIKey($vendeur);
-        $retour = "http://localhost:8888/ClickJourney/retour_paiement.php";
-        $control = md5( $api_key."#".$transaction."#".$montant."#".$vendeur."#".$retour."#");
-
-    ?>
     <h2>Votre panier</h2>
     
-        Recapitulatif de panier <?php echo $montant ?>€</li>
+        Voyage <?php echo $trip["nom"] ?></li>
         
             <?php 
-                echo "<p>Hébergement : ".$_POST["hebergements"]. " : ". $_POST["nb_personnes"][$_POST["hebergements"]]. " personne";
+                echo "<h3>Hébergement :</h3><p>".$_POST["hebergements"]. " : ". $_POST["nb_personnes"][$_POST["hebergements"]]. " personne";
                 if ($_POST["nb_personnes"][$_POST["hebergements"]]>1){echo "s";}
                 echo "</p>";
             if (isset($_POST["activites"])) {
                 if(count($_POST["activites"])>1){
-                    echo " <p> Activités sélectionnées : </p><ul>";
+                    echo " <h3> Activités sélectionnées : </h3><ul>";
                 }
                 else{
-                    echo "<p> Activité sélectionnée : </p><ul>";
+                    echo "<h3> Activité sélectionnée : </h3><ul>";
                 }
                 $activites_selectionnes = $_POST["activites"];
                 $nb_personnes = $_POST["nb_personnes"]; // Tableau associatif des nombres de personnes par hébergement
@@ -52,8 +63,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 }
                 echo '</ul>';
             }
+            echo "<h3>Dates :</h3><p> Du ".$_POST["date_depart"]. " au ". $_POST["date_retour"];
             ?>
-    <h3> Total : 1456789.99€</h3>
+    <h3> Total : <?php echo $montant; ?> €</h3>
     <form action='https://www.plateforme-smc.fr/cybank/index.php' method='POST'>
     <input type='hidden' name='transaction' value='<?php echo $transaction; ?>'>
     <input type='hidden' name='montant' value='<?php echo $montant; ?>'>
@@ -61,5 +73,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <input type='hidden' name='retour' value='<?php echo $retour; ?>'>
     <input type='hidden' name='control' value='<?php echo $control; ?>'>
     <input type='submit' value="Valider et payer">
+    <a href='details.php?voyage=<?php echo $trip["id"]; ?>'> Modifier </a>
+    </form>
+    
 </body>
 </html>
