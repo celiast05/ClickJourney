@@ -1,12 +1,10 @@
 <?php 
 session_start();
 
-// Vérification de la présence de l'ID du voyage
 if (!isset($_GET['voyage']) || empty($_GET['voyage'])) {
     die("Voyage non spécifié.");
 }
 
-// Charger les voyages depuis le fichier JSON
 $fileJson = 'json/voyage.json';
 $trips = json_decode(file_get_contents($fileJson), true);
 
@@ -18,12 +16,10 @@ foreach ($trips as $t) {
     }
 }
 
-// Vérifier si le voyage existe
 if (!$trip) {
     die("Voyage introuvable.");
 }
 
-// Vérifier que les dates sont bien envoyées
 if (!isset($_POST['date_depart']) || !isset($_POST['date_retour'])) {
     die("Les dates de voyage sont obligatoires.");
 }
@@ -31,20 +27,16 @@ if (!isset($_POST['date_depart']) || !isset($_POST['date_retour'])) {
 $date_depart = htmlspecialchars($_POST['date_depart']);
 $date_retour = htmlspecialchars($_POST['date_retour']);
 
-// Initialisation du montant total
 $montant = $trip['prix'] * $_POST["nb_personnes"][$_POST["hebergements"]];
 
-// Ajout du coût de l'hébergement
 $hebergement = $_POST["hebergements"];
 $nb_personnes_hebergement = (int) $_POST["nb_personnes"][$hebergement];
 $prix_hebergement = $trip["hebergements"][$hebergement] * $nb_personnes_hebergement;
 $montant += $prix_hebergement;
 
-// Stocker les détails des options sélectionnées
 $details_options = [];
 $details_options[] = "Hébergement : " . htmlspecialchars($hebergement) . " ($nb_personnes_hebergement pers.) - $prix_hebergement €";
 
-// Ajout du coût des activités
 if (isset($_POST["activites"])) {
     foreach ($_POST["activites"] as $activite) {
         if (isset($_POST["nb_personnes"][$activite]) && isset($trip["activites"][$activite])) {
@@ -56,7 +48,16 @@ if (isset($_POST["activites"])) {
     }
 }
 
-// Inclure la fonction pour récupérer la clé API
+$_SESSION['voyage'] = [
+    'id' => $trip['id'],
+    'nom' => $trip['nom'],
+    'hebergement' => $_POST['hebergements'],
+    'activites' => isset($_POST['activites']) ? $_POST['activites'] : [],
+    'nombre_personnes' => $_POST['nb_personnes'],
+    'date_depart' => $_POST['date_depart'],
+    'date_retour' => $_POST['date_retour']
+];
+
 require_once("getapikey.php");
 
 $transaction = uniqid();

@@ -35,9 +35,15 @@ if ($users !== null) {
     if(isset($password_check) && password_verify($password,$password_check)){
         $_SESSION['email'] = $email;
         $_SESSION['logged_in'] = true;
-        $_SESSION['stay_connected'] = $_POST['stay_connected'];
+        $_SESSION['stay_connected'] = isset($_POST['stay_connected']) ? $_POST['stay_connected'] : false;;
         $_SESSION['role'] = $user_role;
-        $_SESSION['user'] = $users[$index];
+        $_SESSION['user'] = [
+            'nom' => $users[$index]['informations']['nom'],
+            'prenom' => $users[$index]['informations']['prenom'],
+            'email' => $users[$index]['email'],
+            'telephone' => $users[$index]['informations']['telephone'],
+            'role' => $users[$index]['role']
+        ];
         $_SESSION['index'] = $index;
         $_SESSION["panier"] = [];
         $users[$index]['dates']['derniere_connexion'] = date("Y-m-d"); // Ex: 2025-03-25

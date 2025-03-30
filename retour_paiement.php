@@ -1,89 +1,88 @@
+<?php
+session_start();
+
+include("getapikey.php");
+
+if (!isset($_GET['transaction'], $_GET['montant'], $_GET['vendeur'], $_GET['status'], $_GET['control'])) {
+    die("Données manquantes dans la réponse de Cybank.");
+}
+
+$transaction = $_GET['transaction'];
+$montant = $_GET['montant'];
+$vendeur = $_GET['vendeur'];
+$statut = $_GET['status'];
+$control = $_GET['control'];
+
+$api_key = getAPIKey($vendeur);
+
+$control_calculé = md5($api_key . "#" . $transaction . "#" . $montant . "#" . $vendeur . "#" . $statut . "#");
+
+if ($control !== $control_calculé) {
+    die("Erreur de validation du contrôle. Les données ont été falsifiées.");
+}
+
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panier</title>
     <link rel="stylesheet" href="css/retour_paiement.css"> 
+    <title>Retour de paiement</title>
+</head>
 <body>
+<div class='container'>
+    <h2>Récapitulatif du paiement</h2>
+
+    <p><strong>Numéro de transaction :</strong> <?php echo htmlspecialchars($transaction); ?></p>
+    <p><strong>Montant :</strong> <?php echo htmlspecialchars($montant); ?> €</p>
+    <p><strong>Statut du paiement :</strong> <?php echo ($statut === 'accepted' ? 'Paiement accepté' : 'Paiement refusé'); ?></p>
+</div>
     <?php
-    session_start();
+    if ($statut === 'accepted') {
+        if (!empty($_SESSION['voyage']) && !empty($_SESSION['user'])) {
+            $voyage = $_SESSION['voyage'];
+            $user = $_SESSION['user'];
+            $hebergement = $voyage['hebergement'] ?? "Non spécifié";
+            $activites = !empty($voyage['activites']) ? $voyage['activites'] : ["Aucune activité sélectionnée"];
+            $nb_personnes = $voyage['nombre_personnes'][$hebergement] ?? "Non spécifié";
+            $date_depart = $voyage['date_depart'] ?? "Non spécifié";
+            $date_retour = $voyage['date_retour'] ?? "Non spécifié";
 
-    include("getapikey.php");
+            // Création du nom de fichier JSON
+            $fileName = 'json/' . strtolower(str_replace(' ', '_', $voyage['nom'])) . '_' . strtolower(str_replace(' ', '_', $user['nom'])) . '.json';
 
-    if($_SERVER["REQUEST_METHOD"] == "GET"){
-        //Récupération des données envoyées par CyBank
-        $transaction = $_GET["transaction"] ?? "";
-        $montant = $_GET["montant"] ?? "";
-        $vendeur = $_GET["vendeur"] ?? "";
-        $status = $_GET["status"] ?? "";
-        $control_recu = $_GET["control"] ?? "";
+            // Données à enregistrer
+            $data = [
+                'transaction' => $transaction,
+                'destination' => $voyage['nom'],
+                'hebergement' => $hebergement,
+                'activites' => $activites,
+                'nombre_personnes' => $nb_personnes,
+                'montant' => $montant,
+                'statut' => $statut,
+                'date_depart' => $date_depart,
+                'date_retour' => $date_retour
+            ];
 
-        //Verification des données reçues
-        if(empty($transaction) || empty($montant) || empty($vendeur) || empty($status) || empty($control_recu)) {
-            die("Erreur : paramètres de retour invalides.");
-        }
-
-        $api_key = getAPIKey($vendeur);
-        $control_attendu = md5($api_key."#".$transaction."#".$montant."#".$vendeur."#".$status."#");
-
-        if($control_attendu !== $control_recu){
-            die("Erreur : controle d'intégrité échoué.");
-        }
-
-        echo "<div class='container'>";
-        if($status == "accepted"){
-            echo "<h2>Paiement accepté</h2>";
-            echo "<p>Transaction : $transaction</p>";
-            echo "<p>Montant : $montant</p>";
-            echo "<p>Préparer vos bagages, vous allez vous envoler vers votre destination très bientôt ...</p>";
-
-            //il faut stocker le paiement dans un json
-            header("refresh:5;url=profil.php");
-        }
-        else{
-            echo "<h2>Paiement refusé</h2>";
-            echo "<p>Transaction : $transaction</p>";
-            echo "<p>Montant : $montant</p>";
-            echo "<p>Vérifier vos informations bancaires et réessayer</p>";
-            header("refresh:5;url=panier.php");
-        }
-        echo "</div>";
-    }
-    else{
-        echo "Accès interdit.";
-    }
-
-    if(!isset($_SESSION['email']) || !isset($_SESSION['commande'])){ //voir pour stocké voyage dans un json spécial
-        echo "<p>Erreur : aucune commande ou utilisateur en session.";
-        exit;
-    }
-
-    $email = $_SESSION['email'];
-    $commande = $_SESSION['commande'];
-    $commande['id'] = $commande['voyage_id'];
-
-    $voyage_achete = [
-        "id" => $commande['voyage_id'],
-        "nom" => $commande['titre'],
-        "date_achat" => date('Y-m-d'),
-        "prix_total" => $commande['prix_total']
-    ];
-
-    $utilisateur_path = "data/utilisateurs.json";
-    if(file_exists($utilisateur_path)){
-        $utilisateurs = json_decode(file_get_contents($utilisateur_path), true);
-        foreach ($utilisateurs as $user){
-            if ($user['email'] == $email){
-                if(!isset($user['voyages_achetes'])){
-                $user['voyages_achetes'] = [];
-                }
-                $user['voyages_achetes'][] = $voyage_achete;
-                break;
+            // Vérifier si un fichier existe déjà pour cet utilisateur et ce voyage
+            if (file_exists($fileName)) {
+                $existingData = json_decode(file_get_contents($fileName), true);
+                $existingData[] = $data;
+                file_put_contents($fileName, json_encode($existingData, JSON_PRETTY_PRINT));
+            } else {
+                file_put_contents($fileName, json_encode([$data], JSON_PRETTY_PRINT));
             }
+
+            echo "<div class='container><p><strong>Préparer vos bagages, vous allez vous envoler vers votre destination très bientôt ...</strong></p></div>";
         }
-        file_put_contents($utilisateur_path, json_encode($utilisateurs, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+    } 
+    else {
+        echo "<div class='container><h2>Paiement accepté</h2></div>";
     }
+    header("refresh:5;url=profil.php");
     ?>
+
 </body>
 </html>
