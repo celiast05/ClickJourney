@@ -116,3 +116,22 @@ h4 {
 h2 {
   font-size: 35px;
 }
+
+.header {
+  font-weight: bold;
+  margin: 20px 0;
+}
+
+button[type="submit"] {
+  display: block;
+  padding: 12px 25px;
+  margin-left: calc(50% - 100px);
+  font-size: 20px;
+  font-family: var(--title);
+  border: none;
+  background-color: var(--title-color);
+  color: white;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.3s ease;
+}

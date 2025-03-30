@@ -9,7 +9,7 @@ if ( !isset($_SESSION['stay_connected'])){ // si Rester connecté n'est pas clic
   if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > $timeout) {
       session_unset(); // Supprime toutes les variables de session
       session_destroy(); // Détruit la session
-      header("Location: connexion.html?timeout=1"); // Redirige vers la connexion
+      header("Location: connexion.php?timeout=1"); // Redirige vers la connexion
       exit();
   }
 }
@@ -45,10 +45,10 @@ $_SESSION['last_activity'] = time();
         <a href="filtrage.php">Filtrer</a>
         <?php
         if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-            echo "<a href='deconnexion.php?action=run'>Déconnexion</a>";
+            echo "<a href='script/deconnexion.php?action=run'>Déconnexion</a>";
         }
         else{
-            echo "<a href='connexion.html'>Connexion</a>";
+            echo "<a href='connexion.php'>Connexion</a>";
         }
         ?>
       </div>
