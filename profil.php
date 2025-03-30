@@ -35,14 +35,7 @@
             "Égypte" => "egypte","Dubaï"=>"budai"];
             $index = 0;
             foreach($list as $trip){
-                echo '<a href="details.php?voyage='.$trip_to_link[$trip].'">'.$trip.'</a>';
-                $index += 1;
-                if ($index < count($list)){
-                    echo ', ';
-                }
-                else{
-                    echo ".";
-                }
+                echo '<p class="voyage-nom"><a href="details.php?voyage='.$trip_to_link[$trip].'">'.htmlspecialchars($trip).'</a></p>';
             }
         }
     }
@@ -153,14 +146,31 @@
         </form>
     </section>
     <?php
-    if(!empty($_SESSION['user']['voyages']['consultes']) || !empty($_SESSION['user']['voyages']['favoris']) || !empty($_SESSION['user']['voyages']['achetes'])){
-        echo "<section class='historique'>";
-            print_trip($_SESSION['user']['voyages']['consultes'],"Consulté");
-            print_trip($_SESSION['user']['voyages']['favoris'],"Favori");
-            print_trip($_SESSION['user']['voyages']['achetes'],"Acheté");
-        echo "</section>";
-    }
-    ?>
+if (!empty($_SESSION['user']['voyages']['consultes']) || !empty($_SESSION['user']['voyages']['favoris']) || !empty($_SESSION['user']['voyages']['achetes'])) {
+    echo "<section class='historique'>";
+    
+        echo "<div class='historique-section consultes'>";
+            echo "<div class='voyage-container'>";
+            print_trip($_SESSION['user']['voyages']['consultes'], "Consulté");
+            echo "</div>";
+        echo "</div>";
+
+        echo "<div class='historique-section favoris'>";
+            echo "<div class='voyage-container'>";
+            print_trip($_SESSION['user']['voyages']['favoris'], "Favori");
+            echo "</div>";
+        echo "</div>";
+
+        echo "<div class='historique-section achetes'>";
+            echo "<div class='voyage-container'>";
+            print_trip($_SESSION['user']['voyages']['achetes'], "Acheté");
+            echo "</div>";
+        echo "</div>";
+
+    echo "</section>";
+}
+?>
+
     </div>
     
     <footer>
