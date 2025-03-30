@@ -18,7 +18,8 @@
       "Dîner étoilé": 150
     },
     "intimite": "Élevée",
-    "prix": 3000
+    "prix": 3000,
+    "mots_cles": ["France", "art", "musée", "romantisme", "gastronomie", "Ville Lumière"]
   },
   {
     "id": "rome",
@@ -39,7 +40,8 @@
       "Dîner face au Colisée": 120
     },
     "intimite": "Moyenne",
-    "prix": 2800
+    "prix": 2800,
+    "mots_cles": ["Italie", "vestiges antiques", "locale", "fontaine", "dolce vita"]
   },
   {
     "id": "santorin",
@@ -60,7 +62,8 @@
       "Atelier culinaire grec": 90
     },
     "intimite": "Très élevée",
-    "prix": 3500
+    "prix": 3500,
+    "mots_cles": ["falaises", "dômes bleus", "mer Égée", "coucher de soleil", "Grèce", "Joyau des Cyclades", "détente", "locale", "vin", "gastronomie"]
   },
   {
     "id": "bora_bora",
@@ -85,7 +88,8 @@
       "Dîner romantique sur la plage": 200
     },
     "intimite": "Très élevée",
-    "prix": 4500
+    "prix": 4500,
+    "mots_cles": ["lagons", "bungalows sur pilotis", "paradis", "plongée", "snorkeling", "gastronomie", "Polynésie Française", "Perle du Pacifique", "luxe", "détente"]
   },
   {
     "id": "maldives",
@@ -106,7 +110,8 @@
       "Massage en bord de mer": 150
     },
     "intimite": "Extrême",
-    "prix": 5000
+    "prix": 5000,
+    "mots_cles": ["eau cristalline", "sable blanc", "sérénité", "plongée", "snorkeling", "Maldives", "Évasion tropicale", "luxe", "spa"]
   },
   {
     "id": "laponie",
@@ -131,7 +136,8 @@
       "Excursion en motoneige": 200
     },
     "intimite": "Élevée",
-    "prix": 3200
+    "prix": 3200,
+    "mots_cles": ["neige", "aurores boréales", "rennes", "nature", "aventures", "Finlande", "polaire", "traîneau à chiens", "motoneige"]
   },
   {
     "id": "dubai",
@@ -156,7 +162,8 @@
       "Croisière en yacht privé": 600
     },
     "intimite": "Moyenne",
-    "prix": 6000
+    "prix": 6000,
+    "mots_cles": ["désert", "hôtels de luxe", "shopping", "aventure", "Dubaï", "Burj Khalifa", "yacht privé"]
   },
   {
     "id": "oman",
@@ -181,7 +188,8 @@
       "Visite du souk de Mascate": 50
     },
     "intimite": "Élevée",
-    "prix": 4000
+    "prix": 4000,
+    "mots_cles": ["désert", "paysages", "plages", "snorkeling", "Oman", "Moyen-Orient", "aventure", "culture"]
   },
   {
     "id": "egypte",
@@ -202,7 +210,8 @@
       "Plongée en mer Rouge": 200
     },
     "intimite": "Moyenne",
-    "prix": 3500
+    "prix": 3500,
+    "mots_cles": ["pyramides", "désert", "temples", "Nil", "pharaons", "Égypte", "Merveilles antiques", "croisière", "histoire", "aventure"]
   },
   {
     "id": "tanzanie",
@@ -223,7 +232,8 @@
       "Ascension du Kilimandjaro": 1000
     },
     "intimite": "Élevée",
-    "prix": 5000
+    "prix": 5000,
+    "mots_cles": ["safari", "Zanzibar", "Serengeti", "Kilimandjaro", "faune", "Tanzanie", "Safari", "Plages", "plage", "plongée"]
   },
   {
     "id": "costarica",
@@ -244,7 +254,8 @@
       "Excursion nocturne dans la forêt": 100
     },
     "intimite": "Moyenne",
-    "prix": 3800
+    "prix": 3800,
+    "mots_cles": ["jungle", "volcans", "plages", "faune", "flore", "Costa Rica", "Nature", "aventure", "bien-être"]
   },
   {
     "id": "australie",
@@ -265,7 +276,8 @@
       "Excursion à Uluru": 450
     },
     "intimite": "Variable",
-    "prix": 6000
+    "prix": 6000,
+    "mots_cles": ["plages", "Grande Barrière de Corail", "Outback", "Australie", "aventure", "plongée", "safari", "Uluru"]
   },
   {
     "id": "tahiti",
@@ -286,7 +298,8 @@
       "Dîner polynésien au bord de l’eau": 200
     },
     "intimite": "Très élevée",
-    "prix": 4500
+    "prix": 4500,
+    "mots_cles": ["eaux cristallines", "nature", "locale", "Tahiti", "Polynésie", "plongée", "bien-être", "raies manta"]
   },
   {
     "id": "aspen",
@@ -307,7 +320,8 @@
       "Dîner gastronomique en altitude": 200
     },
     "intimite": "Élevée",
-    "prix": 5500
+    "prix": 5500,
+    "mots_cles": ["neige", "ski", "luxe", "Rocheuses", "Aspen", "sports d'hiver", "bien-être"]
   },
   {
     "id": "courchevel",
@@ -332,6 +346,7 @@
       "Spa et bien-être en altitude": 300
     },
     "intimite": "Élevée",
-    "prix": 7000
+    "prix": 7000,
+    "mots_cles": ["neige", "luxe", "Alpes", "Courchevel", "Ski", "gastronomie", "montagne", "bien-être"]
   }
 ]
