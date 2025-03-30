@@ -252,6 +252,14 @@ footer p {
     margin-left: 0;
     margin-top: 10px;
   }
+
+  .historique {
+    flex-direction: column;
+    align-items: center;
+}
+.historique-section {
+    width: 80%;
+}
   .profil {
     width: 60%;
   }
@@ -310,12 +318,54 @@ footer p {
     margin-bottom: 8px;
   }
 
-  .profil {
-    width: 80%;
-    padding: 20px;
-    margin-top: 15vh;
+  .container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
   }
 
+  .profil {
+    width: 90%;
+    margin-top: 5vh;
+    padding: 20px;
+  }
+
+  .historique {
+    width: 100%;
+    padding: 10px;
+    gap: 15px;
+  }
+
+  .historique-section {
+    width: 95%;
+    min-width: unset;
+    margin: 0 auto;
+    padding: 15px 10px;
+  }
+
+  .voyage-container {
+    gap: 10px;
+  }
+
+  .voyage {
+    padding: 10px;
+  }
+
+  
+  .historique-section h2 {
+    font-size: 18px;
+    padding-bottom: 5px;
+  }
+
+  .historique a, 
+  .historique p {
+    font-size: 16px;
+  }
+
+  .voyage-nom {
+    font-size: 14px;
+  }
   section h2,
   section h3 {
     font-size: 20px;
