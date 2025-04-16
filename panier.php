@@ -63,7 +63,7 @@ require_once("getapikey.php");
 $transaction = uniqid();
 $vendeur = "MEF-2_G";
 $api_key = getAPIKey($vendeur);
-$retour = "http://localhost:8888/ClickJourney/retour_paiement.php";
+$retour = "http://localhost:8888/retour_paiement.php"; //mettre le chemin correspondant selon le fichier
 $control = md5($api_key . "#" . $transaction . "#" . $montant . "#" . $vendeur . "#" . $retour . "#");
 
 ?>
