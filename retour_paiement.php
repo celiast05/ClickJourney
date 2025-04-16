@@ -51,7 +51,19 @@ if ($control !== $control_calculé) {
             $date_retour = $voyage['date_retour'] ?? "Non spécifié";
 
             // Création du nom de fichier JSON
-            $fileName = 'json/' . strtolower(str_replace(' ', '_', $voyage['nom'])) . '_' . strtolower(str_replace(' ', '_', $user['nom'])) . '.json';
+            //$fileName = 'json/' . strtolower(str_replace(' ', '_', $voyage['nom'])) . '_' . strtolower(str_replace(' ', '_', $user['nom'])) . '.json';
+
+
+//test
+$nom_voyage = $voyage['nom'] ?? "voyage_inconnu";
+$nom_user = $user['nom'] ?? "utilisateur_inconnu";
+
+$fileName = 'json/' . strtolower(str_replace(' ', '_', $nom_voyage)) . '_' . strtolower(str_replace(' ', '_', $nom_user)) . '.json';
+
+
+//fin test
+
+
 
             // Données à enregistrer
             $data = [
