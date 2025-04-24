@@ -1,0 +1,24 @@
+:root {
+    --background-color: #fefefe;
+    --text-color: #000000;
+    --title-color: #333333;
+    --banner-color: #dddddd;
+  }
+  
+  /* Taille de texte agrandie */
+  body {
+    font-size: 20px;
+  }
+  
+  h1, h2, h3 {
+    font-size: 1.5em !important;
+  }
+  
+  nav a,
+  main p,
+  main a,
+  button,
+  .cta {
+    font-size: 1.2em !important;
+  }
+  
