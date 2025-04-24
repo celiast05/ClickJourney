@@ -73,6 +73,7 @@ $control = md5($api_key . "#" . $transaction . "#" . $montant . "#" . $vendeur .
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/panier.css?v=1.3">
+    <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
     <title>Panier</title>
 </head>
 <body>
@@ -107,6 +108,6 @@ $control = md5($api_key . "#" . $transaction . "#" . $montant . "#" . $vendeur .
     </form>
 
     <p><a href='details.php?voyage=<?php echo $trip["id"]; ?>'>Modifier</a></p>
-
+    <script src="js/theme.js"></script>
 </body>
 </html>

@@ -13,6 +13,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Connexion - Elysia Voyage</title>
     <link rel="stylesheet" href="css/connexion.css?v=1" />
+    <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
   </head>
   <body>
     <section class="connexion">
@@ -44,5 +45,6 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     <footer>
       <p>&copy; 2025 Elysia Voyage. Tous droits réservés.</p>
     </footer>
+    <script src="js/theme.js"></script>
   </body>
 </html>

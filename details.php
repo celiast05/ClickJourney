@@ -43,6 +43,7 @@ foreach ($trips as $t) { // on récupère le bon voyage
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $trip["nom"] ?></title>
     <link rel="stylesheet" href="css/details.css?v=1.6">
+    <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
 </head>
 <body>
 <nav>
@@ -173,5 +174,6 @@ foreach ($trips as $t) { // on récupère le bon voyage
         });
     });
 </script>
+<script src="js/theme.js"></script>
 </body>
 </html>

@@ -28,7 +28,8 @@ if ($control !== $control_calculé) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/retour_paiement.css"> 
+    <link rel="stylesheet" href="css/retour_paiement.css">
+    <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
     <title>Retour de paiement</title>
 </head>
 <body>
@@ -95,6 +96,6 @@ $fileName = 'json/' . strtolower(str_replace(' ', '_', $nom_voyage)) . '_' . str
     }
     header("refresh:5;url=profil.php");
     ?>
-
+<script src="js/theme.js"></script>
 </body>
 </html>

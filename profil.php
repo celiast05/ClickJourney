@@ -59,6 +59,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil - Elysia Voyage</title>
     <link rel="stylesheet" href="css/profil.css?v=1">
+    <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
 
 </head>
 <body>
@@ -206,8 +207,7 @@ if (!empty($_SESSION['user']['voyages']['consultes']) || !empty($_SESSION['user'
             return true;
         }
     </script>
-
+<script src="js/theme.js"></script>
 </body>
-
 </html>
 

@@ -24,6 +24,7 @@ $_SESSION['last_activity'] = time();
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="css/accueil.css" />
+    <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
     <title>Elysia Voyage</title>
   </head>
   <body>
@@ -51,6 +52,7 @@ $_SESSION['last_activity'] = time();
             echo "<a href='connexion.php'>Connexion</a>";
         }
         ?>
+        <button id="change-theme">Changer de thème</button>
       </div>
     </nav>
 
@@ -91,5 +93,6 @@ $_SESSION['last_activity'] = time();
         </svg>
       </a>
     </main>
+    <script src="js/theme.js"></script>
   </body>
 </html>

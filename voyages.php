@@ -77,6 +77,7 @@ if (isset($_POST['keyword']) && !empty(trim($_POST['keyword']))) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="stylesheet" type="text/css" href="css/voyages.css" />
+    <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
     <title>Nos voyages - Elysia Voyage</title>
 </head>
 <body>
@@ -139,5 +140,6 @@ if (isset($_POST['keyword']) && !empty(trim($_POST['keyword']))) {
             <?php }} ?>
     </div>
 </main>
+<script src="js/theme.js"></script>
 </body>
 </html>

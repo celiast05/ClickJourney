@@ -87,6 +87,7 @@ if(!$error){
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inscription - Elysia Voyage</title>
     <link rel="stylesheet" href="css/connexion.css?v=1" />
+    <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
   </head>
   <body>
   <nav>
@@ -130,5 +131,6 @@ if(!$error){
     }
     ?>
     </section>
+    <script src="js/theme.js"></script>
 </body>
 </html>
