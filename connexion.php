@@ -14,6 +14,8 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     <title>Connexion - Elysia Voyage</title>
     <link rel="stylesheet" href="css/connexion.css?v=1" />
     <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
+    <link rel="icon" type="images/logo.png" href="images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   </head>
   <body>
     <section class="connexion">
@@ -25,15 +27,18 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
         <label for="email">Email :</label>
         <input type="email" id="email" name="email" required />
 
+        
         <label for="password">Mot de passe :</label>
-        <input type="password" id="password" name="password" required />
+<div class="password-wrapper">
+  <input type="password" id="password" name="password" required />
+  <i class="fa-solid fa-eye toggle-eye" id="togglePassword"></i>
+</div>
 
-        <br />
-        <label for="stay_connected">Rester connecté</label>
-        <input type="checkbox" id="stay_connected" name="stay_connected" />
-        <br />
-
-        <button type="submit">Se connecter</button>
+<div class="stay-connected">
+  <label for="stay_connected">Rester connecté</label>
+  <input type="checkbox" id="stay_connected" name="stay_connected" />
+</div>
+      <button type="submit">Se connecter</button>
       </form>
 
       <p><a href="#">Mot de passe oublié ?</a></p>
@@ -45,6 +50,8 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     <footer>
       <p>&copy; 2025 Elysia Voyage. Tous droits réservés.</p>
     </footer>
+    <script src="connexion.js"></script>
     <script src="js/theme.js"></script>
+
   </body>
 </html>
