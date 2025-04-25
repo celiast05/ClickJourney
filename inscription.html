@@ -6,6 +6,7 @@
     <title>Inscription - Elysia Voyage</title>
     <link rel="stylesheet" href="css/inscription.css" />
     <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   </head>
   <body>
     <section class="inscription">
@@ -44,34 +45,39 @@
         />
 
         <label for="password">Mot de passe :</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          required
-          placeholder="Créez un mot de passe"
-        />
+        <div class="password-wrapper">
+          <input
+            type="password"
+            id="password"
+            name="password"
+            required
+            placeholder="Créez un mot de passe"
+          />
+          <i class="fa-solid fa-eye toggle-eye" id="togglePassword"></i>
+        </div>
 
         <label for="confirm-password">Confirmer le mot de passe :</label>
-        <input
-          type="password"
-          id="confirm-password"
-          name="confirm-password"
-          required
-          placeholder="Confirmez votre mot de passe"
-        />
-
-        <br />
+        <div class="password-wrapper">
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            required
+            placeholder="Confirmez votre mot de passe"
+          />
+          <i class="fa-solid fa-eye toggle-eye" id="toggleConfirm"></i>
+        </div>
 
         <button type="submit">Rejoindre l'expérience</button>
       </form>
 
-      <p>Déjà un compte ? <a href="connexion.html">Connectez-vous ici</a></p>
+      <p>Déjà un compte ? <a href="connexion.php">Connectez-vous ici</a></p>
     </section>
 
     <footer>
       <p>&copy; 2025 Elysia Voyage. Tous droits réservés.</p>
     </footer>
+    <script src="inscription.js"></script>
     <script src="js/theme.js"></script>
   </body>
 </html>
