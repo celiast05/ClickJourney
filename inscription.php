@@ -86,7 +86,7 @@ if(!$error){
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Inscription - Elysia Voyage</title>
-    <link rel="stylesheet" href="css/connexion.css?v=1" />
+    <link rel="stylesheet" href="css/inscription.css?v=1" />
     <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
   </head>
   <body>
