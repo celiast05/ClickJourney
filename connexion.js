@@ -15,7 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
       removeError(input);
       const error = document.createElement("div");
       error.className = "error-message";
-      error.innerHTML = <ul><li>${message}</li></ul>;
+     
+      error.innerHTML = `<ul><li>${message}</li></ul>`;
       input.insertAdjacentElement("afterend", error);
       input.setAttribute("data-valid", "false");
     }
