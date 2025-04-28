@@ -135,32 +135,7 @@
     "prix": 4500,
     "mots_cles": ["eaux cristallines", "nature", "locale", "Tahiti", "Polynésie", "plongée", "bien-être", "raies manta"]
   },
-  {
-    "id": "laponie",
-    "nom": "Laponie",
-    "theme": "Magie polaire",
-    "image": "Images/Laponie.jpeg",
-    "description": "Forêts enneigées, aurores boréales et aventures arctiques. Une expérience hors du commun.",
-    "climat_saison": "Froid polaire",
-    "hebergements": {
-      "Igloo de verre": 700,
-      "Cabane en bois": 500,
-      "Lodge de luxe": 800
-    },
-    "experiences": [
-      "Nature & Aventures",
-      "Rencontre avec les rennes",
-      "Chasse aux aurores boréales"
-    ],
-    "activites": {
-      "Balade en traîneau à chiens": 250,
-      "Nuit sous les aurores boréales": 400,
-      "Excursion en motoneige": 200
-    },
-    "intimite": "Élevée",
-    "prix": 3200,
-    "mots_cles": ["neige", "aurores boréales", "rennes", "nature", "aventures", "Finlande", "polaire", "traîneau à chiens", "motoneige"]
-  },
+  
   {
     "id": "dubai",
     "nom": "Dubaï",
