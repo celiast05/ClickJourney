@@ -207,5 +207,25 @@
             "achetes": [],
             "favoris": []
         }
+    },
+    {
+        "email": "bouchra.kouba@yahoo.com",
+        "passwordHash": "$2y$10$3HwF5YNZRm1sF52e9BgFce0sX8eqanK\/Mpv5r2HD3MZnpFSRfeXZ2",
+        "role": "normal",
+        "informations": {
+            "nom": "Zamoum",
+            "prenom": "bouchra",
+            "civilite": "",
+            "telephone": null
+        },
+        "dates": {
+            "inscription": "2025-04-28",
+            "derniere_connexion": null
+        },
+        "voyages": {
+            "consultes": [],
+            "achetes": [],
+            "favoris": []
+        }
     }
 ]

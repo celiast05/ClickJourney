@@ -114,6 +114,28 @@
     "mots_cles": ["eau cristalline", "sable blanc", "sérénité", "plongée", "snorkeling", "Maldives", "Évasion tropicale", "luxe", "spa"]
   },
   {
+    "id": "tahiti",
+    "nom": "Tahiti",
+    "theme": "Douceur de vivre polynésienne",
+    "image": "Images/Tahiti.jpeg",
+    "description": "Eaux cristallines, nature luxuriante et culture polynésienne. Une destination de rêve pour les voyageurs en quête de paradis.",
+    "climat_saison": "Tropical",
+    "hebergements": {
+      "Bungalow sur pilotis": 1400,
+      "Hôtel en bord de plage": 1000,
+      "Villa privée": 1200
+    },
+    "experiences": ["Plongée", "Culture locale", "Bien-être"],
+    "activites": {
+      "Excursion en pirogue traditionnelle": 250,
+      "Plongée avec les raies manta": 300,
+      "Dîner polynésien au bord de l’eau": 200
+    },
+    "intimite": "Très élevée",
+    "prix": 4500,
+    "mots_cles": ["eaux cristallines", "nature", "locale", "Tahiti", "Polynésie", "plongée", "bien-être", "raies manta"]
+  },
+  {
     "id": "laponie",
     "nom": "Laponie",
     "theme": "Magie polaire",
@@ -280,27 +302,32 @@
     "mots_cles": ["plages", "Grande Barrière de Corail", "Outback", "Australie", "aventure", "plongée", "safari", "Uluru"]
   },
   {
-    "id": "tahiti",
-    "nom": "Tahiti",
-    "theme": "Douceur de vivre polynésienne",
-    "image": "Images/Tahiti.jpeg",
-    "description": "Eaux cristallines, nature luxuriante et culture polynésienne. Une destination de rêve pour les voyageurs en quête de paradis.",
-    "climat_saison": "Tropical",
+    "id": "laponie",
+    "nom": "Laponie",
+    "theme": "Magie polaire",
+    "image": "Images/Laponie.jpeg",
+    "description": "Forêts enneigées, aurores boréales et aventures arctiques. Une expérience hors du commun.",
+    "climat_saison": "Froid polaire",
     "hebergements": {
-      "Bungalow sur pilotis": 1400,
-      "Hôtel en bord de plage": 1000,
-      "Villa privée": 1200
+      "Igloo de verre": 700,
+      "Cabane en bois": 500,
+      "Lodge de luxe": 800
     },
-    "experiences": ["Plongée", "Culture locale", "Bien-être"],
+    "experiences": [
+      "Nature & Aventures",
+      "Rencontre avec les rennes",
+      "Chasse aux aurores boréales"
+    ],
     "activites": {
-      "Excursion en pirogue traditionnelle": 250,
-      "Plongée avec les raies manta": 300,
-      "Dîner polynésien au bord de l’eau": 200
+      "Balade en traîneau à chiens": 250,
+      "Nuit sous les aurores boréales": 400,
+      "Excursion en motoneige": 200
     },
-    "intimite": "Très élevée",
-    "prix": 4500,
-    "mots_cles": ["eaux cristallines", "nature", "locale", "Tahiti", "Polynésie", "plongée", "bien-être", "raies manta"]
+    "intimite": "Élevée",
+    "prix": 3200,
+    "mots_cles": ["neige", "aurores boréales", "rennes", "nature", "aventures", "Finlande", "polaire", "traîneau à chiens", "motoneige"]
   },
+  
   {
     "id": "aspen",
     "nom": "Aspen",
