@@ -36,7 +36,7 @@ nav .btn {
   margin-left: 200px;
 }
 
-nav .btn a {
+nav .btn a, #change-theme {
   text-decoration: none;
   color: var(--btn-color);
   margin-right: 10px;

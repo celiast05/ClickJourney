@@ -35,10 +35,6 @@ document.addEventListener("DOMContentLoaded", () => {
         isValid = false;
       }
   
-      if (passwordValue.length < 6) {
-        showError(password, "Le mot de passe doit contenir au moins 6 caractères.");
-        isValid = false;
-      }
   
       if (!isValid) {
         e.preventDefault();

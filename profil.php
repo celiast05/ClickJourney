@@ -98,21 +98,21 @@
             <div class="profil-info">
                 <label for="civilite obligatoire">Civilité :</label>
                 <select id="civilite" name="civilite" disabled> 
-                <option value="" <?php echo empty($_SESSION['user']['informations']['civilite']) ? "selected" : ""; ?>>Sélectionnez...</option>
-                    <option value="Monsieur" <?php echo isset($_SESSION['user']['informations']['civilite']) && $_SESSION['user']['informations']['civilite'] == "Monsieur" ? "selected" : ""; ?>>Monsieur</option>
-                    <option value="Madame" <?php echo isset($_SESSION['user']['informations']['civilite']) && $_SESSION['user']['informations']['civilite'] == "Madame" ? "selected" : ""; ?>>Madame</option>
-                    <option value="Autre" <?php echo isset($_SESSION['user']['informations']['civilite']) && $_SESSION['user']['informations']['civilite'] == "Autre" ? "selected" : ""; ?>>Autre</option>
+                <option value="" <?php echo empty($_SESSION['user']['civilite']) ? "selected" : ""; ?>>Sélectionnez...</option>
+                    <option value="Monsieur" <?php echo isset($_SESSION['user']['civilite']) && $_SESSION['user']['civilite'] == "Monsieur" ? "selected" : ""; ?>>Monsieur</option>
+                    <option value="Madame" <?php echo isset($_SESSION['user']['civilite']) && $_SESSION['user']['civilite'] == "Madame" ? "selected" : ""; ?>>Madame</option>
+                    <option value="Autre" <?php echo isset($_SESSION['user']['civilite']) && $_SESSION['user']['civilite'] == "Autre" ? "selected" : ""; ?>>Autre</option>
                 </select>
             </div>
         
             <div class="profil-info obligatoire">
                 <label for="nom">Nom :</label>
-                <input type="text" id="nom" name="nom" disabled value="<?php echo isset($_SESSION['user']['informations']['nom']) ? $_SESSION['user']['informations']['nom'] : ''; ?>" required>
+                <input type="text" id="nom" name="nom" disabled value="<?php echo isset($_SESSION['user']['nom']) ? $_SESSION['user']['nom'] : ''; ?>" required>
             </div>
             
             <div class="profil-info obligatoire">
                 <label for="prenom">Prénom :</label>
-                <input type="text" id="prenom" name="prenom" disabled value="<?php echo isset($_SESSION['user']['informations']['prenom']) ? $_SESSION['user']['informations']['prenom'] : ''; ?>" required>
+                <input type="text" id="prenom" name="prenom" disabled value="<?php echo isset($_SESSION['user']['prenom']) ? $_SESSION['user']['prenom'] : ''; ?>" required>
             </div>
             
             <div class="profil-info obligatoire">
@@ -122,7 +122,7 @@
             
             <div class="profil-info obligatoire">
                 <label for="telephone">Téléphone :</label>
-                <input type="tel" id="telephone" name="telephone" disabled value="<?php echo isset($_SESSION['user']['informations']['telephone']) ? $_SESSION['user']['informations']['telephone'] : ''; ?>" required>
+                <input type="tel" id="telephone" name="telephone" disabled value="<?php echo isset($_SESSION['user']['telephone']) ? $_SESSION['user']['telephone'] : ''; ?>" required>
             </div>
             
             <h3>Informations Facultatives</h3>
@@ -135,7 +135,7 @@
             
             <div class="profil-info">
                 <label for="preferences">Préférences de Voyage :</label>
-                <textarea id="preferences" name="preferences" placeholder="Indiquez vos préférences (ex: plages, montagnes, road trip...)" disabled ><?php echo isset($_SESSION['user']['informations']['preferences']) ? $_SESSION['user']['informations']['preferences'] : ''; ?></textarea>
+                <textarea id="preferences" name="preferences" placeholder="Indiquez vos préférences (ex: plages, montagnes, road trip...)" disabled ><?php echo isset($_SESSION['user']['preferences']) ? $_SESSION['user']['informations']['preferences'] : ''; ?></textarea>
             </div>
             
             <div class="profil-info">
