@@ -127,8 +127,8 @@ nav .btn a:hover {
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.12);
 }
 
-
-.historique a, p{
+.historique a,
+p {
   color: var(--text-color);
   font-family: var(--text);
   font-size: 22px;
@@ -148,11 +148,6 @@ nav .btn a:hover {
 .voyage-nom a:hover {
   color: var(--text-color);
 }
-label {
-  font-weight: 600;
-  color: var(--title-color);
-  display: block;
-}
 
 section h2,
 h3 {
@@ -162,7 +157,8 @@ h3 {
 }
 form {
   gap: 15px;
-
+  width: 85%;
+  max-width: 480px;
   align-items: center;
 }
 
@@ -172,6 +168,18 @@ label {
   margin-top: 12px;
   margin-bottom: 5px;
   color: var(--title-color);
+}
+
+.profil-info {
+  display: block;
+  padding: 5px;
+}
+
+.inclined {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  border: 10px;
 }
 
 input,
@@ -209,13 +217,30 @@ textarea:focus {
   box-shadow: 0px 0px 8px rgba(139, 111, 71, 0.7);
 }
 
+.edit-btn,
+.save-btn {
+  background: var(--title-color);
+  color: white;
+  padding: 0px;
+  border: none;
+  width: 35px;
+  height: 35px;
+
+  /* margin-top: calc(6% - 17.5px); */
+  border-radius: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
 button {
   background: var(--title-color);
   color: white;
-  padding: 12px;
   border: none;
+  padding: 10px;
   border-radius: 6px;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: bold;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
@@ -256,10 +281,10 @@ footer p {
   .historique {
     flex-direction: column;
     align-items: center;
-}
-.historique-section {
+  }
+  .historique-section {
     width: 80%;
-}
+  }
   .profil {
     width: 60%;
   }
@@ -352,13 +377,12 @@ footer p {
     padding: 10px;
   }
 
-  
   .historique-section h2 {
     font-size: 18px;
     padding-bottom: 5px;
   }
 
-  .historique a, 
+  .historique a,
   .historique p {
     font-size: 16px;
   }

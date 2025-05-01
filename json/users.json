@@ -6,12 +6,12 @@
         "informations": {
             "nom": "Test",
             "prenom": "Michel",
-            "civilite": "Monsieur",
-            "telephone": "05 564 654"
+            "civilite": "Madame",
+            "telephone": "16514312685"
         },
         "dates": {
             "inscription": "2025-03-25",
-            "derniere_connexion": "2025-04-28"
+            "derniere_connexion": "2025-05-01"
         },
         "voyages": {
             "consultes": [
@@ -26,11 +26,7 @@
             "favoris": [
                 "Courchevel"
             ]
-        },
-        "civilite": "",
-        "nom": "cg",
-        "prenom": "Lala",
-        "telephone": "05 564 654"
+        }
     },
     {
         "email": "zoe@gmail.com",
