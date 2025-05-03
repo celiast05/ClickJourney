@@ -116,6 +116,10 @@ if(!$error){
         else{
             echo "<a href='connexion.php'>Connexion</a>";
         }
+        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+            $nbArticles = isset($_SESSION['panier']) ? count($_SESSION['panier']) : 0;
+            echo "<a href='mon_panier.php'>Panier ($nbArticles)</a>";
+        }
         ?>
       </div>
     </nav>
