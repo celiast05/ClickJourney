@@ -25,7 +25,7 @@ session_start();
       $total = 0;
 
       foreach ($_SESSION['panier'] as $index => $voyage) {
-          echo "<div style='border: 1px solid #ccc; padding: 15px; margin-bottom: 20px;'>";
+          echo "<div class='container'>";
 
           echo "<h3>" . htmlspecialchars($voyage['nom']) . "</h3>";
           echo "<p><strong>Dates :</strong> " . htmlspecialchars($voyage['date_depart']) . " → " . htmlspecialchars($voyage['date_retour']) . "</p>";
@@ -52,11 +52,12 @@ session_start();
       echo "<hr><h2>Total à payer : $total €</h2>";
   }
   ?>
+
     <form action="validation_paiement.php" method="POST">
         <button type="submit">Valider et payer</button>
     </form>
 
-  <a href="voyages.php">Continuer vos recherches</a>
+  <a href="voyages.php" class="continuer-recherches">Continuer vos recherches</a>
 
   <script src="js/theme.js"></script>
   <script>
