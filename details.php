@@ -42,7 +42,7 @@ foreach ($trips as $t) { // on récupère le bon voyage
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $trip["nom"] ?></title>
-    <link rel="stylesheet" href="css/details.css?v=1.6">
+    <link rel="stylesheet" href="css/details.css?v=1.7">
     <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
 </head>
 <body>
@@ -143,37 +143,7 @@ foreach ($trips as $t) { // on récupère le bon voyage
         </form>
     </section>
     </div>
-    <script>
-
-
-    function toggleInput() {
-        // Sélectionner toutes les cases cochées (radio et checkbox)
-        const selectedInputs = document.querySelectorAll('input[type="radio"]:checked, input[type="checkbox"]:checked');
-        const uncheckedInputs = document.querySelectorAll('input[type="radio"]:not(:checked), input[type="checkbox"]:not(:checked)');
-
-        // Sélectionner tous les champs de nombre de personnes
-        const allNumberInputs = document.querySelectorAll('input[type="number"]');
-
-        // Désactiver tous les champs et supprimer leur "name"
-        allNumberInputs.forEach(input => {
-            input.disabled = false;
-        });
-
-        uncheckedInputs.forEach(input => {
-            const numberInput = input.parentNode.querySelector('input[type="number"]');
-            if (numberInput) {
-                numberInput.disabled = true;
-                numberInput.value = "1"; // Remettre à 1
-            }
-        });
-    }
-    // Avant l'envoi du formulaire, on supprime les inputs désactivés pour qu'ils ne soient pas envoyés
-    document.getElementById("reservation-form").addEventListener("submit", function() {
-        document.querySelectorAll('input[type="number"]:disabled').forEach(input => {
-            input.removeAttribute("name"); // Supprimer le name pour qu'il ne soit pas envoyé
-        });
-    });
-</script>
+    <script src="js/details.js"></script>
 <script src="js/theme.js"></script>
 </body>
 </html>
