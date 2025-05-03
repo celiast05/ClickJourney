@@ -77,8 +77,8 @@ foreach ($trips as $t) { // on récupère le bon voyage
     <div class="container">
     <div class="image"><img src="<?php echo $trip["image"]; ?>" alt="<?php echo "Image de ".$trip["nom"]; ?>"/></div>
     <section>
-        <form action="panier.php?voyage=<?php echo $_GET['voyage']; ?>" method="POST">
-        <?php if (!empty($trip["description"])){
+    <form id="reservation-form" action="ajout_panier.php?voyage=<?php echo $_GET['voyage']; ?>" method="POST">
+    <?php if (!empty($trip["description"])){
             echo '<p>'. $trip["description"] ."</p>";
         }?>
         <?php if (!empty($trip["climat_saison"])){
@@ -139,6 +139,7 @@ foreach ($trips as $t) { // on récupère le bon voyage
         </label>
         
         <br><br>
+        <p><strong>Prix estimé : </strong><span id="estimation">0</span> €</p>
         <button type="submit">Ajouter au panier</button>
         </form>
     </section>
@@ -174,6 +175,16 @@ foreach ($trips as $t) { // on récupère le bon voyage
         });
     });
 </script>
+<script id="prix-data" type="application/json">
+{
+  "basePrix": <?= $trip['prix'] ?>,
+  "hebergements": <?= json_encode($trip['hebergements']) ?>,
+  "activites": <?= json_encode($trip['activites']) ?>
+}
+</script>
+
 <script src="js/theme.js"></script>
+<script src="js/prix.js"></script>
+
 </body>
 </html>

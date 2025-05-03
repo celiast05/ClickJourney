@@ -11,7 +11,7 @@
         },
         "dates": {
             "inscription": "2025-03-25",
-            "derniere_connexion": "2025-05-01"
+            "derniere_connexion": "2025-05-03"
         },
         "voyages": {
             "consultes": [
@@ -113,7 +113,7 @@
     {
         "email": "luc@gmail.com",
         "passwordHash": "$2y$10$gAVmy0Aqib3LJVImVdcFC.iOrWy3v5joX9LhX3N8R9GCx9eFOleZ2",
-        "role": "normal",
+        "role": "banni",
         "informations": {
             "nom": "nom",
             "prenom": "luc",
@@ -122,7 +122,7 @@
         },
         "dates": {
             "inscription": "2025-03-30",
-            "derniere_connexion": "2025-03-30"
+            "derniere_connexion": "2025-05-03"
         },
         "voyages": {
             "consultes": [
