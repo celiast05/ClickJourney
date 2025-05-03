@@ -90,7 +90,7 @@ if ($statut === 'accepted') {
 <!-- Redirection JS vers le profil -->
 <script>
   setTimeout(() => {
-    window.location.href = "profil.php";
+    window.location.href = "accueil.php";
   }, 5000); // 5 secondes
 </script>
 
