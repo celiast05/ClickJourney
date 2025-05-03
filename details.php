@@ -175,6 +175,12 @@ foreach ($trips as $t) { // on récupère le bon voyage
         });
     });
 </script>
+<script id="prix-data" type="application/json">
+{
+  "basePrix": <?= $trip['prix'] ?>,
+  "hebergements": <?= json_encode($trip['hebergements']) ?>,
+  "activites": <?= json_encode($trip['activites']) ?>
+}
 <script src="js/theme.js"></script>
 <script src="js/prix.js"></script>
 
