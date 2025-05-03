@@ -186,7 +186,7 @@ foreach ($trips as $t) { // on récupère le bon voyage
   "activites": <?= json_encode($trip['activites']) ?>
 }
 <script src="js/theme.js"></script>
-<script src="js/prix.js"></script>
-
+<script src="js/panier.js"></script>
+<script src="js/theme.js"></script>
 </body>
 </html>

@@ -77,7 +77,7 @@ h2 {
 section {
   max-width: 600px;
   text-align: left;
-  background: white;
+  background: var(--card-voyage);
   padding: 30px;
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
