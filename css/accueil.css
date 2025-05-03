@@ -42,9 +42,10 @@ nav .btn a, #change-theme {
   margin-right: 10px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.5);
   padding-bottom: 3px;
+  cursor: pointer;
 }
 
-nav .btn a:hover {
+nav .btn a:hover, #change-theme:hover {
   border-bottom: 2px solid var(--title-color);
 }
 
@@ -99,7 +100,7 @@ main a {
   outline: none;
   cursor: pointer;
   text-decoration: none;
-  color: black;
+  color: var(--text-color);
   font-family: var(--title);
 }
 
@@ -138,7 +139,7 @@ main a {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: black;
+  background-color: var(--text-color);
   transform: scaleX(0);
   transition: transform 0.25s ease-out;
 }

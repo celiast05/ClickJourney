@@ -75,7 +75,7 @@ main a {
   outline: none;
   cursor: pointer;
   text-decoration: none;
-  color: black;
+  color: var(--text-color);
 }
 
 form {
@@ -128,7 +128,7 @@ label {
 
 .card {
   width: 350px;
-  background: white;
+  background: var(--card-voyage);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
@@ -211,7 +211,7 @@ label {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: black;
+  background-color: var(--text-color);
   transform: scaleX(0);
   transition: transform 0.25s ease-out;
 }

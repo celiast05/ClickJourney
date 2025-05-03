@@ -56,7 +56,7 @@ $_SESSION['last_activity'] = time();
           echo "<a href='mon_panier.php'>Panier ($nbArticles)</a>";
         }
         ?>
-        <button id="change-theme">Changer de thème</button>
+        <a href="javascript:void(0)" id="change-theme">Changer de thème</a>
       </div>
     </nav>
 
