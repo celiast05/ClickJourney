@@ -60,7 +60,7 @@
     <title>Profil - Elysia Voyage</title>
     <link rel="stylesheet" href="css/profil.css?v=2.2">
     <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
-    <script src="profil.js" defer></script>
+    <!-- <script src="profil.js" defer></script> -->
 </head>
 <body>
 <nav>
@@ -230,7 +230,7 @@ if (!empty($_SESSION['user']['voyages']['consultes']) || !empty($_SESSION['user'
 
     </footer>
     <script src="js/theme.js"></script>
-    <!-- <script src="profil.js"></script> -->
+    <script src="js/profil.js"></script>
 </body>
 </html>
 

@@ -22,8 +22,11 @@ function add_user($email, $password) {
         "informations" => [
             "nom" => $_POST['nom'],
             "prenom" => $_POST['prenom'],
-            "civilite" => "",
-            "telephone" => null
+            "civilite" => null,
+            "telephone" => null,
+            "photo" => null,
+            "preferences" => null,
+            "passeport" => null
         ],
         "dates" => [
             "inscription" => date("Y-m-d"), // Date d'inscription actuelle
