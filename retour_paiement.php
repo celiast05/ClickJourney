@@ -78,7 +78,7 @@ if ($statut === 'accepted') {
             file_put_contents($fileName, json_encode([$data], JSON_PRETTY_PRINT));
         }
 
-        // On peut aussi supprimer `voyage` si plus utilisé
+        
         unset($_SESSION['voyage']);
     }
 } else {
@@ -86,13 +86,14 @@ if ($statut === 'accepted') {
 }
 ?>
 
+<a href="accueil.php">Retour à l'accueil</a>
 
-<!-- Redirection JS vers le profil 
+<!-- Redirection JS vers le profil -->
 <script>
   setTimeout(() => {
     window.location.href = "accueil.php";
   }, 5000); // 5 secondes
-</script>-->
+</script>
 
 <script src="js/theme.js"></script>
 </body>
