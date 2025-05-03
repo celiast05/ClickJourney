@@ -218,7 +218,8 @@ textarea:focus {
 }
 
 .edit-btn,
-.save-btn {
+.save-btn,
+.reset-btn {
   background: var(--title-color);
   color: white;
   padding: 0px;
