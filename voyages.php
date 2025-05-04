@@ -96,7 +96,6 @@ if (isset($_POST['keyword']) && !empty(trim($_POST['keyword']))) {
         }
         ?>
         <a href="voyages.php">Nos voyages</a>
-        <a href="filtrage.php">Filtrer</a>
         <?php
         if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
             echo "<a href='script/deconnexion.php?action=run'>Déconnexion</a>";
@@ -122,7 +121,54 @@ if (isset($_POST['keyword']) && !empty(trim($_POST['keyword']))) {
 
     <br><br>
 
-    <div class="container">
+    <div style="display: flex; gap: 20px; padding: 40px; justify-content: center;">
+
+<!-- FILTRES A GAUCHE -->
+<aside style="width: 250px; background: #f8f8f8; padding: 20px; border-radius: 10px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">
+    <h3>Filtres</h3>
+
+    <label><strong>Prix :</strong></label>
+    <select id="filter-prix">
+        <option value="">-- Aucun tri --</option>
+        <option value="asc">Prix croissant</option>
+        <option value="desc">Prix décroissant</option>
+    </select>
+
+    <br><br>
+    <label><strong>Climat & Saison :</strong></label><br>
+    <input type="checkbox" name="climat" value="Tropical & Ensoleillé"> Tropical & Ensoleillé<br>
+    <input type="checkbox" name="climat" value="Chaleur d'Aventure"> Chaleur d'Aventure<br>
+    <input type="checkbox" name="climat" value="Hiver Chic & Neige"> Hiver Chic & Neige<br>
+    <input type="checkbox" name="climat" value="Printemps à l'Européenne"> Printemps à l'Européenne<br>
+    <input type="checkbox" name="climat" value="Automne Doré"> Automne Doré<br>
+
+    <br>
+    <label><strong>Pays :</strong></label><br>
+    <input type="checkbox" name="pays" value="france"> France<br>
+    <input type="checkbox" name="pays" value="polynesie"> Polynésie Française<br>
+    <input type="checkbox" name="pays" value="italie"> Italie<br>
+    <input type="checkbox" name="pays" value="grece"> Grèce<br>
+    <input type="checkbox" name="pays" value="maldives"> Maldives<br>
+    <input type="checkbox" name="pays" value="tanzanie"> Tanzanie<br>
+    <input type="checkbox" name="pays" value="costa rica"> Costa Rica<br>
+    <input type="checkbox" name="pays" value="australie"> Australie<br>
+    <input type="checkbox" name="pays" value="laponie"> Laponie<br>
+    <input type="checkbox" name="pays" value="aspen"> Aspen<br>
+    <input type="checkbox" name="pays" value="courchevel"> Courchevel<br>
+    <input type="checkbox" name="pays" value="dubai"> Dubaï<br>
+    <input type="checkbox" name="pays" value="oman"> Oman<br>
+    <input type="checkbox" name="pays" value="egypte"> Égypte<br>
+
+    <br>
+    <label><strong>Thème du voyage :</strong></label><br>
+    <input type="checkbox" name="theme" value="Romantique & Féerique"> Romantique & Féerique<br>
+    <input type="checkbox" name="theme" value="Aventure & Exploration"> Aventure & Exploration<br>
+    <input type="checkbox" name="theme" value="Désert & Splendeur d'Orient"> Désert & Splendeur d'Orient<br>
+    <input type="checkbox" name="theme" value="Détente & Bien-être"> Détente & Bien-être<br>
+    <input type="checkbox" name="theme" value="Flocon & Glamour"> Flocon & Glamour<br>
+</aside>
+
+    <div class="container" id="voyageCards">
         <?php if (empty($searchResults)){
             echo '<p style="text-align:center;">Aucun voyage ne correspond à votre recherche.</p>';}
          else { 
@@ -145,5 +191,6 @@ if (isset($_POST['keyword']) && !empty(trim($_POST['keyword']))) {
     </div>
 </main>
 <script src="js/theme.js"></script>
+<script src="js/voyages.js"></script>
 </body>
 </html>
