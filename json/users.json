@@ -1,281 +1,232 @@
 [
-    {
-        "email": "test@gmail.com",
-        "passwordHash": "$2y$10$aO34OVxuwsO8q6XBVw.FKePGIHtQys1\/Ho\/Dx.VnK7o4H25zOJgr6",
-        "role": "banni",
-        "informations": {
-            "nom": "Test",
-            "prenom": "Michel",
-            "civilite": "Madame",
-            "telephone": "16514312685",
-            "photo": null,
-            "preferences": null,
-            "passeport": null
-        },
-        "dates": {
-            "inscription": "2025-03-25",
-            "derniere_connexion": "2025-05-04"
-        },
-        "voyages": {
-            "consultes": [
-                "Bora Bora",
-                "Rome",
-                "Courchevel",
-                "Costa Rica"
-            ],
-            "achetes": [
-                "Rome"
-            ],
-            "favoris": [
-                "Courchevel"
-            ]
-        }
+  {
+    "email": "test@gmail.com",
+    "passwordHash": "$2y$10$aO34OVxuwsO8q6XBVw.FKePGIHtQys1/Ho/Dx.VnK7o4H25zOJgr6",
+    "role": "admin",
+    "informations": {
+      "nom": "Test",
+      "prenom": "Michel",
+      "civilite": "Madame",
+      "telephone": "16514312685",
+      "photo": null,
+      "preferences": null,
+      "passeport": null
     },
-    {
-        "email": "zoe@gmail.com",
-        "passwordHash": "$2y$10$aJipp0wjsCAeu9HaaHL.buxjhDAEM7sk6FqxeWTxidSrrX3LEIqku",
-        "role": "admin",
-        "informations": {
-            "nom": "Zoe",
-            "prenom": "Runneterra",
-            "civilite": null,
-            "telephone": null,
-            "photo": null,
-            "preferences": null,
-            "passeport": null
-        },
-        "dates": {
-            "inscription": "2025-03-25",
-            "derniere_connexion": "2025-03-30"
-        },
-        "voyages": {
-            "consultes": [
-                "Aspen",
-                "Laponie"
-            ],
-            "achetes": [],
-            "favoris": []
-        }
+    "dates": {
+      "inscription": "2025-03-25",
+      "derniere_connexion": "2025-05-04"
     },
-    {
-        "email": "justice@gmail.com",
-        "passwordHash": "$2y$10$uLp2vZRw2MA7CLTyIsb4Pet4Wjr7Dl2Jz\/NayFLcP0shQrM4XGq6y",
-        "role": "normal",
-        "informations": {
-            "nom": "Garen",
-            "prenom": "Justice",
-            "civilite": null,
-            "telephone": null,
-            "photo": null,
-            "preferences": null,
-            "passeport": null
-        },
-        "dates": {
-            "inscription": "2025-03-25",
-            "derniere_connexion": "2025-03-30"
-        },
-        "voyages": {
-            "consultes": [
-                "Maldives",
-                "Santorin",
-                "Paris"
-            ],
-            "achetes": [
-                "Santorin",
-                "Paris",
-                "Costa Rica"
-            ],
-            "favoris": [
-                "Maldives"
-            ]
-        }
-    },
-    {
-        "email": "skibidi@gmail.com",
-        "passwordHash": "$2y$10$rLP1DUy0LYgSDA2YW0Uq4.liZp6ntY1N\/594tUUm61CIdmYCYaBVO",
-        "role": "vip",
-        "informations": {
-            "nom": "Skibidi",
-            "prenom": "Toilet",
-            "civilite": null,
-            "telephone": null,
-            "photo": null,
-            "preferences": null,
-            "passeport": null
-        },
-        "dates": {
-            "inscription": "2025-03-25",
-            "derniere_connexion": "2025-03-30"
-        },
-        "voyages": {
-            "consultes": [
-                "Maldives",
-                "Santorin",
-                "Paris"
-            ],
-            "achetes": [
-                "Santorin",
-                "Paris"
-            ],
-            "favoris": [
-                "Santorin"
-            ]
-        }
-    },
-    {
-        "email": "luc@gmail.com",
-        "passwordHash": "$2y$10$gAVmy0Aqib3LJVImVdcFC.iOrWy3v5joX9LhX3N8R9GCx9eFOleZ2",
-        "role": "banni",
-        "informations": {
-            "nom": "nom",
-            "prenom": "luc",
-            "civilite": "",
-            "telephone": null,
-            "photo": null,
-            "preferences": null,
-            "passeport": null
-        },
-        "dates": {
-            "inscription": "2025-03-30",
-            "derniere_connexion": "2025-05-04"
-        },
-        "voyages": {
-            "consultes": [
-                "Dubaï",
-                "Santorin",
-                "Paris"
-            ],
-            "achetes": [
-                "Santorin",
-                "Paris"
-            ],
-            "favoris": [
-                "Dubaï"
-            ]
-        }
-    },
-    {
-        "email": "marc@gmail.com",
-        "passwordHash": "$2y$10$fLgZMqyStGxMlkQRITqQWeY0cBXBMTFG3VHn6enOQCZ3fYrzSywkK",
-        "role": "normal",
-        "informations": {
-            "nom": "nom",
-            "prenom": "marc",
-            "civilite": "",
-            "telephone": null,
-            "photo": null,
-            "preferences": null,
-            "passeport": null
-        },
-        "dates": {
-            "inscription": "2025-03-30",
-            "derniere_connexion": "2025-03-30"
-        },
-        "voyages": {
-            "consultes": [],
-            "achetes": [
-                "Laponie"
-            ],
-            "favoris": [
-                "Laponie"
-            ]
-        }
-    },
-    {
-        "email": "paul@gmail.com",
-        "passwordHash": "$2y$10$\/.ZG6wf77XI3mchT.b2iAONpcupOljOUkYp26OwXvfsug24ffLK1e",
-        "role": "normal",
-        "informations": {
-            "nom": "nom",
-            "prenom": "paul",
-            "civilite": "",
-            "telephone": null,
-            "photo": null,
-            "preferences": null,
-            "passeport": null
-        },
-        "dates": {
-            "inscription": "2025-03-30",
-            "derniere_connexion": "2025-03-30"
-        },
-        "voyages": {
-            "consultes": [
-                "Oman"
-            ],
-            "achetes": [],
-            "favoris": []
-        }
-    },
-    {
-        "email": "thomas@gmail.com",
-        "passwordHash": "$2y$10$pkV08LRV1ZupOscXQqENb.aVYPXj0k1Yd5E7oqmk2g\/Xx5dBs58mi",
-        "role": "normal",
-        "informations": {
-            "nom": "Thomas",
-            "prenom": "Andrey",
-            "civilite": "",
-            "telephone": null,
-            "photo": null,
-            "preferences": null,
-            "passeport": null
-        },
-        "dates": {
-            "inscription": "2025-03-30",
-            "derniere_connexion": "2025-03-30"
-        },
-        "voyages": {
-            "consultes": [
-                "Maldives",
-                "Bora Bora"
-            ],
-            "achetes": [],
-            "favoris": []
-        }
-    },
-    {
-        "email": "bouchra.kouba@yahoo.com",
-        "passwordHash": "$2y$10$3HwF5YNZRm1sF52e9BgFce0sX8eqanK\/Mpv5r2HD3MZnpFSRfeXZ2",
-        "role": "normal",
-        "informations": {
-            "nom": "Zamoum",
-            "prenom": "bouchra",
-            "civilite": "",
-            "telephone": null,
-            "photo": null,
-            "preferences": null,
-            "passeport": null
-        },
-        "dates": {
-            "inscription": "2025-04-28",
-            "derniere_connexion": null
-        },
-        "voyages": {
-            "consultes": [],
-            "achetes": [],
-            "favoris": []
-        }
-    },
-    {
-        "email": "test@leretour.com",
-        "passwordHash": "$2y$10$12mZwYgPgn5UVYYd8Evf2eyqDkzkhYpSxaNFBoG53Mrt5hEt1T2Qa",
-        "role": "normal",
-        "informations": {
-            "nom": "Test",
-            "prenom": "Le retour",
-            "civilite": "Madame",
-            "telephone": "2168515361",
-            "photo": "",
-            "preferences": "",
-            "passeport": "Diplomatique"
-        },
-        "dates": {
-            "inscription": "2025-05-03",
-            "derniere_connexion": "2025-05-03"
-        },
-        "voyages": {
-            "consultes": [],
-            "achetes": [],
-            "favoris": []
-        }
+    "voyages": {
+      "consultes": ["Bora Bora", "Rome", "Courchevel", "Costa Rica"],
+      "achetes": ["Rome"],
+      "favoris": ["Courchevel"]
     }
+  },
+  {
+    "email": "zoe@gmail.com",
+    "passwordHash": "$2y$10$aJipp0wjsCAeu9HaaHL.buxjhDAEM7sk6FqxeWTxidSrrX3LEIqku",
+    "role": "admin",
+    "informations": {
+      "nom": "Zoe",
+      "prenom": "Runneterra",
+      "civilite": null,
+      "telephone": null,
+      "photo": null,
+      "preferences": null,
+      "passeport": null
+    },
+    "dates": {
+      "inscription": "2025-03-25",
+      "derniere_connexion": "2025-03-30"
+    },
+    "voyages": {
+      "consultes": ["Aspen", "Laponie"],
+      "achetes": [],
+      "favoris": []
+    }
+  },
+  {
+    "email": "justice@gmail.com",
+    "passwordHash": "$2y$10$uLp2vZRw2MA7CLTyIsb4Pet4Wjr7Dl2Jz/NayFLcP0shQrM4XGq6y",
+    "role": "normal",
+    "informations": {
+      "nom": "Garen",
+      "prenom": "Justice",
+      "civilite": null,
+      "telephone": null,
+      "photo": null,
+      "preferences": null,
+      "passeport": null
+    },
+    "dates": {
+      "inscription": "2025-03-25",
+      "derniere_connexion": "2025-03-30"
+    },
+    "voyages": {
+      "consultes": ["Maldives", "Santorin", "Paris"],
+      "achetes": ["Santorin", "Paris", "Costa Rica"],
+      "favoris": ["Maldives"]
+    }
+  },
+  {
+    "email": "skibidi@gmail.com",
+    "passwordHash": "$2y$10$rLP1DUy0LYgSDA2YW0Uq4.liZp6ntY1N/594tUUm61CIdmYCYaBVO",
+    "role": "vip",
+    "informations": {
+      "nom": "Skibidi",
+      "prenom": "Toilet",
+      "civilite": null,
+      "telephone": null,
+      "photo": null,
+      "preferences": null,
+      "passeport": null
+    },
+    "dates": {
+      "inscription": "2025-03-25",
+      "derniere_connexion": "2025-03-30"
+    },
+    "voyages": {
+      "consultes": ["Maldives", "Santorin", "Paris"],
+      "achetes": ["Santorin", "Paris"],
+      "favoris": ["Santorin"]
+    }
+  },
+  {
+    "email": "luc@gmail.com",
+    "passwordHash": "$2y$10$gAVmy0Aqib3LJVImVdcFC.iOrWy3v5joX9LhX3N8R9GCx9eFOleZ2",
+    "role": "banni",
+    "informations": {
+      "nom": "nom",
+      "prenom": "luc",
+      "civilite": "",
+      "telephone": null,
+      "photo": null,
+      "preferences": null,
+      "passeport": null
+    },
+    "dates": {
+      "inscription": "2025-03-30",
+      "derniere_connexion": "2025-05-04"
+    },
+    "voyages": {
+      "consultes": ["Dubaï", "Santorin", "Paris"],
+      "achetes": ["Santorin", "Paris"],
+      "favoris": ["Dubaï"]
+    }
+  },
+  {
+    "email": "marc@gmail.com",
+    "passwordHash": "$2y$10$fLgZMqyStGxMlkQRITqQWeY0cBXBMTFG3VHn6enOQCZ3fYrzSywkK",
+    "role": "normal",
+    "informations": {
+      "nom": "nom",
+      "prenom": "marc",
+      "civilite": "",
+      "telephone": null,
+      "photo": null,
+      "preferences": null,
+      "passeport": null
+    },
+    "dates": {
+      "inscription": "2025-03-30",
+      "derniere_connexion": "2025-03-30"
+    },
+    "voyages": {
+      "consultes": [],
+      "achetes": ["Laponie"],
+      "favoris": ["Laponie"]
+    }
+  },
+  {
+    "email": "paul@gmail.com",
+    "passwordHash": "$2y$10$/.ZG6wf77XI3mchT.b2iAONpcupOljOUkYp26OwXvfsug24ffLK1e",
+    "role": "normal",
+    "informations": {
+      "nom": "nom",
+      "prenom": "paul",
+      "civilite": "",
+      "telephone": null,
+      "photo": null,
+      "preferences": null,
+      "passeport": null
+    },
+    "dates": {
+      "inscription": "2025-03-30",
+      "derniere_connexion": "2025-03-30"
+    },
+    "voyages": {
+      "consultes": ["Oman"],
+      "achetes": [],
+      "favoris": []
+    }
+  },
+  {
+    "email": "thomas@gmail.com",
+    "passwordHash": "$2y$10$pkV08LRV1ZupOscXQqENb.aVYPXj0k1Yd5E7oqmk2g/Xx5dBs58mi",
+    "role": "normal",
+    "informations": {
+      "nom": "Thomas",
+      "prenom": "Andrey",
+      "civilite": "",
+      "telephone": null,
+      "photo": null,
+      "preferences": null,
+      "passeport": null
+    },
+    "dates": {
+      "inscription": "2025-03-30",
+      "derniere_connexion": "2025-03-30"
+    },
+    "voyages": {
+      "consultes": ["Maldives", "Bora Bora"],
+      "achetes": [],
+      "favoris": []
+    }
+  },
+  {
+    "email": "bouchra.kouba@yahoo.com",
+    "passwordHash": "$2y$10$3HwF5YNZRm1sF52e9BgFce0sX8eqanK/Mpv5r2HD3MZnpFSRfeXZ2",
+    "role": "normal",
+    "informations": {
+      "nom": "Zamoum",
+      "prenom": "bouchra",
+      "civilite": "",
+      "telephone": null,
+      "photo": null,
+      "preferences": null,
+      "passeport": null
+    },
+    "dates": {
+      "inscription": "2025-04-28",
+      "derniere_connexion": null
+    },
+    "voyages": {
+      "consultes": [],
+      "achetes": [],
+      "favoris": []
+    }
+  },
+  {
+    "email": "test@leretour.com",
+    "passwordHash": "$2y$10$12mZwYgPgn5UVYYd8Evf2eyqDkzkhYpSxaNFBoG53Mrt5hEt1T2Qa",
+    "role": "normal",
+    "informations": {
+      "nom": "Test",
+      "prenom": "Le retour",
+      "civilite": "Madame",
+      "telephone": "2168515361",
+      "photo": "",
+      "preferences": "",
+      "passeport": "Diplomatique"
+    },
+    "dates": {
+      "inscription": "2025-05-03",
+      "derniere_connexion": "2025-05-03"
+    },
+    "voyages": {
+      "consultes": [],
+      "achetes": [],
+      "favoris": []
+    }
+  }
 ]
