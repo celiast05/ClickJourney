@@ -60,7 +60,6 @@
     <title>Profil - Elysia Voyage</title>
     <link rel="stylesheet" href="css/profil.css?v=2.2">
     <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
-    <!-- <script src="profil.js" defer></script> -->
 </head>
 <body>
 <nav>
