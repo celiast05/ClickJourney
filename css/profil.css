@@ -112,7 +112,7 @@ nav .btn a:hover {
 }
 
 .voyage {
-  background: white;
+  background: var(--card-voyage);
   border-radius: 12px;
   padding: 15px;
   display: flex;

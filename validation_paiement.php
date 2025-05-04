@@ -56,7 +56,7 @@ $control = md5($api_key . "#" . $transaction . "#" . $total . "#" . $vendeur . "
     <button type="submit">Payer maintenant</button>
   </form>
 
-  <a href="mon_panier.php">⬅ Retour au panier</a>
+  <a href="mon_panier.php" class="continuer-recherches">Retour au panier</a>
 
   <script src="js/theme.js"></script>
 </body>
