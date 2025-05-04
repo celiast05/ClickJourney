@@ -44,6 +44,7 @@ session_start();
           echo "<button type='submit'>Supprimer ce voyage</button>";
           echo "</form>";
 
+          echo "<a href='details.php?voyage=" . htmlspecialchars($voyage['id']) . "' class='continuer-recherches'>Modifier ce voyage</a>";
           echo "</div>";
 
           $total += $voyage['montant'];

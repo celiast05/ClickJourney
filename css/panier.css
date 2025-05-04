@@ -60,7 +60,7 @@ ul li {
 }
 
 .container {
-  text-align: left;
+  text-align: center;
   color: var(--text-color);
   padding: 20px;
   background-color: var(--card-voyage);
