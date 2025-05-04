@@ -67,12 +67,23 @@ header h1 {
   letter-spacing: 4px;
 }
 
+.filtre {
+  display: flex; 
+  gap: 35px; 
+  padding: 40px; 
+  justify-content: center;
+}
+
 aside {
   width: 250px; 
-  background: #f8f8f8; 
+  background: var(--card-voyage); 
   padding: 20px; 
   border-radius: 10px; 
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+h3, input{
+  color: var(--text-color);
 }
 
 main a {
@@ -273,6 +284,20 @@ label {
   .cta {
     font-size: 14px;
   }
+  .filtre {
+    flex-direction: column; /* Empile les éléments du filtre sur une colonne */
+    padding: 20px; /* Réduit le padding */
+  }
+
+  aside {
+    width: 100%; /* Prend toute la largeur sur les écrans plus petits */
+    margin-bottom: 20px; /* Ajoute un peu d'espace sous le filtre */
+  }
+
+  /* Ajuste les tailles de police pour les petits écrans */
+  h3, input {
+    font-size: 1rem; /* Réduit la taille de la police */
+  }
 }
 
 @media (max-width: 767px) {
@@ -325,5 +350,21 @@ label {
 
   .cta {
     font-size: 12px;
+  }
+  .filtre {
+    gap: 20px; /* Réduit l'écart entre les éléments */
+    padding: 15px; /* Moins de padding pour mieux utiliser l'espace */
+  }
+
+  aside {
+    width: 100%; /* L'aside prend toute la largeur */
+  }
+
+  h3 {
+    font-size: 1.2rem; /* Ajuste la taille des titres */
+  }
+
+  input {
+    font-size: 0.9rem; /* Réduit un peu la taille des champs de saisie */
   }
 }

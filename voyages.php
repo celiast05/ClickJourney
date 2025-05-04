@@ -121,7 +121,7 @@ if (isset($_POST['keyword']) && !empty(trim($_POST['keyword']))) {
 
     <br><br>
 
-    <div style="display: flex; gap: 20px; padding: 40px; justify-content: center;">
+    <div class="filtre">
 
 <!-- FILTRES A GAUCHE -->
 <aside>
