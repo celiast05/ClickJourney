@@ -144,19 +144,19 @@ if (isset($_POST['keyword']) && !empty(trim($_POST['keyword']))) {
 
     <br>
     <label><strong>Pays :</strong></label><br>
-    <input type="checkbox" name="pays" value="france"> France<br>
-    <input type="checkbox" name="pays" value="polynesie"> Polynésie Française<br>
-    <input type="checkbox" name="pays" value="italie"> Italie<br>
-    <input type="checkbox" name="pays" value="grece"> Grèce<br>
-    <input type="checkbox" name="pays" value="maldives"> Maldives<br>
-    <input type="checkbox" name="pays" value="tanzanie"> Tanzanie<br>
-    <input type="checkbox" name="pays" value="costa rica"> Costa Rica<br>
     <input type="checkbox" name="pays" value="australie"> Australie<br>
-    <input type="checkbox" name="pays" value="finlande"> Finlande<br>
-    <input type="checkbox" name="pays" value="usa"> Etats-Unis<br>
-    <input type="checkbox" name="pays" value="emirats"> Émirats Arabes Unis <br>
-    <input type="checkbox" name="pays" value="oman"> Oman<br>
+    <input type="checkbox" name="pays" value="costa rica"> Costa Rica<br>
     <input type="checkbox" name="pays" value="egypte"> Égypte<br>
+    <input type="checkbox" name="pays" value="emirats"> Émirats Arabes Unis <br>
+    <input type="checkbox" name="pays" value="usa"> États-Unis<br>
+    <input type="checkbox" name="pays" value="finlande"> Finlande<br>
+    <input type="checkbox" name="pays" value="france"> France<br>
+    <input type="checkbox" name="pays" value="grece"> Grèce<br>
+    <input type="checkbox" name="pays" value="italie"> Italie<br>
+    <input type="checkbox" name="pays" value="maldives"> Maldives<br>
+    <input type="checkbox" name="pays" value="oman"> Oman<br>
+    <input type="checkbox" name="pays" value="polynesie"> Polynésie Française<br>
+    <input type="checkbox" name="pays" value="tanzanie"> Tanzanie<br>
 
     <br>
     <label><strong>Thème du voyage :</strong></label><br>
