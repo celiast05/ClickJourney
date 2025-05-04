@@ -67,6 +67,14 @@ header h1 {
   letter-spacing: 4px;
 }
 
+aside {
+  width: 250px; 
+  background: #f8f8f8; 
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
 main a {
   padding: 10px 20px;
   background-color: white;

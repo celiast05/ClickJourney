@@ -124,7 +124,7 @@ if (isset($_POST['keyword']) && !empty(trim($_POST['keyword']))) {
     <div style="display: flex; gap: 20px; padding: 40px; justify-content: center;">
 
 <!-- FILTRES A GAUCHE -->
-<aside style="width: 250px; background: #f8f8f8; padding: 20px; border-radius: 10px; box-shadow: 0 0 5px rgba(0,0,0,0.1);">
+<aside>
     <h3>Filtres</h3>
 
     <label><strong>Prix :</strong></label>
@@ -152,10 +152,9 @@ if (isset($_POST['keyword']) && !empty(trim($_POST['keyword']))) {
     <input type="checkbox" name="pays" value="tanzanie"> Tanzanie<br>
     <input type="checkbox" name="pays" value="costa rica"> Costa Rica<br>
     <input type="checkbox" name="pays" value="australie"> Australie<br>
-    <input type="checkbox" name="pays" value="laponie"> Laponie<br>
-    <input type="checkbox" name="pays" value="aspen"> Aspen<br>
-    <input type="checkbox" name="pays" value="courchevel"> Courchevel<br>
-    <input type="checkbox" name="pays" value="dubai"> Dubaï<br>
+    <input type="checkbox" name="pays" value="finlande"> Finlande<br>
+    <input type="checkbox" name="pays" value="usa"> Etats-Unis<br>
+    <input type="checkbox" name="pays" value="emirats"> Émirats Arabes Unis <br>
     <input type="checkbox" name="pays" value="oman"> Oman<br>
     <input type="checkbox" name="pays" value="egypte"> Égypte<br>
 
