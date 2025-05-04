@@ -1,6 +1,11 @@
 <?php 
 session_start();
 
+if (isset($_SESSION['role']) && $_SESSION['role'] === 'banni') { // détection d'utilisateur banni
+    header("Location: script/deconnexion.php?action=run");
+    exit();
+  }
+
 if (!isset($_GET['voyage']) || empty($_GET['voyage'])) {
     die("Voyage non spécifié.");
 }

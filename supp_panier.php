@@ -8,3 +8,4 @@ if (isset($_POST['index'])) {
 
 header("Location: mon_panier.php");
 exit();
+?>

@@ -3,6 +3,11 @@
 <?php
 session_start();
 
+if (isset($_SESSION['role']) && $_SESSION['role'] === 'banni') { // détection d'utilisateur banni
+    header("Location: script/deconnexion.php?action=run");
+    exit();
+  }
+
 // Durée d'inactivité autorisée
 $timeout = 300; // 5 minutes
 

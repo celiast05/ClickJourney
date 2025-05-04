@@ -83,3 +83,4 @@ if (!$existeDeja) {
 
 header("Location: mon_panier.php");
 exit();
+?>

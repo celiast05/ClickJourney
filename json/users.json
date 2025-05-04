@@ -2,7 +2,7 @@
     {
         "email": "test@gmail.com",
         "passwordHash": "$2y$10$aO34OVxuwsO8q6XBVw.FKePGIHtQys1\/Ho\/Dx.VnK7o4H25zOJgr6",
-        "role": "admin",
+        "role": "banni",
         "informations": {
             "nom": "Test",
             "prenom": "Michel",

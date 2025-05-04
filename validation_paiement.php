@@ -6,6 +6,11 @@ if (!isset($_SESSION['logged_in']) || empty($_SESSION['panier'])) {
     exit();
 }
 
+if (isset($_SESSION['role']) && $_SESSION['role'] === 'banni') { // détection d'utilisateur banni
+  header("Location: script/deconnexion.php?action=run");
+  exit();
+}
+
 // Calcul du total
 $total = 0;
 foreach ($_SESSION['panier'] as $voyage) {
