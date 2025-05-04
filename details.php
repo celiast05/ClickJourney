@@ -129,7 +129,10 @@ foreach ($trips as $t) { // on récupère le bon voyage
             echo '<p>'. $trip["intimite"] ."</p>";
         }?>
         <?php if (!empty($trip["prix"])){
-            echo "<h4>Prix par personne : ". $trip["prix"] ." € </h4>";
+            echo "<h4>Frais de  réservation: ". $trip["prix"] ." € </h4>";
+        }?>
+        <?php if (!empty($trip["moyenne"])){
+            echo "<h4>Prix moyen par personne pour 3 nuits: ". $trip["moyenne"] ." € </h4>";
         }?>
     <br>
         <label for="date_depart" class="header"> Date de départ : &emsp;
@@ -151,14 +154,11 @@ foreach ($trips as $t) { // on récupère le bon voyage
 
 
     function toggleInput() {
-        // Sélectionner toutes les cases cochées (radio et checkbox)
         const selectedInputs = document.querySelectorAll('input[type="radio"]:checked, input[type="checkbox"]:checked');
         const uncheckedInputs = document.querySelectorAll('input[type="radio"]:not(:checked), input[type="checkbox"]:not(:checked)');
 
-        // Sélectionner tous les champs de nombre de personnes
         const allNumberInputs = document.querySelectorAll('input[type="number"]');
 
-        // Désactiver tous les champs et supprimer leur "name"
         allNumberInputs.forEach(input => {
             input.disabled = false;
         });
@@ -167,14 +167,13 @@ foreach ($trips as $t) { // on récupère le bon voyage
             const numberInput = input.parentNode.querySelector('input[type="number"]');
             if (numberInput) {
                 numberInput.disabled = true;
-                numberInput.value = "1"; // Remettre à 1
+                numberInput.value = "1";
             }
         });
     }
-    // Avant l'envoi du formulaire, on supprime les inputs désactivés pour qu'ils ne soient pas envoyés
     document.getElementById("reservation-form").addEventListener("submit", function() {
         document.querySelectorAll('input[type="number"]:disabled').forEach(input => {
-            input.removeAttribute("name"); // Supprimer le name pour qu'il ne soit pas envoyé
+            input.removeAttribute("name");
         });
     });
 </script>

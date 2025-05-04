@@ -20,6 +20,7 @@
     },
     "intimite": "Élevée",
     "prix": 3000,
+    "moyenne": 4300,
     "mots_cles": ["France", "art", "musée", "romantisme", "gastronomie", "Ville Lumière"]
   },
   {
@@ -43,6 +44,7 @@
     },
     "intimite": "Moyenne",
     "prix": 2800,
+    "moyenne": 3800,
     "mots_cles": ["Italie", "vestiges antiques", "locale", "fontaine", "dolce vita"]
   },
   {
@@ -66,6 +68,7 @@
     },
     "intimite": "Très élevée",
     "prix": 3500,
+    "moyenne": 4860,
     "mots_cles": ["falaises", "dômes bleus", "mer Égée", "coucher de soleil", "Grèce", "Joyau des Cyclades", "détente", "locale", "vin", "gastronomie"]
   },
   {
@@ -89,6 +92,7 @@
     },
     "intimite": "Très élevée",
     "prix": 4500,
+    "moyenne": 6600,
     "mots_cles": ["lagons", "bungalows sur pilotis", "paradis", "plongée", "snorkeling", "gastronomie", "Polynésie Française", "Perle du Pacifique", "luxe", "détente"]
   },
   {
@@ -112,6 +116,7 @@
     },
     "intimite": "Extrême",
     "prix": 5000,
+    "moyenne": 7500,
     "mots_cles": ["eau cristalline", "sable blanc", "sérénité", "plongée", "snorkeling", "Maldives", "Évasion tropicale", "luxe", "spa"]
   },
   {
@@ -135,6 +140,7 @@
     },
     "intimite": "Très élevée",
     "prix": 4500,
+    "moyenne": 7200,
     "mots_cles": ["eaux cristallines", "nature", "locale", "Tahiti", "Polynésie", "plongée", "bien-être", "raies manta"]
   },
   
@@ -158,7 +164,8 @@
       "Croisière en yacht privé": 600
     },
     "intimite": "Moyenne",
-    "prix": 6000,
+    "prix": 3000,
+    "moyenne": 8900,
     "mots_cles": ["désert", "hôtels de luxe", "shopping", "aventure", "Dubaï", "Burj Khalifa", "yacht privé"]
   },
   {
@@ -182,6 +189,7 @@
     },
     "intimite": "Élevée",
     "prix": 4000,
+    "moyenne": 5600,
     "mots_cles": ["désert", "paysages", "plages", "snorkeling", "Oman", "Moyen-Orient", "aventure", "culture"]
   },
   {
@@ -205,6 +213,7 @@
     },
     "intimite": "Moyenne",
     "prix": 3500,
+    "moyenne": 5200,
     "mots_cles": ["pyramides", "désert", "temples", "Nil", "pharaons", "Égypte", "Merveilles antiques", "croisière", "histoire", "aventure"]
   },
   {
@@ -228,6 +237,7 @@
     },
     "intimite": "Élevée",
     "prix": 5000,
+    "moyenne": 8000,
     "mots_cles": ["safari", "Zanzibar", "Serengeti", "Kilimandjaro", "faune", "Tanzanie", "Safari", "Plages", "plage", "plongée"]
   },
   {
@@ -251,6 +261,7 @@
     },
     "intimite": "Moyenne",
     "prix": 3800,
+    "moyenne": 5050,
     "mots_cles": ["jungle", "volcans", "plages", "faune", "flore", "Costa Rica", "Nature", "aventure", "bien-être"]
   },
   {
@@ -273,7 +284,8 @@
       "Excursion à Uluru": 450
     },
     "intimite": "Variable",
-    "prix": 6000,
+    "prix": 3000,
+    "moyenne": 7050,
     "mots_cles": ["plages", "Grande Barrière de Corail", "Outback", "Australie", "aventure", "plongée", "safari", "Uluru"]
   },
   {
@@ -297,6 +309,7 @@
     },
     "intimite": "Élevée",
     "prix": 3200,
+    "moyenne": 4850,
     "mots_cles": ["neige", "aurores boréales", "rennes", "nature", "aventures", "Finlande", "polaire", "traîneau à chiens", "motoneige"]
   },
   
@@ -321,6 +334,7 @@
     },
     "intimite": "Élevée",
     "prix": 5500,
+    "moyenne": 8100,
     "mots_cles": ["neige", "ski", "luxe", "Rocheuses", "Aspen", "sports d'hiver", "bien-être"]
   },
   {
@@ -343,7 +357,8 @@
       "Spa et bien-être en altitude": 300
     },
     "intimite": "Élevée",
-    "prix": 7000,
+    "prix": 5000,
+    "moyenne": 11300,
     "mots_cles": ["neige", "luxe", "Alpes", "Courchevel", "Ski", "gastronomie", "montagne", "bien-être"]
   }
 ]

@@ -28,11 +28,16 @@ session_start();
           echo "<div class='container'>";
 
           echo "<h3>" . htmlspecialchars($voyage['nom']) . "</h3>";
-          echo "<p><strong>Dates :</strong> " . htmlspecialchars($voyage['date_depart']) . " → " . htmlspecialchars($voyage['date_retour']) . "</p>";
+          
+          // Correction pour les dates - conversion en string si nécessaire
+          $date_depart = is_object($voyage['date_depart']) ? $voyage['date_depart']->format('Y-m-d') : $voyage['date_depart'];
+          $date_retour = is_object($voyage['date_retour']) ? $voyage['date_retour']->format('Y-m-d') : $voyage['date_retour'];
+          
+          echo "<p><strong>Dates :</strong> " . htmlspecialchars($date_depart) . " → " . htmlspecialchars($date_retour) . "</p>";
 
           echo "<ul>";
           foreach ($voyage['details'] as $detail) {
-              echo "<li>$detail</li>";
+              echo "<li>" . htmlspecialchars($detail) . "</li>";
           }
           echo "</ul>";
 
@@ -50,7 +55,7 @@ session_start();
           $total += $voyage['montant'];
       }
 
-      echo "<hr><h2>Total à payer : $total €</h2>";
+      echo "<hr><h2>Total à payer : Total à payer : $total €</h2>";
   }
   ?>
 
@@ -66,8 +71,8 @@ session_start();
   if (confirmation) {
     setTimeout(() => {
       confirmation.style.display = 'none';
-    }, 3000); // 3 secondes
+    }, 3000);
   }
-</script>
+  </script>
 </body>
 </html>

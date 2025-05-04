@@ -28,14 +28,16 @@ if (!isset($_POST['date_depart']) || !isset($_POST['date_retour'])) {
     die("Les dates de voyage sont obligatoires.");
 }
 
-$date_depart = htmlspecialchars($_POST['date_depart']);
-$date_retour = htmlspecialchars($_POST['date_retour']);
+$date_depart = new DateTime($_POST['date_depart']);
+$date_retour = new DateTime($_POST['date_retour']);
+$interval = $date_depart->diff($date_retour);
+$nombre_nuits = $interval->days;
 
 $hebergement = $_POST["hebergements"];
 $nb_personnes_hebergement = (int) $_POST["nb_personnes"][$hebergement];
-$prix_hebergement = $trip["hebergements"][$hebergement] * $nb_personnes_hebergement;
+$prix_hebergement = $trip["hebergements"][$hebergement] * $nb_personnes_hebergement * $nombre_nuits;
 
-$montant = $trip['prix'] * $nb_personnes_hebergement + $prix_hebergement;
+$montant = ($trip['prix'] * $nb_personnes_hebergement) + $prix_hebergement;
 
 $details_options = [];
 $details_options[] = "Hébergement : " . htmlspecialchars($hebergement) . " ($nb_personnes_hebergement pers.) - $prix_hebergement €";
@@ -72,8 +74,8 @@ if (!$existeDeja) {
         'hebergement' => $hebergement,
         'activites' => $_POST['activites'] ?? [],
         'nombre_personnes' => $_POST['nb_personnes'],
-        'date_depart' => $date_depart,
-        'date_retour' => $date_retour,
+        'date_depart' => $date_depart->format('Y-m-d'),
+        'date_retour' => $date_retour->format('Y-m-d'),
         'montant' => $montant,
         'details' => $details_options
     ];

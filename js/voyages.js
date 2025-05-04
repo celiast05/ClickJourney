@@ -67,8 +67,8 @@ function filtrer() {
     });
 
     // Tri
-    if (triPrix === "asc") results.sort((a, b) => a.prix - b.prix);
-    if (triPrix === "desc") results.sort((a, b) => b.prix - a.prix);
+    if (triPrix === "asc") results.sort((a, b) => a.moyenne - b.moyenne);
+    if (triPrix === "desc") results.sort((a, b) => b.moyenne - a.moyenne);
 
     console.log("Résultats après filtrage:", results); // Voir le résultat
     afficherVoyages(results);
