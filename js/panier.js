@@ -1,37 +1,57 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const dataTag = document.getElementById("prix-data");
-    if (!dataTag) return;
-  
-    const { basePrix, hebergements, activites } = JSON.parse(dataTag.textContent);
-    const inputs = document.querySelectorAll('input[type="number"], input[type="radio"], input[type="checkbox"]');
-    const estimation = document.getElementById('estimation');
-  
-    function calculerPrix() {
-      let total = 0;
-  
-      const checkedHebergement = document.querySelector('input[name="hebergements"]:checked');
-      if (checkedHebergement) {
-        const nb = parseInt(document.querySelector(`input[name="nb_personnes[${checkedHebergement.value}]"]`)?.value || 0);
-        total += basePrix * nb;
-        total += hebergements[checkedHebergement.value] * nb;
+document.addEventListener('DOMContentLoaded', function() {
+  // Récupération des données de prix
+  const prixData = JSON.parse(document.getElementById('prix-data').textContent);
+  const form = document.getElementById('reservation-form');
+  const estimationElement = document.getElementById('estimation');
+
+  // Fonction de calcul du prix
+  function calculerPrix() {
+      // Calcul de la durée
+      let duree = 1;
+      const dateDepart = document.getElementById('date_depart').value;
+      const dateRetour = document.getElementById('date_retour').value;
+      
+      if (dateDepart && dateRetour) {
+          const diffTime = new Date(dateRetour) - new Date(dateDepart);
+          duree = Math.max(1, diffTime / (1000 * 60 * 60 * 24));
       }
-  
-      const checkedActivites = document.querySelectorAll('input[type="checkbox"]:checked');
-      checkedActivites.forEach(act => {
-        const nb = parseInt(document.querySelector(`input[name="nb_personnes[${act.value}]"]`)?.value || 0);
-        total += activites[act.value] * nb;
+
+      // Calcul hébergement
+      let prixHebergement = 0;
+      const hebergementRadio = form.querySelector('input[name="hebergements"]:checked');
+      if (hebergementRadio) {
+          const hebergement = hebergementRadio.value;
+          const nbPersonnes = hebergementRadio.closest('label').querySelector('input[type="number"]').value || 1;
+          prixHebergement = prixData.hebergements[hebergement] * duree * nbPersonnes;
+      }
+
+      // Calcul activités
+      let prixActivites = 0;
+      form.querySelectorAll('input[name="activites[]"]:checked').forEach(activite => {
+          const nbPersonnes = activite.closest('label').querySelector('input[type="number"]').value || 1;
+          prixActivites += prixData.activites[activite.value] * nbPersonnes;
       });
-  
-      if (estimation) {
-        estimation.textContent = total;
+
+      // Calcul total
+      const nbPersonnesHebergement = hebergementRadio ? 
+          hebergementRadio.closest('label').querySelector('input[type="number"]').value || 1 : 1;
+      
+      const total = prixData.basePrix * nbPersonnesHebergement + prixHebergement + prixActivites;
+      
+      // Affichage
+      estimationElement.textContent = total.toLocaleString('fr-FR');
+  }
+
+  // Écouteurs d'événements
+  form.addEventListener('change', function(e) {
+      if (e.target.matches('input[type="radio"], input[type="checkbox"]')) {
+          toggleInput();
       }
-    }
-  
-    inputs.forEach(input => {
-      input.addEventListener('input', calculerPrix);
-      input.addEventListener('change', calculerPrix);
-    });
-  
-    calculerPrix();
+      if (e.target.matches('input[type="number"], input[type="date"], input[type="radio"], input[type="checkbox"]')) {
+          calculerPrix();
+      }
   });
-  
+
+  // Initialisation
+  calculerPrix();
+});

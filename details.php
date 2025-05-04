@@ -183,7 +183,7 @@ foreach ($trips as $t) { // on récupère le bon voyage
   "hebergements": <?= json_encode($trip['hebergements']) ?>,
   "activites": <?= json_encode($trip['activites']) ?>
 }
-<script src="js/theme.js"></script>
+</script>
 <script src="js/panier.js"></script>
 <script src="js/theme.js"></script>
 </body>
