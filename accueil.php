@@ -43,7 +43,6 @@ $_SESSION['last_activity'] = time();
         }
         ?>
         <a href="voyages.php">Nos voyages</a>
-        <a href="filtrage.php">Filtrer</a>
         <?php
         if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
             echo "<a href='script/deconnexion.php?action=run'>Déconnexion</a>";

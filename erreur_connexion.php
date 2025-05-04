@@ -72,7 +72,6 @@ if ($users !== null) {
         }
         ?>
         <a href="voyages.php">Nos voyages</a>
-        <a href="filtrage.php">Filtrer</a>
       </div>
     </nav>
 
