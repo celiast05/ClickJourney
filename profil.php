@@ -90,6 +90,7 @@
             echo "<a href='mon_panier.php'>Panier ($nbArticles)</a>";
         }
         ?>
+        <a href="javascript:void(0)" id="change-theme">Changer de thème</a>
       </div>
     </nav>
     </nav>
