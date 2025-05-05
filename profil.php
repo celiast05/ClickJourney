@@ -1,6 +1,11 @@
 <?php
 
     session_start();
+    
+    if (isset($_SESSION['role']) && $_SESSION['role'] === 'banni') { // détection d'utilisateur banni
+        header("Location: script/deconnexion.php?action=run");
+        exit();
+    }
 
     // Durée d'inactivité autorisée
     $timeout = 300; // 5 minutes
@@ -58,9 +63,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil - Elysia Voyage</title>
-    <link rel="stylesheet" href="css/profil.css?v=1">
+    <link rel="stylesheet" href="css/profil.css?v=2.2">
     <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
-
 </head>
 <body>
 <nav>
@@ -78,7 +82,6 @@
         }
         ?>
         <a href="voyages.php">Nos voyages</a>
-        <a href="filtrage.php">Filtrer</a>
         <?php
         if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
             echo "<a href='script/deconnexion.php?action=run'>Déconnexion</a>";
@@ -86,7 +89,12 @@
         else{
             echo "<a href='connexion.php'>Connexion</a>";
         }
+        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+            $nbArticles = isset($_SESSION['panier']) ? count($_SESSION['panier']) : 0;
+            echo "<a href='mon_panier.php'>Panier ($nbArticles)</a>";
+        }
         ?>
+        <a href="javascript:void(0)" id="change-theme">Changer de thème</a>
       </div>
     </nav>
     </nav>
@@ -95,63 +103,105 @@
     <section class="profil">
         <form action="profil_update.php" method="POST" onsubmit="return validateForm()">
             <h2>Mon Profil</h2>
+
             <div class="profil-info">
-                <label for="civilite obligatoire">Civilité :</label>
-                <select id="civilite" name="civilite" disabled> 
-                <option value="" <?php echo empty($_SESSION['user']['informations']['civilite']) ? "selected" : ""; ?>>Sélectionnez...</option>
-                    <option value="Monsieur" <?php echo isset($_SESSION['user']['informations']['civilite']) && $_SESSION['user']['informations']['civilite'] == "Monsieur" ? "selected" : ""; ?>>Monsieur</option>
-                    <option value="Madame" <?php echo isset($_SESSION['user']['informations']['civilite']) && $_SESSION['user']['informations']['civilite'] == "Madame" ? "selected" : ""; ?>>Madame</option>
-                    <option value="Autre" <?php echo isset($_SESSION['user']['informations']['civilite']) && $_SESSION['user']['informations']['civilite'] == "Autre" ? "selected" : ""; ?>>Autre</option>
-                </select>
+                <label for="civilite">Civilité :</label>
+                <div class="inclined" >
+                    <select id="civilite" name="civilite" disabled required> 
+                        <option value="" <?php echo empty($_SESSION['user']['informations']['civilite']) ? "selected" : ""; ?>>Sélectionnez...</option>
+                        <option value="Monsieur" <?php echo (isset($_SESSION['user']['informations']['civilite']) && $_SESSION['user']['informations']['civilite'] == "Monsieur") ? "selected" : ""; ?>>Monsieur</option>
+                        <option value="Madame" <?php echo (isset($_SESSION['user']['informations']['civilite']) && $_SESSION['user']['informations']['civilite'] == "Madame") ? "selected" : ""; ?>>Madame</option>
+                        <option value="Autre" <?php echo (isset($_SESSION['user']['informations']['civilite']) && $_SESSION['user']['informations']['civilite'] == "Autre") ? "selected" : ""; ?>>Autre</option>
+                    </select>
+                    <button type="button" class="edit-btn">✎</button>
+                    <button type="button" class="save-btn" style="display:none;" onclick="confirmChange(this)">✔</button>
+                    <button type="button" class="reset-btn" style="display:none;"  onclick="resetInput(this, '<?php echo $_SESSION['user']['informations']['civilite']; ?>')">⟳</button>
+                </div>
             </div>
-        
-            <div class="profil-info obligatoire">
+
+            <div class="profil-info">
                 <label for="nom">Nom :</label>
+                <div class="inclined" >
                 <input type="text" id="nom" name="nom" disabled value="<?php echo isset($_SESSION['user']['informations']['nom']) ? $_SESSION['user']['informations']['nom'] : ''; ?>" required>
+                    <button type="button" class="edit-btn">✎</button>
+                    <button type="button" class="save-btn" style="display:none;" onclick="confirmChange(this)">✔</button>
+                    <button type="button" class="reset-btn" style="display:none;" onclick="resetInput(this, '<?php echo $_SESSION['user']['informations']['nom']; ?>')">⟳</button>
+                </div>
             </div>
-            
-            <div class="profil-info obligatoire">
+
+            <div class="profil-info">
                 <label for="prenom">Prénom :</label>
-                <input type="text" id="prenom" name="prenom" disabled value="<?php echo isset($_SESSION['user']['informations']['prenom']) ? $_SESSION['user']['informations']['prenom'] : ''; ?>" required>
+                <div class="inclined" >
+                    <input type="text" id="prenom" name="prenom" disabled value="<?php echo isset($_SESSION['user']['informations']['prenom']) ? $_SESSION['user']['informations']['prenom'] : ''; ?>" required>
+                    <button type="button" class="edit-btn">✎</button>
+                    <button type="button" class="save-btn" style="display:none;" onclick="confirmChange(this)">✔</button>
+                    <button type="button" class="reset-btn" style="display:none;"  onclick="resetInput(this, '<?php echo $_SESSION['user']['informations']['prenom']; ?>')">⟳</button>
+                </div>
             </div>
-            
-            <div class="profil-info obligatoire">
+
+            <div class="profil-info">
                 <label for="email">Email :</label>
-                <input type="email" id="email" name="email" disabled value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>" required>
+                <div class="inclined" >
+                    <input type="email" id="email" name="email" disabled value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>" required>
+                    <button type="button" class="edit-btn">✎</button>
+                    <button type="button" class="save-btn" style="display:none;" onclick="confirmChange(this)">✔</button>
+                    <button type="button" class="reset-btn" style="display:none;"  onclick="resetInput(this, '<?php echo $_SESSION['email']; ?>')">⟳</button>
+                </div>
             </div>
-            
-            <div class="profil-info obligatoire">
-                <label for="telephone">Téléphone :</label>
-                <input type="tel" id="telephone" name="telephone" disabled value="<?php echo isset($_SESSION['user']['informations']['telephone']) ? $_SESSION['user']['informations']['telephone'] : ''; ?>" required>
+
+            <div class="profil-info">
+            <label for="telephone">Téléphone :</label>
+                <div class="inclined" >
+                    <input type="tel" id="telephone" name="telephone" disabled value="<?php echo isset($_SESSION['user']['informations']['telephone']) ? $_SESSION['user']['informations']['telephone'] : ''; ?>" required>
+                    <button type="button" class="edit-btn">✎</button>
+                    <button type="button" class="save-btn" style="display:none;" onclick="confirmChange(this)">✔</button>
+                    <button type="button" class="reset-btn" style="display:none;"  onclick="resetInput(this, '<?php echo $_SESSION['user']['informations']['telephone']; ?>')">⟳</button>
+                </div>
+                
+                
             </div>
             
             <h3>Informations Facultatives</h3>
             
             <div class="profil-info">
                 <label for="photo">Photo de Profil :</label>
+                <div class="inclined" >
                 <input type="file" id="photo" name="photo" accept="image/*" disabled>
+                    <button type="button" class="edit-btn">✎</button>
+                    <button type="button" class="save-btn" style="display:none;" onclick="confirmChange(this)">✔</button>
+                    <button type="button" class="reset-btn" style="display:none;"  onclick="resetInput(this, '<?php echo 'None' ?>')">⟳</button>
+                </div>
             </div>
         
             
             <div class="profil-info">
                 <label for="preferences">Préférences de Voyage :</label>
-                <textarea id="preferences" name="preferences" placeholder="Indiquez vos préférences (ex: plages, montagnes, road trip...)" disabled ><?php echo isset($_SESSION['user']['informations']['preferences']) ? $_SESSION['user']['informations']['preferences'] : ''; ?></textarea>
+                <div class="inclined" >
+                    <textarea id="preferences" name="preferences" placeholder="Indiquez vos préférences (ex: plages, montagnes, road trip...)" disabled ><?php echo isset($_SESSION['user']['preferences']) ? $_SESSION['user']['informations']['preferences'] : ''; ?></textarea>
+                    <button type="button" class="edit-btn">✎</button>
+                    <button type="button" class="save-btn" style="display:none;" onclick="confirmChange(this)">✔</button>
+                    <button type="button" class="reset-btn" style="display:none;"  onclick="resetInput(this, '<?php echo $_SESSION['user']['informations']['preferences']; ?>')">⟳</button>
+                </div>
             </div>
             
             <div class="profil-info">
                 <label for="passeport">Type de Passeport :</label>
-                <select id="passeport" name="passeport" disabled>
-                <option value="">Sélectionnez...</option>
-                    <option value="Ordinaire" <?php echo isset($_SESSION['user']['informations']['passeport']) && $_SESSION['user']['informations']['passeport'] == "Ordinaire" ? "selected" : ""; ?>>Ordinaire</option>
-                    <option value="Diplomatique" <?php echo isset($_SESSION['user']['informations']['passeport']) && $_SESSION['user']['informations']['passeport'] == "Diplomatique" ? "selected" : ""; ?>>Diplomatique</option>
-                    <option value="Officiel" <?php echo isset($_SESSION['user']['informations']['passeport']) && $_SESSION['user']['informations']['passeport'] == "Officiel" ? "selected" : ""; ?>>Officiel</option>
-                </select>
+                <div class="inclined" >
+                    <select id="passeport" name="passeport" disabled>
+                        <option value="">Sélectionnez...</option>
+                        <option value="Ordinaire" <?php echo isset($_SESSION['user']['informations']['passeport']) && $_SESSION['user']['informations']['passeport'] == "Ordinaire" ? "selected" : ""; ?>>Ordinaire</option>
+                        <option value="Diplomatique" <?php echo isset($_SESSION['user']['informations']['passeport']) && $_SESSION['user']['informations']['passeport'] == "Diplomatique" ? "selected" : ""; ?>>Diplomatique</option>
+                        <option value="Officiel" <?php echo isset($_SESSION['user']['informations']['passeport']) && $_SESSION['user']['informations']['passeport'] == "Officiel" ? "selected" : ""; ?>>Officiel</option>
+                    </select>
+                    <button type="button" class="edit-btn">✎</button>
+                    <button type="button" class="save-btn" style="display:none;" onclick="confirmChange(this)">✔</button>
+                    <button type="button" class="reset-btn" style="display:none;"  onclick="resetInput(this, '<?php echo $_SESSION['user']['informations']['passeport']; ?>')">⟳</button>
+                </div>
+                
             </div>
 
             <br />
-            
-            <button type="button" class="edit-btn" onclick="enableEdit()">✎ Modifier</button>
-            <button type="submit" class="save-btn" style="display:none;">Enregistrer</button>
+            <button type="submit" class="send-btn" style="display:none;">Enregistrer</button>
         </form>
     </section>
     <?php
@@ -187,27 +237,8 @@ if (!empty($_SESSION['user']['voyages']['consultes']) || !empty($_SESSION['user'
         <p>&copy; 2025 Elysia Voyage. Tous droits réservés.</p>
 
     </footer>
-    
-    <script>
-        function enableEdit() {
-            let inputs = document.querySelectorAll('.profil-info input, .profil-info select, .profil-info textarea');
-            inputs.forEach(input => input.removeAttribute('disabled'));
-            document.querySelector('.edit-btn').style.display = 'none';
-            document.querySelector('.save-btn').style.display = 'inline-block';
-        }
-
-        function validateForm() {
-            let requiredFields = document.querySelectorAll('.profil-info .obligatoire input');
-            for (let field of requiredFields) {
-                if (field.value.trim() === "") {
-                    alert("Tous les champs obligatoires doivent être remplis.");
-                    return false;
-                }
-            }
-            return true;
-        }
-    </script>
-<script src="js/theme.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/profil.js"></script>
 </body>
 </html>
 
