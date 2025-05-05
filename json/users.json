@@ -14,7 +14,7 @@
         },
         "dates": {
             "inscription": "2025-03-25",
-            "derniere_connexion": "2025-05-04"
+            "derniere_connexion": "2025-05-05"
         },
         "voyages": {
             "consultes": [
@@ -239,17 +239,6 @@
         "informations": {
             "nom": "Zamoum",
             "prenom": "bouchra",
-<<<<<<< HEAD
-            "civilite": "",
-            "telephone": null,
-            "photo": null,
-            "preferences": null,
-            "passeport": null
-        },
-        "dates": {
-            "inscription": "2025-04-28",
-            "derniere_connexion": null
-=======
             "civilite": "Monsieur",
             "telephone": "0608177031",
             "photo": "",
@@ -259,7 +248,6 @@
         "dates": {
             "inscription": "2025-04-28",
             "derniere_connexion": "2025-05-05"
->>>>>>> 75023b7f75d087dace7bf3d59ec69258d676993c
         },
         "voyages": {
             "consultes": [],
