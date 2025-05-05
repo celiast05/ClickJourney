@@ -127,6 +127,7 @@
                     <button type="button" class="save-btn" style="display:none;" onclick="confirmChange(this)">✔</button>
                     <button type="button" class="reset-btn" style="display:none;" onclick="resetInput(this, '<?php echo $_SESSION['user']['informations']['nom']; ?>')">⟳</button>
                 </div>
+                
             </div>
 
             <div class="profil-info">
@@ -147,6 +148,7 @@
                     <button type="button" class="save-btn" style="display:none;" onclick="confirmChange(this)">✔</button>
                     <button type="button" class="reset-btn" style="display:none;"  onclick="resetInput(this, '<?php echo $_SESSION['email']; ?>')">⟳</button>
                 </div>
+                <div class="error-message" id="email-error" style="display: none;"></div>
             </div>
 
             <div class="profil-info">
@@ -157,8 +159,7 @@
                     <button type="button" class="save-btn" style="display:none;" onclick="confirmChange(this)">✔</button>
                     <button type="button" class="reset-btn" style="display:none;"  onclick="resetInput(this, '<?php echo $_SESSION['user']['informations']['telephone']; ?>')">⟳</button>
                 </div>
-                
-                
+                <div class="error-message" id="tel-error" style="display: none;"></div>
             </div>
             
             <h3>Informations Facultatives</h3>

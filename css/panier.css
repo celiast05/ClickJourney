@@ -172,3 +172,46 @@ hr {
     padding: 10px 20px;
   }
 }
+/* --- MESSAGES D'ERREUR POUR EMAIL & TÉLÉPHONE --- */
+
+.error-message {
+  font-size: 14px;
+  color: #ff5e5e;
+  background-color: rgba(255, 94, 94, 0.1);
+  border: 1px solid #ff5e5e;
+  padding: 8px 10px;
+  border-radius: 6px;
+  margin-top: 6px;
+  width: 94%;
+  text-align: left;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.error-message ul {
+  padding-left: 20px;
+  margin: 10px 0 0;
+  list-style-type: disc;
+}
+
+.error-message li {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #ff5e5e;
+  line-height: 1.6;
+}
+
+input[data-valid="false"] {
+  border-color: #ff5e5e !important;
+  background-color: rgba(255, 94, 94, 0.05);
+}

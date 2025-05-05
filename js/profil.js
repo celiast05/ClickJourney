@@ -116,3 +116,54 @@ document.querySelectorAll(".edit-btn").forEach((btn) => {
     }
   });
 });
+// Validation de l'email dans la page profil
+const emailInput = document.getElementById("email");
+const emailError = document.getElementById("email-error");
+
+if (emailInput) {
+  emailInput.addEventListener("blur", () => {
+    const emailValue = emailInput.value.trim();
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    emailError.style.display = "none";
+    emailError.innerHTML = "";
+
+    if (!emailRegex.test(emailValue)) {
+      emailError.innerHTML = `
+        <p style="color: white; font-weight: bold;">Adresse e-mail invalide :</p>
+        <ul>
+          <li>L'adresse doit contenir un <strong>@</strong></li>
+          <li>Elle doit comporter un nom de domaine valide (ex : gmail, yahoo...)</li>
+          <li>Elle doit se terminer par une extension (ex : <strong>.com</strong>, <strong>.fr</strong>, ...)</li>
+        </ul>
+      `;
+      emailError.style.display = "block";
+    }
+  });
+}
+
+// Validation du téléphone dans la page profil
+const telInput = document.getElementById("telephone");
+const telError = document.getElementById("tel-error");
+
+if (telInput) {
+  telInput.addEventListener("blur", () => {
+    const telValue = telInput.value.trim();
+    const telRegex = /^[0-9]{10,15}$/;
+
+    telError.style.display = "none";
+    telError.innerHTML = "";
+
+    if (!telRegex.test(telValue)) {
+      telError.innerHTML = `
+        <p style="color: white; font-weight: bold;">Numéro invalide :</p>
+        <ul>
+          <li>Il doit contenir uniquement des chiffres (pas d'espaces ni de lettres)</li>
+          <li>Il doit comporter au moins 10 chiffres</li>
+          <li>En France, il commence par 0 ; sinon, utilisez l’indicatif pays (ex : +33, +212)</li>
+        </ul>
+      `;
+      telError.style.display = "block";
+    }
+  });
+}
