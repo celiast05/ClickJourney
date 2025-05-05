@@ -1,24 +1,28 @@
 @import url("root.css");
 
 body {
-    display: flex;
     justify-content: center;
     align-items: center; 
     height: 100vh;
     margin: 0;
     padding: 0;
     font-family: var(--text);
-    color: var(--text-color);
     background-color: var(--background-color);
     line-height: 1.8;
+    text-align: center;
   }
   
   .container {
     text-align: center;
+    color: var(--text-color);
     padding: 20px;
-    background-color: #fff;
+    background-color: var(--card-voyage);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 90%;
+    max-width: 600px;
+    margin: 10px auto;
   }
   
   h2 {
@@ -30,4 +34,17 @@ body {
     font-size: 18px;
     margin: 10px 0;
   }
+
+a {
+    text-decoration: none;
+    color: var(--btn-color);
+    margin-right: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+    padding-bottom: 3px;
+    cursor: pointer;
+}
+  
+a:hover {
+  border-bottom: 2px solid var(--title-color);
+}
   

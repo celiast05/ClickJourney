@@ -3,6 +3,11 @@
 <?php
 session_start();
 
+if (isset($_SESSION['role']) && $_SESSION['role'] === 'banni') { // détection d'utilisateur banni
+    header("Location: script/deconnexion.php?action=run");
+    exit();
+  }
+
 // Durée d'inactivité autorisée
 $timeout = 300; // 5 minutes
 
@@ -51,7 +56,7 @@ $total_pages = ceil(count($users) / $users_par_page);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrateur - Elysia Voyage</title>
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="css/admin.css?v=1">
     <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
 </head>
 <body>
@@ -70,7 +75,6 @@ $total_pages = ceil(count($users) / $users_par_page);
         }
         ?>
         <a href="voyages.php">Nos voyages</a>
-        <a href="filtrage.php">Filtrer</a>
         <?php
         if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
             echo "<a href='script/deconnexion.php?action=run'>Déconnexion</a>";
@@ -78,7 +82,12 @@ $total_pages = ceil(count($users) / $users_par_page);
         else{
             echo "<a href='connexion.php'>Connexion</a>";
         }
+        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+            $nbArticles = isset($_SESSION['panier']) ? count($_SESSION['panier']) : 0;
+            echo "<a href='mon_panier.php'>Panier ($nbArticles)</a>";
+          }
         ?>
+        <a href="javascript:void(0)" id="change-theme">Changer de thème</a>
       </div>
     </nav>
     
@@ -96,7 +105,6 @@ $total_pages = ceil(count($users) / $users_par_page);
             <tbody>
                 <?php
                 
-
                 if ($users !== null) {
                     foreach ($users_pagination as $user) {
                         echo "<tr>";
@@ -155,5 +163,6 @@ $total_pages = ceil(count($users) / $users_par_page);
 </div>
         </div>
         <script src="js/theme.js"></script>
+        <script src="js/admin.js"></script>
     </body>
 </html>

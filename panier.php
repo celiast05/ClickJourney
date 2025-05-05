@@ -1,6 +1,11 @@
 <?php 
 session_start();
 
+if (isset($_SESSION['role']) && $_SESSION['role'] === 'banni') { // détection d'utilisateur banni
+    header("Location: script/deconnexion.php?action=run");
+    exit();
+  }
+
 if (!isset($_GET['voyage']) || empty($_GET['voyage'])) {
     die("Voyage non spécifié.");
 }
@@ -48,14 +53,21 @@ if (isset($_POST["activites"])) {
     }
 }
 
-$_SESSION['voyage'] = [
+if (!isset($_SESSION['panier'])) {
+    $_SESSION['panier'] = [];
+}
+
+// On ajoute le voyage comme un nouvel élément dans le panier
+$_SESSION['panier'][] = [
     'id' => $trip['id'],
     'nom' => $trip['nom'],
     'hebergement' => $_POST['hebergements'],
     'activites' => isset($_POST['activites']) ? $_POST['activites'] : [],
     'nombre_personnes' => $_POST['nb_personnes'],
-    'date_depart' => $_POST['date_depart'],
-    'date_retour' => $_POST['date_retour']
+    'date_depart' => $date_depart,
+    'date_retour' => $date_retour,
+    'montant' => $montant,
+    'details' => $details_options
 ];
 
 require_once("getapikey.php");
@@ -63,7 +75,7 @@ require_once("getapikey.php");
 $transaction = uniqid();
 $vendeur = "MEF-2_G";
 $api_key = getAPIKey($vendeur);
-$retour = "http://localhost:8888/retour_paiement.php"; //mettre le chemin correspondant selon le fichier
+$retour = "http://localhost:8888/ClickJourney/retour_paiement.php"; //mettre le chemin correspondant selon le fichier
 $control = md5($api_key . "#" . $transaction . "#" . $montant . "#" . $vendeur . "#" . $retour . "#");
 
 ?>

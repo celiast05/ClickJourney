@@ -67,6 +67,25 @@ header h1 {
   letter-spacing: 4px;
 }
 
+.filtre {
+  display: flex; 
+  gap: 35px; 
+  padding: 40px; 
+  justify-content: center;
+}
+
+aside {
+  width: 250px; 
+  background: var(--card-voyage); 
+  padding: 20px; 
+  border-radius: 10px; 
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+h3, input{
+  color: var(--text-color);
+}
+
 main a {
   padding: 10px 20px;
   background-color: white;
@@ -75,7 +94,7 @@ main a {
   outline: none;
   cursor: pointer;
   text-decoration: none;
-  color: black;
+  color: var(--text-color);
 }
 
 form {
@@ -128,7 +147,7 @@ label {
 
 .card {
   width: 350px;
-  background: white;
+  background: var(--card-voyage);
   border-radius: 15px;
   overflow: hidden;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
@@ -211,7 +230,7 @@ label {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: black;
+  background-color: var(--text-color);
   transform: scaleX(0);
   transition: transform 0.25s ease-out;
 }
@@ -265,6 +284,19 @@ label {
   .cta {
     font-size: 14px;
   }
+  .filtre {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  aside {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  h3, input {
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 767px) {
@@ -317,5 +349,21 @@ label {
 
   .cta {
     font-size: 12px;
+  }
+  .filtre {
+    gap: 20px;
+    padding: 15px;
+  }
+
+  aside {
+    width: 100%;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  input {
+    font-size: 0.9rem;
   }
 }

@@ -1,6 +1,11 @@
 <?php
 session_start();
 
+if (isset($_SESSION['role']) && $_SESSION['role'] === 'banni') { // détection d'utilisateur banni
+    header("Location: script/deconnexion.php?action=run");
+    exit();
+  }
+
 // Durée d'inactivité autorisée
 $timeout = 300; // 5 minutes
 
@@ -42,7 +47,7 @@ foreach ($trips as $t) { // on récupère le bon voyage
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $trip["nom"] ?></title>
-    <link rel="stylesheet" href="css/details.css?v=1.6">
+    <link rel="stylesheet" href="css/details.css?v=1.7">
     <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
 </head>
 <body>
@@ -61,7 +66,6 @@ foreach ($trips as $t) { // on récupère le bon voyage
         }
         ?>
         <a href="voyages.php">Nos voyages</a>
-        <a href="filtrage.php">Filtrer</a>
         <?php
         if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
             echo "<a href='script/deconnexion.php?action=run'>Déconnexion</a>";
@@ -69,7 +73,12 @@ foreach ($trips as $t) { // on récupère le bon voyage
         else{
             echo "<a href='connexion.php'>Connexion</a>";
         }
+        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+            $nbArticles = isset($_SESSION['panier']) ? count($_SESSION['panier']) : 0;
+            echo "<a href='mon_panier.php'>Panier ($nbArticles)</a>";
+        }
         ?>
+        <a href="javascript:void(0)" id="change-theme">Changer de thème</a>
       </div>
     </nav>
 
@@ -77,8 +86,8 @@ foreach ($trips as $t) { // on récupère le bon voyage
     <div class="container">
     <div class="image"><img src="<?php echo $trip["image"]; ?>" alt="<?php echo "Image de ".$trip["nom"]; ?>"/></div>
     <section>
-        <form action="panier.php?voyage=<?php echo $_GET['voyage']; ?>" method="POST">
-        <?php if (!empty($trip["description"])){
+    <form id="reservation-form" action="ajout_panier.php?voyage=<?php echo $_GET['voyage']; ?>" method="POST">
+    <?php if (!empty($trip["description"])){
             echo '<p>'. $trip["description"] ."</p>";
         }?>
         <?php if (!empty($trip["climat_saison"])){
@@ -126,7 +135,10 @@ foreach ($trips as $t) { // on récupère le bon voyage
             echo '<p>'. $trip["intimite"] ."</p>";
         }?>
         <?php if (!empty($trip["prix"])){
-            echo "<h4>Prix par personne : ". $trip["prix"] ." € </h4>";
+            echo "<h4>Frais de  réservation: ". $trip["prix"] ." € </h4>";
+        }?>
+        <?php if (!empty($trip["moyenne"])){
+            echo "<h4>Prix moyen par personne pour 3 nuits: ". $trip["moyenne"] ." € </h4>";
         }?>
     <br>
         <label for="date_depart" class="header"> Date de départ : &emsp;
@@ -139,6 +151,7 @@ foreach ($trips as $t) { // on récupère le bon voyage
         </label>
         
         <br><br>
+        <p><strong>Prix estimé : </strong><span id="estimation">0</span> €</p>
         <button type="submit">Ajouter au panier</button>
         </form>
     </section>
@@ -147,14 +160,11 @@ foreach ($trips as $t) { // on récupère le bon voyage
 
 
     function toggleInput() {
-        // Sélectionner toutes les cases cochées (radio et checkbox)
         const selectedInputs = document.querySelectorAll('input[type="radio"]:checked, input[type="checkbox"]:checked');
         const uncheckedInputs = document.querySelectorAll('input[type="radio"]:not(:checked), input[type="checkbox"]:not(:checked)');
 
-        // Sélectionner tous les champs de nombre de personnes
         const allNumberInputs = document.querySelectorAll('input[type="number"]');
 
-        // Désactiver tous les champs et supprimer leur "name"
         allNumberInputs.forEach(input => {
             input.disabled = false;
         });
@@ -163,17 +173,24 @@ foreach ($trips as $t) { // on récupère le bon voyage
             const numberInput = input.parentNode.querySelector('input[type="number"]');
             if (numberInput) {
                 numberInput.disabled = true;
-                numberInput.value = "1"; // Remettre à 1
+                numberInput.value = "1";
             }
         });
     }
-    // Avant l'envoi du formulaire, on supprime les inputs désactivés pour qu'ils ne soient pas envoyés
     document.getElementById("reservation-form").addEventListener("submit", function() {
         document.querySelectorAll('input[type="number"]:disabled').forEach(input => {
-            input.removeAttribute("name"); // Supprimer le name pour qu'il ne soit pas envoyé
+            input.removeAttribute("name");
         });
     });
 </script>
+<script id="prix-data" type="application/json">
+{
+  "basePrix": <?= $trip['prix'] ?>,
+  "hebergements": <?= json_encode($trip['hebergements']) ?>,
+  "activites": <?= json_encode($trip['activites']) ?>
+}
+</script>
+<script src="js/panier.js"></script>
 <script src="js/theme.js"></script>
 </body>
 </html>

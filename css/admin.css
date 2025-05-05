@@ -136,6 +136,10 @@ th {
   border: none;
 }
 
+.gray {
+  filter: grayscale(50%);
+}
+
 .pagination {
   text-align: center;
 }
@@ -226,7 +230,7 @@ th {
     display: block;
     margin-bottom: 8px;
   }
-  
+
   .admin-container {
     width: 90%;
     padding: 15px;

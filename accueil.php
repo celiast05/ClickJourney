@@ -4,6 +4,17 @@ session_start();
 // Durée d'inactivité autorisée
 $timeout = 600; // 10 minutes
 
+if (isset($_SESSION['role']) && $_SESSION['role'] === 'banni') { // détection d'utilisateur banni
+  header("Location: script/deconnexion.php?action=run");
+  exit();
+}
+
+if (isset($_GET['banni'])): ?>
+  <script>
+      alert("Vous avez été banni. Vous avez été automatiquement déconnecté.");
+  </script>
+<?php endif;
+
 if ( !isset($_SESSION['stay_connected'])){ // si Rester connecté n'est pas clické
   // Vérifier si l'utilisateur est inactif depuis trop longtemps
   if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > $timeout) {
@@ -43,7 +54,6 @@ $_SESSION['last_activity'] = time();
         }
         ?>
         <a href="voyages.php">Nos voyages</a>
-        <a href="filtrage.php">Filtrer</a>
         <?php
         if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
             echo "<a href='script/deconnexion.php?action=run'>Déconnexion</a>";
@@ -51,8 +61,12 @@ $_SESSION['last_activity'] = time();
         else{
             echo "<a href='connexion.php'>Connexion</a>";
         }
+        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+          $nbArticles = isset($_SESSION['panier']) ? count($_SESSION['panier']) : 0;
+          echo "<a href='mon_panier.php'>Panier ($nbArticles)</a>";
+        }
         ?>
-        <button id="change-theme">Changer de thème</button>
+        <a href="javascript:void(0)" id="change-theme">Changer de thème</a>
       </div>
     </nav>
 

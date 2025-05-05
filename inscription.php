@@ -22,8 +22,11 @@ function add_user($email, $password) {
         "informations" => [
             "nom" => $_POST['nom'],
             "prenom" => $_POST['prenom'],
-            "civilite" => "",
-            "telephone" => null
+            "civilite" => null,
+            "telephone" => null,
+            "photo" => null,
+            "preferences" => null,
+            "passeport" => null
         ],
         "dates" => [
             "inscription" => date("Y-m-d"), // Date d'inscription actuelle
@@ -105,13 +108,16 @@ if(!$error){
         }
         ?>
         <a href="voyages.php">Nos voyages</a>
-        <a href="filtrage.php">Filtrer</a>
         <?php
         if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
             echo "<a href='script/deconnexion.php?action=run'>Déconnexion</a>";
         }
         else{
             echo "<a href='connexion.php'>Connexion</a>";
+        }
+        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
+            $nbArticles = isset($_SESSION['panier']) ? count($_SESSION['panier']) : 0;
+            echo "<a href='mon_panier.php'>Panier ($nbArticles)</a>";
         }
         ?>
       </div>

@@ -50,7 +50,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     <footer>
       <p>&copy; 2025 Elysia Voyage. Tous droits réservés.</p>
     </footer>
-    <script src="connexion.js"></script>
+    <script src="js/connexion.js"></script>
     <script src="js/theme.js"></script>
 
   </body>

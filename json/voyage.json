@@ -2,16 +2,17 @@
   {
     "id": "paris",
     "nom": "Paris",
+    "pays": "france",
     "theme": "Ville Lumière",
     "image": "Images/Paris.jpeg",
     "description": "Un mélange envoûtant d’histoire, d’art et de romantisme. Flânez entre musées, avenues mythiques et dîners étoilés.",
-    "climat_saison": "Tempéré",
+    "climat_saison": "Printemps à l'Européenne",
     "hebergements": {
       "Palace": 800,
       "Château urbain": 600,
       "Hôtel historique": 400
     },
-    "experiences": ["Culture & Patrimoine", "Gastronomie", "Shopping de luxe"],
+    "themes": "Romantique & Féerique",
     "activites": {
       "Croisière privée sur la Seine": 200,
       "Visite du Louvre": 50,
@@ -19,21 +20,23 @@
     },
     "intimite": "Élevée",
     "prix": 3000,
+    "moyenne": 4300,
     "mots_cles": ["France", "art", "musée", "romantisme", "gastronomie", "Ville Lumière"]
   },
   {
     "id": "rome",
     "nom": "Rome",
+    "pays": "italie",
     "theme": "L’Éternelle",
     "image": "Images/Rome.jpeg",
     "description": "Vestiges antiques, fontaines majestueuses et dolce vita. Une escapade où l’histoire côtoie le raffinement.",
-    "climat_saison": "Méditerranéen",
+    "climat_saison": "Printemps à l'Européenne",
     "hebergements": {
       "Palace": 700,
       "Demeure historique": 500,
       "Villa en centre-ville": 450
     },
-    "experiences": ["Culture & Patrimoine", "Cuisine locale", "Mode italienne"],
+    "themes": "Romantique & Féerique",
     "activites": {
       "Visite privée du Vatican": 100,
       "Balade en Fiat 500": 80,
@@ -41,21 +44,23 @@
     },
     "intimite": "Moyenne",
     "prix": 2800,
+    "moyenne": 3800,
     "mots_cles": ["Italie", "vestiges antiques", "locale", "fontaine", "dolce vita"]
   },
   {
     "id": "santorin",
     "nom": "Santorin",
+    "pays": "grece",
     "theme": "Joyau des Cyclades",
     "image": "Images/Santorin.jpeg",
     "description": "Falaises blanches, dômes bleus et couchers de soleil inoubliables sur la mer Égée. Une île taillée pour le rêve.",
-    "climat_saison": "Méditerranéen",
+    "climat_saison": "Printemps à l'Européenne",
     "hebergements": {
       "Villa privée": 900,
       "Hôtel troglodyte": 750,
       "Suite avec piscine": 600
     },
-    "experiences": ["Détente & Spa", "Culture locale", "Vin & Gastronomie"],
+    "themes": "Romantique & Féerique",
     "activites": {
       "Croisière autour de la caldeira": 250,
       "Visite d’Akrotiri": 70,
@@ -63,25 +68,23 @@
     },
     "intimite": "Très élevée",
     "prix": 3500,
+    "moyenne": 4860,
     "mots_cles": ["falaises", "dômes bleus", "mer Égée", "coucher de soleil", "Grèce", "Joyau des Cyclades", "détente", "locale", "vin", "gastronomie"]
   },
   {
     "id": "bora_bora",
     "nom": "Bora Bora",
+    "pays": "polynesie",
     "theme": "Perle du Pacifique",
     "image": "Images/Bora Bora.jpeg",
     "description": "Lagons turquoise, bungalows sur pilotis et romantisme absolu. Un coin de paradis au bout du monde.",
-    "climat_saison": "Tropical",
+    "climat_saison": "Tropical & Ensoleillé",
     "hebergements": {
       "Bungalow sur pilotis": 1200,
       "Resort de luxe": 950,
       "Villa plage privée": 1100
     },
-    "experiences": [
-      "Luxe & Détente",
-      "Plongée & Snorkeling",
-      "Gastronomie polynésienne"
-    ],
+    "themes": "Détente & Bien-être",
     "activites": {
       "Excursion en bateau privé": 300,
       "Plongée avec les raies manta": 250,
@@ -89,21 +92,23 @@
     },
     "intimite": "Très élevée",
     "prix": 4500,
+    "moyenne": 6600,
     "mots_cles": ["lagons", "bungalows sur pilotis", "paradis", "plongée", "snorkeling", "gastronomie", "Polynésie Française", "Perle du Pacifique", "luxe", "détente"]
   },
   {
     "id": "maldives",
     "nom": "Maldives",
+    "pays": "maldives",
     "theme": "Évasion tropicale",
     "image": "Images/Maldives.jpeg",
     "description": "Eau cristalline, sable blanc et sérénité absolue. L’évasion ultime pour une parenthèse enchantée.",
-    "climat_saison": "Tropical",
+    "climat_saison": "Tropical & Ensoleillé",
     "hebergements": {
       "Bungalow sur pilotis": 1300,
       "Resort avec spa": 1000,
       "Villa avec piscine privée": 1400
     },
-    "experiences": ["Détente & Spa", "Aventures aquatiques", "Gastronomie"],
+    "themes": "Détente & Bien-être",
     "activites": {
       "Croisière au coucher du soleil": 350,
       "Snorkeling avec les requins-baleines": 300,
@@ -111,21 +116,23 @@
     },
     "intimite": "Extrême",
     "prix": 5000,
+    "moyenne": 7500,
     "mots_cles": ["eau cristalline", "sable blanc", "sérénité", "plongée", "snorkeling", "Maldives", "Évasion tropicale", "luxe", "spa"]
   },
   {
     "id": "tahiti",
     "nom": "Tahiti",
-    "theme": "Douceur de vivre polynésienne",
+    "pays": "polynesie",
+    "theme": "Eden polynésien",
     "image": "Images/Tahiti.jpeg",
     "description": "Eaux cristallines, nature luxuriante et culture polynésienne. Une destination de rêve pour les voyageurs en quête de paradis.",
-    "climat_saison": "Tropical",
+    "climat_saison": "Tropical & Ensoleillé",
     "hebergements": {
       "Bungalow sur pilotis": 1400,
       "Hôtel en bord de plage": 1000,
       "Villa privée": 1200
     },
-    "experiences": ["Plongée", "Culture locale", "Bien-être"],
+    "themes": "Détente & Bien-être",
     "activites": {
       "Excursion en pirogue traditionnelle": 250,
       "Plongée avec les raies manta": 300,
@@ -133,52 +140,48 @@
     },
     "intimite": "Très élevée",
     "prix": 4500,
+    "moyenne": 7200,
     "mots_cles": ["eaux cristallines", "nature", "locale", "Tahiti", "Polynésie", "plongée", "bien-être", "raies manta"]
   },
   
   {
     "id": "dubai",
     "nom": "Dubaï",
+    "pays": "emirats",
     "theme": "Luxe et démesure",
     "image": "Images/Dubai.jpeg",
     "description": "Une métropole futuriste où tout est possible : safari dans le désert, hôtels ultra-luxueux et shopping XXL.",
-    "climat_saison": "Désertique",
+    "climat_saison": "Automne Doré",
     "hebergements": {
       "Hôtel 7 étoiles": 2000,
       "Penthouse skyline": 1500,
       "Resort en bord de mer": 1000
     },
-    "experiences": [
-      "Shopping de luxe",
-      "Aventures dans le désert",
-      "Grands restaurants"
-    ],
+    "themes": "Désert & Splendeur d'Orient",
     "activites": {
       "Dîner au sommet du Burj Khalifa": 500,
       "Excursion en 4x4 dans le désert": 300,
       "Croisière en yacht privé": 600
     },
     "intimite": "Moyenne",
-    "prix": 6000,
+    "prix": 3000,
+    "moyenne": 8900,
     "mots_cles": ["désert", "hôtels de luxe", "shopping", "aventure", "Dubaï", "Burj Khalifa", "yacht privé"]
   },
   {
     "id": "oman",
     "nom": "Oman",
+    "pays": "oman",
     "theme": "Trésor du Moyen-Orient",
     "image": "Images/Oman.jpeg",
     "description": "Des paysages désertiques, des forts historiques et des plages paradisiaques. Une perle méconnue du Golfe.",
-    "climat_saison": "Désertique",
+    "climat_saison": "Automne Doré",
     "hebergements": {
       "Palace oriental": 1000,
       "Lodge dans le désert": 750,
       "Resort en bord de mer": 800
     },
-    "experiences": [
-      "Aventures dans le désert",
-      "Patrimoine culturel",
-      "Plages & Snorkeling"
-    ],
+    "themes": "Désert & Splendeur d'Orient",
     "activites": {
       "Excursion en 4x4 dans le désert": 300,
       "Balade en dhow traditionnel": 250,
@@ -186,21 +189,23 @@
     },
     "intimite": "Élevée",
     "prix": 4000,
+    "moyenne": 5600,
     "mots_cles": ["désert", "paysages", "plages", "snorkeling", "Oman", "Moyen-Orient", "aventure", "culture"]
   },
   {
     "id": "egypte",
     "nom": "Égypte",
+    "pays": "egypte",
     "theme": "Merveilles antiques",
     "image": "Images/Egypte.jpeg",
     "description": "Entre pyramides, temples et croisières sur le Nil, un voyage dans l’histoire fascinante des pharaons.",
-    "climat_saison": "Aride",
+    "climat_saison": "Automne Doré",
     "hebergements": {
       "Palace au Caire": 700,
       "Bateau de luxe sur le Nil": 900,
       "Hôtel avec vue sur les pyramides": 650
     },
-    "experiences": ["Culture & Histoire", "Aventure", "Gastronomie locale"],
+    "themes": "Désert & Splendeur d'Orient",
     "activites": {
       "Visite privée des pyramides": 150,
       "Croisière sur le Nil": 400,
@@ -208,21 +213,23 @@
     },
     "intimite": "Moyenne",
     "prix": 3500,
+    "moyenne": 5200,
     "mots_cles": ["pyramides", "désert", "temples", "Nil", "pharaons", "Égypte", "Merveilles antiques", "croisière", "histoire", "aventure"]
   },
   {
     "id": "tanzanie",
     "nom": "Tanzanie",
-    "theme": "Safari & Plages",
+    "pays": "tanzanie",
+    "theme": "Royaume du Safari",
     "image": "Images/Tanzanie.jpeg",
     "description": "Un voyage entre safaris grandioses et plages paradisiaques de Zanzibar.",
-    "climat_saison": "Tropical",
+    "climat_saison": "Chaleur d'Aventure",
     "hebergements": {
       "Lodge de luxe en safari": 1200,
       "Bungalow à Zanzibar": 850,
       "Campement chic en savane": 900
     },
-    "experiences": ["Safari", "Plongée", "Rencontre avec la faune"],
+    "themes": "Aventure & Exploration",
     "activites": {
       "Safari dans le Serengeti": 600,
       "Plongée à Zanzibar": 300,
@@ -230,21 +237,23 @@
     },
     "intimite": "Élevée",
     "prix": 5000,
+    "moyenne": 8000,
     "mots_cles": ["safari", "Zanzibar", "Serengeti", "Kilimandjaro", "faune", "Tanzanie", "Safari", "Plages", "plage", "plongée"]
   },
   {
     "id": "costarica",
     "nom": "Costa Rica",
-    "theme": "Nature & Aventure",
+    "pays": "costa rica",
+    "theme": "Nature Originelle",
     "image": "Images/Costa Rica.jpeg",
     "description": "Jungle luxuriante, volcans actifs et plages sauvages. Un paradis pour les amoureux de nature.",
-    "climat_saison": "Tropical",
+    "climat_saison": "Chaleur d'Aventure",
     "hebergements": {
       "Écolodge en jungle": 750,
       "Villa en bord de plage": 900,
       "Hôtel thermal près des volcans": 850
     },
-    "experiences": ["Aventure", "Bien-être", "Faune & Flore"],
+    "themes": "Aventure & Exploration",
     "activites": {
       "Randonnée au volcan Arenal": 200,
       "Tyrolienne dans la jungle": 150,
@@ -252,47 +261,47 @@
     },
     "intimite": "Moyenne",
     "prix": 3800,
+    "moyenne": 5050,
     "mots_cles": ["jungle", "volcans", "plages", "faune", "flore", "Costa Rica", "Nature", "aventure", "bien-être"]
   },
   {
     "id": "australie",
     "nom": "Australie",
+    "pays": "australie",
     "theme": "Terre d’aventure",
     "image": "Images/Australie.jpeg",
     "description": "Un voyage entre les plages de rêve, la Grande Barrière de Corail et l’Outback mystérieux.",
-    "climat_saison": "Variable selon la région",
+    "climat_saison": "Chaleur d'Aventure",
     "hebergements": {
       "Lodge en Outback": 950,
       "Hôtel de luxe à Sydney": 1100,
       "Bungalow sur la Grande Barrière de Corail": 1300
     },
-    "experiences": ["Aventure", "Plongée & Snorkeling", "Exploration urbaine"],
+    "themes": "Aventure & Exploration",
     "activites": {
       "Plongée sur la Grande Barrière": 500,
       "Safari en Outback": 700,
       "Excursion à Uluru": 450
     },
     "intimite": "Variable",
-    "prix": 6000,
+    "prix": 3000,
+    "moyenne": 7050,
     "mots_cles": ["plages", "Grande Barrière de Corail", "Outback", "Australie", "aventure", "plongée", "safari", "Uluru"]
   },
   {
     "id": "laponie",
     "nom": "Laponie",
+    "pays": "finlande",
     "theme": "Magie polaire",
     "image": "Images/Laponie.jpeg",
     "description": "Forêts enneigées, aurores boréales et aventures arctiques. Une expérience hors du commun.",
-    "climat_saison": "Froid polaire",
+    "climat_saison": "Hiver Chic & Neige",
     "hebergements": {
       "Igloo de verre": 700,
       "Cabane en bois": 500,
       "Lodge de luxe": 800
     },
-    "experiences": [
-      "Nature & Aventures",
-      "Rencontre avec les rennes",
-      "Chasse aux aurores boréales"
-    ],
+    "themes": "Flocon & Glamour",
     "activites": {
       "Balade en traîneau à chiens": 250,
       "Nuit sous les aurores boréales": 400,
@@ -300,22 +309,24 @@
     },
     "intimite": "Élevée",
     "prix": 3200,
+    "moyenne": 4850,
     "mots_cles": ["neige", "aurores boréales", "rennes", "nature", "aventures", "Finlande", "polaire", "traîneau à chiens", "motoneige"]
   },
   
   {
     "id": "aspen",
     "nom": "Aspen",
-    "theme": "Ski & Luxe",
+    "pays": "usa",
+    "theme": "Perle des Rocheuses",
     "image": "Images/Aspen.jpeg",
     "description": "Neige parfaite, stations de luxe et ambiance chic dans les Rocheuses américaines.",
-    "climat_saison": "Froid",
+    "climat_saison": "Hiver Chic & Neige",
     "hebergements": {
       "Chalet de luxe": 1500,
       "Hôtel ski-in/ski-out": 1200,
       "Lodge en montagne": 1100
     },
-    "experiences": ["Ski & Sports d’hiver", "Bien-être", "Gastronomie"],
+    "themes": "Flocon & Glamour",
     "activites": {
       "Ski avec un guide privé": 400,
       "Détente dans un spa de montagne": 250,
@@ -323,32 +334,31 @@
     },
     "intimite": "Élevée",
     "prix": 5500,
+    "moyenne": 8100,
     "mots_cles": ["neige", "ski", "luxe", "Rocheuses", "Aspen", "sports d'hiver", "bien-être"]
   },
   {
     "id": "courchevel",
     "nom": "Courchevel",
-    "theme": "Ski & Élégance",
+    "pays": "france",
+    "theme": "Ecrin des Alpes",
     "image": "Images/Courchevel.jpeg",
     "description": "Une station de ski prestigieuse où luxe, sport et paysages alpins se rencontrent.",
-    "climat_saison": "Montagnard",
+    "climat_saison": "Hiver Chic & Neige",
     "hebergements": {
       "Chalet de luxe avec service": 2500,
       "Hôtel 5 étoiles en station": 1800,
       "Appartement avec vue sur les pistes": 1200
     },
-    "experiences": [
-      "Ski haut de gamme",
-      "Gastronomie étoilée",
-      "Bien-être en altitude"
-    ],
+    "themes": "Flocon & Glamour",
     "activites": {
       "Journée de ski avec moniteur privé": 600,
       "Dîner gastronomique en montagne": 400,
       "Spa et bien-être en altitude": 300
     },
     "intimite": "Élevée",
-    "prix": 7000,
+    "prix": 5000,
+    "moyenne": 11300,
     "mots_cles": ["neige", "luxe", "Alpes", "Courchevel", "Ski", "gastronomie", "montagne", "bien-être"]
   }
 ]

@@ -5,13 +5,16 @@
         "role": "admin",
         "informations": {
             "nom": "Test",
-            "prenom": "Test le grand",
-            "civilite": "Monsieur",
-            "telephone": "123456"
+            "prenom": "Michel",
+            "civilite": "Madame",
+            "telephone": "16514312685",
+            "photo": null,
+            "preferences": null,
+            "passeport": null
         },
         "dates": {
             "inscription": "2025-03-25",
-            "derniere_connexion": "2025-03-30"
+            "derniere_connexion": "2025-05-04"
         },
         "voyages": {
             "consultes": [
@@ -36,7 +39,10 @@
             "nom": "Zoe",
             "prenom": "Runneterra",
             "civilite": null,
-            "telephone": null
+            "telephone": null,
+            "photo": null,
+            "preferences": null,
+            "passeport": null
         },
         "dates": {
             "inscription": "2025-03-25",
@@ -59,7 +65,10 @@
             "nom": "Garen",
             "prenom": "Justice",
             "civilite": null,
-            "telephone": null
+            "telephone": null,
+            "photo": null,
+            "preferences": null,
+            "passeport": null
         },
         "dates": {
             "inscription": "2025-03-25",
@@ -89,7 +98,10 @@
             "nom": "Skibidi",
             "prenom": "Toilet",
             "civilite": null,
-            "telephone": null
+            "telephone": null,
+            "photo": null,
+            "preferences": null,
+            "passeport": null
         },
         "dates": {
             "inscription": "2025-03-25",
@@ -113,16 +125,19 @@
     {
         "email": "luc@gmail.com",
         "passwordHash": "$2y$10$gAVmy0Aqib3LJVImVdcFC.iOrWy3v5joX9LhX3N8R9GCx9eFOleZ2",
-        "role": "normal",
+        "role": "banni",
         "informations": {
             "nom": "nom",
             "prenom": "luc",
             "civilite": "",
-            "telephone": null
+            "telephone": null,
+            "photo": null,
+            "preferences": null,
+            "passeport": null
         },
         "dates": {
             "inscription": "2025-03-30",
-            "derniere_connexion": "2025-03-30"
+            "derniere_connexion": "2025-05-04"
         },
         "voyages": {
             "consultes": [
@@ -147,7 +162,10 @@
             "nom": "nom",
             "prenom": "marc",
             "civilite": "",
-            "telephone": null
+            "telephone": null,
+            "photo": null,
+            "preferences": null,
+            "passeport": null
         },
         "dates": {
             "inscription": "2025-03-30",
@@ -171,7 +189,10 @@
             "nom": "nom",
             "prenom": "paul",
             "civilite": "",
-            "telephone": null
+            "telephone": null,
+            "photo": null,
+            "preferences": null,
+            "passeport": null
         },
         "dates": {
             "inscription": "2025-03-30",
@@ -193,7 +214,10 @@
             "nom": "Thomas",
             "prenom": "Andrey",
             "civilite": "",
-            "telephone": null
+            "telephone": null,
+            "photo": null,
+            "preferences": null,
+            "passeport": null
         },
         "dates": {
             "inscription": "2025-03-30",
@@ -215,12 +239,38 @@
         "informations": {
             "nom": "Zamoum",
             "prenom": "bouchra",
-            "civilite": "",
-            "telephone": null
+            "civilite": "Monsieur",
+            "telephone": "0608177031",
+            "photo": "",
+            "preferences": "",
+            "passeport": "Diplomatique"
         },
         "dates": {
             "inscription": "2025-04-28",
-            "derniere_connexion": null
+            "derniere_connexion": "2025-05-05"
+        },
+        "voyages": {
+            "consultes": [],
+            "achetes": [],
+            "favoris": []
+        }
+    },
+    {
+        "email": "test@leretour.com",
+        "passwordHash": "$2y$10$12mZwYgPgn5UVYYd8Evf2eyqDkzkhYpSxaNFBoG53Mrt5hEt1T2Qa",
+        "role": "normal",
+        "informations": {
+            "nom": "Test",
+            "prenom": "Le retour",
+            "civilite": "Madame",
+            "telephone": "2168515361",
+            "photo": "",
+            "preferences": "",
+            "passeport": "Diplomatique"
+        },
+        "dates": {
+            "inscription": "2025-05-03",
+            "derniere_connexion": "2025-05-03"
         },
         "voyages": {
             "consultes": [],
