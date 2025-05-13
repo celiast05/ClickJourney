@@ -290,39 +290,55 @@ footer p {
   }
 }
 
-/* Pour l’œil du mot de passe */
+
+
+
+
 .password-wrapper {
   position: relative;
-  width: 94%;
   display: flex;
   align-items: center;
+  width: 94%;
   margin-top: 12px;
   margin-bottom: 12px;
-  box-sizing: border-box;
 }
 
 .password-wrapper input {
   width: 100%;
   padding: 12px;
-  padding-right: 40px;
+  padding-right: 80px;
   border: 1px solid var(--title-color);
   border-radius: 6px;
   background-color: rgba(255, 255, 255, 0.2);
   color: white;
-  font-size: 16px;
-  outline: none;
-  transition: 0.3s;
-  box-sizing: border-box;
 }
 
+.email-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 94%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+.email-wrapper input {
+  width: 100%;
+  padding: 12px;
+  padding-right: 80px;
+  border: 1px solid var(--title-color);
+  border-radius: 6px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
 .toggle-eye {
   position: absolute;
-  right: 12px;
+  right: 40px;
   top: 50%;
   transform: translateY(-50%);
-  cursor: pointer;
-  color: var(--title-color);
   font-size: 18px;
+  color: var(--title-color);
+  cursor: pointer;
 }
 
 .stay-connected {
@@ -334,4 +350,16 @@ footer p {
   font-weight: bold;
   color: var(--title-color);
   margin-top: 10px;
+}
+
+#charCount {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--title-color);
+  pointer-events: none;
+  user-select: none;
 }

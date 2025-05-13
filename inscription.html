@@ -74,9 +74,15 @@
       <p>Déjà un compte ? <a href="connexion.php">Connectez-vous ici</a></p>
     </section>
 
-    <footer>
-      <p>&copy; 2025 Elysia Voyage. Tous droits réservés.</p>
-    </footer>
+    <div id="foot"></div>
+
+      <script>
+      fetch('/footer.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('foot').innerHTML = html;
+        });
+    </script>
     <script src="js/inscription.js"></script>
     <script src="js/theme.js"></script>
   </body>

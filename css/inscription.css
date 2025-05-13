@@ -10,45 +10,6 @@ body {
   min-height: 100vh;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
-  background: var(--background-color);
-}
-
-nav h1 {
-  font-family: var(--title);
-  font-size: 32px;
-  font-weight: bold;
-  color: var(--title-color);
-  letter-spacing: 2px;
-}
-
-nav img {
-  width: 200px;
-}
-
-nav .btn {
-  margin-top: 3px;
-  margin-left: 200px;
-}
-
-nav .btn a {
-  text-decoration: none;
-  color: rgba(0, 0, 0, 0.5);
-  color: var(--btn-color);
-  margin-right: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-  padding-bottom: 3px;
-}
-
-nav .btn a:hover {
-  border-bottom: 2px solid var(--title-color);
-}
-
 .inscription {
   background: var(--banner-color);
   padding: 30px;
@@ -151,15 +112,6 @@ a {
 a:hover {
   color: var(--title-color);
 }
-
-footer p {
-  color: var(--title-color);
-  text-align: center;
-  bottom: 10px;
-  width: 100%;
-  font-size: 14px;
-}
-
 
 @media (max-width: 1024px) {
   nav {
@@ -349,4 +301,3 @@ input[data-valid="false"] {
   color: var(--title-color);
   font-size: 18px;
 }
-

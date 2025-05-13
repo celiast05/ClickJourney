@@ -25,14 +25,18 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
       </p>
       <form action="erreur_connexion.php" method="POST">
         <label for="email">Email :</label>
+        <div class="email-wrapper">
         <input type="email" id="email" name="email" required />
+        </div>
 
         
         <label for="password">Mot de passe :</label>
 <div class="password-wrapper">
   <input type="password" id="password" name="password" required />
   <i class="fa-solid fa-eye toggle-eye" id="togglePassword"></i>
+  <span id="charCount">0</span>
 </div>
+
 
 <div class="stay-connected">
   <label for="stay_connected">Rester connecté</label>
@@ -50,7 +54,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     <footer>
       <p>&copy; 2025 Elysia Voyage. Tous droits réservés.</p>
     </footer>
-    <script src="js/connexion.js"></script>
+    <script src="connexion.js"></script>
     <script src="js/theme.js"></script>
 
   </body>
