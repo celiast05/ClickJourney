@@ -33,32 +33,7 @@ $_SESSION['last_activity'] = time();
     <title>Personalisation - Elysia Voyage</title>
   </head>
   <body>
-  <nav>
-      <img src="Images/logo.png" alt="Logo" />
-      <div class="btn">
-        <?php
-        if(isset($_SESSION['role']) && $_SESSION['role'] == "admin") {
-            echo "<a href='admin.php'>Administrateur</a>";
-        }
-        ?>
-        <a href="accueil.php">Accueil</a>
-        <?php
-        if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-            echo "<a href='profil.php'>Mon profil</a>";
-        }
-        ?>
-        <a href="voyages.php">Nos voyages</a>
-        <a href="filtrage.php">Filtrer</a>
-        <?php
-        if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-            echo "<a href='script/deconnexion.php?action=run'>Déconnexion</a>";
-        }
-        else{
-            echo "<a href='connexion.php'>Connexion</a>";
-        }
-        ?>
-      </div>
-    </nav>
+  <?php include 'nav.php'; ?>
 
     <header>
       <h1>Elysia Voyage</h1>

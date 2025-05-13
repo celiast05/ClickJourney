@@ -62,19 +62,7 @@ if ($users !== null) {
     <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
   </head>
   <body>
-    <nav>
-      <img src="Images/logo.png" alt="Logo" />
-      <div class="btn">
-        <a href="accueil.php">Accueil</a>
-        <?php
-        if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-            echo "<a href='profil.php'>Mon profil</a>";
-        }
-        ?>
-        <a href="voyages.php">Nos voyages</a>
-      </div>
-    </nav>
-
+    <?php include 'nav.php'; ?>
     <?php 
     if ($error){
         echo "<section id='error'><p> Utilisateur invalide, mail ou mot de passe incorect.</p>";
