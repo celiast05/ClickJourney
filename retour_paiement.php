@@ -99,15 +99,9 @@ if ($statut === 'accepted') {
     window.location.href = "accueil.php";
   }, 5000); // 5 secondes
 </script>
-<div id="foot"></div>
 
-      <script>
-      fetch('/footer.html')
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('foot').innerHTML = html;
-        });
-    </script>
+<?php include 'footer.php'; ?>
+
 <script src="js/theme.js"></script>
 </body>
 </html>

@@ -277,5 +277,74 @@
             "achetes": [],
             "favoris": []
         }
+    },
+    {
+        "email": null,
+        "passwordHash": "$2y$10$zOa4WenedDltjQusLJwiiemQyH0k.OIryNiABJScpnZx3sVN3fdCG",
+        "role": "normal",
+        "informations": {
+            "nom": null,
+            "prenom": null,
+            "civilite": null,
+            "telephone": null,
+            "photo": null,
+            "preferences": null,
+            "passeport": null
+        },
+        "dates": {
+            "inscription": "2025-05-13",
+            "derniere_connexion": null
+        },
+        "voyages": {
+            "consultes": [],
+            "achetes": [],
+            "favoris": []
+        }
+    },
+    {
+        "email": null,
+        "passwordHash": "$2y$10$hE4XFHJZ2Xtm517x\/SzD7eliNlAbURBlLH9SkamNR2s5AJSh9TZOW",
+        "role": "normal",
+        "informations": {
+            "nom": null,
+            "prenom": null,
+            "civilite": null,
+            "telephone": null,
+            "photo": null,
+            "preferences": null,
+            "passeport": null
+        },
+        "dates": {
+            "inscription": "2025-05-13",
+            "derniere_connexion": null
+        },
+        "voyages": {
+            "consultes": [],
+            "achetes": [],
+            "favoris": []
+        }
+    },
+    {
+        "email": null,
+        "passwordHash": "$2y$10$xjKZ9ubI1wa6cEvrX5dNIeH3U\/wwxdbrYkHrKSlIDmodekwP8pbKe",
+        "role": "normal",
+        "informations": {
+            "nom": null,
+            "prenom": null,
+            "civilite": null,
+            "telephone": null,
+            "photo": null,
+            "preferences": null,
+            "passeport": null
+        },
+        "dates": {
+            "inscription": "2025-05-13",
+            "derniere_connexion": null
+        },
+        "voyages": {
+            "consultes": [],
+            "achetes": [],
+            "favoris": []
+        }
     }
 ]

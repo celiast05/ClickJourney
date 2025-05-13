@@ -235,6 +235,15 @@ a:hover {
   animation: fadeIn 0.3s ease-in-out;
 }
 
+.error-message {
+  color: #ff0000;
+  background-color: #ffe6e6;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  border: 1px solid #ff0000;
+}
+
 /* Petite animation d'apparition */
 @keyframes fadeIn {
   from {

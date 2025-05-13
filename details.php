@@ -161,15 +161,9 @@ foreach ($trips as $t) { // on récupère le bon voyage
   "activites": <?= json_encode($trip['activites']) ?>
 }
 </script>
-<div id="foot"></div>
 
-      <script>
-      fetch('/footer.html')
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('foot').innerHTML = html;
-        });
-    </script>
+<?php include 'footer.php'; ?>
+
 <script src="js/panier.js"></script>
 <script src="js/theme.js"></script>
 </body>

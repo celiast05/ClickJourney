@@ -131,18 +131,11 @@ $total_pages = ceil(count($users) / $users_par_page);
     <?php if ($page_actuelle < $total_pages): ?>
         <a href="?page=<?php echo $page_actuelle + 1; ?>">Suivant</a>
     <?php endif; ?>
-    </div>
-            </div>
-        <div id="foot"></div>
+    
+    <?php include 'footer.php'; ?>
 
-      <script>
-      fetch('/footer.html')
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('foot').innerHTML = html;
-        });
-    </script>
-        <script src="js/theme.js"></script>
-        <script src="js/admin.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/admin.js"></script>
+    
     </body>
 </html>

@@ -203,15 +203,9 @@ if (!empty($_SESSION['user']['voyages']['consultes']) || !empty($_SESSION['user'
 ?>
 
     </div>
-    <div id="foot"></div>
+    
+    <?php include 'footer.php'; ?>
 
-      <script>
-      fetch('/footer.html')
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('foot').innerHTML = html;
-        });
-    </script>
     <script src="js/theme.js"></script>
     <script src="js/profil.js"></script>
 </body>

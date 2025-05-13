@@ -121,14 +121,8 @@ $control = md5($api_key . "#" . $transaction . "#" . $montant . "#" . $vendeur .
 
     <p><a href='details.php?voyage=<?php echo $trip["id"]; ?>'>Modifier</a></p>
     <script src="js/theme.js"></script>
-    <div id="foot"></div>
-
-      <script>
-      fetch('/footer.html')
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('foot').innerHTML = html;
-        });
-    </script>
+    
+    <?php include 'footer.php'; ?>
+    
 </body>
 </html>

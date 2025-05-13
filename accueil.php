@@ -39,7 +39,7 @@ $_SESSION['last_activity'] = time();
     <title>Elysia Voyage</title>
   </head>
   <body> 
-  <?php include 'nav.php'; ?>
+    <?php include 'nav.php'; ?>
 
     <header>
       <h1>Elysia Voyage</h1>
@@ -78,15 +78,9 @@ $_SESSION['last_activity'] = time();
         </svg>
       </a>
     </main>
-    <div id="foot"></div>
+    
+    <?php include 'footer.php'; ?>
 
-      <script>
-      fetch('/footer.html')
-        .then(res => res.text())
-        .then(html => {
-          document.getElementById('foot').innerHTML = html;s
-        });
-    </script>
     <script src="js/theme.js"></script>
   </body>
 </html>
