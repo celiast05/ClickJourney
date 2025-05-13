@@ -10,49 +10,6 @@ body {
   text-align: center;
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
-  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
-  background: var(--background-color);
-}
-
-nav h1 {
-  font-family: var(--title);
-  font-size: 32px;
-  font-weight: bold;
-  color: var(--title-color);
-  letter-spacing: 2px;
-}
-
-nav img {
-  width: 200px;
-}
-
-nav a {
-  font-weight: normal;
-}
-
-nav .btn {
-  margin-top: 3px;
-  margin-left: 200px;
-}
-
-nav .btn a {
-  text-decoration: none;
-  font-family: var(--text);
-  color: var(--btn-color);
-  margin-right: 10px;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
-  padding-bottom: 3px;
-}
-
-nav .btn a:hover {
-  border-bottom: 2px solid var(--title-color);
-}
-
 h2 {
   font-size: 40px;
   font-weight: bold;

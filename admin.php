@@ -56,7 +56,7 @@ $total_pages = ceil(count($users) / $users_par_page);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrateur - Elysia Voyage</title>
-    <link rel="stylesheet" href="css/admin.css?v=1">
+    <link rel="stylesheet" href="css/admin.css?v=1.2">
     <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
 </head>
 <body>
@@ -131,8 +131,17 @@ $total_pages = ceil(count($users) / $users_par_page);
     <?php if ($page_actuelle < $total_pages): ?>
         <a href="?page=<?php echo $page_actuelle + 1; ?>">Suivant</a>
     <?php endif; ?>
-</div>
-        </div>
+    </div>
+            </div>
+        <div id="foot"></div>
+
+      <script>
+      fetch('/footer.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('foot').innerHTML = html;
+        });
+    </script>
         <script src="js/theme.js"></script>
         <script src="js/admin.js"></script>
     </body>

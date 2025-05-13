@@ -45,9 +45,15 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
       </p>
     </section>
 
-    <footer>
-      <p>&copy; 2025 Elysia Voyage. Tous droits réservés.</p>
-    </footer>
+    <div id="foot"></div>
+
+      <script>
+      fetch('/footer.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('foot').innerHTML = html;
+        });
+    </script>
     <script src="js/connexion.js"></script>
     <script src="js/theme.js"></script>
 

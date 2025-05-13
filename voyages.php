@@ -167,6 +167,15 @@ if (isset($_POST['keyword']) && !empty(trim($_POST['keyword']))) {
             <?php }} ?>
     </div>
 </main>
+<div id="foot"></div>
+
+      <script>
+      fetch('/footer.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('foot').innerHTML = html;
+        });
+    </script>
 <script src="js/theme.js"></script>
 <script src="js/voyages.js"></script>
 </body>

@@ -78,6 +78,15 @@ $_SESSION['last_activity'] = time();
         </svg>
       </a>
     </main>
+    <div id="foot"></div>
+
+      <script>
+      fetch('/footer.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('foot').innerHTML = html;s
+        });
+    </script>
     <script src="js/theme.js"></script>
   </body>
 </html>
