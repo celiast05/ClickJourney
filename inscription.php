@@ -109,13 +109,6 @@ if(!$error){
     }
     ?>
     </section>
-    
-    <footer>
-        <p>&copy; 2025 Elysia Voyage. Tous droits réservés.</p>
-
-    </footer>
-
-
     <script src="js/theme.js"></script>
 </body>
 </html>

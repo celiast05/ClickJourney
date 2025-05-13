@@ -56,40 +56,11 @@ $total_pages = ceil(count($users) / $users_par_page);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrateur - Elysia Voyage</title>
-    <link rel="stylesheet" href="css/admin.css?v=1">
+    <link rel="stylesheet" href="css/admin.css?v=1.2">
     <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
 </head>
 <body>
-    <nav>
-      <img src="Images/logo.png" alt="Logo" />
-      <div class="btn">
-        <?php
-        if(isset($_SESSION['role']) && $_SESSION['role'] == "admin") {
-            echo "<a href='admin.php'>Administrateur</a>";
-        }
-        ?>
-        <a href="accueil.php">Accueil</a>
-        <?php
-        if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-            echo "<a href='profil.php'>Mon profil</a>";
-        }
-        ?>
-        <a href="voyages.php">Nos voyages</a>
-        <?php
-        if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-            echo "<a href='script/deconnexion.php?action=run'>Déconnexion</a>";
-        }
-        else{
-            echo "<a href='connexion.php'>Connexion</a>";
-        }
-        if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-            $nbArticles = isset($_SESSION['panier']) ? count($_SESSION['panier']) : 0;
-            echo "<a href='mon_panier.php'>Panier ($nbArticles)</a>";
-          }
-        ?>
-        <a href="javascript:void(0)" id="change-theme">Changer de thème</a>
-      </div>
-    </nav>
+    <?php include 'nav.php'; ?>
     
     <div class="admin-container">
         <h1>Gestion des Utilisateurs</h1>
@@ -160,8 +131,17 @@ $total_pages = ceil(count($users) / $users_par_page);
     <?php if ($page_actuelle < $total_pages): ?>
         <a href="?page=<?php echo $page_actuelle + 1; ?>">Suivant</a>
     <?php endif; ?>
-</div>
-        </div>
+    </div>
+            </div>
+        <div id="foot"></div>
+
+      <script>
+      fetch('/footer.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('foot').innerHTML = html;
+        });
+    </script>
         <script src="js/theme.js"></script>
         <script src="js/admin.js"></script>
     </body>

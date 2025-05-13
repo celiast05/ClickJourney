@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Récupérer les informations envoyées par le formulaire
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $url = "connexion.php?email=". $email;
 }
 
 $fileJson = 'json/users.json';
@@ -62,26 +63,23 @@ if ($users !== null) {
     <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
   </head>
   <body>
-    <nav>
-      <img src="Images/logo.png" alt="Logo" />
-      <div class="btn">
-        <a href="accueil.php">Accueil</a>
-        <?php
-        if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
-            echo "<a href='profil.php'>Mon profil</a>";
-        }
-        ?>
-        <a href="voyages.php">Nos voyages</a>
-      </div>
-    </nav>
-
+    <?php include 'nav.php'; ?>
     <?php 
     if ($error){
         echo "<section id='error'><p> Utilisateur invalide, mail ou mot de passe incorect.</p>";
-        echo "<a href='connexion.php'>Réessayer</a>";
+        echo "<a href='". $url ."'>Réessayer</a>";
         echo "<a href='inscription.html'>Inscrivez vous</a></section>";
     }
     ?>
+    <div id="foot"></div>
+
+      <script>
+      fetch('/footer.html')
+        .then(res => res.text())
+        .then(html => {
+          document.getElementById('foot').innerHTML = html;
+        });
+    </script>
     <script src="js/theme.js"></script>
 </body>
 </html>
