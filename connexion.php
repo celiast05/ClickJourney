@@ -25,9 +25,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
       </p>
       <form action="erreur_connexion.php" method="POST">
         <label for="email">Email :</label>
-        <input type="email" id="email" name="email" required />
-
-        
+        <input type="email" id="email" name="email" required <?php if (isset($_GET['email'])){echo "value='".$_GET['email']."'";} ?> />
         <label for="password">Mot de passe :</label>
 <div class="password-wrapper">
   <input type="password" id="password" name="password" required />

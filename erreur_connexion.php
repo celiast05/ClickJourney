@@ -14,6 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Récupérer les informations envoyées par le formulaire
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $url = "connexion.php?email=". $email;
 }
 
 $fileJson = 'json/users.json';
@@ -66,7 +67,7 @@ if ($users !== null) {
     <?php 
     if ($error){
         echo "<section id='error'><p> Utilisateur invalide, mail ou mot de passe incorect.</p>";
-        echo "<a href='connexion.php'>Réessayer</a>";
+        echo "<a href='". $url ."'>Réessayer</a>";
         echo "<a href='inscription.html'>Inscrivez vous</a></section>";
     }
     ?>
