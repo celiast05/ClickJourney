@@ -6,7 +6,7 @@
         "informations": {
             "nom": "Test",
             "prenom": "Test le grand",
-            "civilite": "Madame",
+            "civilite": "Monsieur",
             "telephone": "5354381532112",
             "photo": [],
             "preferences": "",
@@ -30,7 +30,7 @@
                 "Courchevel"
             ]
         },
-        "civilite": "Madame",
+        "civilite": "Monsieur",
         "nom": "Test",
         "prenom": "Test le grand",
         "telephone": "5354381532112",

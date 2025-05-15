@@ -207,7 +207,7 @@ if (!empty($_SESSION['user']['voyages']['consultes']) || !empty($_SESSION['user'
     <?php include 'footer.php'; ?>
 
     <script src="js/theme.js"></script>
-    <script src="js/test.js"></script>
+    <script src="js/profil.js"></script>
 </body>
 </html>
 
