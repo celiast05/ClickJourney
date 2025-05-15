@@ -1,3 +1,51 @@
+const form = document.getElementById("profilForm");
+
+// Save previous value
+const originalData = {
+  civilite: form.civilite.value,
+  nom: form.nom.value,
+  prenom: form.prenom.value,
+  email: form.email.value,
+  telephone: form.telephone.value,
+
+  photo: form.photo.value,
+  preferences: form.preferences.value,
+  passeport: form.passeport.value,
+};
+
+form.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const formData = new FormData(form); // Get from data
+  const data = Object.fromEntries(formData.entries()); // Transforme en objet simple
+
+  try {
+    const response = await fetch("profil_update.php", {
+      method: "POST",
+      body: JSON.stringify(data),
+      headers: { "Content-Type": "application/json" },
+    });
+
+    const result = await response.json(); // Attend le JSON de retour
+
+    if (response.ok && result.success) {
+      alert("Mise à jour réussie.");
+      document.querySelectorAll("input, select, textarea").forEach((el) => {
+        el.dataset.initial = el.value;
+        el.disabled = true;
+      });
+      document.querySelector(".send-btn").style.display = "none";
+    } else {
+      throw new Error(result.message || "Erreur inconnue");
+    }
+  } catch (error) {
+    // if error put back the previous dataset
+    form.nom.value = originalData.nom;
+    form.email.value = originalData.email;
+    alert("Échec de la mise à jour : " + error.message);
+  }
+});
+
 // Faire save et enregistrer au moins une modif est fait
 
 function detectChange() {
@@ -165,5 +213,13 @@ if (telInput) {
       `;
       telError.style.display = "block";
     }
+  });
+}
+
+if (form) {
+  form.addEventListener("submit", () => {
+    document.querySelectorAll("input, select, textarea").forEach((el) => {
+      el.dataset.initial = el.value;
+    });
   });
 }

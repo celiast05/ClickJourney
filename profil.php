@@ -71,7 +71,7 @@
     
     <div class="container">
     <section class="profil">
-        <form action="profil_update.php" method="POST" onsubmit="return validateForm()">
+        <form action="profil_update.php" method="POST" onsubmit="return validateForm()" id="profilForm">
             <h2>Mon Profil</h2>
 
             <div class="profil-info">
@@ -207,7 +207,7 @@ if (!empty($_SESSION['user']['voyages']['consultes']) || !empty($_SESSION['user'
     <?php include 'footer.php'; ?>
 
     <script src="js/theme.js"></script>
-    <script src="js/profil.js"></script>
+    <script src="js/test.js"></script>
 </body>
 </html>
 

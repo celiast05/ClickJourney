@@ -5,16 +5,16 @@
         "role": "admin",
         "informations": {
             "nom": "Test",
-            "prenom": "Michel",
+            "prenom": "Test le grand",
             "civilite": "Madame",
-            "telephone": "16514312685",
-            "photo": null,
-            "preferences": null,
-            "passeport": null
+            "telephone": "5354381532112",
+            "photo": [],
+            "preferences": "",
+            "passeport": ""
         },
         "dates": {
             "inscription": "2025-03-25",
-            "derniere_connexion": "2025-05-13"
+            "derniere_connexion": "2025-05-15"
         },
         "voyages": {
             "consultes": [
@@ -29,7 +29,14 @@
             "favoris": [
                 "Courchevel"
             ]
-        }
+        },
+        "civilite": "Madame",
+        "nom": "Test",
+        "prenom": "Test le grand",
+        "telephone": "5354381532112",
+        "photo": [],
+        "preferences": "",
+        "passeport": ""
     },
     {
         "email": "zoe@gmail.com",
