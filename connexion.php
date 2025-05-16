@@ -30,11 +30,12 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
         </div>
 
         
-        <label for="password">Mot de passe :</label>
+
+ <label for="password">Mot de passe :</label>
 <div class="password-wrapper">
   <input type="password" id="password" name="password" required />
-  <i class="fa-solid fa-eye toggle-eye" id="togglePassword"></i>
-  <span id="charCount">0</span>
+  <span id="charCount">0</span> <!-- compteur de caractères -->
+  <i class="fa-solid fa-eye toggle-eye" id="togglePassword"></i> <!-- œil -->
 </div>
 
 
@@ -53,7 +54,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
 
     <?php include 'footer.php'; ?>
     
-    <script src="js/connexion.js"></script>
+    <script src="connexion.js"></script>
     <script src="js/theme.js"></script>
 
   </body>

@@ -1,12 +1,12 @@
-// Fichier : connexion.js
-
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector("form");
   const email = document.getElementById("email");
   const password = document.getElementById("password");
   const togglePassword = document.getElementById("togglePassword");
   const charCount = document.getElementById("charCount");
-  let previousLength = 0;
+
+  console.log("charCount:", charCount);
+
 
   // Fonction pour afficher une erreur
   function showError(input, message) {
@@ -36,12 +36,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     if (!emailRegex.test(emailValue)) {
-      showError(email, "Adresse e-mail invalide.");
       isValid = false;
     }
 
     if (passwordValue.length < 6) {
-      showError(password, "Le mot de passe doit contenir au moins 6 caractères.");
       isValid = false;
     }
 
@@ -50,19 +48,24 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+
+
   // Compteur de caractères mot de passe
   password.addEventListener("input", () => {
-    const currentLength = password.value.length;
-    charCount.textContent = currentLength;
-    previousLength = currentLength;
+    charCount.textContent = password.value.length;
   });
 
   // Afficher/Masquer le mot de passe
   togglePassword.addEventListener("click", function () {
     const isPassword = password.getAttribute("type") === "password";
     password.setAttribute("type", isPassword ? "text" : "password");
-
     this.classList.toggle("fa-eye");
     this.classList.toggle("fa-eye-slash");
   });
 });
+
+
+  
+
+
+ 
