@@ -240,8 +240,6 @@ a:hover {
 
 
 
-
-
 .password-wrapper {
   position: relative;
   display: flex;
@@ -279,6 +277,7 @@ a:hover {
   background-color: rgba(255, 255, 255, 0.2);
   color: white;
 }
+
 .toggle-eye {
   position: absolute;
   right: 40px;
@@ -302,7 +301,7 @@ a:hover {
 
 #charCount {
   position: absolute;
-  right: 10px;
+  right: 65px; /* 👈 plus à gauche que l’œil */
   top: 50%;
   transform: translateY(-50%);
   font-size: 14px;
@@ -311,3 +310,4 @@ a:hover {
   pointer-events: none;
   user-select: none;
 }
+
