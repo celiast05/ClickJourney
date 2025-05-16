@@ -70,6 +70,8 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'banni') { // détection d
 
   <a href="voyages.php" class="continuer-recherches">Continuer vos recherches</a>
 
+  <?php include 'footer.php'; ?>
+  
   <script src="js/theme.js"></script>
   <script>
   const confirmation = document.getElementById('confirmation');
