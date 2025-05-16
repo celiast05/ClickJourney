@@ -149,17 +149,17 @@ if (telInput) {
 const form = document.getElementById("profilForm");
 if (form) {
   form.addEventListener("submit", async (e) => {
-    e.preventDefault();
+    e.preventDefault(); // prevent normal sending of the form
 
     if (!validateForm()) return;
 
     const formData = new FormData(form);
-    const data = Object.fromEntries(formData.entries());
+    const data = Object.fromEntries(formData.entries()); // transform data into dictionary
 
     try {
       const response = await fetch("profil_update.php", {
         method: "POST",
-        body: JSON.stringify(data),
+        body: JSON.stringify(data), // make the dictonary into json
         headers: { "Content-Type": "application/json" },
       });
 

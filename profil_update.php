@@ -21,15 +21,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && is_array($data)) {
     $users[$index]['informations']['preferences'] = $data['preferences'] ?? '';
     $users[$index]['informations']['passeport'] = $data['passeport'] ?? '';
 
-    // Optionnel : mise à plat des infos au même niveau (comme dans votre version)
-    $users[$index]['civilite'] = $data['civilite'] ?? '';
-    $users[$index]['nom'] = $data['nom'] ?? '';
-    $users[$index]['prenom'] = $data['prenom'] ?? '';
-    $users[$index]['telephone'] = $data['telephone'] ?? '';
-    $users[$index]['photo'] = $data['photo'] ?? '';
-    $users[$index]['preferences'] = $data['preferences'] ?? '';
-    $users[$index]['passeport'] = $data['passeport'] ?? '';
-
     // Enregistre dans le fichier JSON
     file_put_contents($fileJson, json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 

@@ -1,12 +1,33 @@
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
+async function send_request(email, new_role){
+  const data = {
+    user_email: email,
+    role: new_role
+  }; // transform data into dictionary
+
+  try {
+    const response = await fetch("role_update.php", {
+      method: "POST",
+      body: JSON.stringify(data), // make the dictonary into json
+      headers: { "Content-Type": "application/json" },
+    });
+
+    const result = await response.json();
+
+    if (response.ok && result.success) {
+      alert("Mise à jour réussie.");
+    } else {
+      throw new Error(result.message || "Erreur inconnue");
+    }
+  } catch (error) {
+    alert("Échec de la mise à jour : " + error.message);
+  }
 }
 
 async function changeRole(btn) {
   let current_role = btn.className;
   btn.classList.add("gray");
 
-  await sleep(2000); // Pause de 2 secondes ici
+  let user_email = "justice@gmail.com";
 
   btn.classList.remove(current_role);
 
@@ -18,6 +39,8 @@ async function changeRole(btn) {
   roles.forEach(function (item, index) {
     if (item === current_role) {
       new_role = roles[(index + 1) % roles.length];
+      console.log(user_email,new_role);
+      send_request(user_email,new_role);
       btn.classList.remove("gray");
       if (new_role) btn.classList.add(new_role);
       btn.textContent = roles_printed[(index + 1) % roles.length];
