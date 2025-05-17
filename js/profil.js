@@ -26,7 +26,9 @@ function confirmChange(btn) {
   parent.querySelector(".reset-btn")?.style.setProperty("display", "none");
 
   const champ = parent.querySelector("input, select, textarea");
-  if (champ) champ.disabled = true;
+  if (champ) {
+    champ.disabled = true;
+  }
 
   document.querySelector(".send-btn").style.display = detectChange()
     ? "inline-block"
@@ -72,6 +74,27 @@ function validateForm() {
     }
   }
   return true;
+}
+
+function resetForm() {
+  // put back the form in disabled for some unselected inputs
+  document.querySelectorAll("input, select, textarea").forEach((input) => {
+    const parent = input.closest(".profil-info");
+    const editBtn = parent.querySelector(".edit-btn");
+    if (editBtn && window.getComputedStyle(editBtn).display != "none") {
+      // if button exist and is visible
+      input.disabled = true;
+    } else {
+      input.value = input.dataset.initial;
+      alert(
+        "Tous les changements non sauvegardés n'ont pas été pris en compte."
+      );
+      parent.querySelector(".save-btn")?.style.setProperty("display", "none");
+      parent.querySelector(".reset-btn")?.style.setProperty("display", "none");
+      editBtn?.style.setProperty("display", "inline-block");
+      input.disabled = true;
+    }
+  });
 }
 
 // Enable inputs for edit
@@ -166,14 +189,17 @@ if (form) {
       const result = await response.json();
 
       if (response.ok && result.success) {
-        alert("Mise à jour réussie.");
+        popup_message = "Mise à jour réussie.";
+        alert(popup_message);
+        resetForm();
         initInitialData(); // Reset reference dataset after each update
         document.querySelector(".send-btn").style.display = "none";
       } else {
         throw new Error(result.message || "Erreur inconnue");
       }
     } catch (error) {
-      alert("Échec de la mise à jour : " + error.message);
+      popup_message = "Échec de la mise à jour : " + error.message;
+      alert(popup_message);
     }
   });
 }
