@@ -346,5 +346,28 @@
             "achetes": [],
             "favoris": []
         }
+    },
+    {
+        "email": "peter@gmail.com",
+        "passwordHash": "$2y$10$r6UUAluzmcEOEsExNuAdHuPE\/.pI8FWpIhpvekVExTvcfsc5REMk6",
+        "role": "normal",
+        "informations": {
+            "nom": "parker",
+            "prenom": "peter",
+            "civilite": null,
+            "telephone": null,
+            "photo": null,
+            "preferences": null,
+            "passeport": null
+        },
+        "dates": {
+            "inscription": "2025-05-17",
+            "derniere_connexion": "2025-05-17"
+        },
+        "voyages": {
+            "consultes": [],
+            "achetes": [],
+            "favoris": []
+        }
     }
 ]

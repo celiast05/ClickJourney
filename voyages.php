@@ -1,24 +1,5 @@
 <?php
-session_start();
-
-if (isset($_SESSION['role']) && $_SESSION['role'] === 'banni') { // détection d'utilisateur banni
-    header("Location: script/deconnexion.php?action=run");
-    exit();
-  }
-
-// Durée d'inactivité autorisée
-$timeout = 600;
-
-if (!isset($_SESSION['stay_connected'])) {
-    if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > $timeout) {
-        session_unset();
-        session_destroy();
-        header("Location: connexion.php?timeout=1");
-        exit();
-    }
-}
-
-$_SESSION['last_activity'] = time();
+include 'session.php';
 
 // Fonction pour normaliser (accents + minuscule)
 function normalize($string) {

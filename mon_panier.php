@@ -1,8 +1,8 @@
 <?php
-session_start();
+include 'session.php';
 
-if (isset($_SESSION['role']) && $_SESSION['role'] === 'banni') { // détection d'utilisateur banni
-  header("Location: script/deconnexion.php?action=run");
+if (!isset($_SESSION['logged_in'])) {
+  header("Location: connexion.php");
   exit();
 }
 ?>
@@ -60,7 +60,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'banni') { // détection d
           $total += $voyage['montant'];
       }
 
-      echo "<hr><h2>Total à payer : Total à payer : $total €</h2>";
+      echo "<hr><h2>Total à payer : $total €</h2>";
   }
   ?>
 

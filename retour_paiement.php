@@ -1,10 +1,10 @@
 <?php
-session_start();
+include 'session.php';
 
-if (isset($_SESSION['role']) && $_SESSION['role'] === 'banni') { // détection d'utilisateur banni
-    header("Location: script/deconnexion.php?action=run");
+if (!isset($_SESSION['logged_in'])) {
+    header("Location: connexion.php");
     exit();
-  }
+}
 
 include("getapikey.php");
 
@@ -45,47 +45,46 @@ if ($control !== $control_calculé) {
 <?php
 if ($statut === 'accepted') {
     echo "<div class='container'><p><strong>Paiement accepté ! Préparez vos bagages...</strong></p></div>";
+    if (isset($_SESSION['panier'], $_SESSION['logged_in'])) {
+        $voyage = $_SESSION['panier'][0];
+        $userId = isset($_SESSION['logged_in']) ? $_SESSION['logged_in'] : null;
+        
+        $data = [
+            'user_id' => $userId,
+            'transaction_id' => $transaction,
+            'montant' => $montant,
+            'voyage' => $voyage,
+            'date' => date('Y-m-d H:i:s')
+        ];
+
+        $pays = isset($voyage['nom']) ? $voyage['nom'] : 'destination_inconnue';
+        $prenom = isset($_SESSION['prenom']) ? $_SESSION['prenom'] : '';
+        $nom = isset($_SESSION['nom']) ? $_SESSION['nom'] : '';
+        $identite = trim($prenom . '_' . $nom);
+        $identite = strtolower($identite);
+        $identite = preg_replace('/[^a-z0-9_]/', '', $identite);
+        $nomFichier = strtolower($identite . '_' . $pays);
+        $jsonFile = "json/{$nomFichier}.json";
+
+        // Charger les données existantes ou créer un tableau vide
+        $existingData = [];
+        if (file_exists($jsonFile)) {
+            $jsonContent = file_get_contents($jsonFile);
+            $existingData = json_decode($jsonContent, true);
+            if (!is_array($existingData)) {
+                $existingData = [];
+            }
+        }
+
+        // Ajouter le nouveau voyage
+        $existingData[] = $data;
+
+        // Enregistrer les données mises à jour
+        file_put_contents($jsonFile, json_encode($existingData, JSON_PRETTY_PRINT));
+    }
 
     // On vide le panier quoi qu’il arrive
     unset($_SESSION['panier']);
-
-    // On tente d’enregistrer les infos si disponibles
-    if (!empty($_SESSION['voyage']) && !empty($_SESSION['user'])) {
-        $voyage = $_SESSION['voyage'];
-        $user = $_SESSION['user'];
-        $hebergement = $voyage['hebergement'] ?? "Non spécifié";
-        $activites = !empty($voyage['activites']) ? $voyage['activites'] : ["Aucune activité sélectionnée"];
-        $nb_personnes = $voyage['nombre_personnes'][$hebergement] ?? "Non spécifié";
-        $date_depart = $voyage['date_depart'] ?? "Non spécifié";
-        $date_retour = $voyage['date_retour'] ?? "Non spécifié";
-
-        $nom_voyage = $voyage['nom'] ?? "voyage_inconnu";
-        $nom_user = $user['nom'] ?? "utilisateur_inconnu";
-        $fileName = 'json/' . strtolower(str_replace(' ', '_', $nom_voyage)) . '_' . strtolower(str_replace(' ', '_', $nom_user)) . '.json';
-
-        $data = [
-            'transaction' => $transaction,
-            'destination' => $voyage['nom'],
-            'hebergement' => $hebergement,
-            'activites' => $activites,
-            'nombre_personnes' => $nb_personnes,
-            'montant' => $montant,
-            'statut' => $statut,
-            'date_depart' => $date_depart,
-            'date_retour' => $date_retour
-        ];
-
-        if (file_exists($fileName)) {
-            $existingData = json_decode(file_get_contents($fileName), true);
-            $existingData[] = $data;
-            file_put_contents($fileName, json_encode($existingData, JSON_PRETTY_PRINT));
-        } else {
-            file_put_contents($fileName, json_encode([$data], JSON_PRETTY_PRINT));
-        }
-
-        
-        unset($_SESSION['voyage']);
-    }
 } else {
     echo "<div class='container'><p>Paiement refusé. Veuillez réessayer.</p></div>";
 }

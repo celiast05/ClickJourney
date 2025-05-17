@@ -1,14 +1,9 @@
 <?php
-session_start();
+include 'session.php';
 
 if (!isset($_SESSION['logged_in']) || empty($_SESSION['panier'])) {
     header("Location: mon_panier.php");
     exit();
-}
-
-if (isset($_SESSION['role']) && $_SESSION['role'] === 'banni') { // détection d'utilisateur banni
-  header("Location: script/deconnexion.php?action=run");
-  exit();
 }
 
 // Calcul du total

@@ -1,60 +1,39 @@
 <?php
+include 'session.php';
 
-    session_start();
-    
-    if (isset($_SESSION['role']) && $_SESSION['role'] === 'banni') { // détection d'utilisateur banni
-        header("Location: script/deconnexion.php?action=run");
-        exit();
-    }
-
-    // Durée d'inactivité autorisée
-    $timeout = 300; // 5 minutes
-
-    if (!isset($_SESSION['logged_in'])){ 
+if (!isset($_SESSION['logged_in'])) {
     header("Location: connexion.php");
     exit();
-    } 
-    if (!isset($_SESSION['user'])) {
-        $fileJson = 'json/users.json';
-        $users = json_decode(file_get_contents($fileJson), true);
-        foreach ($users as $user) {
-            if ($user['email'] == $_SESSION['email']) {
-                $_SESSION['user'] = $user;
-                break;
-            }
+}
+
+if (!isset($_SESSION['user'])) {
+    $fileJson = 'json/users.json';
+    $users = json_decode(file_get_contents($fileJson), true);
+    foreach ($users as $user) {
+        if ($user['email'] == $_SESSION['email']) {
+            $_SESSION['user'] = $user;
+            break;
         }
     }
+}
 
-    if ( !isset($_SESSION['stay_connected'])){ // si "Rester connecté" n'est pas clické
-    // Vérifier si l'utilisateur est inactif depuis trop longtemps
-    if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > $timeout) {
-        session_unset(); // Supprime toutes les variables de session
-        session_destroy(); // Détruit la session
-        header("Location: connexion.php?timeout=1"); // Redirige vers la connexion
-        exit();
-    }
-    }
-
-    // Met à jour l'heure de la dernière activité
-    $_SESSION['last_activity'] = time();
-
-    function print_trip($list, $name) {
-        if(!empty($list)){
-            $fileJson = 'json/voyage.json';
-            $trips = json_decode(file_get_contents($fileJson), true); 
-            foreach ($trips as $t) { // on fais la liste des correspondances
-                $trip_to_link[$t['nom']] = $t['id'];
-            }
-            echo "<h2>". $name;
-            if(count($list)>1){
-                echo 's';
-            }
-            echo " :</h2>";
-            foreach($list as $trip){
-                echo '<p class="voyage-nom"><a href="details.php?voyage='.$trip_to_link[$trip].'">'.htmlspecialchars($trip).'</a></p>';
-            }
+function print_trip($list, $name) {
+    if(!empty($list)){
+        $fileJson = 'json/voyage.json';
+        $trips = json_decode(file_get_contents($fileJson), true); 
+        foreach ($trips as $t) { // on fais la liste des correspondances
+            $trip_to_link[$t['nom']] = $t['id'];
+        }
+        echo "<h2>". $name;
+        if(count($list)>1){
+            echo 's';
+        }
+        echo " :</h2>";
+        foreach($list as $trip){
+            echo '<p class="voyage-nom"><a href="details.php?voyage='.$trip_to_link[$trip].'">'.htmlspecialchars($trip).'</a></p>';
         }
     }
+}
     
 ?>
 <!DOCTYPE html>

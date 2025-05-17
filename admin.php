@@ -1,38 +1,17 @@
 <!-- // Se connecter avec test@gmail.com le password est test -->
  <!-- pour tout les comptes le mot de passe corespond au prénom en minuscule -->
 <?php
-session_start();
+include 'session.php';
 
-if (isset($_SESSION['role']) && $_SESSION['role'] === 'banni') { // détection d'utilisateur banni
-    header("Location: script/deconnexion.php?action=run");
-    exit();
-  }
-
-// Durée d'inactivité autorisée
-$timeout = 300; // 5 minutes
-
-if (!isset($_SESSION['logged_in'])){ // utilisateur anonyme
-  header("Location: connexion.php"); // Redirige vers la connexion
-  exit();
-} 
-
-if ( !isset($_SESSION['stay_connected'])){ // si "Rester connecté" n'est pas clické
-  // Vérifier si l'utilisateur est inactif depuis trop longtemps
-  if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity']) > $timeout) {
-      session_unset(); // Supprime toutes les variables de session
-      session_destroy(); // Détruit la session
-      header("Location: connexion.php?timeout=1"); // Redirige vers la connexion
-      exit();
-  }
-}
-
-if ( $_SESSION['role'] != 'admin'){ // si l'utilisateur n'est pas un admin
-    header("Location: accueil.php"); // renvoie à la page précédente
+if (!isset($_SESSION['logged_in'])) {
+    header("Location: connexion.php");
     exit();
 }
 
-// Met à jour l'heure de la dernière activité
-$_SESSION['last_activity'] = time();
+if ($_SESSION['role'] !== 'admin') {
+    header("Location: accueil.php");
+    exit();
+}
 
 $fileJson = 'json/users.json';
 $users = json_decode(file_get_contents($fileJson), true);  // Parser le contenu JSON en fait un tableau
