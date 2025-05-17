@@ -1,7 +1,7 @@
 [
     {
         "email": "test@gmail.com",
-        "passwordHash": "$2y$10$aO34OVxuwsO8q6XBVw.FKePGIHtQys1\/Ho\/Dx.VnK7o4H25zOJgr6",
+        "passwordHash": "$2y$10$4cTykLG.RXqGlcWWOsFoN.SHIpzfI\/lWQAesZUTfY7QyLEE8PMfdm",
         "role": "admin",
         "informations": {
             "nom": "Test",
@@ -14,7 +14,7 @@
         },
         "dates": {
             "inscription": "2025-03-25",
-            "derniere_connexion": "2025-05-16"
+            "derniere_connexion": "2025-05-17"
         },
         "voyages": {
             "consultes": [
@@ -33,7 +33,7 @@
     },
     {
         "email": "zoe@gmail.com",
-        "passwordHash": "$2y$10$aJipp0wjsCAeu9HaaHL.buxjhDAEM7sk6FqxeWTxidSrrX3LEIqku",
+        "passwordHash": "$2y$10$fxI3jeHHnaZGemnXCEVG1eMZXCVSKP1shppmobVxKkOjyNLfOYv5C",
         "role": "admin",
         "informations": {
             "nom": "Zoe",
@@ -46,7 +46,7 @@
         },
         "dates": {
             "inscription": "2025-03-25",
-            "derniere_connexion": "2025-03-30"
+            "derniere_connexion": "2025-05-17"
         },
         "voyages": {
             "consultes": [
@@ -72,7 +72,7 @@
         },
         "dates": {
             "inscription": "2025-03-25",
-            "derniere_connexion": "2025-03-30"
+            "derniere_connexion": "2025-05-17"
         },
         "voyages": {
             "consultes": [
@@ -91,12 +91,12 @@
         }
     },
     {
-        "email": "skibidi@gmail.com",
-        "passwordHash": "$2y$10$rLP1DUy0LYgSDA2YW0Uq4.liZp6ntY1N\/594tUUm61CIdmYCYaBVO",
+        "email":"charles@gmail.com",
+        "passwordHash": "$2y$10$m.5koa.H3.bDb32RclQl7ejewsPBBiN3ZVutQwI/AoutzlqNIVWau",
         "role": "vip",
         "informations": {
-            "nom": "Skibidi",
-            "prenom": "Toilet",
+            "nom": "Windsor",
+            "prenom": "Charles",
             "civilite": null,
             "telephone": null,
             "photo": null,
@@ -105,7 +105,7 @@
         },
         "dates": {
             "inscription": "2025-03-25",
-            "derniere_connexion": "2025-03-30"
+            "derniere_connexion": "2025-05-17"
         },
         "voyages": {
             "consultes": [
@@ -124,7 +124,7 @@
     },
     {
         "email": "luc@gmail.com",
-        "passwordHash": "$2y$10$gAVmy0Aqib3LJVImVdcFC.iOrWy3v5joX9LhX3N8R9GCx9eFOleZ2",
+        "passwordHash": "$2y$10$tiDcm2.WkjDH9JjuZVMHo.HvlwJtyLLlRtF.qtjYs8xM.uO4mXiKm",
         "role": "banni",
         "informations": {
             "nom": "nom",
@@ -137,7 +137,7 @@
         },
         "dates": {
             "inscription": "2025-03-30",
-            "derniere_connexion": "2025-05-04"
+            "derniere_connexion": "2025-05-17"
         },
         "voyages": {
             "consultes": [
@@ -156,7 +156,7 @@
     },
     {
         "email": "marc@gmail.com",
-        "passwordHash": "$2y$10$fLgZMqyStGxMlkQRITqQWeY0cBXBMTFG3VHn6enOQCZ3fYrzSywkK",
+        "passwordHash": "$2y$10$sUq4fHIybr0Ir7INdgvMWuC3YnNDAMMLlooCGaS.rlJ8A\/tPJjXsu",
         "role": "normal",
         "informations": {
             "nom": "nom",
@@ -169,7 +169,7 @@
         },
         "dates": {
             "inscription": "2025-03-30",
-            "derniere_connexion": "2025-03-30"
+            "derniere_connexion": "2025-05-17"
         },
         "voyages": {
             "consultes": [],
@@ -183,7 +183,7 @@
     },
     {
         "email": "paul@gmail.com",
-        "passwordHash": "$2y$10$\/.ZG6wf77XI3mchT.b2iAONpcupOljOUkYp26OwXvfsug24ffLK1e",
+        "passwordHash": "$2y$10$0lU0NZbQr.8e3DZ.AoIareKCAk8KKYEjR5DK6d9Wbf.e8TVPmKk3e",
         "role": "normal",
         "informations": {
             "nom": "nom",
@@ -196,7 +196,7 @@
         },
         "dates": {
             "inscription": "2025-03-30",
-            "derniere_connexion": "2025-03-30"
+            "derniere_connexion": "2025-05-17"
         },
         "voyages": {
             "consultes": [
@@ -208,8 +208,8 @@
     },
     {
         "email": "thomas@gmail.com",
-        "passwordHash": "$2y$10$pkV08LRV1ZupOscXQqENb.aVYPXj0k1Yd5E7oqmk2g\/Xx5dBs58mi",
-        "role": "normal",
+        "passwordHash": "$2y$10$DOdPb.cASs5IBI8pJ1f7nOzR\/jaTiS5xjbUpUywnomFj7Ctnl\/r8y",
+        "role": "banni",
         "informations": {
             "nom": "Thomas",
             "prenom": "Andrey",
@@ -221,7 +221,7 @@
         },
         "dates": {
             "inscription": "2025-03-30",
-            "derniere_connexion": "2025-03-30"
+            "derniere_connexion": "2025-05-17"
         },
         "voyages": {
             "consultes": [
@@ -350,7 +350,7 @@
     {
         "email": "peter@gmail.com",
         "passwordHash": "$2y$10$r6UUAluzmcEOEsExNuAdHuPE\/.pI8FWpIhpvekVExTvcfsc5REMk6",
-        "role": "normal",
+        "role": "vip",
         "informations": {
             "nom": "parker",
             "prenom": "peter",
