@@ -91,8 +91,8 @@
         }
     },
     {
-        "email":"charles@gmail.com",
-        "passwordHash": "$2y$10$m.5koa.H3.bDb32RclQl7ejewsPBBiN3ZVutQwI/AoutzlqNIVWau",
+        "email": "charles@gmail.com",
+        "passwordHash": "$2y$10$m.5koa.H3.bDb32RclQl7ejewsPBBiN3ZVutQwI\/AoutzlqNIVWau",
         "role": "vip",
         "informations": {
             "nom": "Windsor",
