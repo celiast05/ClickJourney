@@ -163,7 +163,7 @@ email.addEventListener("blur", () => {
     if (isClickingEye) return; // ⛔ ne pas valider si clic sur l’œil
   
     const passwordValue = password.value;
-    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d?!$£€@&()\-\+_=*%\/<>,.;:])[A-Za-z\d?!$£€@&()\-\+_=*%\/<>,.;:]{8,50}$/;
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[\d?!$£€@&()\-\+_=*%\/<>,.;:])[A-Za-z\d?!$£€@&()\-\+_=*%\/<>,.;:]{6,50}$/;
   
     if (!passwordRegex.test(passwordValue)) {
       removeError(password);
@@ -174,7 +174,7 @@ email.addEventListener("blur", () => {
       errorContainer.innerHTML = `
         <p style="margin-bottom: 8px; font-weight: bold;">Votre mot de passe est incorrect :</p>
         <ul>
-          <li>Le mot de passe doit comporter entre <strong>8 et 50 caractères</strong></li>
+          <li>Le mot de passe doit comporter entre <strong>6 et 50 caractères</strong></li>
           <li>Il doit contenir des lettres <strong>latines uniquement</strong>, sans accent</li>
           <li>Il doit inclure au moins <strong>une majuscule</strong>, <strong>une minuscule</strong> et <strong>un chiffre ou caractère spécial</strong></li>
           <li>Ne doit contenir <strong>aucun caractère non autorisé</strong></li>
