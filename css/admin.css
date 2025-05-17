@@ -54,7 +54,6 @@ th {
   padding: 6px 12px;
   border-radius: 6px;
   border: none;
-  transition: background 0.3s ease-in-out;
 }
 
 .vip:hover {
@@ -68,7 +67,6 @@ th {
   padding: 6px 12px;
   border-radius: 6px;
   border: none;
-  transition: background 0.3s ease-in-out;
 }
 
 .bannir:hover {
@@ -82,7 +80,6 @@ th {
   padding: 6px 12px;
   border-radius: 6px;
   border: none;
-  transition: background 0.3s ease-in-out;
 }
 
 .normal:hover {

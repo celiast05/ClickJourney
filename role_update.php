@@ -3,7 +3,6 @@ session_start();
 header('Content-Type: application/json'); // Déclare que la réponse est du JSON
 
 if ($_SESSION['role'] != 'admin') {
-    alert("Modification refusée : vous n'êtes pas administrateur.");
     header("Location: accueil.php");
     exit();
 }
@@ -36,26 +35,26 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && is_array($data)) {
     // Save JSON
     file_put_contents($fileJson, json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 
-    // Update session if the users modifier is himself
-    if($index == $_SESSION['index']){
-        $_SESSION['role'] = $data['role'];
-        exit();
-    }
-    $users['email'] = $users[$index];
-    $_SESSION['role'] = $users[$index]['role'];
-
     // client answer (JavaScript)
-    echo json_encode([
-        "success" => true,
-        "message" => "Mise à jour réussie"
-    ]);
+
+    $response = [
+    "success" => true,
+    "message" => "Update successful"
+    ];
+
+    // Update session if the user modified is himself
+    if ($data['user_email'] == $_SESSION['email']) {
+        $_SESSION['role'] = $data['role'];
+        $response["redirect"] = "accueil.php";
+    }
+    echo json_encode($response);
     exit();
 } else {
     // wrong request
     http_response_code(400);
     echo json_encode([
         "success" => false,
-        "message" => "Données invalides ou méthode incorrecte"
+        "message" => "Invalide datas or method"
     ]);
     exit();
 }

@@ -1,7 +1,7 @@
-async function send_request(email, new_role){
+async function send_request(email, new_role) {
   const data = {
     user_email: email,
-    role: new_role
+    role: new_role,
   }; // transform data into dictionary
 
   try {
@@ -14,7 +14,12 @@ async function send_request(email, new_role){
     const result = await response.json();
 
     if (response.ok && result.success) {
-      alert("Mise à jour réussie.");
+      if (result.redirect) {
+        // user isn't an admin anymore
+        window.location.href = result.redirect;
+      } else {
+        alert("Mise à jour réussie.");
+      }
     } else {
       throw new Error(result.message || "Erreur inconnue");
     }
@@ -27,7 +32,8 @@ async function changeRole(btn) {
   let current_role = btn.className;
   btn.classList.add("gray");
 
-  let user_email = "justice@gmail.com";
+  let previousTd = btn.closest("td").previousElementSibling; // td conataining the email
+  let user_email = previousTd.textContent;
 
   btn.classList.remove(current_role);
 
@@ -39,8 +45,7 @@ async function changeRole(btn) {
   roles.forEach(function (item, index) {
     if (item === current_role) {
       new_role = roles[(index + 1) % roles.length];
-      console.log(user_email,new_role);
-      send_request(user_email,new_role);
+      send_request(user_email, new_role);
       btn.classList.remove("gray");
       if (new_role) btn.classList.add(new_role);
       btn.textContent = roles_printed[(index + 1) % roles.length];

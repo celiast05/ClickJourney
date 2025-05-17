@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   console.log("charCount:", charCount);
 
-
   // Fonction pour afficher une erreur
   function showError(input, message) {
     removeError(input);
@@ -48,8 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-
-
   // Compteur de caractères mot de passe
   password.addEventListener("input", () => {
     charCount.textContent = password.value.length;
@@ -63,9 +60,3 @@ document.addEventListener("DOMContentLoaded", () => {
     this.classList.toggle("fa-eye-slash");
   });
 });
-
-
-  
-
-
- 

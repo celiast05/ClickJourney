@@ -1,34 +1,25 @@
 [
     {
-        "email": "test@gmail.com",
-        "passwordHash": "$2y$10$4cTykLG.RXqGlcWWOsFoN.SHIpzfI\/lWQAesZUTfY7QyLEE8PMfdm",
+        "email": "user4@example.com",
+        "passwordHash": "$2y$10$GAaOsUJFGiEIh71uMeRlleSHguzcW0LYFd3wp.l7rGV6c13CeVFJy",
         "role": "admin",
         "informations": {
-            "nom": "Test",
-            "prenom": "Test le grand",
+            "nom": "debug",
+            "prenom": "truc",
             "civilite": "Monsieur",
-            "telephone": "5354381532112",
+            "telephone": "1685435454",
             "photo": [],
             "preferences": "",
             "passeport": ""
         },
         "dates": {
-            "inscription": "2025-03-25",
+            "inscription": "2025-05-17",
             "derniere_connexion": "2025-05-17"
         },
         "voyages": {
-            "consultes": [
-                "Bora Bora",
-                "Rome",
-                "Courchevel",
-                "Costa Rica"
-            ],
-            "achetes": [
-                "Rome"
-            ],
-            "favoris": [
-                "Courchevel"
-            ]
+            "consultes": [],
+            "achetes": [],
+            "favoris": []
         }
     },
     {
@@ -60,7 +51,7 @@
     {
         "email": "justice@gmail.com",
         "passwordHash": "$2y$10$uLp2vZRw2MA7CLTyIsb4Pet4Wjr7Dl2Jz\/NayFLcP0shQrM4XGq6y",
-        "role": "normal",
+        "role": "vip",
         "informations": {
             "nom": "Garen",
             "prenom": "Justice",
@@ -93,7 +84,7 @@
     {
         "email": "charles@gmail.com",
         "passwordHash": "$2y$10$m.5koa.H3.bDb32RclQl7ejewsPBBiN3ZVutQwI\/AoutzlqNIVWau",
-        "role": "vip",
+        "role": "normal",
         "informations": {
             "nom": "Windsor",
             "prenom": "Charles",
@@ -125,7 +116,7 @@
     {
         "email": "luc@gmail.com",
         "passwordHash": "$2y$10$tiDcm2.WkjDH9JjuZVMHo.HvlwJtyLLlRtF.qtjYs8xM.uO4mXiKm",
-        "role": "banni",
+        "role": "normal",
         "informations": {
             "nom": "nom",
             "prenom": "luc",
@@ -157,7 +148,7 @@
     {
         "email": "marc@gmail.com",
         "passwordHash": "$2y$10$sUq4fHIybr0Ir7INdgvMWuC3YnNDAMMLlooCGaS.rlJ8A\/tPJjXsu",
-        "role": "normal",
+        "role": "vip",
         "informations": {
             "nom": "nom",
             "prenom": "marc",
@@ -184,7 +175,7 @@
     {
         "email": "paul@gmail.com",
         "passwordHash": "$2y$10$0lU0NZbQr.8e3DZ.AoIareKCAk8KKYEjR5DK6d9Wbf.e8TVPmKk3e",
-        "role": "normal",
+        "role": "bannir",
         "informations": {
             "nom": "nom",
             "prenom": "paul",
@@ -209,7 +200,7 @@
     {
         "email": "thomas@gmail.com",
         "passwordHash": "$2y$10$DOdPb.cASs5IBI8pJ1f7nOzR\/jaTiS5xjbUpUywnomFj7Ctnl\/r8y",
-        "role": "banni",
+        "role": "normal",
         "informations": {
             "nom": "Thomas",
             "prenom": "Andrey",
@@ -235,7 +226,7 @@
     {
         "email": "bouchra.kouba@yahoo.com",
         "passwordHash": "$2y$10$3HwF5YNZRm1sF52e9BgFce0sX8eqanK\/Mpv5r2HD3MZnpFSRfeXZ2",
-        "role": "normal",
+        "role": "vip",
         "informations": {
             "nom": "Zamoum",
             "prenom": "bouchra",
@@ -258,7 +249,7 @@
     {
         "email": "test@leretour.com",
         "passwordHash": "$2y$10$12mZwYgPgn5UVYYd8Evf2eyqDkzkhYpSxaNFBoG53Mrt5hEt1T2Qa",
-        "role": "normal",
+        "role": "vip",
         "informations": {
             "nom": "Test",
             "prenom": "Le retour",
@@ -279,78 +270,9 @@
         }
     },
     {
-        "email": null,
-        "passwordHash": "$2y$10$zOa4WenedDltjQusLJwiiemQyH0k.OIryNiABJScpnZx3sVN3fdCG",
-        "role": "vip",
-        "informations": {
-            "nom": null,
-            "prenom": null,
-            "civilite": null,
-            "telephone": null,
-            "photo": null,
-            "preferences": null,
-            "passeport": null
-        },
-        "dates": {
-            "inscription": "2025-05-13",
-            "derniere_connexion": null
-        },
-        "voyages": {
-            "consultes": [],
-            "achetes": [],
-            "favoris": []
-        }
-    },
-    {
-        "email": null,
-        "passwordHash": "$2y$10$hE4XFHJZ2Xtm517x\/SzD7eliNlAbURBlLH9SkamNR2s5AJSh9TZOW",
-        "role": "normal",
-        "informations": {
-            "nom": null,
-            "prenom": null,
-            "civilite": null,
-            "telephone": null,
-            "photo": null,
-            "preferences": null,
-            "passeport": null
-        },
-        "dates": {
-            "inscription": "2025-05-13",
-            "derniere_connexion": null
-        },
-        "voyages": {
-            "consultes": [],
-            "achetes": [],
-            "favoris": []
-        }
-    },
-    {
-        "email": null,
-        "passwordHash": "$2y$10$xjKZ9ubI1wa6cEvrX5dNIeH3U\/wwxdbrYkHrKSlIDmodekwP8pbKe",
-        "role": "normal",
-        "informations": {
-            "nom": null,
-            "prenom": null,
-            "civilite": null,
-            "telephone": null,
-            "photo": null,
-            "preferences": null,
-            "passeport": null
-        },
-        "dates": {
-            "inscription": "2025-05-13",
-            "derniere_connexion": null
-        },
-        "voyages": {
-            "consultes": [],
-            "achetes": [],
-            "favoris": []
-        }
-    },
-    {
         "email": "peter@gmail.com",
         "passwordHash": "$2y$10$r6UUAluzmcEOEsExNuAdHuPE\/.pI8FWpIhpvekVExTvcfsc5REMk6",
-        "role": "vip",
+        "role": "bannir",
         "informations": {
             "nom": "parker",
             "prenom": "peter",

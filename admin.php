@@ -67,7 +67,7 @@ $total_pages = ceil(count($users) / $users_par_page);
                         elseif($user['role']=='vip'){
                             echo "<td> <button class='vip'>VIP</button> </td>";
                         }
-                        elseif($user['role']=='banni'){
+                        elseif($user['role']=='bannir'){
                             echo "<td> <button class='bannir'>Bloqué</button> </td>";
                         }
                         else{
