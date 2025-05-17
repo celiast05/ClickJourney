@@ -1,9 +1,13 @@
 <?php
 session_start();
-header('Content-Type: application/json'); // Déclare que la réponse est du JSON
+header('Content-Type: application/json'); // Declare that answer is JSON
 
-if ($_SESSION['role'] != 'admin') {
-    header("Location: accueil.php");
+if ($_SESSION['role'] != 'admin') { // Unnessary security check
+    $response = [
+    "success" => false,
+    "message" => "User is not an operator."
+    ];
+    echo json_encode($response);
     exit();
 }
 

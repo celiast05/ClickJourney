@@ -32,7 +32,7 @@ async function changeRole(btn) {
   let current_role = btn.className;
   btn.classList.add("gray");
 
-  let previousTd = btn.closest("td").previousElementSibling; // td conataining the email
+  let previousTd = btn.closest("td").previousElementSibling; // td containing the email
   let user_email = previousTd.textContent;
 
   btn.classList.remove(current_role);
