@@ -1,5 +1,6 @@
 <?php
-session_start();
+include 'session.php';
+
 header('Content-Type: application/json'); // Declare that answer is JSON
 
 if ($_SESSION['role'] != 'admin') { // Unnessary security check

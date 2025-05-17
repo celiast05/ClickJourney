@@ -1,13 +1,13 @@
 [
     {
-        "email": "user4@example.com",
-        "passwordHash": "$2y$10$GAaOsUJFGiEIh71uMeRlleSHguzcW0LYFd3wp.l7rGV6c13CeVFJy",
+        "email": "test@gmail.com",
+        "passwordHash": "$2y$10$9qQE3dT6Rlv8yGurtchINevaIQmxnClePmRlwoljyKbpXjubfu27O",
         "role": "admin",
         "informations": {
-            "nom": "debug",
-            "prenom": "truc",
+            "nom": "Test",
+            "prenom": "L'Unique",
             "civilite": "Monsieur",
-            "telephone": "1685435454",
+            "telephone": "561616545684",
             "photo": [],
             "preferences": "",
             "passeport": ""
@@ -17,9 +17,18 @@
             "derniere_connexion": "2025-05-17"
         },
         "voyages": {
-            "consultes": [],
-            "achetes": [],
-            "favoris": []
+            "consultes": [
+                "Maldives",
+                "Santorin",
+                "Paris"
+            ],
+            "achetes": [
+                "Santorin",
+                "Paris"
+            ],
+            "favoris": [
+                "Santorin"
+            ]
         }
     },
     {
