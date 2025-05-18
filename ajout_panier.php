@@ -24,17 +24,70 @@ if (!$trip) {
     die("Voyage introuvable.");
 }
 
+$erreurs = [];
+
 if (!isset($_POST['date_depart']) || !isset($_POST['date_retour'])) {
-    die("Les dates de voyage sont obligatoires.");
+    $erreurs[] = "Les dates de voyage sont obligatoires.";
+} else {
+    $date_depart = new DateTime($_POST['date_depart']);
+    $date_retour = new DateTime($_POST['date_retour']);
+    $today = new DateTime();
+    $today->setTime(0, 0, 0); // ignore l'heure
+
+    if ($date_depart < $today) {
+        $erreurs[] = "La date de départ ne peut pas être dans le passé.";
+    }
+
+    if ($date_retour < $date_depart) {
+        $erreurs[] = "La date de retour ne peut pas être avant la date de départ.";
+    }
+
+    $interval = $date_depart->diff($date_retour);
+    $nombre_nuits = $interval->days;
 }
 
-$date_depart = new DateTime($_POST['date_depart']);
-$date_retour = new DateTime($_POST['date_retour']);
-$interval = $date_depart->diff($date_retour);
-$nombre_nuits = $interval->days;
 
 $hebergement = $_POST["hebergements"];
 $nb_personnes_hebergement = (int) $_POST["nb_personnes"][$hebergement];
+// Vérification : aucune activité ne doit dépasser le nombre de personnes de l'hébergement
+
+
+if (isset($_POST["activites"])) {
+    foreach ($_POST["activites"] as $activite) {
+        $nb_pers_activite = (int) ($_POST["nb_personnes"][$activite] ?? 0);
+        if ($nb_pers_activite > $nb_personnes_hebergement) {
+            $erreurs[] = "$nb_pers_activite personne(s) pour l’activité « $activite », mais seulement $nb_personnes_hebergement prévues pour l’hébergement.";
+        }
+    }
+}
+if (!empty($erreurs)) {
+    echo '<!DOCTYPE html>
+    <html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <title>Erreur de réservation</title>
+        <link rel="stylesheet" href="css/themes/theme_light.css">
+        <link rel="stylesheet" href="css/erreur.css">
+    </head>
+    <body>
+        <div class="error-box">
+            <h2>Erreur(s) de réservation :</h2>
+            <ul>';
+                foreach ($erreurs as $err) {
+                    echo '<li>' . htmlspecialchars($err) . '</li>';
+                }
+    echo '</ul>
+            <a href="javascript:history.back()">⬅ Retour à la réservation</a>
+        </div>
+    </body>
+    </html>';
+    exit;
+}
+
+        
+
+
+
 $prix_hebergement = $trip["hebergements"][$hebergement] * $nb_personnes_hebergement * $nombre_nuits;
 
 $montant = ($trip['prix'] * $nb_personnes_hebergement) + $prix_hebergement;

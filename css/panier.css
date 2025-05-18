@@ -215,3 +215,42 @@ input[data-valid="false"] {
   border-color: #ff5e5e !important;
   background-color: rgba(255, 94, 94, 0.05);
 }
+
+.error-box {
+  border: 2px solid #1f3a52;
+  padding: 40px;
+  border-radius: 10px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  max-width: 1000px;
+  margin: 50px auto;
+  text-align: center;
+  font-family: var(--text);
+}
+
+.error-box h2 {
+  font-family: var(--title);
+  font-size: 30px;
+  color: var(--title-color);
+  margin-bottom: 30px;
+}
+
+.error-box ul {
+  list-style-type: disc;
+  padding-left: 40px;
+  text-align: left;
+}
+
+.error-box li {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.error-box a {
+  display: inline-block;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: 30px;
+  text-decoration: none;
+  color: var(--title-color);
+}

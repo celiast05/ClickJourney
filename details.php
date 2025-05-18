@@ -127,11 +127,35 @@ foreach ($trips as $t) { // on récupère le bon voyage
             }
         });
     }
-    document.getElementById("reservation-form").addEventListener("submit", function() {
-        document.querySelectorAll('input[type="number"]:disabled').forEach(input => {
-            input.removeAttribute("name");
-        });
-    });
+    document.getElementById("reservation-form").addEventListener("submit", function () {
+  document.querySelectorAll('input[type="number"]').forEach(input => {
+    const label = input.closest("label");
+    const checkbox = label.querySelector('input[type="checkbox"]');
+    const radio = label.querySelector('input[type="radio"]');
+
+    if (radio && !radio.checked) {
+      // Si ce n'est pas le radio sélectionné, on supprime le name
+      input.removeAttribute("name");
+    }
+
+    if (checkbox && !checkbox.checked) {
+      // Si ce n'est pas une activité cochée, on supprime aussi
+      input.removeAttribute("name");
+    }
+
+    // S'il est actif (coché), on s'assure que le `name` existe
+    if ((checkbox && checkbox.checked) || (radio && radio.checked)) {
+      const labelText = label.querySelector("p")?.innerText?.split(":")[0]?.trim();
+      if (labelText) {
+        input.name = `nb_personnes[${labelText}]`; // réassigne le name au cas où
+      }
+    }
+  });
+});
+
+
+
+
 </script>
 <script id="prix-data" type="application/json">
 {
