@@ -48,9 +48,12 @@ if ($statut === 'accepted') {
     if (isset($_SESSION['panier'], $_SESSION['logged_in'])) {
         $voyage = $_SESSION['panier'][0];
         $userId = isset($_SESSION['logged_in']) ? $_SESSION['logged_in'] : null;
-        
+        $prenom = $_SESSION['prenom'] ?? '';
+        $nom = $_SESSION['nom'] ?? '';
+
         $data = [
-            'user_id' => $userId,
+            'user_prenom' => $prenom,
+            'user_nom' => $nom,
             'transaction_id' => $transaction,
             'montant' => $montant,
             'voyage' => $voyage,
@@ -58,13 +61,16 @@ if ($statut === 'accepted') {
         ];
 
         $pays = isset($voyage['nom']) ? $voyage['nom'] : 'destination_inconnue';
-        $prenom = isset($_SESSION['prenom']) ? $_SESSION['prenom'] : '';
-        $nom = isset($_SESSION['nom']) ? $_SESSION['nom'] : '';
-        $identite = trim($prenom . '_' . $nom);
-        $identite = strtolower($identite);
-        $identite = preg_replace('/[^a-z0-9_]/', '', $identite);
+
+        if (empty($prenom) && empty($nom) && isset($_SESSION['logged_in'])) {
+            $identite = $_SESSION['logged_in'];
+        } else {
+            $identite = strtolower(trim($prenom . '_' . $nom));
+            $identite = preg_replace('/[^a-z0-9_]/', '', $identite);
+        }
+
         $nomFichier = strtolower($identite . '_' . $pays);
-        $jsonFile = "json/{$nomFichier}.json";
+        $jsonFile = "json/achat_voyages/{$nomFichier}.json";
 
         // Charger les données existantes ou créer un tableau vide
         $existingData = [];
