@@ -70,3 +70,36 @@ footer p {
   width: 100%;
   font-size: 14px;
 }
+
+.notif {
+  position: fixed; /*Don't move when scrolling*/
+  top: 15px; 
+  font-size: 18px;
+  font-family:Georgia, 'Times New Roman', Times, serif;
+  left: 50%;
+  transform: translateX(-50%); /* put in to the left depending on in size */
+  background-color: rgba(212, 212, 212, 0.829);
+  color: black;
+  padding: 12px 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  z-index: 9999; /* Above other elements */
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.5s ease; /* Smooth fade-in/out */
+}
+
+.notif.show {
+  opacity: 1; /* Show when active */
+}
+
+.hidden {
+  display: none; /* Completely remove from layout */
+}
+
+.good{
+  background-color: rgba(156, 230, 137, 0.829);
+}
+
+.bad{
+  background-color: rgba(230, 15, 15, 0.815);
+}

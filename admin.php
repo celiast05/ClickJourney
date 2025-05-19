@@ -39,7 +39,8 @@ $total_pages = ceil(count($users) / $users_par_page);
     <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
 </head>
 <body>
-    <?php include 'nav.php'; ?>
+    <?php include 'nav.php';
+    include 'notif.php'; ?>
     
     <div class="admin-container">
         <h1>Gestion des Utilisateurs</h1>

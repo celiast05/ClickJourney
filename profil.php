@@ -46,8 +46,9 @@ function print_trip($list, $name) {
     <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
 </head>
 <body>
-<?php include 'nav.php'; ?>
-    
+<?php include 'nav.php';
+include 'notif.php'; ?>
+
     <div class="container">
     <section class="profil">
         <form action="profil_update.php" method="POST" onsubmit="return validateForm()" id="profilForm">

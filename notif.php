@@ -1,0 +1,1 @@
+<div class="notif hidden" id="notif"></div>

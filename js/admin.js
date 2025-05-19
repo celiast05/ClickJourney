@@ -1,3 +1,24 @@
+function popNotif(message,type=0) {
+  const notif = document.getElementById('notif');
+  notif.textContent = message;
+  if(type){notif.classList.add(type)}; // type = good or bad
+  notif.classList.remove('hidden'); // Make element visible in layout
+
+  // Allow browser to reflow before applying fade-in
+  setTimeout(() => {
+    notif.classList.add('show'); // Trigger fade-in
+  }, 10);
+
+  // Auto-hide after 3 seconds
+  setTimeout(() => {
+    notif.classList.remove('show'); // Start fade-out
+    if(type){notif.classList.remove(type)}
+    setTimeout(() => {
+      notif.classList.add('hidden'); // Fully hide after fade-out completes
+    }, 500); // Match CSS transition duration
+  }, 3000);
+}
+
 async function send_request(email, new_role) {
   const data = {
     user_email: email,
@@ -18,13 +39,13 @@ async function send_request(email, new_role) {
         // user isn't an admin anymore
         window.location.href = result.redirect;
       } else {
-        alert("Mise à jour réussie.");
+        popNotif("Mise à jour réussie.",'good');
       }
     } else {
       throw new Error(result.message || "Erreur inconnue");
     }
   } catch (error) {
-    alert("Échec de la mise à jour : " + error.message);
+    popNotif("Échec de la mise à jour : " + error.message, 'bad');
   }
 }
 
