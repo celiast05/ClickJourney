@@ -1,0 +1,8 @@
+# Protect JSON files from direct access
+<FilesMatch "\.json$">
+    # Block direct access from web browsers
+    Order Deny,Allow 
+    Deny from all
+    # Allow access only if requested through PHP
+    Allow from env=REDIRECT_STATUS
+</FilesMatch>

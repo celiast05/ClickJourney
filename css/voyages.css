@@ -97,12 +97,11 @@ label {
 
 /* CONTAINER POUR ALIGNER LES CARTES */
 .container {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px;
-  justify-content: flex-start;
-  flex: 1;
-  justify-content: center;
+  padding: 0 40px;
+  width: 100%;
 }
 
 .card {
@@ -114,7 +113,7 @@ max-width: 400px;
 
 
 .card {
-  width: 350px;
+  width: 100%;
   background: var(--card-voyage);
   border-radius: 15px;
   overflow: hidden;
@@ -229,11 +228,8 @@ max-width: 400px;
   }
 
   .container {
-    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    justify-content: center;
-    width: 100%;
+    padding: 0 20px;
   }
 
   .card {
@@ -294,11 +290,7 @@ max-width: 400px;
   }
 
   .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 15px;
-    width: 100%;
+    grid-template-columns: 1fr;
   }
 
   .card {

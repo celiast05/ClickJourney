@@ -21,7 +21,7 @@
     "intimite": "Élevée",
     "prix": 3000,
     "moyenne": 4300,
-    "mots_cles": ["France", "art", "musée", "romantisme", "gastronomie", "Ville Lumière"]
+    "mots_cles": ["France", "art", "musée", "romantisme", "gastronomie", "Ville Lumière", "Europe"]
   },
   {
     "id": "rome",
@@ -45,7 +45,7 @@
     "intimite": "Moyenne",
     "prix": 2800,
     "moyenne": 3800,
-    "mots_cles": ["Italie", "vestiges antiques", "locale", "fontaine", "dolce vita"]
+    "mots_cles": ["Italie", "vestiges antiques", "locale", "fontaine", "dolce vita", "Europe"]
   },
   {
     "id": "santorin",
@@ -69,7 +69,7 @@
     "intimite": "Très élevée",
     "prix": 3500,
     "moyenne": 4860,
-    "mots_cles": ["falaises", "dômes bleus", "mer Égée", "coucher de soleil", "Grèce", "Joyau des Cyclades", "détente", "locale", "vin", "gastronomie"]
+    "mots_cles": ["falaises", "dômes bleus", "mer Égée", "coucher de soleil", "Grèce", "Joyau des Cyclades", "détente", "locale", "vin", "gastronomie", "Europe"]
   },
   {
     "id": "bora_bora",

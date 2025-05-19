@@ -1,82 +1,149 @@
-let voyages = [];
+// Fetch voyages data
+let voyagesData = [];
 
-// Charger le JSON
-fetch('json/voyage.json')
-    .then(res => res.json())
-    .then(data => {
-        voyages = data;
-        filtrer(); // Afficher dès le chargement
-    })
-    .catch(error => console.error("Erreur JSON :", error));
+fetch('../get_voyage.php')
+  .then(response => response.json())
+  .then(data => {
+    voyagesData = data;
+    updateResults(); // Update results after fetching data
+  })
+  .catch(error => console.error('Error loading voyages:', error));
 
-// Affiche les cartes
-function afficherVoyages(liste) {
-    const container = document.getElementById("voyageCards");
-    container.innerHTML = "";
+// Search function
+function searchVoyages(searchTerm) {
+    if (!searchTerm.trim()) return voyagesData; // Return all if empty search
 
-    if (liste.length === 0) {
-        container.innerHTML = '<p style="text-align:center;">Aucun voyage ne correspond aux filtres.</p>';
-        return;
-    }
+    const normalize = (text) => {
+        return text.toString().toLowerCase()
+            .normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "");
+    };
 
-    liste.forEach(v => {
-        const card = document.createElement("div");
-        card.className = "card";
-        card.innerHTML = `
-            <div class="card-image" style="background-image: url('${v.image}');"></div>
-            <div class="card-content">
-                <h2>${v.nom}</h2>
-                <p class="category">${v.theme}</p>
-                <p class="taille">${v.description}</p>
-                <a href="details.php?voyage=${v.id}" class="cta">
-                    Découvrir
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
-                        <path d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
-                    </svg>
-                </a>
-            </div>`;
-        container.appendChild(card);
+    const normalizedSearch = normalize(searchTerm);
+
+    return voyagesData.filter(voyage => {
+        // Check name
+        if (normalize(voyage.nom).includes(normalizedSearch)) return true;
+        
+        // Check description
+        if (normalize(voyage.description).includes(normalizedSearch)) return true;
+        
+        // Check keywords
+        if (voyage.mots_cles && voyage.mots_cles.some(mot => 
+            normalize(mot).includes(normalizedSearch))) return true;
+
+        // Check country
+        if (normalize(voyage.pays).includes(normalizedSearch)) return true;
+        
+        // Check theme
+        if (normalize(voyage.theme).includes(normalizedSearch)) return true;
+
+        return false;
     });
 }
 
-// Appliquer les filtres
-function filtrer() {
-    console.log("Filtrer function called"); // Vérifier que la fonction est appelée
+// Price sorting function
+function sortByPrice(voyages, order) {
+    return [...voyages].sort((a, b) => {
+        return order === 'asc' ? a.prix - b.prix : b.prix - a.prix;
+    });
+}
+
+// Filter by multiple criteria
+function filterVoyages(voyages) {
+    // Get selected filters
+    const selectedClimats = Array.from(document.querySelectorAll('input[name="climat"]:checked'))
+        .map(input => input.value);
+    const selectedPays = Array.from(document.querySelectorAll('input[name="pays"]:checked'))
+        .map(input => input.value);
+    const selectedThemes = Array.from(document.querySelectorAll('input[name="theme"]:checked'))
+        .map(input => input.value);
     
-    const triPrix = document.getElementById("filter-prix").value;
-    const climats = Array.from(document.querySelectorAll('input[name="climat"]:checked')).map(cb => cb.value.trim());
-    const pays = Array.from(document.querySelectorAll('input[name="pays"]:checked')).map(cb => cb.value.trim().toLowerCase());
-    const themes = Array.from(document.querySelectorAll('input[name="theme"]:checked')).map(cb => cb.value.trim());
-
-    console.log("Filtres actifs:", { climats, pays, themes}); // Voir ce qui est sélectionné
-
-    let results = voyages.filter(v => {
-        if (climats.length > 0 && !climats.includes(v.climat_saison)) {
+    return voyages.filter(voyage => {
+        // Apply climate filter
+        if (selectedClimats.length && !selectedClimats.includes(voyage.climat_saison)) {
             return false;
         }
         
-        if (pays.length > 0 && !pays.includes(v.pays)) {
+        // Apply country filter
+        if (selectedPays.length && !selectedPays.includes(voyage.pays)) {
             return false;
         }
         
-        if (themes.length > 0 && !themes.includes(v.themes)) {
+        // Apply theme filter
+        if (selectedThemes.length && !selectedThemes.includes(voyage.themes)) {
             return false;
         }
         
         return true;
     });
-
-    // Tri
-    if (triPrix === "asc") results.sort((a, b) => a.moyenne - b.moyenne);
-    if (triPrix === "desc") results.sort((a, b) => b.moyenne - a.moyenne);
-
-    console.log("Résultats après filtrage:", results); // Voir le résultat
-    afficherVoyages(results);
 }
 
-// Événements
-document.getElementById("filter-prix").addEventListener("change", filtrer);
-document.querySelectorAll('input[name="climat"]').forEach(cb => cb.addEventListener("change", filtrer));
-document.querySelectorAll('input[name="activite"]').forEach(cb => cb.addEventListener("change", filtrer));
-document.querySelectorAll('input[name="pays"]').forEach(cb => cb.addEventListener("change", filtrer));
-document.querySelectorAll('input[name="theme"]').forEach(cb => cb.addEventListener("change", filtrer));
+// Apply all filters and search
+function updateResults() {
+    console.log('Voyages data:', voyagesData); // Debug log
+
+    let results = [...voyagesData];
+    
+    // Apply search if there's a search term
+    const searchTerm = document.querySelector('input[name="keyword"]').value;
+    if (searchTerm.trim()) {
+        results = searchVoyages(searchTerm);
+    }
+    
+    // Apply filters
+    results = filterVoyages(results);
+    
+    // Apply price sorting
+    const priceSort = document.getElementById('filter-prix').value;
+    if (priceSort) {
+        results = sortByPrice(results, priceSort);
+    }
+    
+    displayResults(results);
+}
+
+// Display results function
+function displayResults(voyages) {
+    const container = document.getElementById('voyageCards');
+    container.innerHTML = '';
+
+    if (voyages.length === 0) {
+        container.innerHTML = '<p>Aucun voyage trouvé</p>';
+        return;
+    }
+
+    voyages.forEach(voyage => {
+        const card = `
+            <div class="card">
+                <div class="card-image" style="background-image: url('${voyage.image}');"></div>
+                <div class="card-content">
+                    <h2>${voyage.nom}</h2>
+                    <p class="category">${voyage.theme}</p>
+                    <p class="taille">${voyage.description}</p>
+                    <a href="details.php?voyage=${voyage.id}" class="cta">
+                        Découvrir
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="10" viewBox="0 0 46 16">
+                            <path d="M8,0,6.545,1.455l5.506,5.506H-30V9.039H12.052L6.545,14.545,8,16l8-8Z" transform="translate(30)"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        `;
+        container.innerHTML += card;
+    });
+}
+
+// Add event listeners
+document.getElementById('filter-prix').addEventListener('change', updateResults);
+
+// Add listeners for checkboxes
+document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+    checkbox.addEventListener('change', updateResults);
+});
+
+// Update search listener to use combined filtering
+document.querySelector('input[name="keyword"]').addEventListener('input', updateResults);
+
+// Initial display
+updateResults();
