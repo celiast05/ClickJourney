@@ -1,7 +1,7 @@
 // Fetch voyages data
 let voyagesData = [];
 
-fetch('../get_voyage.php')
+fetch('get_voyage.php')
   .then(response => response.json())
   .then(data => {
     voyagesData = data;

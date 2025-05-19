@@ -6,11 +6,22 @@ if (!isset($_SESSION['logged_in'])) {
     exit();
 }
 
-if (!isset($_SESSION['user'])) {
+/*if (!isset($_SESSION['user'])) {
     $fileJson = 'json/users.json';
     $users = json_decode(file_get_contents($fileJson), true);
     foreach ($users as $user) {
         if ($user['email'] == $_SESSION['email']) {
+            $_SESSION['user'] = $user;
+            break;
+        }
+    }
+}*/
+
+if (isset($_SESSION['logged_in'])) {
+    $email = $_SESSION['logged_in'];
+    $users = json_decode(file_get_contents('json/users.json'), true);
+    foreach ($users as $user) {
+        if ($user['email'] === $email) {
             $_SESSION['user'] = $user;
             break;
         }
@@ -46,9 +57,8 @@ function print_trip($list, $name) {
     <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
 </head>
 <body>
-<?php include 'nav.php';
-include 'notif.php'; ?>
-
+<?php include 'nav.php'; ?>
+    
     <div class="container">
     <section class="profil">
         <form action="profil_update.php" method="POST" onsubmit="return validateForm()" id="profilForm">
@@ -174,7 +184,19 @@ if (!empty($_SESSION['user']['voyages']['consultes']) || !empty($_SESSION['user'
 
         echo "<div class='historique-section achetes'>";
             echo "<div class='voyage-container'>";
-            print_trip($_SESSION['user']['voyages']['achetes'], "Acheté");
+            echo "<h2>Voyages Achetés :</h2>";
+            if (!empty($_SESSION['user']['voyages']['achetes'])) {
+                foreach ($_SESSION['user']['voyages']['achetes'] as $voyage) {
+                    if (is_array($voyage) && isset($voyage['nom'], $voyage['transaction_id'])) {
+                        echo '<p class="voyage-nom">';
+                        echo '<a href="reservation_detail.php?transaction=' . htmlspecialchars($voyage['transaction_id']) . '">';
+                        echo htmlspecialchars($voyage['nom']);
+                        echo '</a></p>';
+                    }
+                }
+            } else {
+                echo "<p>Aucun voyage acheté pour le moment.</p>";
+            }
             echo "</div>";
         echo "</div>";
 
@@ -190,4 +212,5 @@ if (!empty($_SESSION['user']['voyages']['consultes']) || !empty($_SESSION['user'
     <script src="js/profil.js"></script>
 </body>
 </html>
+
 

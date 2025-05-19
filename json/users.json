@@ -4,9 +4,9 @@
         "passwordHash": "$2y$10$9qQE3dT6Rlv8yGurtchINevaIQmxnClePmRlwoljyKbpXjubfu27O",
         "role": "admin",
         "informations": {
-            "nom": "Test",
+            "nom": "Test 2",
             "prenom": "L'Unique",
-            "civilite": "Madame",
+            "civilite": "Monsieur",
             "telephone": "561616545684",
             "photo": [],
             "preferences": "",
@@ -23,8 +23,16 @@
                 "Paris"
             ],
             "achetes": [
-                "Santorin",
-                "Paris"
+                {
+                    "id": "courchevel",
+                    "nom": "Courchevel",
+                    "hebergement": "Chalet de luxe avec service",
+                    "activites": [],
+                    "date_depart": "2025-05-19",
+                    "date_retour": "2025-05-21",
+                    "montant": "10000",
+                    "transaction_id": "6829cf6281fde"
+                }
             ],
             "favoris": [
                 "Santorin"
@@ -247,7 +255,7 @@
         },
         "dates": {
             "inscription": "2025-04-28",
-            "derniere_connexion": "2025-05-18"
+            "derniere_connexion": "2025-05-13"
         },
         "voyages": {
             "consultes": [],

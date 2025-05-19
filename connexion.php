@@ -54,7 +54,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
 
     <?php include 'footer.php'; ?>
     
-    <script src="connexion.js"></script>
+    <script src="js/connexion.js"></script>
     <script src="js/theme.js"></script>
 
   </body>

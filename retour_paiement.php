@@ -87,6 +87,30 @@ if ($statut === 'accepted') {
 
         // Enregistrer les données mises à jour
         file_put_contents($jsonFile, json_encode($existingData, JSON_PRETTY_PRINT));
+
+        // Ajouter la réservation dans users.json
+        $usersFile = 'json/users.json';
+        $users = json_decode(file_get_contents($usersFile), true);
+
+        foreach ($users as &$u) {
+            if ($u['email'] === $_SESSION['logged_in']) {
+                $u['voyages']['achetes'][] = [
+                    'id' => $voyage['id'],
+                    'nom' => $voyage['nom'],
+                    'hebergement' => $voyage['hebergement'],
+                    'activites' => $voyage['activites'],
+                    'date_depart' => $voyage['date_depart'],
+                    'date_retour' => $voyage['date_retour'],
+                    'montant' => $montant,
+                    'transaction_id' => $transaction
+                ];
+            break;
+            }
+        }
+
+        // Écriture dans le fichier
+        file_put_contents($usersFile, json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+
     }
 
     // On vide le panier quoi qu’il arrive

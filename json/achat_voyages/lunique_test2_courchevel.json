@@ -1,0 +1,29 @@
+[
+    {
+        "user_prenom": "L'Unique",
+        "user_nom": "Test 2",
+        "transaction_id": "6829cf6281fde",
+        "montant": 0,
+        "voyage": {
+            "id": "courchevel",
+            "nom": "Courchevel",
+            "hebergement": "Chalet de luxe avec service",
+            "activites": [
+                "Journée de ski avec moniteur privé",
+                "Dîner gastronomique en montagne"
+            ],
+            "nombre_personnes": {
+                "Chalet de luxe avec service": "1",
+                "Journée de ski avec moniteur privé": "1",
+                "Dîner gastronomique en montagne": "1"
+            },
+            "date_depart": "2025-05-19",
+            "date_retour": "2025-05-21",
+            "montant": 10000,
+            "details": [
+                "Hébergement : Chalet de luxe avec service (1 pers.) - 5000 €"
+            ]
+        },
+        "date": "2025-05-18 16:19:52"
+    }
+]
