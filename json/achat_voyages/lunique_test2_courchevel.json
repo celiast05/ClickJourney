@@ -13,9 +13,9 @@
                 "Dîner gastronomique en montagne"
             ],
             "nombre_personnes": {
-                "Chalet de luxe avec service": "1",
-                "Journée de ski avec moniteur privé": "1",
-                "Dîner gastronomique en montagne": "1"
+                "Chalet de luxe avec service": "2",
+                "Journée de ski avec moniteur privé": "2",
+                "Dîner gastronomique en montagne": "2"
             },
             "date_depart": "2025-05-19",
             "date_retour": "2025-05-21",
@@ -24,6 +24,6 @@
                 "Hébergement : Chalet de luxe avec service (1 pers.) - 5000 €"
             ]
         },
-        "date": "2025-05-18 16:19:52"
+        "date": "2025-05-19 12:07:42"
     }
 ]
