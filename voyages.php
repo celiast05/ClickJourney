@@ -62,7 +62,7 @@ if (isset($_POST['keyword']) && !empty(trim($_POST['keyword']))) {
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link rel="stylesheet" type="text/css" href="css/voyages.css" />
+    <link rel="stylesheet" type="text/css" href="css/voyages.css?v=1.5" />
     <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
     <title>Nos voyages - Elysia Voyage</title>
 </head>
