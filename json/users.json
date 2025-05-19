@@ -4,7 +4,7 @@
         "passwordHash": "$2y$10$9qQE3dT6Rlv8yGurtchINevaIQmxnClePmRlwoljyKbpXjubfu27O",
         "role": "admin",
         "informations": {
-            "nom": "Test 2",
+            "nom": "Test",
             "prenom": "L'Unique",
             "civilite": "Monsieur",
             "telephone": "561616545684",
@@ -113,7 +113,7 @@
         },
         "dates": {
             "inscription": "2025-03-25",
-            "derniere_connexion": "2025-05-17"
+            "derniere_connexion": "2025-05-19"
         },
         "voyages": {
             "consultes": [

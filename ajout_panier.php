@@ -106,6 +106,10 @@ if (isset($_POST["activites"])) {
     }
 }
 
+if(isset($_SESSION['role']) & $_SESSION['role']=='vip'){
+    $montant *= 0.8;
+}
+
 // Vérifie si ce voyage existe déjà dans le panier
 $existeDeja = false;
 foreach ($_SESSION['panier'] as $item) {
@@ -123,6 +127,7 @@ foreach ($_SESSION['panier'] as $item) {
 if (!$existeDeja) {
     $_SESSION['panier'][] = [
         'id' => $trip['id'],
+        'frais_reservation' => $trip['prix'],
         'nom' => $trip['nom'],
         'hebergement' => $hebergement,
         'activites' => $_POST['activites'] ?? [],

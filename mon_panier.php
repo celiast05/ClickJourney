@@ -41,8 +41,12 @@ if (!isset($_SESSION['logged_in'])) {
           echo "<p><strong>Dates :</strong> " . htmlspecialchars($date_depart) . " → " . htmlspecialchars($date_retour) . "</p>";
 
           echo "<ul>";
+          echo "<li> Frais de réservation : ". $voyage['frais_reservation'] ." €</li>";
           foreach ($voyage['details'] as $detail) {
               echo "<li>" . htmlspecialchars($detail) . "</li>";
+          }
+          if(isset($_SESSION['role']) & $_SESSION['role']=='vip'){
+              echo "<li> Réduction VIP -20% </li>";
           }
           echo "</ul>";
 
@@ -53,7 +57,6 @@ if (!isset($_SESSION['logged_in'])) {
           echo "<input type='hidden' name='index' value='$index'>";
           echo "<button type='submit'>Supprimer ce voyage</button>";
           echo "</form>";
-
           echo "<a href='details.php?voyage=" . htmlspecialchars($voyage['id']) . "' class='continuer-recherches'>Modifier ce voyage</a>";
           echo "</div>";
 

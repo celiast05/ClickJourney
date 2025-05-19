@@ -55,7 +55,7 @@ foreach ($trips as $t) { // on récupère le bon voyage
                 } 
                 echo '/>
                     <p>'.$hebergement.' : '.$prix. '€</p>
-                &emsp; <input type="number" id="nb_personnes" name="nb_personnes[' . htmlspecialchars($hebergement) . ']" value="1" min="1" max="10" required';
+                &emsp; <input type="number" id="nb_personnes[' . htmlspecialchars($hebergement) . ']" name="nb_personnes[' . htmlspecialchars($hebergement) . ']" value="1" min="1" max="10" required';
                 if (!$bool){
                     echo ' disabled';
                 }
@@ -71,7 +71,7 @@ foreach ($trips as $t) { // on récupère le bon voyage
                 echo '<label>
                     <input type="checkbox" name="activites[]" value="'.htmlspecialchars($activity).'" onclick="toggleInput()" />
                     <p>'.$activity.' : '.$prix. '€</p>
-                &emsp; <input type="number" id="nb_personnes" name="nb_personnes[' . htmlspecialchars($activity) . ']" value="1" min="1" max="10" required disabled> <span style="font-size: 20px"> personne(s)</span></label>';
+                &emsp; <input type="number" id="nb_personnes[' . htmlspecialchars($activity) . ']" name="nb_personnes[' . htmlspecialchars($activity) . ']" value="1" min="1" max="10" required disabled> <span style="font-size: 20px"> personne(s)</span></label>';
             }
         echo '</div>';
         }
@@ -101,7 +101,8 @@ foreach ($trips as $t) { // on récupère le bon voyage
         </label>
         
         <br><br>
-        <p><strong>Prix estimé : </strong><span id="estimation">0</span> €</p>
+        <p><strong>Prix estimé : </strong><span id="estimation">0</span> € 
+        <?php if(isset($_SESSION['role']) & $_SESSION['role']=='vip'){echo 'avec la réduction <span style="color: #a58a60; font-weight: bold;">VIP (-20%)</span> ';}?></p>
         <button type="submit">Ajouter au panier</button>
         </form>
     </section>
@@ -161,7 +162,8 @@ foreach ($trips as $t) { // on récupère le bon voyage
 {
   "basePrix": <?= $trip['prix'] ?>,
   "hebergements": <?= json_encode($trip['hebergements']) ?>,
-  "activites": <?= json_encode($trip['activites']) ?>
+  "activites": <?= json_encode($trip['activites']) ?>,
+  "role": <?= json_encode($_SESSION['role']) ?>
 }
 </script>
 
