@@ -40,15 +40,22 @@ body {
     line-height: 1.6;
   }
   
-  .error-box a {
-    font-family: var(--title);
-    font-size: 22px;
+  a.continuer-recherches {
+    display: inline-block;
+    padding: 12px 25px;
+    font-size: 20px;
     font-weight: bold;
+    border: none;
+    background: var(--title-color);
+    color: white;
     text-decoration: none;
-    color: var(--title-color);
+    cursor: pointer;
+    transition: background 0.3s ease;
+    border-radius: 5px;
+    margin-top: 20px;
   }
   
-  .error-box a:hover {
-    text-decoration: underline;
+  a.continuer-recherches:hover {
+    background-color: rgba(0, 0, 0, 0.7);
   }
   
