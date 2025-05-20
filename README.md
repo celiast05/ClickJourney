@@ -1,14 +1,41 @@
+<img src="Images/logo.png" alt="Logo Elysia Voyage" width="200">
 
-# 🌍 Click-journeY
+# Click-journeY – Elysia Voyage
 
-**Click-journeY** est un site de voyages de luxe personnalisés, réalisé dans le cadre du module d'informatique du semestre 4 (préING2 - 2024/2025).  
-Le site propose aux utilisateurs des circuits de voyages fixes, modifiables à chaque étape (hébergement, activités, transport, etc.).
-
+**MEF-2 • Trinôme MEF2_G**
 ## 👥 Membres de l’équipe
 
 - **Célia Astier**
 - **Bouchra Zamoum**
 - **Raphaëlle Grimaldi**
+
+---
+## Table des Matières 
+- [Introduction](#introduction)
+- [Fonctionnalités](#fonctionnalités)
+- [Technologies utilisées](#technologies-utilisées)
+- [Lancement local](#lancement-local)
+- [Points forts techniques](#points-forts-techniques)
+- [Tests & Sécurité](#tests--sécurité)
+- [Organisation des fichiers](#organisation-des-fichiers)
+- [Comptes de Test](#comptes-de-test)
+- [Projet universitaire](#projet-universitaire)
+- [Annexes](#annexes)
+---
+
+## Introduction
+
+**Click-journeY** est un site web de **voyages de luxe personnalisables**.  
+Chaque utilisateur peut sélectionner un circuit fixe mais personnaliser à chaque étape :  
+hébergement, activités, restauration, transport…
+
+Le projet a été développé en 4 phases dans le cadre du module d'informatique (HTML, CSS, PHP, JavaScript, AJAX).
+
+Le site intègre :
+- une **gestion des utilisateurs et administrateurs**,
+- une **personnalisation dynamique des voyages**,
+- un **système de panier et paiement**,
+- et une **interface d'administration** complète.
 
 ---
 
@@ -38,14 +65,9 @@ Le site propose aux utilisateurs des circuits de voyages fixes, modifiables à c
 
 - **HTML / CSS** : mise en page, thèmes
 - **JavaScript** : DOM, interactions utilisateur, validation
-- **AJAX** : mises à jour sans rechargement (profil, admin, prix, options…)
+- **AJAX** : mises à jour sans rechargement (profil, admin, prix,options…)
 - **PHP** : gestion serveur, sessions, traitement des données
 - **JSON** : structure des données utilisateurs & voyages
-
----
-
-## 📁 Structure du projet
-
 
 ---
 
@@ -77,17 +99,53 @@ Le site propose aux utilisateurs des circuits de voyages fixes, modifiables à c
 
 ---
 
-## 📎 Annexes
+## 🎓 Organisation des fichiers
+click-journeY/
+│
+├── css/
+│   ├── accueil.css
+│   ├── admin.css
+│   ├── ...
+│   └── themes/
+│       ├── theme_light.css
+│       ├── theme_dark.css
+│       ├── theme_contrast.css
+│       └── theme_large.css
+│
+├── js/
+│   ├── connexion.js
+│   ├── admin.js
+│   ├── voyages.js
+│   └── ...
+│
+├── json/
+│   ├── voyage.json
+│   ├── users.json
+│   └── achat_voyages/
+│
+├── Images/
+│
+├── script/
+│   ├── accueil.php
+│   ├── voyages.php
+│   ├── admin.php
+│   ├── connexion.php
+│   ├── inscription.php
+│   ├── details.php
+│   ├── profil.php
+│   ├── mon_panier.php
+│   ├── retour_paiement.php
+│   └── ...
+│
+├── rapport + charte/
+│   ├── Rapport de projet final.pdf
+│   └── Charte graphique v1.4.pdf
+│
+└── README.md
 
-- 📄 [Charte graphique](./rapport%20+%20charte/Charte%20graphique%20v1.4.pdf)
-- 📄 [Rapport de projet final](./rapport%20+%20charte/Rapport%20de%20projet%20final.pdf)
+## 👤 Comptes de Test
 
----
-
-## 🎓 Projet universitaire
-
-> Ce projet a été réalisé dans le cadre du module informatique 4 (HTML/CSS, PHP, JS, DOM, AJAX) – préING2 – CY Tech – 2024/2025  
-> Enseignants : **R. Grignon** & **C. Le Breton**
+Voici une liste d’utilisateurs disponibles dans le fichier `users.json` pour vos tests :
 
 
 | **Adresse mail**  | **Mot de passe** | **Rôle**       |
@@ -101,3 +159,13 @@ Le site propose aux utilisateurs des circuits de voyages fixes, modifiables à c
 | justice@gmail.com | justice          | Normal         |
 | marc@gmail.com    | Marc_norm1       | Normal         |
 | paul@gmail.com    | Paul_norm2       | Normal         |
+
+## 🎓 Projet universitaire
+
+> Ce projet a été réalisé dans le cadre du module informatique 4 (HTML/CSS, PHP, JS, DOM, AJAX) – préING2 – CY Tech – 2024/2025  
+> Enseignant : **C. Le Breton**
+
+## 📎 Annexes
+
+- 📄 [Charte graphique](./rapport%20+%20charte/Charte%20graphique%20v1.4.pdf)
+- 📄 [Rapport de projet final](./rapport%20+%20charte/Rapport%20de%20projet%20final.pdf)
