@@ -18,6 +18,7 @@ foreach ($files as $file) {
     foreach ($content as $entry) {
         if (isset($entry['transaction_id']) && $entry['transaction_id'] === $transactionId) {
             $reservation = $entry;
+            $nomFichier = basename($file);
             break 2;
         }
     }
@@ -61,7 +62,7 @@ $voyage = $reservation['voyage'];
     <p><strong>Montant payé :</strong> <?= htmlspecialchars($reservation['montant']) ?> €</p>
 
     <br>
-    <a href="modifier_reservation.php?transaction=<?= urlencode($transactionId) ?>" class="cta">Modifier cette réservation</a>
+    <a href="modifier_apres_paiement.php?fichier=<?= urlencode($nomFichier) ?>" class="cta">Modifier cette réservation</a>
 </div>
 
 <?php include 'footer.php'; ?>
