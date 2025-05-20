@@ -10,9 +10,9 @@
 - [Lancement local](#lancement-local)
 - [Points forts techniques](#points-forts-techniques)
 - [Tests & Sécurité](#tests--sécurité)
-- [👤 Comptes de Test](#comptes-de-test)
-- [🎓 Projet universitaire](#projet-universitaire)
-- [📎 Annexes](#annexes)
+- [Comptes de Test](#comptes-de-test)
+- [Projet universitaire](#projet-universitaire)
+- [Annexes](#annexes)
 - [Organisation des fichiers](#organisation-des-fichiers)
 ---
 
@@ -99,9 +99,9 @@ Le site intègre :
 
 ---
 
-## 👤 Comptes de Test
+## Comptes de Test
 
-Voici une liste d’utilisateurs disponibles dans le fichier `users.json` pour vos tests :
+👤 Voici une liste d’utilisateurs disponibles dans le fichier `users.json` pour vos tests :
 
 
 | **Adresse mail**  | **Mot de passe** | **Rôle**       |
@@ -117,12 +117,12 @@ Voici une liste d’utilisateurs disponibles dans le fichier `users.json` pour v
 | paul@gmail.com    | Paul_norm2       | Normal         |
 
 
-## 🎓 Projet universitaire
+## Projet universitaire
 
-> Ce projet a été réalisé dans le cadre du module informatique 4 (HTML/CSS, PHP, JS, DOM, AJAX) – préING2 – CY Tech – 2024/2025  
+> 🎓 Ce projet a été réalisé dans le cadre du module informatique 4 (HTML/CSS, PHP, JS, DOM, AJAX) – préING2 – CY Tech – 2024/2025  
 > Enseignant : **C. Le Breton**
 
-## 📎 Annexes
+## Annexes
 
 - 📄 [Charte graphique](./rapport%20+%20charte/Charte%20graphique%20v2.pdf)
 - 📄 [Rapport de projet final](./rapport%20+%20charte/Rapport%20de%20projet%20final.pdf)
