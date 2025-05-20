@@ -1,11 +1,5 @@
 <?php
 include 'session.php';
-
-if (!isset($_SESSION['logged_in'])) {
-    header("Location: connexion.php");
-    exit();
-}
-
 include("getapikey.php");
 
 if (!isset($_GET['transaction'], $_GET['montant'], $_GET['vendeur'], $_GET['status'], $_GET['control'])) {
@@ -35,7 +29,7 @@ if (!file_exists($fileTmp)) {
 $modif = json_decode(file_get_contents($fileTmp), true);
 unlink($fileTmp); // on supprime après lecture
 
-// OK, on applique la modification
+// Appliquer la modification
 $fichier = "json/achat_voyages/" . $modif['fichier'];
 
 if (!file_exists($fichier)) {
@@ -52,20 +46,39 @@ $voyageData['supplement_paye'] = true;
 $voyageData['transaction_supplement'] = $transaction;
 
 file_put_contents($fichier, json_encode($reservations, JSON_PRETTY_PRINT));
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Modification enregistrée</title>
-    <link rel="stylesheet" href="css/themes/theme_light.css">
+    <title>Confirmation de modification</title>
+    <link rel="stylesheet" href="css/retour_paiement.css">
+    <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
 </head>
 <body>
+<?php include 'nav.php'; ?>
+
+<div class="container">
+    <h2>Récapitulatif du paiement</h2>
+    <p><strong>Numéro de transaction :</strong> <?= htmlspecialchars($transaction) ?></p>
+    <p><strong>Montant :</strong> <?= htmlspecialchars($montant) ?> €</p>
+    <p><strong>Statut du paiement :</strong> <?= ($statut === 'accepted' ? 'Paiement accepté' : 'Paiement refusé') ?></p>
+</div>
+
+<?php if ($statut === 'accepted'): ?>
     <div class="container">
-        <h2>Modification enregistrée avec succès !</h2>
-        <p>Le supplément a été payé et les changements sont maintenant actifs.</p>
-        <a href="profil.php">Retour au profil</a>
+        <p><strong>Supplément payé avec succès !</strong></p>
+        <p>Votre réservation a été modifiée.</p>
+        <a href="profil.php" class="cta">Retour à mon profil</a>
     </div>
+<?php else: ?>
+    <div class="container">
+        <p>Le paiement du supplément a échoué. La modification n'a pas été enregistrée.</p>
+        <a href="profil.php" class="cta">Retour au profil</a>
+    </div>
+<?php endif; ?>
+
+<?php include 'footer.php'; ?>
+<script src="js/theme.js"></script>
 </body>
 </html>
