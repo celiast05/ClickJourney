@@ -2,13 +2,6 @@
 
 # Click-journeY – Elysia Voyage
 
-**MEF-2 • Trinôme MEF2_G**
-## 👥 Membres de l’équipe
-
-- **Célia Astier**
-- **Bouchra Zamoum**
-- **Raphaëlle Grimaldi**
-
 ---
 ## Table des Matières 
 - [Introduction](#introduction)
@@ -18,12 +11,19 @@
 - [Points forts techniques](#points-forts-techniques)
 - [Tests & Sécurité](#tests--sécurité)
 - [Organisation des fichiers](#organisation-des-fichiers)
-- [Comptes de Test](#comptes-de-test)
 - [Projet universitaire](#projet-universitaire)
 - [Annexes](#annexes)
+- [Comptes de Test](#comptes-de-test)
 ---
 
 ## Introduction
+
+**MEF-2 • Trinôme MEF2_G**
+## 👥 Membres de l’équipe
+
+- **Célia Astier**
+- **Bouchra Zamoum**
+- **Raphaëlle Grimaldi**
 
 **Click-journeY** est un site web de **voyages de luxe personnalisables**.  
 Chaque utilisateur peut sélectionner un circuit fixe mais personnaliser à chaque étape :  
@@ -65,7 +65,7 @@ Le site intègre :
 
 - **HTML / CSS** : mise en page, thèmes
 - **JavaScript** : DOM, interactions utilisateur, validation
-- **AJAX** : mises à jour sans rechargement (profil, admin, prix,options…)
+- **Fetch** : mises à jour sans rechargement (profil, admin, prix,options…)
 - **PHP** : gestion serveur, sessions, traitement des données
 - **JSON** : structure des données utilisateurs & voyages
 
@@ -99,8 +99,36 @@ Le site intègre :
 
 ---
 
+## 👤 Comptes de Test
 
-## 🎓 Organisation des fichiers
+Voici une liste d’utilisateurs disponibles dans le fichier `users.json` pour vos tests :
+
+
+| **Adresse mail**  | **Mot de passe** | **Rôle**       |
+|-------------------|------------------|----------------|
+| test@gmail.com    | Test_admin1      | Administrateur |
+| zoe@gmail.com     | Zoe_admin2       | Administrateur |
+| charles@gmail.com | Charles_vip1     | VIP            |
+| peter@gmail.com   | PeterParker1     | VIP            |
+| luc@gmail.com     | Luc_ban1         | Banni          |
+| thomas@gmail.com  | Thomas_norm3     | Banni          |
+| justice@gmail.com | justice          | Normal         |
+| marc@gmail.com    | Marc_norm1       | Normal         |
+| paul@gmail.com    | Paul_norm2       | Normal         |
+
+
+
+ ## 🎓 Projet universitaire
+
+> Ce projet a été réalisé dans le cadre du module informatique 4 (HTML/CSS, PHP, JS, DOM, AJAX) – préING2 – CY Tech – 2024/2025  
+> Enseignant : **C. Le Breton**
+
+## 📎 Annexes
+
+- 📄 [Charte graphique](./rapport%20+%20charte/Charte%20graphique%20v1.4.pdf)
+- 📄 [Rapport de projet final](./rapport%20+%20charte/Rapport%20de%20projet%20final.pdf)
+
+
 ## 🎓 Organisation des fichiers
 
 ```bash
@@ -145,30 +173,3 @@ click-journeY/
 │   └── Charte graphique v1.4.pdf
 │
 └── README.md
-
-## 👤 Comptes de Test
-
-Voici une liste d’utilisateurs disponibles dans le fichier `users.json` pour vos tests :
-
-
-| **Adresse mail**  | **Mot de passe** | **Rôle**       |
-|-------------------|------------------|----------------|
-| test@gmail.com    | Test_admin1      | Administrateur |
-| zoe@gmail.com     | Zoe_admin2       | Administrateur |
-| charles@gmail.com | Charles_vip1     | VIP            |
-| peter@gmail.com   | PeterParker1     | VIP            |
-| luc@gmail.com     | Luc_ban1         | Banni          |
-| thomas@gmail.com  | Thomas_norm3     | Banni          |
-| justice@gmail.com | justice          | Normal         |
-| marc@gmail.com    | Marc_norm1       | Normal         |
-| paul@gmail.com    | Paul_norm2       | Normal         |
-
-## 🎓 Projet universitaire
-
-> Ce projet a été réalisé dans le cadre du module informatique 4 (HTML/CSS, PHP, JS, DOM, AJAX) – préING2 – CY Tech – 2024/2025  
-> Enseignant : **C. Le Breton**
-
-## 📎 Annexes
-
-- 📄 [Charte graphique](./rapport%20+%20charte/Charte%20graphique%20v1.4.pdf)
-- 📄 [Rapport de projet final](./rapport%20+%20charte/Rapport%20de%20projet%20final.pdf)
