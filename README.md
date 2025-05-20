@@ -10,9 +10,9 @@
 - [Lancement local](#lancement-local)
 - [Points forts techniques](#points-forts-techniques)
 - [Tests & Sécurité](#tests--sécurité)
-- [👤Comptes de Test](#comptes-de-test)
-- [🎓Projet universitaire](#projet-universitaire)
-- [📎Annexes](#annexes)
+- [👤 Comptes de Test](#comptes-de-test)
+- [🎓 Projet universitaire](#projet-universitaire)
+- [📎 Annexes](#annexes)
 - [Organisation des fichiers](#organisation-des-fichiers)
 ---
 
