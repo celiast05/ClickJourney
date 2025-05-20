@@ -1,0 +1,32 @@
+[
+    {
+        "user_prenom": "L'Unique",
+        "user_nom": "Test",
+        "transaction_id": "682b8c1c56659",
+        "montant": 39100,
+        "voyage": {
+            "id": "maldives",
+            "nom": "Maldives",
+            "hebergement": "Bungalow sur pilotis",
+            "activites": [
+                "Croisi\u00e8re au coucher du soleil"
+            ],
+            "nombre_personnes": {
+                "Bungalow sur pilotis": 3,
+                "Croisi\u00e8re au coucher du soleil": 2
+            },
+            "date_depart": "2025-06-04",
+            "date_retour": "2025-05-29",
+            "montant": 39100,
+            "frais_reservation": 5000,
+            "details": [
+                "H\u00e9bergement : Bungalow sur pilotis (3 pers.) - 23400 \u20ac",
+                "Activit\u00e9 : Croisi\u00e8re au coucher du soleil (2 pers.) - 700 \u20ac"
+            ]
+        },
+        "date": "2025-05-19 20:07:17",
+        "modifie": true,
+        "supplement_paye": true,
+        "transaction_supplement": "682c312c1c241"
+    }
+]

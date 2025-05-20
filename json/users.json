@@ -24,14 +24,14 @@
             ],
             "achetes": [
                 {
-                    "id": "courchevel",
-                    "nom": "Courchevel",
-                    "hebergement": "Chalet de luxe avec service",
+                    "id": "maldives",
+                    "nom": "Maldives",
+                    "hebergement": "Bungalow sur pilotis",
                     "activites": [],
-                    "date_depart": "2025-05-19",
-                    "date_retour": "2025-05-21",
-                    "montant": "10000",
-                    "transaction_id": "6829cf6281fde"
+                    "date_depart": "2025-05-26",
+                    "date_retour": "2025-05-29",
+                    "montant": "8900",
+                    "transaction_id": "682b8c1c56659"
                 }
             ],
             "favoris": [

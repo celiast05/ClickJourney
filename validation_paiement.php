@@ -15,7 +15,7 @@ foreach ($_SESSION['panier'] as $voyage) {
 // Préparation des données pour un paiement unique
 $transaction = uniqid();
 $vendeur = "MEF-2_G";
-require_once("getapikey.php");
+include("getapikey.php");
 $api_key = getAPIKey($vendeur);
 $retour = "http://localhost:8888/ClickJourney/retour_paiement.php"; // À adapter selon ton environnement
 $control = md5($api_key . "#" . $transaction . "#" . $total . "#" . $vendeur . "#" . $retour . "#");

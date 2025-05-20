@@ -110,3 +110,4 @@ $_SESSION['panier'][$index] = [
 
 header("Location: mon_panier.php?modifie=1");
 exit();
+?>
