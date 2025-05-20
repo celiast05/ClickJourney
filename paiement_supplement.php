@@ -103,9 +103,19 @@ file_put_contents("tmp/modif_" . $transaction . ".json", json_encode([
 <head>
     <meta charset="UTF-8">
     <title>Paiement du supplément</title>
+    <link rel="stylesheet" href="css/panier.css">
+    <link id="theme-link" rel="stylesheet" href="css/themes/theme-light.css">
 </head>
 <body>
-    <h2>Un supplément de <?= $supplement ?> € est requis pour appliquer votre modification.</h2>
+<?php include 'nav.php'; ?>
+
+<h1>Paiement du supplément</h1>
+
+<div class="container">
+    <div style="border:1px solid #ccc; padding:15px; margin-bottom:25px;">
+        <p>Suite à votre modification, un supplément est requis.</p>
+        <strong>Montant du supplément : <?= number_format($supplement, 2, ',', ' ') ?> €</strong>
+    </div>
 
     <form action="https://www.plateforme-smc.fr/cybank/index.php" method="POST">
         <input type="hidden" name="transaction" value="<?= $transaction ?>">
@@ -115,5 +125,12 @@ file_put_contents("tmp/modif_" . $transaction . ".json", json_encode([
         <input type="hidden" name="control" value="<?= $control ?>">
         <button type="submit">Payer le supplément</button>
     </form>
+
+    <br>
+    <a href="profil.php" class="continuer-recherches">Annuler la modification</a>
+</div>
+
+<?php include 'footer.php'; ?>
+<script src="js/theme.js"></script>
 </body>
 </html>
