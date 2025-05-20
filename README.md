@@ -99,9 +99,12 @@ Le site intègre :
 
 ---
 
+
 ## 🎓 Organisation des fichiers
+## 🎓 Organisation des fichiers
+
+```bash
 click-journeY/
-│
 ├── css/
 │   ├── accueil.css
 │   ├── admin.css
