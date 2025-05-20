@@ -10,9 +10,9 @@
 - [Lancement local](#lancement-local)
 - [Points forts techniques](#points-forts-techniques)
 - [Tests & Sécurité](#tests--sécurité)
-- [Comptes de Test](#comptes-de-test)
-- [Projet universitaire](#projet-universitaire)
-- [Annexes](#annexes)
+- [👤Comptes de Test](#comptes-de-test)
+- [🎓Projet universitaire](#projet-universitaire)
+- [📎Annexes](#annexes)
 - [Organisation des fichiers](#organisation-des-fichiers)
 ---
 
@@ -39,7 +39,7 @@ Le site intègre :
 
 ---
 
-## 🧾 Fonctionnalités
+## Fonctionnalités
 
 ### Utilisateur
 - 🔐 Inscription / Connexion avec validation client & serveur
@@ -61,7 +61,7 @@ Le site intègre :
 
 ---
 
-## 🛠️ Technologies utilisées
+## Technologies utilisées
 
 - **HTML / CSS** : mise en page, thèmes
 - **JavaScript** : DOM, interactions utilisateur, validation
@@ -71,7 +71,7 @@ Le site intègre :
 
 ---
 
-## 🚀 Lancement local
+## Lancement local
 
 1. Installer un serveur local (XAMPP, MAMP, WAMP…).
 2. Copier le dossier du projet dans `htdocs` (ou équivalent).
@@ -80,7 +80,7 @@ Le site intègre :
 
 ---
 
-## 🐞 Points forts techniques
+## Points forts techniques
 
 - Architecture modulaire (footer, header, sessions séparés)
 - Requêtes AJAX avec retour JSON pour éviter le rechargement complet
@@ -90,7 +90,7 @@ Le site intègre :
 
 ---
 
-## 🧪 Tests & Sécurité
+## Tests & Sécurité
 
 - Validation dynamique des formulaires
 - Gestion des erreurs (champs vides, incohérences, navigation interdite sans session)
