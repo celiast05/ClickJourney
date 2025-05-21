@@ -59,6 +59,11 @@ function resetInput(btn, previous_value) {
 function popNotif(message, type = 0) {
   const notif = document.getElementById("notif");
   notif.textContent = message;
+
+  // if 2 notifs follows each other, prevent wrong color
+  notif.classList.remove("good");
+  notif.classList.remove("bad");
+
   if (type) {
     notif.classList.add(type);
   } // type = good or bad
