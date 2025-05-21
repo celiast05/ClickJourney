@@ -48,3 +48,36 @@ a:hover {
   border-bottom: 2px solid var(--title-color);
 }
   
+@media screen and (max-width: 1024px) {
+  .container {
+    padding: 16px;
+    max-width: 80%;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  p {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 14px;
+    max-width: 90%;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  a {
+    font-size: 16px;
+  }
+}

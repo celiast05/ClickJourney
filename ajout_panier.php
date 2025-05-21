@@ -47,6 +47,7 @@ if (!empty($erreurs)) {
     echo '</ul>
             <a href="javascript:history.back()" class="continuer-recherches">Retour à la réservation</a>
         </div>
+        <script src="js/theme.js"></script>
     </body>
     </html>';
     exit;
