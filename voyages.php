@@ -22,22 +22,27 @@ function normalize($string) {
 $voyages = json_decode(file_get_contents('json/voyage.json'), true);
 
 // Traitement de la recherche
-$searchResults = $voyages;
-$searchTerm = '';
+$searchResults = $voyages; // charge tous les voyages
+$searchTerm = ''; // par défaut, on affiche tout
 
-if (isset($_POST['keyword']) && !empty(trim($_POST['keyword']))) {
-    $searchTerm = normalize(trim($_POST['keyword']));
-    $searchResults = [];
+if (isset($_POST['keyword']) && !empty(trim($_POST['keyword']))) {     // Si l’utilisateur a saisi un mot dans la barre de recherche
 
-    foreach ($voyages as $voyage) {
-        $found = false;
+    $searchTerm = normalize(trim($_POST['keyword'])); // normalise (accents et minuscules)
+    $searchResults = [];     // On vide les résultats, on les remplira avec les voyages trouvés
+
+
+    foreach ($voyages as $voyage) {         // On parcourt chaque voyage
+
+        $found = false;          // On suppose au début qu’il ne correspond pas
+
 
         // Recherche dans le nom et la description
         if (
             strpos(normalize($voyage['nom']), $searchTerm) !== false ||
             strpos(normalize($voyage['description']), $searchTerm) !== false
         ) {
-            $found = true;
+            $found = true;             // Si trouvé dans nom ou description, on marque comme trouvé
+
         }
 
         // Recherche dans les mots clés
@@ -45,13 +50,13 @@ if (isset($_POST['keyword']) && !empty(trim($_POST['keyword']))) {
             foreach ($voyage['mots_cles'] as $mot) {
                 if (strpos(normalize($mot), $searchTerm) !== false) {
                     $found = true;
-                    break;
+                    break; // On arrête dès qu’un mot-clé correspond
                 }
             }
         }
 
         if ($found) {
-            $searchResults[] = $voyage;
+            $searchResults[] = $voyage; // ajoute le voyage au résultat
         }
     }
 }
@@ -74,7 +79,8 @@ if (isset($_POST['keyword']) && !empty(trim($_POST['keyword']))) {
 </header>
 
 <main>
-    <form name="search" method="post" action="voyages.php">
+    <form name="search" method="post" action="voyages.php">     <!-- Formulaire qui envoie la recherche à cette même page -->
+
         <input class="search" id="i1" name="keyword" type="text" placeholder="Rechercher..." value="<?= htmlspecialchars($_POST['keyword'] ?? '') ?>">
     </form>
 

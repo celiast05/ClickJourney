@@ -1,7 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector("form");
-  
-    const nom = document.getElementById("nom");
+    // Quand tout le HTML est chargé, on lance le code JS
+
+    const form = document.querySelector("form"); // Sélectionne le formulaire HTML
+    // Récupération des champs du formulaire via leur ID (attribut HTML)
+
+    const nom = document.getElementById("nom");   // Récupère le champ "nom" (balise avec id="nom")
     const prenom = document.getElementById("prenom");
     const email = document.getElementById("email");
     const password = document.getElementById("password");
@@ -9,27 +12,27 @@ document.addEventListener("DOMContentLoaded", () => {
   
     // Fonction pour afficher une erreur
     function showError(input, message) {
-      removeError(input);
-      const error = document.createElement("p");
-      error.classList.add("error-message");
-      error.style.color = "red";
-      error.textContent = message;
-      input.insertAdjacentElement("afterend", error);
-      input.setAttribute("data-valid", "false");
+      removeError(input); // Supprime les anciennes erreurs du champ
+      const error = document.createElement("p"); // Crée une nouvelle balise <p> (JS natif)
+      error.classList.add("error-message");  // Ajoute une classe CSS pour le style
+      error.style.color = "red"; // Donne une couleur rouge au message
+      error.textContent = message; // Ajoute le texte de l'erreur (sans HTML)
+      input.insertAdjacentElement("afterend", error); // Place la balise juste après le champ
+      input.setAttribute("data-valid", "false"); // Attribut personnalisé : indique que le champ est invalide
     }
   
     // Fonction pour retirer une erreur
     function removeError(input) {
-      const parent = input.closest('.password-wrapper') || input;
-      const container = parent.parentElement;
+      const parent = input.closest('.password-wrapper') || input; // Cherche un parent wrapper (utile pour les champs mot de passe)
+      const container = parent.parentElement; // Récupère l’élément parent du champ
     
       // Supprime tous les messages d’erreur qui sont directement après le champ ou son wrapper
       container.querySelectorAll('.error-message').forEach(error => {
-        error.remove();
+        error.remove();  // Supprime chaque message d’erreur
       });
     
-      input.setAttribute("data-valid", "true");
-    }
+      input.setAttribute("data-valid", "true"); // Marque le champ comme valide
+    } 
     
   
     // Vérifie si un champ est valide
@@ -40,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Règle le verrouillage progressif des champs
     function updateFieldAccess() {
       // Nom → Prénom
-      prenom.disabled = !isValid(nom);
+      prenom.disabled = !isValid(nom); // Active le champ prénom seulement si nom est valide
       // Prénom → Email
       email.disabled = !isValid(prenom);
       // Email → Mot de passe
@@ -52,12 +55,14 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // VALIDATION DU NOM
     nom.addEventListener("blur", () => {
+          // regex : accepte lettres majuscules/minuscules, espaces, tirets, accents
+
       const regexNom = /^[A-Za-zÀ-ÿ\s'-]+$/;
       if (nom.value.trim().length < 2 || !regexNom.test(nom.value)) {
-        removeError(nom);
+        removeError(nom);  // Supprime les erreurs précédentes
       
-        const errorContainer = document.createElement("div");
-        errorContainer.classList.add("error-message");
+        const errorContainer = document.createElement("div"); // Crée une div pour afficher les erreurs
+        errorContainer.classList.add("error-message"); // Ajoute une classe CSS
         errorContainer.innerHTML = `
           <p style="color: white; font-weight: 600;">Nom invalide :</p>
           <ul>
@@ -67,23 +72,26 @@ document.addEventListener("DOMContentLoaded", () => {
             <li>Le nom doit commencer par une majuscule</li>
           </ul>
         `;
-        nom.insertAdjacentElement("afterend", errorContainer);
-        nom.setAttribute("data-valid", "false");
+        nom.insertAdjacentElement("afterend", errorContainer); // Ajoute le message sous le champ
+        nom.setAttribute("data-valid", "false");  // Marque le champ comme invalide
       } else {
-        removeError(nom);
+        removeError(nom); // Pas d’erreur → supprime les message
       }
       
-      updateFieldAccess();
+      updateFieldAccess(); // Active ou désactive les champs suivants
     });
   
     // VALIDATION DU PRÉNOM
-    prenom.addEventListener("blur", () => {
-      const regexPrenom = /^[A-Za-zÀ-ÿ\s'-]+$/;
-      if (prenom.value.trim().length < 2 || !regexPrenom.test(prenom.value)) {
-        removeError(prenom);
+    prenom.addEventListener("blur", () => {  // blur est un événement JavaScript qui se déclenche quand on quitte un champ.
+      const regexPrenom = /^[A-Za-zÀ-ÿ\s'-]+$/;   // Expression régulière (regex) : autorise lettres, espaces, tirets, apostrophes et lettres accentuées
+
+      if (prenom.value.trim().length < 2 || !regexPrenom.test(prenom.value)) {     // Vérifie que le prénom fait au moins 2 caractères ET qu’il respecte la regex
+
+        removeError(prenom); // Supprime les anciens messages d’erreur s’il y en avait
       
-        const errorContainer = document.createElement("div");
-        errorContainer.classList.add("error-message");
+        const errorContainer = document.createElement("div"); // Crée un bloc <div> pour afficher l’erreur
+        errorContainer.classList.add("error-message"); // Ajoute une classe CSS pour le style
+
         errorContainer.innerHTML = `
           <p style="color: white; font-weight: 600;">Prénom invalide :</p>
           <ul>
@@ -93,13 +101,13 @@ document.addEventListener("DOMContentLoaded", () => {
             <li>Le prénom doit commencer par une majuscule</li>
           </ul>
         `;
-        prenom.insertAdjacentElement("afterend", errorContainer);
-        prenom.setAttribute("data-valid", "false");
+        prenom.insertAdjacentElement("afterend", errorContainer); // Ajoute la div juste après le champ <input>
+        prenom.setAttribute("data-valid", "false");  // Marque le champ comme invalide
       } else {
-        removeError(prenom);
+        removeError(prenom); // Si tout est bon, on supprime les erreurs éventuelles
       }
       
-      updateFieldAccess();
+      updateFieldAccess(); // Met à jour l’activation des champs suivants (email, mot de passe, etc.)
     }); 
     
 
@@ -109,8 +117,9 @@ document.addEventListener("DOMContentLoaded", () => {
     removeError(email);
   
     if (!emailRegex.test(email.value.trim())) {
-      const errorContainer = document.createElement("div");
-      errorContainer.classList.add("error-message");
+      const errorContainer = document.createElement("div");     // Si le champ ne respecte pas la structure de l’email...  // Crée un bloc d'erreur
+
+      errorContainer.classList.add("error-message");  // Ajoute une classe CSS pour le style
       
       errorContainer.innerHTML = `
         <p style="color: white; font-weight: bold;">Adresse e-mail invalide :</p>
@@ -121,30 +130,30 @@ document.addEventListener("DOMContentLoaded", () => {
         </ul>
       `;
   
-      email.insertAdjacentElement("afterend", errorContainer);
-      email.setAttribute("data-valid", "false");
+      email.insertAdjacentElement("afterend", errorContainer);  // Affiche le message sous le champ
+      email.setAttribute("data-valid", "false");  // Marque le champ comme invalide
     } else {
-      email.setAttribute("data-valid", "true");
+      email.setAttribute("data-valid", "true"); // Si tout est bon → on le marque comme valide
     }
   
-    updateFieldAccess();
+    updateFieldAccess(); // Active ou désactive le champ mot de passe selon validité de l'email
   });
   
     
   
     // VALIDATION DU MOT DE PASSE
    
-    let isClickingEye = false;
+    let isClickingEye = false; 
     let isClickingConfirmEye = false;
   
   
     togglePassword.addEventListener("mousedown", () => {
-      isClickingEye = true;
+      isClickingEye = true; // Si l’utilisateur clique sur l’œil, on ne valide pas
     });
     
     togglePassword.addEventListener("mouseup", () => {
       setTimeout(() => {
-        isClickingEye = false;
+        isClickingEye = false; // Une fois relâché, on peut revalider
       }, 100);
     });
   
@@ -184,10 +193,10 @@ document.addEventListener("DOMContentLoaded", () => {
         password.setAttribute("data-valid", "false");
     
       } else {
-        removeError(password);
+        removeError(password); // Si valide, on nettoie
       }
     
-      updateFieldAccess();
+      updateFieldAccess(); // Active confirmation si mot de passe est bon
     });
     
     // VALIDATION DE LA CONFIRMATION DU MOT DE PASSE
@@ -218,7 +227,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     // VALIDATION AU MOMENT DE SOUMETTRE
     form.addEventListener("submit", (e) => {
-      e.preventDefault();
+      e.preventDefault();  // Empêche l’envoi si tout n’est pas valide
   
       if (
         isValid(nom) &&
@@ -227,7 +236,7 @@ document.addEventListener("DOMContentLoaded", () => {
         isValid(password) &&
         password.value === confirmPassword.value
       ) {
-        form.submit();
+        form.submit(); // Envoie le formulaire si tout est bon
       } else {
         alert("Veuillez corriger les champs avant de soumettre le formulaire.");
       }
@@ -243,29 +252,32 @@ document.addEventListener("DOMContentLoaded", () => {
   // Afficher / masquer les mots de passe
   
   
-  
-  const togglePassword = document.getElementById("togglePassword");
-  const toggleConfirm = document.getElementById("toggleConfirm");
+  // Récupération des éléments HTML : champs mot de passe et icônes œil
+
+  const togglePassword = document.getElementById("togglePassword"); // icône œil principal
+  const toggleConfirm = document.getElementById("toggleConfirm"); // œil du champ de confirmation
   const password = document.getElementById("password");
   const confirmPassword = document.getElementById("confirm-password");
   
-  let isClickingEye = false;
+  let isClickingEye = false; // Variable utilisée pour éviter de déclencher la validation pendant un clic sur l'œil
+
   
   togglePassword.addEventListener("mousedown", () => {
-    isClickingEye = true;
+    isClickingEye = true; // Quand on clique sur l’icône œil
   });
   togglePassword.addEventListener("mouseup", () => {
     setTimeout(() => {
-      isClickingEye = false;
+      isClickingEye = false; // On réactive la validation juste après
     }, 100);
   });
   
   togglePassword.addEventListener("click", function (e) {
-    e.preventDefault();
-    const isPassword = password.type === "password";
-    password.type = isPassword ? "text" : "password";
-    this.classList.toggle("fa-eye");
-    this.classList.toggle("fa-eye-slash");
+    e.preventDefault(); // Empêche le comportement par défaut si c'est dans un formulaire
+
+    const isPassword = password.type === "password"; // Vérifie si le champ est actuellement masqué
+    password.type = isPassword ? "text" : "password"; // Bascule entre texte (visible) et mot de passe (masqué)
+    this.classList.toggle("fa-eye");  // Alterne l’icône entre œil normal
+    this.classList.toggle("fa-eye-slash"); // ...et œil barré
   });
   
   toggleConfirm.addEventListener("click", function (e) {

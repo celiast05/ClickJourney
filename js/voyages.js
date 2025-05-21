@@ -11,38 +11,38 @@ fetch('get_voyage.php')
 
 // Search function
 function searchVoyages(searchTerm) {
-    if (!searchTerm.trim()) return voyagesData; // Return all if empty search
+    if (!searchTerm.trim()) return voyagesData;     // Si aucun mot n'est saisi → on retourne tous les voyages
 
     const normalize = (text) => {
         return text.toString().toLowerCase()
-            .normalize("NFD")
+            .normalize("NFD") // enlève les accents
             .replace(/[\u0300-\u036f]/g, "");
     };
 
-    const normalizedSearch = normalize(searchTerm);
+    const normalizedSearch = normalize(searchTerm); // transforme le mot-clé recherché
 
     return voyagesData.filter(voyage => {
-        // Check name
+        // On vérifie dans le nom
         if (normalize(voyage.nom).includes(normalizedSearch)) return true;
         
-        // Check description
+        // Dans la description
         if (normalize(voyage.description).includes(normalizedSearch)) return true;
         
-        // Check keywords
+        // Dans les mots-clés
         if (voyage.mots_cles && voyage.mots_cles.some(mot => 
             normalize(mot).includes(normalizedSearch))) return true;
 
-        // Check country
+        // Dans le pays
         if (normalize(voyage.pays).includes(normalizedSearch)) return true;
         
         // Check theme
         if (normalize(voyage.theme).includes(normalizedSearch)) return true;
 
-        return false;
+        return false; // si rien ne correspond, on exclut
     });
 }
 
-// Price sorting function
+//La fonction sortByPrice trie dynamiquement les voyages selon le prix, soit du moins cher au plus cher, soit l’inverse. Elle est déclenchée dès que l’utilisateur sélectionne un tri dans la liste "Prix". C’est une méthode native .sort() sur tableau.
 function sortByPrice(voyages, order) {
     return [...voyages].sort((a, b) => {
         return order === 'asc' ? a.prix - b.prix : b.prix - a.prix;
@@ -51,23 +51,25 @@ function sortByPrice(voyages, order) {
 
 // Filter by multiple criteria
 function filterVoyages(voyages) {
-    // Get selected filters
+    // On récupère tous les filtres cochés dans le HTML
     const selectedClimats = Array.from(document.querySelectorAll('input[name="climat"]:checked'))
         .map(input => input.value);
     const selectedPays = Array.from(document.querySelectorAll('input[name="pays"]:checked'))
         .map(input => input.value);
     const selectedThemes = Array.from(document.querySelectorAll('input[name="theme"]:checked'))
         .map(input => input.value);
-    
+     
+        // On retourne uniquement les voyages qui passent tous les filtres cochés
+
     return voyages.filter(voyage => {
         // Apply climate filter
         if (selectedClimats.length && !selectedClimats.includes(voyage.climat_saison)) {
-            return false;
+            return false;  // si le climat du voyage ne correspond pas
         }
         
         // Apply country filter
         if (selectedPays.length && !selectedPays.includes(voyage.pays)) {
-            return false;
+            return false; // si le pays ne correspond pas
         }
         
         // Apply theme filter
@@ -75,7 +77,7 @@ function filterVoyages(voyages) {
             return false;
         }
         
-        return true;
+        return true; // le voyage passe tous les filtres → on le garde
     });
 }
 
@@ -134,16 +136,16 @@ function displayResults(voyages) {
     });
 }
 
-// Add event listeners
+// Écouteur d’événement sur la liste de tri par prix
 document.getElementById('filter-prix').addEventListener('change', updateResults);
 
-// Add listeners for checkboxes
+// Écouteur d’événements sur **chaque case à cocher** (climat, pays, thème)
 document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
     checkbox.addEventListener('change', updateResults);
 });
 
-// Update search listener to use combined filtering
+// Recherche dynamique dès qu’on tape dans la barre de recherche
 document.querySelector('input[name="keyword"]').addEventListener('input', updateResults);
 
-// Initial display
+// Mise à jour initiale à l’ouverture de la page
 updateResults();

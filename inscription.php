@@ -1,50 +1,55 @@
 <?php
-include 'session.php';
+include 'session.php'; // Fonction PHP : inclut le fichier qui lance session_start()
 
-$fileJson = 'json/users.json';
-$error = 0;
+$fileJson = 'json/users.json'; // Variable : chemin vers le fichier contenant les utilisateurs
+$error = 0; // Variable qui stockera les codes d'erreur (0 = pas d'erreur)
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $confirm_password = $_POST['confirm-password'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') { // Vérifie si le formulaire a été soumis (POST)
+    $email = $_POST['email']; // Superglobale PHP : récupère l’email saisi
+    $password = $_POST['password'];  // Superglobale : mot de passe
+    $confirm_password = $_POST['confirm-password']; // Superglobale : confirmation
     
-    // Vérifier si le fichier existe et charger les utilisateurs
-    if (file_exists($fileJson)) {
-        $users = json_decode(file_get_contents($fileJson), true);
+    // Vérifie si le fichier JSON existe
+    if (file_exists($fileJson)) { // Fonction PHP : teste si un fichier existe
+
+        $users = json_decode(file_get_contents($fileJson), true); // Lit le fichier JSON et convertit en tableau PHP
         
-        // Vérifier si l'email existe déjà
+        // Vérifie si l'email existe déjà dans le tableau
         if ($users !== null) {
             foreach ($users as $u) {
                 if($email == $u['email']){
-                    $error = 1; // Email déjà utilisé
+                    $error = 1;  // Vérifie si l'email existe déjà dans le tableau
+
                     break;
                 }
             }
         }
     }
 
-    // Vérifier la correspondance des mots de passe
+    // Vérifie que les deux mots de passe sont identiques
     if($password != $confirm_password){
-        $error = 2;
+        $error = 2; // Code erreur 2 : mot de passe ≠ confirmation
     }
 
-    // Si pas d'erreur, créer l'utilisateur
+    // Si pas d'erreur, créer l'utilisateur     // Si aucune erreur, on ajoute l'utilisateur
+
     if(!$error){
-        add_user($email, $password);
+        add_user($email, $password);  // Appel de la fonction définie plus bas
     }
 }
 
 function add_user($email, $password) {
     
-    $fileJson = 'json/users.json';
-    if (file_exists($fileJson)) {
+    $fileJson = 'json/users.json'; // chemin vers le fichier JSON
+    if (file_exists($fileJson)) {     // Vérifie si le fichier existe, le lit, ou initialise un tableau vide
+
         $users = json_decode(file_get_contents($fileJson), true); // Lire les données existantes du fichier JSON et les trasforme en tableau
     } else {
         $users = [];
     }
 
-    $passwordHash = password_hash($password, PASSWORD_DEFAULT);
+    $passwordHash = password_hash($password, PASSWORD_DEFAULT); // Fonction PHP : hache le mot de passe pour la sécurité
+    // Création du nouvel utilisateur (tableau associatif)
 
     $new_user = [
         "email" => $email,
@@ -68,9 +73,11 @@ function add_user($email, $password) {
         ]
     ];
 
-    $users[] = $new_user;
+    $users[] = $new_user; // Ajoute le nouvel utilisateur au tableau
     // Sauvegarder les utilisateurs dans le fichier JSON propre
     file_put_contents($fileJson, json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+
+        // Initialise la session utilisateur
 
     $_SESSION['email'] = $_POST['email'];
     $_SESSION['logged_in'] = true;
@@ -78,8 +85,8 @@ function add_user($email, $password) {
     $_SESSION['user'] = $new_user;
     $_SESSION['index'] = count($users)-1;
     $_SESSION["panier"] = [];
-    header("Location: accueil.php");
-    exit();
+    header("Location: accueil.php");  // Redirige vers l’accueil
+    exit(); // Stoppe le script
 }
 ?>
 
@@ -168,7 +175,7 @@ function add_user($email, $password) {
 
     <?php include 'footer.php'; ?>
     
-    <script src="js/inscription.js"></script>
+    <script src="js/inscription.js"></script> <!-- Script JS : validation côté client -->
     <script src="js/theme.js"></script>
   </body>
 </html>
