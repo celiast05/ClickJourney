@@ -1,5 +1,6 @@
 <?php
 include 'session.php';
+require_once 'erreur_voyage.php';
 
 if (!isset($_SESSION['logged_in'])) {
     header("Location: connexion.php");
@@ -24,42 +25,9 @@ if (!$trip) {
     die("Voyage introuvable.");
 }
 
-$erreurs = [];
+$hebergement = $_POST["hebergements"] ?? null;
+$erreurs = validerFormulaireReservation($trip, $_POST);
 
-if (!isset($_POST['date_depart']) || !isset($_POST['date_retour'])) {
-    $erreurs[] = "Les dates de voyage sont obligatoires.";
-} else {
-    $date_depart = new DateTime($_POST['date_depart']);
-    $date_retour = new DateTime($_POST['date_retour']);
-    $today = new DateTime();
-    $today->setTime(0, 0, 0); // ignore l'heure
-
-    if ($date_depart < $today) {
-        $erreurs[] = "La date de départ ne peut pas être dans le passé.";
-    }
-
-    if ($date_retour < $date_depart) {
-        $erreurs[] = "La date de retour ne peut pas être avant la date de départ.";
-    }
-
-    $interval = $date_depart->diff($date_retour);
-    $nombre_nuits = $interval->days;
-}
-
-
-$hebergement = $_POST["hebergements"];
-$nb_personnes_hebergement = (int) $_POST["nb_personnes"][$hebergement];
-// Vérification : aucune activité ne doit dépasser le nombre de personnes de l'hébergement
-
-
-if (isset($_POST["activites"])) {
-    foreach ($_POST["activites"] as $activite) {
-        $nb_pers_activite = (int) ($_POST["nb_personnes"][$activite] ?? 0);
-        if ($nb_pers_activite > $nb_personnes_hebergement) {
-            $erreurs[] = "$nb_pers_activite personne(s) pour l’activité « $activite », mais seulement $nb_personnes_hebergement prévues pour l’hébergement.";
-        }
-    }
-}
 if (!empty($erreurs)) {
     echo '<!DOCTYPE html>
     <html lang="fr">
@@ -77,17 +45,19 @@ if (!empty($erreurs)) {
                     echo '<li>' . htmlspecialchars($err) . '</li>';
                 }
     echo '</ul>
-            <a href="javascript:history.back()">⬅ Retour à la réservation</a>
+            <a href="javascript:history.back()" class="continuer-recherches">Retour à la réservation</a>
         </div>
     </body>
     </html>';
     exit;
 }
 
-        
+$date_depart = new DateTime($_POST['date_depart']);
+$date_retour = new DateTime($_POST['date_retour']);
+$interval = $date_depart->diff($date_retour);
+$nombre_nuits = $interval->days;
 
-
-
+$nb_personnes_hebergement = (int)$_POST["nb_personnes"][$hebergement];
 $prix_hebergement = $trip["hebergements"][$hebergement] * $nb_personnes_hebergement * $nombre_nuits;
 
 $montant = ($trip['prix'] * $nb_personnes_hebergement) + $prix_hebergement;
@@ -95,6 +65,7 @@ $montant = ($trip['prix'] * $nb_personnes_hebergement) + $prix_hebergement;
 $details_options = [];
 $details_options[] = "Hébergement : " . htmlspecialchars($hebergement) . " ($nb_personnes_hebergement pers.) - $prix_hebergement €";
 
+// Ajout des activités
 if (isset($_POST["activites"])) {
     foreach ($_POST["activites"] as $activite) {
         if (isset($_POST["nb_personnes"][$activite]) && isset($trip["activites"][$activite])) {
@@ -106,7 +77,7 @@ if (isset($_POST["activites"])) {
     }
 }
 
-if(isset($_SESSION['role']) & $_SESSION['role']=='vip'){
+if (isset($_SESSION['role']) && $_SESSION['role'] === 'vip') {
     $montant *= 0.8;
 }
 
@@ -115,8 +86,8 @@ $existeDeja = false;
 foreach ($_SESSION['panier'] as $item) {
     if (
         $item['id'] === $trip['id'] &&
-        $item['date_depart'] === $date_depart &&
-        $item['date_retour'] === $date_retour &&
+        $item['date_depart'] === $date_depart->format('Y-m-d') &&
+        $item['date_retour'] === $date_retour->format('Y-m-d') &&
         $item['hebergement'] === $hebergement
     ) {
         $existeDeja = true;

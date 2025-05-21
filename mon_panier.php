@@ -13,7 +13,7 @@ if (!isset($_SESSION['logged_in'])) {
   <meta charset="UTF-8">
   <title>Mon Panier</title>
   <link rel="stylesheet" href="css/panier.css">
-  <link id="theme-link" rel="stylesheet" href="css/themes/theme-light.css">
+  <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
 </head>
 <body>
 
@@ -57,11 +57,12 @@ if (!isset($_SESSION['logged_in'])) {
           echo "<input type='hidden' name='index' value='$index'>";
           echo "<button type='submit'>Supprimer ce voyage</button>";
           echo "</form>";
-          echo "<a href='details.php?voyage=" . htmlspecialchars($voyage['id']) . "' class='continuer-recherches'>Modifier ce voyage</a>";
+          echo "<a href='modifier_reservation.php?index=$index' class='continuer-recherches'>Modifier ce voyage</a>";
           echo "</div>";
 
           $total += $voyage['montant'];
       }
+
 
       echo "<hr><h2>Total à payer : $total €</h2>";
   }

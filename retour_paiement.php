@@ -57,7 +57,10 @@ if ($statut === 'accepted') {
             'transaction_id' => $transaction,
             'montant' => $montant,
             'voyage' => $voyage,
-            'date' => date('Y-m-d H:i:s')
+            'date' => date('Y-m-d H:i:s'),
+            'modifie' => false,
+            'supplement' => 0,
+            'supplement_paye' => false
         ];
 
         $pays = isset($voyage['nom']) ? $voyage['nom'] : 'destination_inconnue';
