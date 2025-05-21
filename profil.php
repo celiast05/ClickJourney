@@ -159,19 +159,6 @@ include 'notif.php'; ?>
     
 if (!empty($_SESSION['user']['voyages']['consultes']) || !empty($_SESSION['user']['voyages']['favoris']) || !empty($_SESSION['user']['voyages']['achetes'])) {
     echo "<section class='historique'>";
-    
-        echo "<div class='historique-section consultes'>";
-            echo "<div class='voyage-container'>";
-            print_trip($_SESSION['user']['voyages']['consultes'], "Consulté");
-            echo "</div>";
-        echo "</div>";
-
-        echo "<div class='historique-section favoris'>";
-            echo "<div class='voyage-container'>";
-            print_trip($_SESSION['user']['voyages']['favoris'], "Favori");
-            echo "</div>";
-        echo "</div>";
-
         echo "<div class='historique-section achetes'>";
             echo "<div class='voyage-container'>";
             echo "<h2>Voyages Achetés :</h2>";

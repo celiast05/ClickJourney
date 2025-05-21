@@ -1,0 +1,28 @@
+[
+    {
+        "user_prenom": "L'Unique",
+        "user_nom": "Test",
+        "transaction_id": "682e32ad5e2ee",
+        "montant": "9200",
+        "voyage": {
+            "id": "paris",
+            "nom": "Paris",
+            "hebergement": "Palace",
+            "activites": [],
+            "nombre_personnes": {
+                "Palace": 2
+            },
+            "date_depart": "2025-05-26",
+            "date_retour": "2025-05-28",
+            "montant": 9200,
+            "frais_reservation": 3000,
+            "details": [
+                "H\u00e9bergement : Palace (2 pers.) - 3200 \u20ac"
+            ]
+        },
+        "date": "2025-05-21 20:08:25",
+        "modifie": false,
+        "supplement": 0,
+        "supplement_paye": false
+    }
+]

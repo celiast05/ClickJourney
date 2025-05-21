@@ -17,11 +17,6 @@
             "derniere_connexion": "2025-05-21"
         },
         "voyages": {
-            "consultes": [
-                "Maldives",
-                "Santorin",
-                "Paris"
-            ],
             "achetes": [
                 {
                     "id": "maldives",
@@ -33,9 +28,6 @@
                     "montant": "8900",
                     "transaction_id": "682b8c1c56659"
                 }
-            ],
-            "favoris": [
-                "Santorin"
             ]
         }
     },
@@ -57,12 +49,7 @@
             "derniere_connexion": "2025-05-17"
         },
         "voyages": {
-            "consultes": [
-                "Aspen",
-                "Laponie"
-            ],
-            "achetes": [],
-            "favoris": []
+            "achetes": []
         }
     },
     {
@@ -83,18 +70,10 @@
             "derniere_connexion": "2025-05-21"
         },
         "voyages": {
-            "consultes": [
-                "Maldives",
-                "Santorin",
-                "Paris"
-            ],
             "achetes": [
                 "Santorin",
                 "Paris",
                 "Costa Rica"
-            ],
-            "favoris": [
-                "Maldives"
             ]
         }
     },
@@ -116,17 +95,9 @@
             "derniere_connexion": "2025-05-19"
         },
         "voyages": {
-            "consultes": [
-                "Maldives",
-                "Santorin",
-                "Paris"
-            ],
             "achetes": [
                 "Santorin",
                 "Paris"
-            ],
-            "favoris": [
-                "Santorin"
             ]
         }
     },
@@ -148,17 +119,9 @@
             "derniere_connexion": "2025-05-17"
         },
         "voyages": {
-            "consultes": [
-                "Dubaï",
-                "Santorin",
-                "Paris"
-            ],
             "achetes": [
                 "Santorin",
                 "Paris"
-            ],
-            "favoris": [
-                "Dubaï"
             ]
         }
     },
@@ -180,11 +143,7 @@
             "derniere_connexion": "2025-05-17"
         },
         "voyages": {
-            "consultes": [],
             "achetes": [
-                "Laponie"
-            ],
-            "favoris": [
                 "Laponie"
             ]
         }
@@ -207,11 +166,7 @@
             "derniere_connexion": "2025-05-17"
         },
         "voyages": {
-            "consultes": [
-                "Oman"
-            ],
-            "achetes": [],
-            "favoris": []
+            "achetes": []
         }
     },
     {
@@ -232,12 +187,7 @@
             "derniere_connexion": "2025-05-17"
         },
         "voyages": {
-            "consultes": [
-                "Maldives",
-                "Bora Bora"
-            ],
-            "achetes": [],
-            "favoris": []
+            "achetes": []
         }
     },
     {
@@ -258,9 +208,7 @@
             "derniere_connexion": "2025-05-13"
         },
         "voyages": {
-            "consultes": [],
-            "achetes": [],
-            "favoris": []
+            "achetes": []
         }
     },
     {
@@ -281,9 +229,7 @@
             "derniere_connexion": "2025-05-03"
         },
         "voyages": {
-            "consultes": [],
-            "achetes": [],
-            "favoris": []
+            "achetes": []
         }
     },
     {
@@ -304,9 +250,7 @@
             "derniere_connexion": "2025-05-19"
         },
         "voyages": {
-            "consultes": [],
-            "achetes": [],
-            "favoris": []
+            "achetes": []
         }
     }
 ]
