@@ -59,11 +59,11 @@
         "informations": {
             "nom": "Garen",
             "prenom": "Justice",
-            "civilite": null,
-            "telephone": null,
-            "photo": null,
-            "preferences": null,
-            "passeport": null
+            "civilite": "Monsieur",
+            "telephone": "1685435454",
+            "photo": [],
+            "preferences": "",
+            "passeport": "Ordinaire"
         },
         "dates": {
             "inscription": "2025-03-25",
