@@ -64,9 +64,7 @@ function add_user($email, $password) {
             "derniere_connexion" => null
         ],
         "voyages" => [
-            "consultes" => [],
-            "achetes" => [],
-            "favoris" => []
+            "achetes" => []
         ]
     ];
 
