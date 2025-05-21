@@ -39,7 +39,10 @@ $control = md5($api_key . "#" . $transaction . "#" . $total . "#" . $vendeur . "
       <ul>
         <?php foreach ($voyage['details'] as $detail): ?>
           <li><?= $detail ?></li>
-        <?php endforeach; ?>
+        <?php endforeach; 
+        if(isset($_SESSION['role']) & $_SESSION['role']=='vip'){
+              echo "<li> Réduction VIP -20% </li>";
+          }?>
       </ul>
       <strong>Total : <?= $voyage['montant'] ?> €</strong>
     </div>
