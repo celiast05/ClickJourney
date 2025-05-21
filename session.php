@@ -27,7 +27,7 @@ if (isset($_GET['banni'])): // after banned user got redirected to accueil.php?b
 <?php endif;
 
 if(isset($_SESSION['logged_in'])){
-  if ( !($_SESSION['stay_connected'])){ // if stay_connected isn't clicked
+  if (isset($_SESSION['stay_connected']) && !($_SESSION['stay_connected'])){ // if stay_connected isn't clicked
     if (isset($_SESSION['last_activity'])) {
           $inactivity = time() - $_SESSION['last_activity'];
 

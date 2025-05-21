@@ -48,8 +48,8 @@ if ($statut === 'accepted') {
     if (isset($_SESSION['panier'], $_SESSION['logged_in'])) {
         $voyage = $_SESSION['panier'][0];
         $userId = isset($_SESSION['logged_in']) ? $_SESSION['logged_in'] : null;
-        $prenom = $_SESSION['prenom'] ?? '';
-        $nom = $_SESSION['nom'] ?? '';
+        $prenom = $_SESSION['user']['informations']['prenom'] ?? '';
+        $nom = $_SESSION['user']['informations']['nom'] ?? '';
 
         $data = [
             'user_prenom' => $prenom,
