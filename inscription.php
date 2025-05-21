@@ -1,5 +1,6 @@
 <?php
-session_start();
+include 'session.php';
+
 $fileJson = 'json/users.json';
 $error = 0;
 

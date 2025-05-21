@@ -1,6 +1,6 @@
 <?php
 
-session_start();
+include 'session.php';
 $error = 0; // error count
 $index = 0;
 
@@ -36,7 +36,7 @@ if ($users !== null) {
     if(isset($password_check) && password_verify($password,$password_check)){
         $_SESSION['email'] = $email;
         $_SESSION['logged_in'] = true;
-        $_SESSION['stay_connected'] = isset($_POST['stay_connected']) ? $_POST['stay_connected'] : false;;
+        $_SESSION['stay_connected'] = isset($_POST['stay_connected']) ? $_POST['stay_connected'] : false;
         $_SESSION['role'] = $user_role;
         $_SESSION['index'] = $index;
         $_SESSION['user']=$users[$index];

@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'session.php';
 // si un utilisateur déjà connecté arrive sur connexion
 if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) { 
     header("Location: accueil.php");
@@ -18,6 +18,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   </head>
   <body>
+    <?php include 'notif.php'; ?>
     <section class="connexion">
       <h2>Heureux de vous revoir chez Elysia Voyage</h2>
       <p>
@@ -53,6 +54,28 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true) {
     </section>
 
     <?php include 'footer.php'; ?>
+    
+    <?php
+    if (isset($_GET['timeout'])):?>
+      <script>
+        const notif = document.getElementById("notif");
+        notif.textContent = "Timeout, veuillez vous reconnecter";
+        notif.classList.remove("hidden"); // Make element visible in layout
+
+        // Allow browser to reflow before applying fade-in
+        setTimeout(() => {
+          notif.classList.add("show"); // Trigger fade-in
+        }, 10);
+
+        // Auto-hide after 3 seconds
+        setTimeout(() => {
+          notif.classList.remove("show"); // Start fade-out
+          setTimeout(() => {
+            notif.classList.add("hidden"); // Fully hide after fade-out completes
+          }, 500); // Match CSS transition duration
+        }, 3000);
+      </script>
+    <?php endif; ?>
     
     <script src="js/connexion.js"></script>
     <script src="js/theme.js"></script>

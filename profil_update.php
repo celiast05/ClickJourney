@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'session.php';
 header('Content-Type: application/json'); // Declare that answer is JSON
 
 $fileJson = 'json/users.json';

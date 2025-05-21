@@ -1,5 +1,5 @@
 <?php
-session_start();
+include 'session.php';
 require_once 'erreur_voyage.php';
 
 if (!isset($_SESSION['logged_in']) || !isset($_POST['index'])) {
