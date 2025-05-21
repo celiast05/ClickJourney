@@ -4,12 +4,17 @@ session_start();
 // Durée d'inactivité autorisée
 $timeout = 600; // 10 minutes
 
-if (isset($_SESSION['role']) && $_SESSION['role'] === 'banni') { // détection d'utilisateur banni
+if (isset($_SESSION['index'])) {
+    $usersData = json_decode(file_get_contents('json/users.json'), true);
+    $_SESSION['role'] = $usersData[$_SESSION['index']]['role'];
+}
+
+if (isset($_SESSION['role']) && $_SESSION['role'] === 'bannir'){// dection of banned user
   header("Location: script/deconnexion.php?action=run");
   exit();
 }
 
-if (isset($_GET['banni'])): ?>
+if (isset($_GET['banni'])): // after banned user got redirected to accueil.php?banni ?>
   <script>
       alert("Vous avez été banni. Vous avez été automatiquement déconnecté.");
   </script>
@@ -27,18 +32,4 @@ if ( !isset($_SESSION['stay_connected'])){ // si Rester connecté n'est pas clic
 
 // Met à jour l'heure de la dernière activité
 $_SESSION['last_activity'] = time();
-
-if (isset($_SESSION['logged_in']) && (!isset($_SESSION['prenom']) || !isset($_SESSION['nom']))) {
-    $userId = $_SESSION['logged_in'];
-    $usersData = json_decode(file_get_contents('json/users.json'), true);
-
-    foreach ($usersData as $user) {
-        if ($user['email'] === $userId) {
-            $_SESSION['prenom'] = $user['informations']['prenom'];
-            $_SESSION['nom'] = $user['informations']['nom'];
-            $_SESSION['role'] = $user['role'];
-            break;
-        }
-    }
-}
 ?>

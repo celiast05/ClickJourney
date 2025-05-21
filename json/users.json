@@ -7,14 +7,14 @@
             "nom": "Test",
             "prenom": "L'Unique",
             "civilite": "Monsieur",
-            "telephone": "561616545684",
+            "telephone": "56161654566354",
             "photo": [],
             "preferences": "",
             "passeport": ""
         },
         "dates": {
             "inscription": "2025-05-17",
-            "derniere_connexion": "2025-05-19"
+            "derniere_connexion": "2025-05-21"
         },
         "voyages": {
             "consultes": [
@@ -68,7 +68,7 @@
     {
         "email": "justice@gmail.com",
         "passwordHash": "$2y$10$uLp2vZRw2MA7CLTyIsb4Pet4Wjr7Dl2Jz\/NayFLcP0shQrM4XGq6y",
-        "role": "normal",
+        "role": "vip",
         "informations": {
             "nom": "Garen",
             "prenom": "Justice",
@@ -80,7 +80,7 @@
         },
         "dates": {
             "inscription": "2025-03-25",
-            "derniere_connexion": "2025-05-17"
+            "derniere_connexion": "2025-05-21"
         },
         "voyages": {
             "consultes": [

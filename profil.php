@@ -6,18 +6,7 @@ if (!isset($_SESSION['logged_in'])) {
     exit();
 }
 
-/*if (!isset($_SESSION['user'])) {
-    $fileJson = 'json/users.json';
-    $users = json_decode(file_get_contents($fileJson), true);
-    foreach ($users as $user) {
-        if ($user['email'] == $_SESSION['email']) {
-            $_SESSION['user'] = $user;
-            break;
-        }
-    }
-}*/
-
-if (isset($_SESSION['logged_in'])) {
+if (isset($_SESSION['logged_in']) && !isset($_SESSION['user'])) {
     $email = $_SESSION['logged_in'];
     $users = json_decode(file_get_contents('json/users.json'), true);
     foreach ($users as $user) {
@@ -57,7 +46,8 @@ function print_trip($list, $name) {
     <link id="theme-link" rel="stylesheet" href="css/themes/theme_light.css">
 </head>
 <body>
-<?php include 'nav.php'; ?>
+<?php include 'nav.php';
+include 'notif.php'; ?>
     
     <div class="container">
     <section class="profil">

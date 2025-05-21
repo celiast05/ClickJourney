@@ -56,23 +56,27 @@ function resetInput(btn, previous_value) {
     : "none";
 }
 
-function popNotif(message,type=0) {
-  const notif = document.getElementById('notif');
+function popNotif(message, type = 0) {
+  const notif = document.getElementById("notif");
   notif.textContent = message;
-  if(type){notif.classList.add(type)}; // type = good or bad
-  notif.classList.remove('hidden'); // Make element visible in layout
+  if (type) {
+    notif.classList.add(type);
+  } // type = good or bad
+  notif.classList.remove("hidden"); // Make element visible in layout
 
   // Allow browser to reflow before applying fade-in
   setTimeout(() => {
-    notif.classList.add('show'); // Trigger fade-in
+    notif.classList.add("show"); // Trigger fade-in
   }, 10);
 
   // Auto-hide after 3 seconds
   setTimeout(() => {
-    notif.classList.remove('show'); // Start fade-out
-    if(type){notif.classList.remove(type)}
+    notif.classList.remove("show"); // Start fade-out
+    if (type) {
+      notif.classList.remove(type);
+    }
     setTimeout(() => {
-      notif.classList.add('hidden'); // Fully hide after fade-out completes
+      notif.classList.add("hidden"); // Fully hide after fade-out completes
     }, 500); // Match CSS transition duration
   }, 3000);
 }
@@ -90,7 +94,7 @@ function validateForm() {
   );
   for (let field of requiredFields) {
     if (field.value.trim() === "" || field.value.trim() === "Sélectionnez...") {
-      popNotif("Tous les champs obligatoires doivent être remplis.", 'bad');
+      popNotif("Tous les champs obligatoires doivent être remplis.", "bad");
       return false;
     }
   }
@@ -107,7 +111,9 @@ function resetForm() {
       input.disabled = true;
     } else {
       input.value = input.dataset.initial;
-      popNotif("Tous les changements non sauvegardés n'ont pas été pris en compte.");
+      popNotif(
+        "Tous les changements non sauvegardés n'ont pas été pris en compte."
+      );
       parent.querySelector(".save-btn")?.style.setProperty("display", "none");
       parent.querySelector(".reset-btn")?.style.setProperty("display", "none");
       editBtn?.style.setProperty("display", "inline-block");
@@ -209,7 +215,7 @@ if (form) {
 
       if (response.ok && result.success) {
         popup_message = "Mise à jour réussie.";
-        popNotif(popup_message, 'good');
+        popNotif(popup_message, "good");
         resetForm();
         initInitialData(); // Reset reference dataset after each update
         document.querySelector(".send-btn").style.display = "none";
@@ -218,11 +224,10 @@ if (form) {
       }
     } catch (error) {
       popup_message = "Échec de la mise à jour : " + error.message;
-      popNotif(popup_message, 'bad');
+      popNotif(popup_message, "bad");
     }
   });
 }
-
 
 // Init at first loading
 initInitialData();
