@@ -95,19 +95,21 @@ if ($statut === 'accepted') {
         $usersFile = 'json/users.json';
         $users = json_decode(file_get_contents($usersFile), true);
 
+        $newTrip = [
+        'id' => $voyage['id'],
+        'nom' => $voyage['nom'],
+        'hebergement' => $voyage['hebergement'],
+        'activites' => $voyage['activites'],
+        'date_depart' => $voyage['date_depart'],
+        'date_retour' => $voyage['date_retour'],
+        'montant' => $montant,
+        'transaction_id' => $transaction
+    ];
+
         foreach ($users as $u) {
-            if ($u['email'] === $_SESSION['email']) {
-                $u['voyages']['achetes'] = [
-                    'id' => $voyage['id'],
-                    'nom' => $voyage['nom'],
-                    'hebergement' => $voyage['hebergement'],
-                    'activites' => $voyage['activites'],
-                    'date_depart' => $voyage['date_depart'],
-                    'date_retour' => $voyage['date_retour'],
-                    'montant' => $montant,
-                    'transaction_id' => $transaction
-                ];
-            break;
+            if ($u['email'] == $_SESSION['email']) {
+                $u['voyages']['achetes'][] = $newTrip;
+                break;
             }
         }
 

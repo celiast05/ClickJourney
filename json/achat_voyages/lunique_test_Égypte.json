@@ -1,0 +1,28 @@
+[
+    {
+        "user_prenom": "L'Unique",
+        "user_nom": "Test",
+        "transaction_id": "682ee3980a44d",
+        "montant": "4900",
+        "voyage": {
+            "id": "egypte",
+            "frais_reservation": 3500,
+            "nom": "\u00c9gypte",
+            "hebergement": "Palace au Caire",
+            "activites": [],
+            "nombre_personnes": {
+                "Palace au Caire": "1"
+            },
+            "date_depart": "2025-05-26",
+            "date_retour": "2025-05-28",
+            "montant": 4900,
+            "details": [
+                "H\u00e9bergement : Palace au Caire (1 pers.) - 1400 \u20ac"
+            ]
+        },
+        "date": "2025-05-22 08:43:41",
+        "modifie": false,
+        "supplement": 0,
+        "supplement_paye": false
+    }
+]

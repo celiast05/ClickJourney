@@ -1,0 +1,28 @@
+[
+    {
+        "user_prenom": "L'Unique",
+        "user_nom": "Test",
+        "transaction_id": "682ee43ceedae",
+        "montant": "10000",
+        "voyage": {
+            "id": "courchevel",
+            "frais_reservation": 5000,
+            "nom": "Courchevel",
+            "hebergement": "Chalet de luxe avec service",
+            "activites": [],
+            "nombre_personnes": {
+                "Chalet de luxe avec service": "1"
+            },
+            "date_depart": "2025-05-26",
+            "date_retour": "2025-05-28",
+            "montant": 10000,
+            "details": [
+                "H\u00e9bergement : Chalet de luxe avec service (1 pers.) - 5000 \u20ac"
+            ]
+        },
+        "date": "2025-05-22 08:45:57",
+        "modifie": false,
+        "supplement": 0,
+        "supplement_paye": false
+    }
+]

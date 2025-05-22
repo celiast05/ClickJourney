@@ -1,0 +1,28 @@
+[
+    {
+        "user_prenom": "L'Unique",
+        "user_nom": "Test",
+        "transaction_id": "682ee1d22623d",
+        "montant": "21000",
+        "voyage": {
+            "id": "dubai",
+            "frais_reservation": 3000,
+            "nom": "Duba\u00ef",
+            "hebergement": "H\u00f4tel 7 \u00e9toiles",
+            "activites": [],
+            "nombre_personnes": {
+                "H\u00f4tel 7 \u00e9toiles": "1"
+            },
+            "date_depart": "2025-05-26",
+            "date_retour": "2025-06-04",
+            "montant": 21000,
+            "details": [
+                "H\u00e9bergement : H\u00f4tel 7 \u00e9toiles (1 pers.) - 18000 \u20ac"
+            ]
+        },
+        "date": "2025-05-22 08:35:39",
+        "modifie": false,
+        "supplement": 0,
+        "supplement_paye": false
+    }
+]
