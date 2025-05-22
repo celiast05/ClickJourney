@@ -6,7 +6,7 @@
         "informations": {
             "nom": "Test",
             "prenom": "L'Unique",
-            "civilite": "Monsieur",
+            "civilite": "Madame",
             "telephone": "56161654566354",
             "photo": [],
             "preferences": "",
@@ -56,7 +56,7 @@
         },
         "dates": {
             "inscription": "2025-03-25",
-            "derniere_connexion": "2025-05-17"
+            "derniere_connexion": "2025-05-22"
         },
         "voyages": {
             "achetes": []
@@ -257,7 +257,28 @@
         },
         "dates": {
             "inscription": "2025-05-17",
-            "derniere_connexion": "2025-05-19"
+            "derniere_connexion": "2025-05-22"
+        },
+        "voyages": {
+            "achetes": []
+        }
+    },
+    {
+        "email": "dora@gmail.com",
+        "passwordHash": "$2y$10$JTlfkHt82tLLLnjDqOs\/HeNZ..ENjwA4pAa9BO.mQUND61Xk\/b7F6",
+        "role": "normal",
+        "informations": {
+            "nom": "Lexploratrice",
+            "prenom": "Dora",
+            "civilite": null,
+            "telephone": null,
+            "photo": null,
+            "preferences": null,
+            "passeport": null
+        },
+        "dates": {
+            "inscription": "2025-05-22",
+            "derniere_connexion": "2025-05-22"
         },
         "voyages": {
             "achetes": []

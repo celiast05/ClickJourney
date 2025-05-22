@@ -3,26 +3,27 @@
         "user_prenom": "L'Unique",
         "user_nom": "Test",
         "transaction_id": "682edaff8063a",
-        "montant": "4200",
+        "montant": 8400,
         "voyage": {
             "id": "rome",
-            "frais_reservation": 2800,
             "nom": "Rome",
             "hebergement": "Palace",
             "activites": [],
             "nombre_personnes": {
-                "Palace": "1"
+                "Palace": 2
             },
             "date_depart": "2025-05-26",
             "date_retour": "2025-05-28",
-            "montant": 4200,
+            "montant": 8400,
+            "frais_reservation": 2800,
             "details": [
-                "H\u00e9bergement : Palace (1 pers.) - 1400 \u20ac"
+                "H\u00e9bergement : Palace (2 pers.) - 2800 \u20ac"
             ]
         },
         "date": "2025-05-22 08:06:32",
-        "modifie": false,
+        "modifie": true,
         "supplement": 0,
-        "supplement_paye": false
+        "supplement_paye": true,
+        "transaction_supplement": "682eed4a8c5c8"
     }
 ]

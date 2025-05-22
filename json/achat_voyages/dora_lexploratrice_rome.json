@@ -1,0 +1,58 @@
+[
+    {
+        "user_prenom": "Dora",
+        "user_nom": "Lexploratrice",
+        "transaction_id": "682ee8733756f",
+        "montant": "12900",
+        "voyage": {
+            "id": "rome",
+            "frais_reservation": 2800,
+            "nom": "Rome",
+            "hebergement": "Palace",
+            "activites": [
+                "Visite priv\u00e9e du Vatican"
+            ],
+            "nombre_personnes": {
+                "Palace": "3",
+                "Visite priv\u00e9e du Vatican": "3"
+            },
+            "date_depart": "2025-05-26",
+            "date_retour": "2025-05-28",
+            "montant": 12900,
+            "details": [
+                "H\u00e9bergement : Palace (3 pers.) - 4200 \u20ac",
+                "Activit\u00e9 : Visite priv\u00e9e du Vatican (3 pers.) - 300 \u20ac"
+            ]
+        },
+        "date": "2025-05-22 09:03:59",
+        "modifie": false,
+        "supplement": 0,
+        "supplement_paye": false
+    },
+    {
+        "user_prenom": "Dora",
+        "user_nom": "Lexploratrice",
+        "transaction_id": "682ee89db3d75",
+        "montant": "4900",
+        "voyage": {
+            "id": "rome",
+            "frais_reservation": 2800,
+            "nom": "Rome",
+            "hebergement": "Palace",
+            "activites": [],
+            "nombre_personnes": {
+                "Palace": "1"
+            },
+            "date_depart": "2025-06-09",
+            "date_retour": "2025-06-12",
+            "montant": 4900,
+            "details": [
+                "H\u00e9bergement : Palace (1 pers.) - 2100 \u20ac"
+            ]
+        },
+        "date": "2025-05-22 09:04:38",
+        "modifie": false,
+        "supplement": 0,
+        "supplement_paye": false
+    }
+]
