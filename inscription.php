@@ -80,7 +80,7 @@ function add_user($email, $password) {
         // Initialise la session utilisateur
 
     $_SESSION['email'] = $_POST['email'];
-    $_SESSION['logged_in'] = true;
+    $_SESSION['logged_in'] = $email;
     $_SESSION['role'] = "normal";
     $_SESSION['user'] = $new_user;
     $_SESSION['index'] = count($users)-1;

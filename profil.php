@@ -6,8 +6,8 @@ if (!isset($_SESSION['logged_in'])) {
     exit();
 }
 
-if (isset($_SESSION['logged_in']) && !isset($_SESSION['user'])) {
-    $email = $_SESSION['logged_in'];
+if (isset($_SESSION['logged_in'])) {
+    $email = $_SESSION['email'];
     $users = json_decode(file_get_contents('json/users.json'), true);
     foreach ($users as $user) {
         if ($user['email'] === $email) {

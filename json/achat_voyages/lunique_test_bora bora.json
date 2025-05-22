@@ -1,0 +1,28 @@
+[
+    {
+        "user_prenom": "L'Unique",
+        "user_nom": "Test",
+        "transaction_id": "682edc6362736",
+        "montant": "6900",
+        "voyage": {
+            "id": "bora_bora",
+            "frais_reservation": 4500,
+            "nom": "Bora Bora",
+            "hebergement": "Bungalow sur pilotis",
+            "activites": [],
+            "nombre_personnes": {
+                "Bungalow sur pilotis": "1"
+            },
+            "date_depart": "2025-06-09",
+            "date_retour": "2025-06-11",
+            "montant": 6900,
+            "details": [
+                "H\u00e9bergement : Bungalow sur pilotis (1 pers.) - 2400 \u20ac"
+            ]
+        },
+        "date": "2025-05-22 08:12:30",
+        "modifie": false,
+        "supplement": 0,
+        "supplement_paye": false
+    }
+]

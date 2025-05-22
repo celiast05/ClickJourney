@@ -14,7 +14,7 @@
         },
         "dates": {
             "inscription": "2025-05-17",
-            "derniere_connexion": "2025-05-21"
+            "derniere_connexion": "2025-05-22"
         },
         "voyages": {
             "achetes": [
@@ -27,6 +27,16 @@
                     "date_retour": "2025-05-29",
                     "montant": "8900",
                     "transaction_id": "682b8c1c56659"
+                },
+                {
+                    "id": "rome",
+                    "nom": "Rome",
+                    "hebergement": "Palace",
+                    "activites": [],
+                    "date_depart": "2025-05-26",
+                    "date_retour": "2025-05-28",
+                    "montant": "4200",
+                    "transaction_id": "682edaff8063a"
                 }
             ]
         }

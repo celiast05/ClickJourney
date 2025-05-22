@@ -95,9 +95,9 @@ if ($statut === 'accepted') {
         $usersFile = 'json/users.json';
         $users = json_decode(file_get_contents($usersFile), true);
 
-        foreach ($users as &$u) {
-            if ($u['email'] === $_SESSION['logged_in']) {
-                $u['voyages']['achetes'][] = [
+        foreach ($users as $u) {
+            if ($u['email'] === $_SESSION['email']) {
+                $u['voyages']['achetes'] = [
                     'id' => $voyage['id'],
                     'nom' => $voyage['nom'],
                     'hebergement' => $voyage['hebergement'],
